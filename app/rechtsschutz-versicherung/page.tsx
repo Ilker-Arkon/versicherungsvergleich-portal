@@ -4,7 +4,7 @@ import React from 'react';
 import PartnerWidget from '@/components/PartnerWidget';
 import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
 import FAQAccordion from '@/components/FAQAccordion';
-import { ShieldCheck, CheckCircle2, Scale } from 'lucide-react';
+import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 
 const rechtsschutzTariffs: TariffRow[] = [
@@ -88,29 +88,37 @@ export default function RechtsschutzPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <Scale className="w-5 h-5 text-emerald-600 mr-2" />
-            Die wichtigsten Bausteine im Rechtsschutz
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">Privatrecht</p>
-              <p className="text-xs text-slate-500">Vertragsstreitigkeiten, Internetkäufe, Reisemängel und Schadenersatzansprüche.</p>
+        {/* Ratgeber-Sektion */}
+        <div className="premium-card p-8 mb-14">
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">Berufsrecht</p>
-              <p className="text-xs text-slate-500">Kündigungsschutzklagen, Abfindungsverhandlungen und Streit um Arbeitszeugnisse.</p>
-            </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">Verkehrsrecht</p>
-              <p className="text-xs text-slate-500">Verkehrsunfälle, Bußgeldbescheide, Fahrverbote und Streit beim Autokauf.</p>
-            </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">Wohnungsrecht</p>
-              <p className="text-xs text-slate-500">Mietminderung, Nebenkostenabrechnungen, Eigenbedarfskündigungen & Nachbarschaft.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Recht haben und Recht bekommen: Keine Angst vor teuren Anwaltskosten</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Rechtsschutzversicherung einfach erklärt</p>
             </div>
           </div>
+          <p className="text-slate-600 text-sm leading-relaxed mb-5">
+            Ein unerwarteter Streit mit dem Vermieter, eine ungerechtfertigte Kündigung oder ein Verkehrsunfall mit strittiger Schuldfrage: Im Alltag kann man schneller in einen Rechtsstreit geraten, als man denkt. Anwaltsgebühren, Gerichtskosten und Gutachter summieren sich selbst bei kleineren Streitwerten rasch auf <strong className="text-slate-900">mehrere tausend Euro</strong>.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {[
+              { icon: '🏠', title: 'Privat- & Vertragsrecht', text: 'Schutz bei Ärger rund um Online-Käufe, Verträge und Dienstleistungen.' },
+              { icon: '💼', title: 'Arbeitsrecht', text: 'Absicherung bei Abmahnungen, Kündigungen oder Streitigkeiten um das Arbeitszeugnis.' },
+              { icon: '🔑', title: 'Miet- & Immobilienrecht', text: 'Hilfe bei Konflikten um Mieterhöhungen, Kündigungen wegen Eigenbedarf oder Mängeln.' },
+              { icon: '🚗', title: 'Verkehrsrecht', text: 'Schutz nach Unfällen, bei drohendem Fahrverbot oder Bußgeldbescheiden.' },
+            ].map((item) => (
+              <div key={item.title} className="p-4 bg-slate-50 rounded-xl border border-slate-100 flex items-start space-x-3">
+                <span className="text-xl shrink-0">{item.icon}</span>
+                <div>
+                  <p className="font-bold text-slate-900 text-sm mb-1">{item.title}</p>
+                  <p className="text-xs text-slate-500">{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-slate-500 mt-4 text-center">Viele moderne Tarife bieten dir neben der freien Anwaltswahl auch kostenlose telefonische Erstberatungen und unbürokratische Schlichtungsverfahren (Mediation).</p>
         </div>
 
         <div className="mb-14">

@@ -112,23 +112,36 @@ export default function PkvPage() {
           />
         </div>
 
+        {/* Ratgeber-Sektion */}
         <div className="premium-card p-8 mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-rose-600 mr-2" />
-            Wichtige Qualitätsmerkmale hochwertiger PKV-Tarife
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">1. Honorare über Höchstsatz</p>
-              <p className="text-xs text-slate-500">Übernahme von Arzthonoraren über den 3,5-fachen GOÄ-Höchstsatz hinaus bei Spezialisten und Chefärzten.</p>
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-rose-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">2. Offener Hilfsmittelkatalog</p>
-              <p className="text-xs text-slate-500">Volle Kostenerstattung für moderne medizinische Hilfsmittel ohne geschlossene Positivliste.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Deine Gesundheit, deine Wahl: Die Private Krankenversicherung einfach erklärt</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Für wen lohnt sich der Wechsel in die PKV?</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">3. Hohe Zahnleistungen</p>
-              <p className="text-xs text-slate-500">Mindestens 80–90 % Erstattung für hochwertigen Zahnersatz, Inlays, Implantate und Kieferorthopädie.</p>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">
+            Die gesetzliche Krankenversicherung bietet eine solide Basisversorgung – doch viele Menschen wünschen sich mehr Flexibilität, schnellere Termine bei Fachärzten und maßgeschneiderte medizinische Leistungen. Mit einer Privaten Krankenversicherung gestaltest du deinen Gesundheitsschutz genau so, wie er zu deinen persönlichen Bedürfnissen passt.
+          </p>
+          <div className="mb-5 p-4 bg-blue-50 border border-blue-200/60 rounded-xl">
+            <p className="text-sm font-bold text-blue-900 mb-2">Für wen lohnt sich der Wechsel?</p>
+            <p className="text-xs text-blue-800">Eine private Absicherung ist besonders interessant für <strong>Selbstständige & Freiberufler</strong>, <strong>Beamte</strong> sowie <strong>Angestellte</strong>, deren Einkommen über der gesetzlichen Versicherungspflichtgrenze liegt.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">⭐ Individuelle Wunschleistungen</p>
+              <p className="text-xs text-slate-500">Wähle selbst zwischen Chefarztbehandlung, Einbettzimmer oder umfangreicher Zahngesundheit.</p>
+            </div>
+            <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
+              <p className="font-bold text-emerald-900 text-sm mb-1">🔒 Garantierter Schutz</p>
+              <p className="text-xs text-emerald-700">Deine gewählten Leistungen können von der Versicherung nicht einseitig gekürzt werden – anders als in der gesetzlichen Kasse.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">💶 Attraktive Beiträge</p>
+              <p className="text-xs text-slate-500">Passgenaue Tarife, die oft umfassendere Leistungen bieten als die gesetzliche Kasse – bei ähnlichem oder geringerem Beitrag.</p>
             </div>
           </div>
         </div>

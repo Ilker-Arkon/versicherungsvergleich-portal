@@ -93,23 +93,28 @@ export default function HaftpflichtPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 mr-2" />
-            Wichtige Kriterien beim Vergleich
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">1. Deckungssumme 50 Mio. Euro</p>
-              <p className="text-xs text-slate-500">Wählen Sie stets eine pauschale Deckungssumme von mindestens 50 Mio. Euro für Personen-, Sach- und Vermögensschäden.</p>
+        {/* Ratgeber-Sektion */}
+        <div className="premium-card p-8 mb-14">
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-blue-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">2. Forderungsausfalldeckung</p>
-              <p className="text-xs text-slate-500">Zahlt, wenn Ihnen ein unversicherter Dritter einen Schaden zufügt und selbst nicht zahlen kann.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Existenzschutz vor Schadenersatz: Warum die Privathaftpflicht unverzichtbar ist</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Ein Unachsamkeitsmoment kann teuer werden</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">3. Schlüsselverlust privat und beruflich</p>
-              <p className="text-xs text-slate-500">Kosten für den Austausch von Schließanlagen in Mietshäusern oder am Arbeitsplatz sind mitversichert.</p>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed mb-5">
+            Du stößt versehentlich das teure Smartphone eines Bekannten um, fügst als Fußgänger einem Radfahrer einen Schaden zu – oder in deiner Wohnung tritt unbemerkt Wasser aus. Ein Unachsamkeitsmoment im Alltag genügt. Nach dem Bürgerlichen Gesetzbuch <strong className="text-slate-900">(§ 823 BGB)</strong> haftest du unbegrenzt mit deinem gesamten privaten Vermögen – auch mit zukünftigem Einkommen.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">💶 Personen-, Sach- & Vermögensschäden</p>
+              <p className="text-xs text-slate-500">Eine gute Privathaftpflicht schützt dich vor finanziellen Forderungen in Millionenhöhe – und das für wenige Euro im Monat.</p>
+            </div>
+            <div className="p-4 bg-blue-50 rounded-xl border border-blue-200/60">
+              <p className="font-bold text-blue-900 text-sm mb-1">🛡️ Passiver Rechtsschutz inklusive</p>
+              <p className="text-xs text-blue-700">Unberechtigte Ansprüche Dritter werden von der Versicherung auf deren Kosten geprüft und abgewehrt.</p>
             </div>
           </div>
         </div>

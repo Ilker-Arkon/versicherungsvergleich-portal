@@ -15,21 +15,23 @@ export default function HeroSection() {
   const topCards = [
     {
       title: "Kfz-Versicherung",
-      subtitle: "Bis zu 850 € sparen",
+      subtitle: "Jedes Jahr Hunderte € sparen",
       slug: "/kfz-versicherung",
       icon: <Car className="w-5 h-5" />,
       accentClass: "accent-bar-blue",
       iconBg: "bg-blue-50 text-blue-600",
-      description: "Über 330 Tarife im Live-Vergleich mit Bestpreis-Garantie."
+      cta: "Jetzt Beitrag berechnen & sparen",
+      description: "Gleicher Schutz, weniger zahlen — über 330 Tarife im Live-Vergleich."
     },
     {
       title: "Private Krankenversicherung",
-      subtitle: "Ø 2.400 € Ersparnis",
+      subtitle: "Chefarzt & Einzelzimmer",
       slug: "/pkv",
       icon: <HeartPulse className="w-5 h-5" />,
       accentClass: "accent-bar-rose",
       iconBg: "bg-rose-50 text-rose-600",
-      description: "Chefarzt, 1-Bett-Zimmer & Top-Zahnersatz zum Besttarif."
+      cta: "Unverbindliches Angebot anfordern",
+      description: "Maßgeschneiderter Gesundheitsschutz — garantiert und nicht kürzbar."
     },
     {
       title: "Berufsunfähigkeit",
@@ -38,7 +40,8 @@ export default function HeroSection() {
       icon: <Briefcase className="w-5 h-5" />,
       accentClass: "accent-bar-indigo",
       iconBg: "bg-indigo-50 text-indigo-600",
-      description: "Ihr Einkommen absichern — ohne abstrakte Verweisung."
+      cta: "In 2 Minuten zum besten Tarif",
+      description: "Dein Einkommen absichern — ohne abstrakte Verweisung."
     }
   ];
 
@@ -53,7 +56,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-5 text-base sm:text-lg text-slate-500 leading-relaxed">
-            Versicherungen & Finanzen — kostenlos, unverbindlich und in unter 3 Minuten zum besten Angebot.
+            Versicherungen & Finanzen — 100 % kostenlos, unverbindlich und in unter 3 Minuten zum besten Angebot.
           </p>
 
           {/* Social Proof Row */}
@@ -92,8 +95,8 @@ export default function HeroSection() {
               </div>
 
               <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
-                <span>Tarife berechnen</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                <span>{card.cta}</span>
+                <ArrowRight className="w-3.5 h-3.5 shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
               </div>
             </Link>
           ))}

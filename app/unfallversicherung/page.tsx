@@ -88,23 +88,37 @@ export default function UnfallPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-indigo-600 mr-2" />
-            Wichtige Leistungen beim Unfallschutz
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">1. Ausreichende Grundsumme</p>
-              <p className="text-xs text-slate-500">Wir empfehlen eine Grundinvaliditätssumme von mindestens 100.000 bis 150.000 € mit 350% bis 500% Progression.</p>
+        {/* Ratgeber-Sektion */}
+        <div className="premium-card p-8 mb-14">
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-indigo-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-indigo-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">2. Hohe Bergungskosten</p>
-              <p className="text-xs text-slate-500">Such- und Rettungseinsätze (z. B. mit Hubschrauber in den Bergen) sollten mit mindestens 50.000 bis 100.000 € versichert sein.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Warum die gesetzliche Unfallkasse nicht ausreicht: Dein 24/7-Schutz für Freizeit & Familie</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Die gefährliche Lücke im gesetzlichen Schutz</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">3. Erweiterter Unfallbegriff</p>
-              <p className="text-xs text-slate-500">Schutz bei Unfällen durch Eigenbewegung, erhöhte Kraftanstrengung sowie Vergiftungen und Tierbisse.</p>
+          </div>
+          <div className="bg-amber-50 border border-amber-200/70 rounded-xl p-4 mb-6">
+            <p className="text-sm font-bold text-amber-900 mb-1">⚠️ Das Problem: Über 70 % der Unfälle passieren in der Freizeit</p>
+            <p className="text-xs text-amber-800 leading-relaxed">Die gesetzliche Unfallversicherung greift ausschließlich am Arbeitsplatz sowie auf dem direkten Hin- und Rückweg. Beim Heimwerken, im Garten, beim Sport, beim Radfahren oder im Familienurlaub leistet die gesetzliche Kasse <strong>keinen einzigen Cent</strong>.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">🌍 Lückenloser 24/7-Weltweitschutz</p>
+              <p className="text-xs text-slate-500">Du und deine Familie seid rund um die Uhr abgesichert – egal ob zu Hause, beim Sport, auf Reisen oder bei Hobbyaktivitäten.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">💰 Finanzielle Unabhängigkeit bei Invalidität</p>
+              <p className="text-xs text-slate-500">Nach einem schweren Unfall entstehen oft hohe Kosten für barrierefreie Wohnungsumbauten. Die Versicherung zahlt eine vereinbarte Kapital-Einmalsumme.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">🏥 Krankenhaustagegeld & Unfallrente</p>
+              <p className="text-xs text-slate-500">Wichtige Zusatzleistungen wie Krankenhaustagegeld, Bergungskosten oder monatliche Unfallrenten sichern den Lebensstandard dauerhaft ab.</p>
+            </div>
+            <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
+              <p className="font-bold text-emerald-900 text-sm mb-1">👨👩👧 Familienfreundliche Tarife</p>
+              <p className="text-xs text-emerald-700">Kinder und Partner lassen sich kostengünstig in einem gemeinsamen Vertrag mit absichern.</p>
             </div>
           </div>
         </div>

@@ -88,23 +88,32 @@ export default function WohngebaeudePage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 mr-2" />
-            Worauf Hauseigentümer beim Vergleich achten sollten
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">1. Elementargefahren einschließen</p>
-              <p className="text-xs text-slate-500">Starkregen-Ereignisse nehmen zu. Ohne Elementarbaustein besteht kein Versicherungsschutz bei Überflutung und Rückstau.</p>
+        {/* Ratgeber-Sektion */}
+        <div className="premium-card p-8 mb-14">
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">2. Grobe Fahrlässigkeit 100%</p>
-              <p className="text-xs text-slate-500">Volle Kostenübernahme selbst wenn eine Kerze vergessen wurde oder ein Fenster bei Sturm gekippt war.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Dein Zuhause optimal schützen: Die Wohngebäudeversicherung im Überblick</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Was du wissen musst – klar und verständlich erklärt</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">3. Rohrbruch außerhalb Gebäude</p>
-              <p className="text-xs text-slate-500">Achten Sie auf ausreichende Summen für Erdarbeiten und Reparaturen von Ableitungsrohren auf dem Grundstück.</p>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed mb-6">
+            Das eigene Haus ist für die meisten Menschen der wertvollste Besitz. Doch unvorhersehbare Naturereignisse wie heftiger Starkregen, Sturmböen, Blitzeinschläge oder ein Brand können innerhalb weniger Minuten Schäden in <strong className="text-slate-900">fünf- oder sechsstelliger Höhe</strong> verursachen. Eine leistungsstarke Wohngebäudeversicherung bewahrt dich verlässlich vor existenzbedrohenden Reparaturkosten.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-blue-50 rounded-xl border border-blue-200/60">
+              <p className="font-bold text-blue-900 text-sm mb-1">🌧️ Schutz vor Elementarschäden</p>
+              <p className="text-xs text-blue-700">Überschwemmungen durch Starkregen, Rückstau oder Schneedruck nehmen zu. Der Elementarschutz stellt sicher, dass alle Schadensbeseitigungen übernommen werden.</p>
+            </div>
+            <div className="p-4 bg-orange-50 rounded-xl border border-orange-200/60">
+              <p className="font-bold text-orange-900 text-sm mb-1">🔥 Umfassender Feuerschutz</p>
+              <p className="text-xs text-orange-700">Egal ob Kurzschluss, Kabelbrand oder Blitzeinschlag – die Versicherung kommt für die vollständige Wiederherstellung deines Gebäudes auf.</p>
+            </div>
+            <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
+              <p className="font-bold text-emerald-900 text-sm mb-1">📈 Gleitender Neuwert</p>
+              <p className="text-xs text-emerald-700">Die Versicherungssumme wird automatisch an steigende Bau- und Materialpreise angepasst. Im Totalschadenfall wird dein Haus ohne finanzielle Lücke neu aufgebaut.</p>
             </div>
           </div>
         </div>

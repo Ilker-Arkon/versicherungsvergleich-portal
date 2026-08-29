@@ -76,14 +76,21 @@ export default function Navbar() {
       {/* Trust Bar */}
       <div className="bg-slate-900 text-slate-400 text-xs py-1.5 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-5">
-            <span className="flex items-center text-emerald-400 font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1" /> Kostenloser & unabhängiger Vergleich
+          <div className="flex items-center divide-x divide-slate-700">
+            <span className="flex items-center text-emerald-400 font-semibold pr-4">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1 shrink-0" /> 100 % Kostenlos & Unverbindlich
             </span>
-            <span>⭐ 4,9/5 Kundenbewertung</span>
-            <span>TÜV-geprüft</span>
+            <span className="flex items-center px-4 text-slate-300">
+              ✦ Über 20 Jahre Erfahrung
+            </span>
+            <span className="flex items-center px-4">
+              🔒 Sicher & Datenschutzkonform
+            </span>
+            <span className="flex items-center pl-4 text-amber-400 font-semibold">
+              ⚡ In unter 3 Min. zum Bestpreis
+            </span>
           </div>
-          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors">
+          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors shrink-0 ml-4">
             <PhoneCall className="w-3.5 h-3.5 mr-1 text-emerald-400" />
             {CUSTOMER_PROFILE.phone}
           </a>

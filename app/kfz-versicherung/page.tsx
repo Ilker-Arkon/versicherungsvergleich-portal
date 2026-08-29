@@ -78,16 +78,16 @@ export default function KfzPage() {
             Fahrzeug & Mobilität
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
-            Kfz-Versicherung vergleichen & bis zu <span className="text-gradient">850 € sparen</span>
+            Gleicher Schutz, weniger zahlen: <span className="text-gradient">Jetzt Kfz-Tarife vergleichen</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko-, Teilkasko- oder Haftpflichtschutz mit garantierter Beitragsersparnis.
+            Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko-, Teilkasko- oder Haftpflichtschutz — und sparen Sie jedes Jahr Hunderte Euro.
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
             <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> TÜV-geprüfte Tarifberechnung</span>
             <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige eVB-Nummer per SMS</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% kostenloser Service</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> In 3 Minuten zum Bestpreis</span>
           </div>
         </div>
 

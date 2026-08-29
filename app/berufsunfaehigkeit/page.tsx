@@ -88,23 +88,36 @@ export default function BerufsunfaehigkeitPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <Briefcase className="w-5 h-5 text-purple-600 mr-2" />
-            Checkliste: Darauf kommt es bei einer guten BU-Police an
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">1. Ausreichende BU-Rentenhöhe</p>
-              <p className="text-xs text-slate-500">Wir empfehlen mindestens 70–80 % des aktuellen Nettoeinkommens abzusichern, um den gewohnten Lebensstandard zu halten.</p>
+        {/* Ratgeber-Sektion */}
+        <div className="premium-card p-8 mb-14">
+          <div className="flex items-center space-x-3 mb-6">
+            <div className="w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center shrink-0">
+              <Briefcase className="w-5 h-5 text-purple-600" />
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">2. Laufzeit bis Endalter 67</p>
-              <p className="text-xs text-slate-500">Vereinbaren Sie die Leistungsdauer idealerweise bis zum gesetzlichen Renteneintrittsalter, um Rentenlücken zu vermeiden.</p>
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">Dein wertvollstes Gut schützen: Sichere dein monatliches Einkommen ab</h2>
+              <p className="text-xs text-slate-500 mt-0.5">Berufsunfähigkeitsversicherung (BU) einfach erklärt</p>
             </div>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-              <p className="font-bold text-slate-900 mb-1">3. Nachversicherungsoptionen</p>
-              <p className="text-xs text-slate-500">Erhöhung der BU-Rente bei Heirat, Geburt eines Kindes, Immobilienkauf oder Gehaltssprung ohne erneute Gesundheitsfragen.</p>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed mb-5">
+            Hast du dir schon einmal überlegt, wie viel Geld du im Laufe deines Arbeitslebens verdienst? Für die meisten Menschen ist das eigene Gehalt ein Millionenvermögen. Doch was passiert, wenn du deinen Beruf durch eine unerwartete Krankheit, ein Burnout oder einen Unfall langfristig nicht mehr ausüben kannst?
+          </p>
+          <div className="bg-red-50 border border-red-200/70 rounded-xl p-4 mb-6">
+            <p className="text-sm font-bold text-red-800 mb-1">⚠️ Die gefährliche gesetzliche Lücke</p>
+            <p className="text-xs text-red-700 leading-relaxed">Wer nach 1961 geboren ist, erhält vom Staat keine gesetzliche Berufsunfähigkeitsrente mehr. Die staatliche Erwerbsminderungsrente greift erst, wenn du gar keiner Tätigkeit am Arbeitsmarkt mehr nachgehen kannst – und selbst dann reicht die staatliche Hilfe meist kaum aus, um den gewohnten Lebensstandard oder laufende Mieten und Kredite zu decken.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">💰 Monatliche Rente sichern</p>
+              <p className="text-xs text-slate-500">Du bestimmst die Höhe deiner gewünschten monatlichen BU-Rente, die im Leistungsfall zuverlässig ausgezahlt wird.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
+              <p className="font-bold text-slate-900 text-sm mb-1">🛡️ Schutz bei allen Berufen</p>
+              <p className="text-xs text-slate-500">Egal ob Bürokraft, Handwerker, Pflegekraft oder Akademiker – der Schutz gilt exakt für deinen zuletzt ausgeübten Beruf.</p>
+            </div>
+            <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
+              <p className="font-bold text-emerald-900 text-sm mb-1">📅 Früh abschließen & sparen</p>
+              <p className="text-xs text-emerald-700">Je jünger und gesünder du bei Vertragsabschluss bist, desto günstiger sind deine monatlichen Beiträge über die gesamte Laufzeit.</p>
             </div>
           </div>
         </div>
