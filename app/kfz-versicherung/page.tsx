@@ -1,0 +1,136 @@
+'use client';
+
+import React from 'react';
+import InteractiveCalculator from '@/components/InteractiveCalculator';
+import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
+import FAQAccordion from '@/components/FAQAccordion';
+import { ShieldCheck } from 'lucide-react';
+
+const kfzTariffs: TariffRow[] = [
+  {
+    id: 'huk24-classic',
+    provider: 'HUK24',
+    logoText: 'HUK',
+    tariffName: 'Classic Kfz-Tarif',
+    priceMonthly: 31.50,
+    priceYearly: 378.00,
+    rating: 4.9,
+    reviewCount: 3420,
+    benefits: ['100 Mio. € Deckungssumme', 'Freie Werkstattwahl wählbar', 'Mallorca-Police inklusive', 'Schutzbrief ab 9 € / Jahr'],
+    bonus: 'Bis zu 850 € Sparpotenzial',
+    isTestsieger: true,
+    ctaText: 'Jetzt kostenlos vergleichen'
+  },
+  {
+    id: 'allianz-direct',
+    provider: 'Allianz Direct',
+    logoText: 'ALZ',
+    tariffName: 'Direct Plus Vollkasko',
+    priceMonthly: 34.20,
+    priceYearly: 410.40,
+    rating: 4.8,
+    reviewCount: 2890,
+    benefits: ['Neupreisentschädigung 24 Monate', 'Marderbiss & Folgeschäden bis 10.000 €', 'Tierbiss aller Tierarten', 'Schnelle 24h Schadenregulierung'],
+    bonus: '50 € Amazon Gutschein bei Wechsel',
+    isTestsieger: false,
+    ctaText: 'Tarif anzeigen'
+  },
+  {
+    id: 'cosmos-comfort',
+    provider: 'CosmosDirekt',
+    logoText: 'COS',
+    tariffName: 'Comfort Schutz',
+    priceMonthly: 28.90,
+    priceYearly: 346.80,
+    rating: 4.7,
+    reviewCount: 1950,
+    benefits: ['Fahrerschutzversicherung inkl.', 'Grobe Fahrlässigkeit mitversichert', 'Schaden-Soforthilfe per App', 'Täglich kündbar im 1. Monat'],
+    bonus: 'Sonderrabatt für Garagenbesitzer',
+    isTestsieger: false,
+    ctaText: 'Jetzt berechnen'
+  },
+  {
+    id: 'ergo-smart',
+    provider: 'ERGO Direkt',
+    logoText: 'ERG',
+    tariffName: 'Smart Drive Kasko',
+    priceMonthly: 36.80,
+    priceYearly: 441.60,
+    rating: 4.7,
+    reviewCount: 1420,
+    benefits: ['Schadenfreiheitsrabatt-Retter', 'Zusatzfahrer flexibel zubuchbar', 'Elektro- & Hybrid-Akkuschutz', '24/7 Notfallservice'],
+    isTestsieger: false,
+    ctaText: 'Angebot anfordern'
+  }
+];
+
+const kfzFaqs = [
+  {
+    question: "Wann kann ich meine Kfz-Versicherung wechseln?",
+    answer: "Der reguläre Stichtag für den Wechsel der Autoversicherung ist der 30. November. Bei einer Beitragserhöhung, einem Schadenfall oder einem Fahrzeugwechsel haben Sie zudem ein 4-wöchiges Sonderkündigungsrecht."
+  },
+  {
+    question: "Übernimmt der neue Anbieter die Kündigung für mich?",
+    answer: "Ja! Beim regulären Wechsel zum 30.11. oder bei Neuabschluss können Sie im Antrag einfach den automatischen Kündigungsservice aktivieren."
+  },
+  {
+    question: "Was bedeutet SF-Klasse und wie wird sie übertragen?",
+    answer: "Die Schadenfreiheitsklasse (SF-Klasse) bestimmt Ihren Rabatt anhand unfallfreier Jahre. Beim Wechsel übermittelt Ihr bisheriger Versicherer die SF-Klasse automatisch an den neuen Anbieter."
+  }
+];
+
+export default function KfzPage() {
+  return (
+    <div className="py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center max-w-3xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+            Fahrzeug & Mobilität
+          </span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
+            Kfz-Versicherung vergleichen & bis zu <span className="text-blue-600">850 € sparen</span>
+          </h1>
+          <p className="mt-4 text-slate-600 text-base leading-relaxed">
+            Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko- oder Teilkaskoschutz mit garantierter Beitragsersparnis und vollem Schadenservice.
+          </p>
+        </div>
+
+        <div className="mb-14">
+          <InteractiveCalculator title="Kfz-Versicherungs-Tarifrechner" categorySlug="kfz" />
+        </div>
+
+        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+            <ShieldCheck className="w-5 h-5 text-blue-600 mr-2" />
+            Worauf Sie beim Kfz-Versicherungsvergleich 2026 achten sollten
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">1. Deckungssumme 100 Mio. €</p>
+              <p className="text-xs text-slate-500">Wählen Sie stets die pauschale Höchstdeckung von 100 Mio. € für Personen-, Sach- und Vermögensschäden.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">2. Erweiterte Elementarschäden</p>
+              <p className="text-xs text-slate-500">Achten Sie auf Absicherung bei Lawinen, Muren, Erdrutsch sowie Tierbisse aller Art inkl. Folgeschäden.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">3. Mallorca-Police</p>
+              <p className="text-xs text-slate-500">Erhöht die oft zu niedrigen Mindestdeckungssummen bei Mietwagen im europäischen Ausland auf deutsches Niveau.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-14">
+          <ComparisonTable 
+            title="Die besten Kfz-Versicherungstarife 2026"
+            subtitle="Geprüfte Tarife mit Bestnoten bei Stiftung Warentest & Focus Money"
+            productType="Kfz-Versicherung"
+            tariffs={kfzTariffs}
+          />
+        </div>
+
+        <FAQAccordion items={kfzFaqs} title="Häufige Fragen zur Kfz-Versicherung" />
+      </div>
+    </div>
+  );
+}
