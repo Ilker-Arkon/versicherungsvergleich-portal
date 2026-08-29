@@ -1,128 +1,175 @@
 'use client';
 
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  ShieldCheck, 
-  ChevronDown, 
-  Menu, 
-  X, 
-  PhoneCall, 
-  Sparkles,
-  Car,
-  Home,
-  HeartPulse,
-  Landmark,
-  Plane,
-  Zap
+import {
+  ShieldCheck,
+  ChevronDown,
+  Menu,
+  X,
+  PhoneCall,
+  ArrowRight,
 } from 'lucide-react';
 import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
+
+const CATEGORY_COLORS: Record<string, string> = {
+  mobilitaet: 'bg-blue-500',
+  'sach-wohnen': 'bg-emerald-500',
+  gesundheit: 'bg-rose-500',
+  vorsorge: 'bg-indigo-500',
+  finanzen: 'bg-amber-500',
+};
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const timeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
-  const getCategoryIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Car': return <Car className="w-5 h-5 text-blue-500" />;
-      case 'Home': return <Home className="w-5 h-5 text-emerald-500" />;
-      case 'HeartPulse': return <HeartPulse className="w-5 h-5 text-rose-500" />;
-      case 'Landmark': return <Landmark className="w-5 h-5 text-amber-500" />;
-      case 'Plane': return <Plane className="w-5 h-5 text-indigo-500" />;
-      case 'Zap': return <Zap className="w-5 h-5 text-yellow-500" />;
-      default: return <ShieldCheck className="w-5 h-5 text-blue-500" />;
+  const handleMouseEnter = (id: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
+    setActiveDropdown(id);
   };
 
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200); // 200ms grace period so mouse movement feels natural
+  };
+
+  const toggleDropdown = (id: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setActiveDropdown(prev => (prev === id ? null : id));
+  };
+
+  // Close dropdown on pathname change or outside click
+  React.useEffect(() => {
+    setActiveDropdown(null);
+  }, [pathname]);
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('nav')) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      {/* Top Trust Bar */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 hidden md:block">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+      {/* Trust Bar */}
+      <div className="bg-slate-900 text-slate-400 text-xs py-1.5 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center text-emerald-400 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1" /> 100% Kostenloser & Unabhängiger Marktvergleich
+          <div className="flex items-center space-x-5">
+            <span className="flex items-center text-emerald-400 font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1" /> Kostenloser & unabhängiger Vergleich
             </span>
-            <span>⭐ 4.9/5 von über 150.000 Kunden bewertet</span>
-            <span className="text-slate-400">TÜV-geprüfte Sicherheit</span>
+            <span>⭐ 4,9/5 Kundenbewertung</span>
+            <span>TÜV-geprüft</span>
           </div>
-          <div className="flex items-center space-x-4">
-            <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors">
-              <PhoneCall className="w-3.5 h-3.5 mr-1 text-emerald-400" />
-              Kostenlose Beratung: {CUSTOMER_PROFILE.phone}
-            </a>
-            <Link href="/ratgeber" className="hover:text-white transition-colors">
-              Ratgeber & Spartipps
-            </Link>
-          </div>
+          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors">
+            <PhoneCall className="w-3.5 h-3.5 mr-1 text-emerald-400" />
+            {CUSTOMER_PROFILE.phone}
+          </a>
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-11 h-11 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              <ShieldCheck className="w-7 h-7" />
+          <Link href="/" className="flex items-center space-x-2.5 group shrink-0">
+            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm group-hover:bg-blue-700 transition-colors">
+              <ShieldCheck className="w-5 h-5" />
             </div>
-            <div>
-              <span className="text-2xl font-black tracking-tight text-slate-900 flex items-center">
-                Tarif<span className="text-blue-600">Vergleich</span>
-                <span className="ml-1 text-xs uppercase px-1.5 py-0.5 bg-amber-100 text-amber-800 font-bold rounded">Direkt</span>
-              </span>
-              <p className="text-[10px] text-slate-500 font-medium tracking-wide">DAS VERBRAUCHERPORTAL • {CUSTOMER_PROFILE.city}</p>
-            </div>
+            <span className="text-xl font-bold tracking-tight text-slate-900">
+              Tarif<span className="text-blue-600">Vergleich</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex items-center space-x-0.5 h-full">
             {CATEGORIES.map((cat) => (
-              <div 
-                key={cat.id} 
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(cat.id)}
-                onMouseLeave={() => setActiveDropdown(null)}
+              <div
+                key={cat.id}
+                className="relative h-full flex items-center"
+                onMouseEnter={() => handleMouseEnter(cat.id)}
+                onMouseLeave={handleMouseLeave}
               >
                 <button 
-                  className="flex items-center px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
+                  onClick={() => toggleDropdown(cat.id)}
+                  className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                    activeDropdown === cat.id 
+                      ? 'bg-slate-100 text-blue-600 font-semibold' 
+                      : 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
+                  }`}
+                  aria-expanded={activeDropdown === cat.id}
                 >
                   <span>{cat.title.replace(/^[0-9]\.\s*/, '')}</span>
-                  <ChevronDown className="w-4 h-4 ml-1 text-slate-400" />
+                  <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 ${
+                    activeDropdown === cat.id ? 'transform rotate-180 text-blue-600' : 'text-slate-400'
+                  }`} />
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown with invisible safe hover bridge */}
                 {activeDropdown === cat.id && (
-                  <div className="absolute left-0 mt-1 w-80 bg-white rounded-2xl shadow-xl border border-slate-100 p-3 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                    <div className="px-3 py-2 border-b border-slate-100 mb-2">
-                      <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{cat.title}</p>
-                      <p className="text-xs text-slate-600 mt-0.5">{cat.description}</p>
-                    </div>
-                    <div className="space-y-1">
-                      {cat.subcategories.map((sub) => (
-                        <Link
-                          key={sub.slug}
-                          href={sub.slug}
-                          className="flex items-start p-2.5 rounded-xl hover:bg-blue-50/80 transition-colors group"
-                        >
-                          <div className="mt-0.5 mr-3 p-2 bg-slate-100 rounded-lg group-hover:bg-white text-blue-600 transition-colors shadow-xs">
-                            {getCategoryIcon(cat.iconName)}
-                          </div>
-                          <div>
-                            <div className="flex items-center space-x-2">
-                              <span className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
-                                {sub.title}
-                              </span>
-                              {sub.badge && (
-                                <span className="text-[10px] font-bold px-1.5 py-0.2 bg-emerald-100 text-emerald-800 rounded-full">
-                                  {sub.badge}
-                                </span>
-                              )}
-                            </div>
-                            <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">{sub.description}</p>
-                          </div>
-                        </Link>
-                      ))}
+                  <div 
+                    className={`absolute top-full pt-2 w-[460px] z-50 animate-in fade-in slide-in-from-top-1 duration-150 ${
+                      cat.id === 'finanzen' || cat.id === 'vorsorge' ? 'right-0' : 'left-0'
+                    }`}
+                    onMouseEnter={() => handleMouseEnter(cat.id)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {/* Container without any scrollbars */}
+                    <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-3 overflow-hidden ring-1 ring-black/5">
+                      <div className="px-3 py-2 mb-2 border-b border-slate-100/80 bg-slate-50/70 rounded-xl flex items-center justify-between">
+                        <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{cat.title.replace(/^[0-9]\.\s*/, '')}</p>
+                        <span className="text-[11px] text-slate-400 font-medium">{cat.subcategories.length} Angebote</span>
+                      </div>
+                      <div className="space-y-1">
+                        {cat.subcategories.map((sub) => {
+                          const isActive = pathname === sub.slug;
+                          return (
+                            <Link
+                              key={sub.slug + sub.title}
+                              href={sub.slug}
+                              className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm transition-all ${
+                                isActive 
+                                  ? 'bg-blue-50 text-blue-700 font-semibold' 
+                                  : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600'
+                              }`}
+                            >
+                              <div className="flex items-center space-x-3 min-w-0 pr-3">
+                                <div className={`w-2 h-2 rounded-full shrink-0 ${CATEGORY_COLORS[cat.id] || 'bg-blue-500'}`} />
+                                <span className="font-medium whitespace-nowrap text-slate-900">{sub.title}</span>
+                              </div>
+                              <div className="flex items-center space-x-2 shrink-0">
+                                {sub.badge && (
+                                  <span className="text-[11px] font-semibold px-2 py-0.5 bg-emerald-50 text-emerald-700 border border-emerald-200/60 rounded-md whitespace-nowrap">
+                                    {sub.badge}
+                                  </span>
+                                )}
+                              </div>
+                            </Link>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
                 )}
@@ -130,63 +177,61 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA & Actions */}
-          <div className="hidden sm:flex items-center space-x-3">
+          {/* CTA & Mobile */}
+          <div className="flex items-center space-x-3">
             <Link
               href="/kfz-versicherung"
-              className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-md shadow-blue-600/25 hover:shadow-lg transition-all active:scale-95"
+              className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
             >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Jetzt Tarife vergleichen
+              Jetzt vergleichen
+              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-600 hover:bg-slate-100"
-              aria-label="Menü öffnen"
+              className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+              aria-label="Menü"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
           <div className="space-y-4">
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="border-b border-slate-100 pb-3">
-                <p className="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">
-                  {cat.title}
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 px-1">
+                  {cat.title.replace(/^[0-9]\.\s*/, '')}
                 </p>
-                <div className="grid grid-cols-1 gap-1">
+                <div className="space-y-0.5">
                   {cat.subcategories.map((sub) => (
                     <Link
-                      key={sub.slug}
+                      key={sub.slug + sub.title}
                       href={sub.slug}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center justify-between py-2 px-3 rounded-lg text-sm text-slate-800 hover:bg-slate-50 font-medium"
+                      className="flex items-center justify-between py-2 px-3 rounded-lg text-sm text-slate-700 hover:bg-slate-50 font-medium"
                     >
-                      <span>{sub.title}</span>
-                      <span className="text-xs text-emerald-600 font-semibold">{sub.savingsPotential}</span>
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-1.5 h-1.5 rounded-full ${CATEGORY_COLORS[cat.id] || 'bg-blue-500'}`} />
+                        <span>{sub.title}</span>
+                      </div>
+                      <span className="text-xs text-emerald-600 font-medium">{sub.savingsPotential}</span>
                     </Link>
                   ))}
                 </div>
               </div>
             ))}
-            <div className="pt-2">
-              <Link
-                href="/kfz-versicherung"
-                onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center py-3 px-4 rounded-xl text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-md"
-              >
-                Jetzt kostenlos vergleichen
-              </Link>
-            </div>
+            <Link
+              href="/kfz-versicherung"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center py-3 px-4 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm"
+            >
+              Jetzt kostenlos vergleichen
+            </Link>
           </div>
         </div>
       )}

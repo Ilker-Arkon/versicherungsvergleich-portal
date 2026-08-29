@@ -1,10 +1,11 @@
 'use client';
 
 import React from 'react';
-import InteractiveCalculator from '@/components/InteractiveCalculator';
+import PartnerWidget from '@/components/PartnerWidget';
 import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
 import FAQAccordion from '@/components/FAQAccordion';
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
+import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 
 const kfzTariffs: TariffRow[] = [
   {
@@ -19,7 +20,7 @@ const kfzTariffs: TariffRow[] = [
     benefits: ['100 Mio. € Deckungssumme', 'Freie Werkstattwahl wählbar', 'Mallorca-Police inklusive', 'Schutzbrief ab 9 € / Jahr'],
     bonus: 'Bis zu 850 € Sparpotenzial',
     isTestsieger: true,
-    ctaText: 'Jetzt kostenlos vergleichen'
+    ctaText: 'Jetzt im Rechner vergleichen'
   },
   {
     id: 'allianz-direct',
@@ -48,58 +49,62 @@ const kfzTariffs: TariffRow[] = [
     bonus: 'Sonderrabatt für Garagenbesitzer',
     isTestsieger: false,
     ctaText: 'Jetzt berechnen'
-  },
-  {
-    id: 'ergo-smart',
-    provider: 'ERGO Direkt',
-    logoText: 'ERG',
-    tariffName: 'Smart Drive Kasko',
-    priceMonthly: 36.80,
-    priceYearly: 441.60,
-    rating: 4.7,
-    reviewCount: 1420,
-    benefits: ['Schadenfreiheitsrabatt-Retter', 'Zusatzfahrer flexibel zubuchbar', 'Elektro- & Hybrid-Akkuschutz', '24/7 Notfallservice'],
-    isTestsieger: false,
-    ctaText: 'Angebot anfordern'
   }
 ];
 
 const kfzFaqs = [
   {
-    question: "Wann kann ich meine Kfz-Versicherung wechseln?",
-    answer: "Der reguläre Stichtag für den Wechsel der Autoversicherung ist der 30. November. Bei einer Beitragserhöhung, einem Schadenfall oder einem Fahrzeugwechsel haben Sie zudem ein 4-wöchiges Sonderkündigungsrecht."
+    question: "Bis wann kann ich meine Kfz-Versicherung regulär wechseln?",
+    answer: "Der Stichtag für den regulären Wechsel der Kfz-Versicherung ist üblicherweise der 30. November. Wenn du deine Kündigung bis zu diesem Datum einreichst, gilt der neue Vertrag ab dem 1. Januar des Folgejahres."
   },
   {
-    question: "Übernimmt der neue Anbieter die Kündigung für mich?",
-    answer: "Ja! Beim regulären Wechsel zum 30.11. oder bei Neuabschluss können Sie im Antrag einfach den automatischen Kündigungsservice aktivieren."
+    question: "Habe ich ein Sonderkündigungsrecht bei einer Beitragserhöhung?",
+    answer: "Ja! Wenn deine bisherige Versicherung die Beiträge erhöht, ohne dass sich deine Leistungen verbessern, hast du ein vierwöchiges Sonderkündigungsrecht ab Erhalt der Beitragsrechnung."
   },
   {
-    question: "Was bedeutet SF-Klasse und wie wird sie übertragen?",
-    answer: "Die Schadenfreiheitsklasse (SF-Klasse) bestimmt Ihren Rabatt anhand unfallfreier Jahre. Beim Wechsel übermittelt Ihr bisheriger Versicherer die SF-Klasse automatisch an den neuen Anbieter."
+    question: "Welche Unterlagen brauche ich für den Kfz-Tarifvergleich?",
+    answer: "Für einen genauen Vergleich benötigst du lediglich deinen aktuellen Fahrzeugschein (Zulassungsbescheinigung Teil I) sowie deine letzte Beitragsrechnung für die aktuelle Schadenfreiheitsklasse (SF-Klasse)."
   }
 ];
 
 export default function KfzPage() {
+  const widget = PARTNER_WIDGETS.kfz;
+
   return (
     <div className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center max-w-3xl mx-auto">
+        <div className="mb-8 text-center max-w-3xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Fahrzeug & Mobilität
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Kfz-Versicherung vergleichen & bis zu <span className="text-blue-600">850 € sparen</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
+            Kfz-Versicherung vergleichen & bis zu <span className="text-gradient">850 € sparen</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko- oder Teilkaskoschutz mit garantierter Beitragsersparnis und vollem Schadenservice.
+            Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko-, Teilkasko- oder Haftpflichtschutz mit garantierter Beitragsersparnis.
           </p>
+
+          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> TÜV-geprüfte Tarifberechnung</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige eVB-Nummer per SMS</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% kostenloser Service</span>
+          </div>
         </div>
 
+        {/* Live Partner Comparison Widget */}
         <div className="mb-14">
-          <InteractiveCalculator title="Kfz-Versicherungs-Tarifrechner" categorySlug="kfz" />
+          <PartnerWidget
+            containerId={widget.containerId}
+            scriptSrc={widget.scriptSrc}
+            directLink={widget.directLink}
+            title="Offizieller Kfz-Versicherungs-Vergleichsrechner"
+            badgeText="Über 330 Tarife im Live-Test"
+            minHeight="700px"
+          />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
+        {/* Advice box */}
+        <div className="premium-card p-8 mb-14">
           <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
             <ShieldCheck className="w-5 h-5 text-blue-600 mr-2" />
             Worauf Sie beim Kfz-Versicherungsvergleich 2026 achten sollten
@@ -120,12 +125,14 @@ export default function KfzPage() {
           </div>
         </div>
 
+        {/* Table */}
         <div className="mb-14">
           <ComparisonTable 
-            title="Die besten Kfz-Versicherungstarife 2026"
+            title="Die beliebtesten Kfz-Versicherungstarife 2026"
             subtitle="Geprüfte Tarife mit Bestnoten bei Stiftung Warentest & Focus Money"
             productType="Kfz-Versicherung"
             tariffs={kfzTariffs}
+            widgetSlug="/kfz-versicherung"
           />
         </div>
 

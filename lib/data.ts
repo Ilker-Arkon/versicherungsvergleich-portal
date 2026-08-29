@@ -44,9 +44,9 @@ export interface MainCategory {
 export const CATEGORIES: MainCategory[] = [
   {
     id: "mobilitaet",
-    title: "1. Fahrzeug & Mobilität",
+    title: "1. Kfz & Mobilität",
     slug: "mobilitaet",
-    description: "Finden Sie Top-Schutz für Ihr Auto, Zweirad oder den nächsten Urlaubsmietwagen.",
+    description: "Finden Sie Top-Schutz für Ihr Auto oder Zweirad mit garantiertem Sparpotenzial.",
     iconName: "Car",
     color: "from-blue-600 to-cyan-600",
     subcategories: [
@@ -61,94 +61,208 @@ export const CATEGORIES: MainCategory[] = [
       {
         title: "Motorradversicherung",
         slug: "/motorrad-versicherung",
-        description: "Saison- & Neuzulassungen: Maßgeschneiderte Haftpflicht & Kasko.",
+        description: "Saison- & Neuzulassungen: Maßgeschneiderte Haftpflicht, Teil- und Vollkasko.",
         badge: "Top Schutz",
         savingsPotential: "Ø 320 € / Jahr",
         iconName: "Bike"
-      },
-      {
-        title: "Mietwagen-Vergleich",
-        slug: "/mietwagen-vergleich",
-        description: "Weltweite Angebote ohne versteckte Gebühren mit Vollkasko ohne SB.",
-        badge: "Bestpreis-Garantie",
-        savingsPotential: "Bis zu 45% günstiger",
-        iconName: "KeyRound"
       }
     ]
   },
   {
-    id: "wohnen-recht",
-    title: "2. Eigentum, Wohnen & Recht",
-    slug: "wohnen-recht",
-    description: "Umfassende Absicherung für Ihr Zuhause, Hab und Gut sowie juristische Sicherheit.",
+    id: "sach-wohnen",
+    title: "2. Sach & Eigentum",
+    slug: "sach-wohnen",
+    description: "Umfassende Absicherung für Ihr Zuhause, Hab & Gut, Tiere sowie juristische Sicherheit.",
     iconName: "Home",
     color: "from-emerald-600 to-teal-600",
     subcategories: [
       {
-        title: "Wohngebäudeversicherung",
-        slug: "/wohngebaeude-versicherung",
-        description: "Schutz vor Unwetter, Sturm, Leitungswasser & Elementargefahren.",
-        badge: "Elementarschutz inkl.",
-        savingsPotential: "Ø 480 € / Jahr",
-        iconName: "ShieldAlert"
+        title: "Privathaftpflicht",
+        slug: "/haftpflicht",
+        description: "Der unverzichtbare Basisschutz vor Schadenersatzforderungen im Alltag.",
+        badge: "Bestseller",
+        savingsPotential: "Ø 140 € / Jahr",
+        iconName: "Shield"
+      },
+      {
+        title: "Hausratversicherung",
+        slug: "/hausrat",
+        description: "Schutz für Möbel, Elektronik und Wertsachen bei Einbruch, Feuer & Leitungswasser.",
+        badge: "Unterversicherungsverzicht",
+        savingsPotential: "Ø 170 € / Jahr",
+        iconName: "Home"
       },
       {
         title: "Rechtsschutzversicherung",
         slug: "/rechtsschutz-versicherung",
-        description: "Absicherung bei Streitigkeiten in Miet-, Arbeits- & Verkehrsrecht.",
+        description: "Kostenübernahme bei Rechtsstreitigkeiten in Beruf, Verkehr, Wohnen & Privatleben.",
         badge: "Ohne Wartezeit wählbar",
         savingsPotential: "Ø 290 € / Jahr",
         iconName: "Scale"
       },
       {
-        title: "Privathaftpflicht & Hausrat",
-        slug: "/haftpflicht-hausrat",
-        description: "Der unverzichtbare Basisschutz für Familie, Wohnung und Vermögen.",
-        badge: "Bestseller",
-        savingsPotential: "Ø 210 € / Jahr",
-        iconName: "Umbrella"
+        title: "Wohngebäudeversicherung",
+        slug: "/wohngebaeude-versicherung",
+        description: "Schutz vor Unwetter, Sturm, Leitungswasser & Elementargefahren für Hauseigentümer.",
+        badge: "Elementarschutz inkl.",
+        savingsPotential: "Ø 480 € / Jahr",
+        iconName: "ShieldAlert"
+      },
+      {
+        title: "Hundehalterhaftpflicht",
+        slug: "/hundeversicherung",
+        description: "Gesetzlich vorgeschriebener Schutz bei Personen- und Sachschäden durch den Hund.",
+        badge: "Ohne Leinenzwang",
+        savingsPotential: "Ab 3,50 € / Monat",
+        iconName: "Dog"
+      },
+      {
+        title: "Hundekrankenversicherung",
+        slug: "/hundekrankenversicherung",
+        description: "OP- & Krankenvollschutz: Hohe Tierarztkosten zuverlässig absichern.",
+        badge: "Bis 100% Erstattung",
+        savingsPotential: "Ø 350 € Ersparnis",
+        iconName: "HeartPulse"
+      },
+      {
+        title: "Haus- & Grundbesitzerhaftpflicht",
+        slug: "/grundbesitzerhaftpflicht",
+        description: "Haftpflichtschutz für Vermieter und Eigentümer von Grundstücken & Mehrfamilienhäusern.",
+        badge: "Für Vermieter",
+        savingsPotential: "Ø 80 € / Jahr",
+        iconName: "Building"
+      },
+      {
+        title: "Gewerbe- & Firmenversicherung",
+        slug: "/firmenversicherung",
+        description: "Betriebshaftpflicht und Inventarschutz für Selbstständige & Unternehmen.",
+        badge: "Maßgeschneidert",
+        savingsPotential: "Individuell",
+        iconName: "Briefcase"
       }
     ]
   },
   {
     id: "gesundheit",
-    title: "3. Gesundheit & Personenschutz",
+    title: "3. Gesundheit & Kranken",
     slug: "gesundheit",
-    description: "Erstklassige medizinische Versorgung und finanzielle Absicherung bei Unfall.",
+    description: "Erstklassige medizinische Versorgung für Selbstständige, Beamte, Angestellte und Familien.",
     iconName: "HeartPulse",
     color: "from-rose-600 to-pink-600",
     subcategories: [
       {
         title: "Private Krankenversicherung (PKV)",
         slug: "/pkv",
-        description: "PKV-Vergleich für Selbstständige, Beamte, Angestellte & Gutverdiener.",
+        description: "PKV-Vollversicherung: Maximale Chefarztbehandlung, 1-Bett-Zimmer & Top-Zahnersatz.",
         badge: "Chefarzt & 1-Bett",
         savingsPotential: "Ø 2.400 € / Jahr",
         iconName: "Activity"
       },
       {
+        title: "PKV für Beamte & Referendare",
+        slug: "/pkv-beamte",
+        description: "Maßgeschneiderte Beihilfe-Restkostentarife mit bis zu 80% Kostenerstattung.",
+        badge: "Beihilfe-optimiert",
+        savingsPotential: "Ø 1.800 € / Jahr",
+        iconName: "Award"
+      },
+      {
+        title: "Zahn- & Krankenzusatzversicherung",
+        slug: "/krankenzusatz",
+        description: "Schließen Sie Kassenlücken: Hochwertige Zahnkronen, Implantate und Vorsorge.",
+        badge: "Bis 100% Zahnersatz",
+        savingsPotential: "Bis 1.500 € Zuzahlung sparen",
+        iconName: "Sparkles"
+      },
+      {
+        title: "PKV für Studenten",
+        slug: "/pkv-studenten",
+        description: "Günstige Spezialtarife für Studierende mit erstklassigen Leistungen.",
+        badge: "Studentenrabatt",
+        savingsPotential: "Ab 85 € / Monat",
+        iconName: "GraduationCap"
+      }
+    ]
+  },
+  {
+    id: "vorsorge",
+    title: "4. Vorsorge & Leben",
+    slug: "vorsorge",
+    description: "Finanzielle Absicherung der Familie, der eigenen Arbeitskraft und des Ruhestands.",
+    iconName: "ShieldCheck",
+    color: "from-indigo-600 to-purple-600",
+    subcategories: [
+      {
+        title: "Berufsunfähigkeitsversicherung (BU)",
+        slug: "/berufsunfaehigkeit",
+        description: "Sichern Sie Ihr wertvollstes Gut: Ihr monatliches Einkommen bei Krankheit oder Unfall.",
+        badge: "Existenzschutz Nr. 1",
+        savingsPotential: "Ø 450 € / Jahr",
+        iconName: "Briefcase"
+      },
+      {
+        title: "Risikolebensversicherung",
+        slug: "/risikoleben",
+        description: "Finanzielle Sicherheit für Hinterbliebene und Absicherung von Immobilienkrediten.",
+        badge: "Familienabsicherung",
+        savingsPotential: "Ø 300 € / Jahr",
+        iconName: "Heart"
+      },
+      {
+        title: "Private Rentenversicherung",
+        slug: "/rente",
+        description: "Lebenslange Zusatzrente für einen sorgenfreien Lebensabend ohne Rentenlücke.",
+        badge: "Steuerbegünstigt",
+        savingsPotential: "Hohe Renditechancen",
+        iconName: "TrendingUp"
+      },
+      {
         title: "Unfallversicherung",
         slug: "/unfallversicherung",
-        description: "Finanzieller Schutz bei Freizeit-, Sport- & Familienunfällen rund um die Uhr.",
+        description: "Weltweiter 24/7-Finanzschutz bei Invalidität durch Freizeit- und Sportunfälle.",
         badge: "24/7 Weltweit",
         savingsPotential: "Ø 190 € / Jahr",
         iconName: "HeartHandshake"
+      },
+      {
+        title: "Riester-Rente",
+        slug: "/riester-rente",
+        description: "Staatliche Zulagen und steuerliche Förderung für Arbeitnehmer & Familien.",
+        badge: "Staatliche Zulagen",
+        savingsPotential: "Bis zu Hunderte € Zuschuss",
+        iconName: "Coins"
+      },
+      {
+        title: "Rürup-Rente (Basisrente)",
+        slug: "/ruerup-rente",
+        description: "Maximale Steuerersparnis für Selbstständige, Freiberufler und Besserverdiener.",
+        badge: "Max. Steuervorteil",
+        savingsPotential: "Bis zu 10.000 € Steuerabzug",
+        iconName: "FileSpreadsheet"
+      },
+      {
+        title: "Pflegezusatzversicherung",
+        slug: "/pflegezusatz",
+        description: "Schutz des eigenen Vermögens und Entlastung der Angehörigen im Pflegefall.",
+        badge: "Vermögensschutz",
+        savingsPotential: "Schutz vor Eigenanteil",
+        iconName: "UserCheck"
       }
     ]
   },
   {
     id: "finanzen",
-    title: "4. Finanzen & Banken",
+    title: "5. Finanzen & Banken",
     slug: "finanzen",
-    description: "Kostenlose Konten, Top-Tagesgeld und transparente Kreditkonditionen.",
+    description: "Kostenlose Konten, Top-Kreditkarten und günstige Raten- sowie Immobilienkredite.",
     iconName: "Landmark",
     color: "from-amber-600 to-orange-600",
     subcategories: [
       {
         title: "Girokonto-Vergleich",
         slug: "/girokonto-vergleich",
-        description: "Kostenfreie Konten mit attraktiven Neukundenprämien und Wechselboni.",
-        badge: "Bis 200 € Prämie",
+        description: "Kostenfreie Kontoführung mit attraktiven Neukundenprämien und Wechselboni.",
+        badge: "0 € Kontoführung",
         savingsPotential: "Ø 180 € / Jahr + Bonus",
         iconName: "CreditCard"
       },
@@ -156,61 +270,25 @@ export const CATEGORIES: MainCategory[] = [
         title: "Kredite & Ratenkredite",
         slug: "/kredit-vergleich",
         description: "Günstige Umschuldung, freie Verwendung & transparente Niedrigzinsen.",
-        badge: "Top-Zinsen ab 3,49%",
+        badge: "Top-Zinsen",
         savingsPotential: "Bis zu 1.200 € Zinsersparnis",
         iconName: "Banknote"
-      }
-    ]
-  },
-  {
-    id: "reise",
-    title: "5. Reise & Urlaub",
-    slug: "reise",
-    description: "Sorgenfrei die Welt entdecken mit bestem Schutz und unschlagbaren Angeboten.",
-    iconName: "Plane",
-    color: "from-sky-600 to-indigo-600",
-    subcategories: [
-      {
-        title: "Reiseversicherungen",
-        slug: "/reiseversicherung",
-        description: "Auslandsreisekranken- & Reiserücktrittsschutz für Singles & Familien.",
-        badge: "Corona-Schutz inkl.",
-        savingsPotential: "Ab 12,90 € / Jahr",
-        iconName: "ShieldCheck"
       },
       {
-        title: "Last-Minute & Pauschalreisen",
-        slug: "/pauschalreisen",
-        description: "Urlaubsangebote für Familien, Paare & Spontanbucher im Bestpreisvergleich.",
-        badge: "Geld-zurück-Garantie",
-        savingsPotential: "Bis zu 60% Rabatt",
-        iconName: "Palmtree"
-      }
-    ]
-  },
-  {
-    id: "energie-haushalt",
-    title: "6. Energie & Haushalt",
-    slug: "energie-haushalt",
-    description: "Monatliche Fixkosten dauerhaft senken mit wenigen Klicks.",
-    iconName: "Zap",
-    color: "from-emerald-500 to-green-700",
-    subcategories: [
-      {
-        title: "Strom & Gas",
-        slug: "/strom-gas-vergleich",
-        description: "Tarifwechsel zur Senkung der monatlichen Fixkosten mit Sofortbonus.",
-        badge: "Bis 900 € Sofort-Sparpotenzial",
-        savingsPotential: "Ø 750 € / Jahr",
-        iconName: "Flame"
+        title: "Baufinanzierung",
+        slug: "/baufinanzierung",
+        description: "Beste Konditionen aus über 400 Banken für Neubau, Kauf oder Anschlussfinanzierung.",
+        badge: "Über 400 Banken",
+        savingsPotential: "Tausende € Zinsvorteil",
+        iconName: "Landmark"
       },
       {
-        title: "DSL & Mobilfunk",
-        slug: "/dsl-mobilfunk-vergleich",
-        description: "Highspeed-Internet (Glasfaser/Kabel) & günstige Allnet-Flat Handytarife.",
-        badge: "Bis 240 € Cashback",
-        savingsPotential: "Ø 360 € / Jahr",
-        iconName: "Wifi"
+        title: "Kreditkarten-Vergleich",
+        slug: "/kreditkarten",
+        description: "Kostenlose Kreditkarten mit weltweit gebührenfreiem Bezahlen & Bargeldabhebung.",
+        badge: "0 € Jahresgebühr",
+        savingsPotential: "Ø 90 € / Jahr",
+        iconName: "CreditCard"
       }
     ]
   }
@@ -220,42 +298,42 @@ export const TRUST_STATS = [
   { label: "Erfahrung im Markt", value: "Über 20 Jahre", subtitle: "Unabhängige Beratung" },
   { label: "Vergleichsdauer", value: "In 3 Minuten", subtitle: "Zum besten Tarif" },
   { label: "Kosten & Bindung", value: "100 % Kostenlos", subtitle: "Ohne versteckte Gebühren" },
-  { label: "Zufriedene Nutzer", value: "Über 150.000+", subtitle: "Ø Bewertung 4.9 / 5.0" }
+  { label: "Zufriedene Nutzer", value: "150.000+", subtitle: "Ø Bewertung 4.9 / 5.0" }
 ];
 
 export const PROMO_HIGHLIGHTS = [
   {
-    id: "girokonto-bonus",
-    title: "Girokonto Neukunden-Aktion",
-    headline: "Bis zu 200 € Willkommensprämie",
-    description: "Jetzt kostenloses Gehaltskonto eröffnen und attraktiven Wechselbonus sichern. 0 € Kontoführungsgebühr inklusive.",
-    badge: "Exklusiv-Deal",
-    buttonText: "Girokonten vergleichen",
-    link: "/girokonto-vergleich",
-    tag: "Banken & Finanzen",
-    color: "border-amber-500/30 bg-gradient-to-br from-amber-50 to-amber-100/50"
-  },
-  {
     id: "kfz-sparen",
     title: "Kfz-Versicherungs-Wechsel",
     headline: "Bis zu 850 € im Jahr einsparen",
-    description: "Vergleichen Sie über 330 Kfz-Tarife. Wechseln Sie einfach online und sichern Sie sich Top-Schutz zum Sparpreis.",
-    badge: "Saison-Highlight",
+    description: "Vergleichen Sie über 330 Kfz-Tarife im offiziellen Live-Rechner. Wechseln Sie bequem online zum Testsieger.",
+    badge: "Bestseller 2026",
     buttonText: "Kfz-Tarife berechnen",
     link: "/kfz-versicherung",
-    tag: "Mobilität",
+    tag: "Kfz & Mobilität",
     color: "border-blue-500/30 bg-gradient-to-br from-blue-50 to-blue-100/50"
   },
   {
-    id: "strom-wechsel",
-    title: "Strom & Gas Preisbremse",
-    headline: "Durchschnittlich 750 € Ersparnis",
-    description: "Energiepreise wieder im Sinkflug! Wechseln Sie jetzt weg vom teuren Grundversorger zu zertifizierten Ökostrom-Tarifen.",
-    badge: "Sofort-Bonus",
-    buttonText: "Strom & Gas vergleichen",
-    link: "/strom-gas-vergleich",
-    tag: "Energie & Haushalt",
-    color: "border-emerald-500/30 bg-gradient-to-br from-emerald-50 to-emerald-100/50"
+    id: "pkv-optimierung",
+    title: "Private Krankenversicherung",
+    headline: "Bis zu 2.400 € Beitragsersparnis",
+    description: "Erstklassige medizinische Versorgung mit Chefarztbehandlung und 1-Bett-Zimmer zu Top-Konditionen vergleichen.",
+    badge: "Top-Leistungen",
+    buttonText: "PKV vergleichen",
+    link: "/pkv",
+    tag: "Gesundheit & Kranken",
+    color: "border-rose-500/30 bg-gradient-to-br from-rose-50 to-rose-100/50"
+  },
+  {
+    id: "bu-absicherung",
+    title: "Berufsunfähigkeits-Schutz",
+    headline: "Ihr monatliches Einkommen sichern",
+    description: "Existenzschutz Nr. 1: Vergleichen Sie zertifizierte BU-Tarife mit Verzicht auf abstrakte Verweisung.",
+    badge: "Existenzschutz",
+    buttonText: "BU berechnen",
+    link: "/berufsunfaehigkeit",
+    tag: "Vorsorge & Leben",
+    color: "border-purple-500/30 bg-gradient-to-br from-purple-50 to-purple-100/50"
   }
 ];
 
@@ -263,26 +341,26 @@ export const GUIDE_ARTICLES = [
   {
     title: "Kfz-Versicherung wechseln: Stichtag & Fristen optimal nutzen",
     excerpt: "Wie Sie durch Sonderkündigungsrechte und Schadenfreiheitsrabatte hunderte Euro sparen können.",
-    category: "Fahrzeug",
+    category: "Kfz",
     readTime: "4 Min. Lesezeit",
     date: "August 2026",
     slug: "/kfz-versicherung"
   },
   {
+    title: "Berufsunfähigkeitsversicherung: Wann ist der Einstieg am günstigsten?",
+    excerpt: "Warum ein früher Abschluss die Monatsbeiträge dauerhaft drastisch senkt und worauf bei Gesundheitsfragen zu achten ist.",
+    category: "Vorsorge",
+    readTime: "5 Min. Lesezeit",
+    date: "August 2026",
+    slug: "/berufsunfaehigkeit"
+  },
+  {
     title: "Private Krankenversicherung: Für wen lohnt sich der Wechsel?",
-    excerpt: "Kriterien, Beitragsentwicklung im Alter und Voraussetzungen für Angestellte & Selbstständige.",
+    excerpt: "Kriterien, Beitragsentwicklung im Alter und Voraussetzungen für Angestellte, Selbstständige und Beamte.",
     category: "Gesundheit",
     readTime: "6 Min. Lesezeit",
     date: "August 2026",
     slug: "/pkv"
-  },
-  {
-    title: "Wohngebäudeversicherung: Warum Elementarschutz 2026 unverzichtbar ist",
-    excerpt: "Starkregen, Überschwemmung und Schneedruck – so schützen Sie Ihr Haus vor existenzbedrohenden Schäden.",
-    category: "Wohnen",
-    readTime: "5 Min. Lesezeit",
-    date: "August 2026",
-    slug: "/wohngebaeude-versicherung"
   },
   {
     title: "Girokonto mit Prämie: So gelingt der Kontowechsel in 10 Minuten",
@@ -296,23 +374,19 @@ export const GUIDE_ARTICLES = [
 
 export const GENERAL_FAQS = [
   {
-    question: "Ist der Vergleich auf diesem Portal wirklich 100 % kostenlos?",
-    answer: "Ja, absolut. Die Nutzung unseres Vergleichsportals ist für Sie zu jedem Zeitpunkt vollständig kostenlos und unverbindlich. Es gibt keine versteckten Gebühren oder Folgekosten."
+    question: "Ist der Tarifvergleich auf dieser Webseite wirklich 100 % kostenlos?",
+    answer: "Ja, die Nutzung unserer Vergleichsrechner ist für dich zu 100 % kostenfrei und unverbindlich. Du kannst beliebig viele Tarife miteinander vergleichen, ohne dass versteckte Gebühren oder Kosten entstehen."
   },
   {
-    question: "Wie finanziert sich das Vergleichsportal?",
-    answer: "Wir erhalten im Erfolgsfall eine gesetzlich geregelte Vermittlungsprovision von den jeweiligen Versicherern, Banken oder Energieanbietern. Dies hat keinerlei Einfluss auf Ihren Tarifpreis – Sie zahlen immer den regulären oder oft sogar vergünstigten Sonderkonditionspreis."
+    question: "Wie funktioniert der Online-Vergleich?",
+    answer: "Du wählst einfach das gewünschte Produkt aus (z. B. Kfz-Versicherung, Krankenversicherung oder Girokonto) und gibst deine individuellen Eckdaten ein. Unser Vergleichsrechner ermittelt in wenigen Sekunden die günstigsten und leistungsstärksten Angebote für deine Kriterien."
   },
   {
-    question: "Wie schnell erhalte ich mein Angebot bzw. den neuen Vertrag?",
-    answer: "Die meisten Vergleiche dauern nur 2 bis 3 Minuten. Nach Eingabe Ihrer Rahmendaten erhalten Sie sofort eine strukturierte Tarifübersicht und können den Antrag direkt online abschließen."
+    question: "Warum unterscheiden sich die Preise der Anbieter oft so stark?",
+    answer: "Versicherungen und Banken bewerten Risiken und Zielgruppen unterschiedlich. Durch den schnellen Marktvergleich siehst du transparent alle Unterschiede bei Leistungen und Preisen auf einen Blick."
   },
   {
-    question: "Werden meine persönlichen Daten vertraulich behandelt?",
-    answer: "Ja. Alle Datenübertragungen erfolgen nach höchsten Sicherheitsstandards mit moderner 256-Bit-SSL-Verschlüsselung nach deutschem DSGVO-Datenschutzrecht. Wir geben Ihre Daten niemals an unbefugte Dritte weiter."
-  },
-  {
-    question: "Was passiert mit meinem bestehenden Altvertrag?",
-    answer: "In vielen Bereichen (z. B. Kfz-Versicherung, Strom/Gas oder Girokonto) übernimmt der neue Anbieter den Kündigungs- bzw. Wechselservice für Sie vollautomatisch."
+    question: "Sind meine eingegebenen Daten sicher?",
+    answer: "Ja, höchste Datenschutzstandards stehen an erster Stelle. Alle Daten werden über verschlüsselte Verbindungen übertragen und ausschließlich für die Erstellung deiner persönlichen Angebote verwendet."
   }
 ];

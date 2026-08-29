@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Check, Star, ArrowRight, Sparkles } from 'lucide-react';
+import Link from 'next/link';
 
 export interface TariffRow {
   id: string;
@@ -16,6 +17,7 @@ export interface TariffRow {
   bonus?: string;
   isTestsieger?: boolean;
   ctaText?: string;
+  ctaLink?: string;
 }
 
 interface ComparisonTableProps {
@@ -23,9 +25,10 @@ interface ComparisonTableProps {
   subtitle: string;
   productType: string;
   tariffs: TariffRow[];
+  widgetSlug?: string;
 }
 
-export default function ComparisonTable({ title, subtitle, productType, tariffs }: ComparisonTableProps) {
+export default function ComparisonTable({ title, subtitle, productType, tariffs, widgetSlug }: ComparisonTableProps) {
   const [selectedFilter, setSelectedFilter] = useState<'all' | 'testsieger' | 'cheapest'>('all');
   const [selectedTariff, setSelectedTariff] = useState<TariffRow | null>(null);
 
@@ -143,83 +146,23 @@ export default function ComparisonTable({ title, subtitle, productType, tariffs 
                   )}
                 </div>
 
-                <button
-                  onClick={() => setSelectedTariff(t)}
+                <Link
+                  href={t.ctaLink || widgetSlug || '#vergleichstabelle'}
                   className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-sm text-white bg-blue-600 hover:bg-blue-700 active:scale-95 shadow-md shadow-blue-600/20 transition-all flex items-center justify-center space-x-2"
                 >
                   <span>{t.ctaText || 'Jetzt kostenlos vergleichen'}</span>
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Interactive Modal */}
-      {selectedTariff && (
-        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-100 animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex justify-between items-start pb-4 border-b border-slate-100">
-              <div>
-                <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full">
-                  100% Unverbindlich
-                </span>
-                <h4 className="text-xl font-black text-slate-900 mt-2">
-                  {selectedTariff.provider} – {selectedTariff.tariffName}
-                </h4>
-                <p className="text-xs text-slate-500">
-                  Monatlicher Bestpreis: {selectedTariff.priceMonthly.toFixed(2).replace('.', ',')} €
-                </p>
-              </div>
-              <button
-                onClick={() => setSelectedTariff(null)}
-                className="text-slate-400 hover:text-slate-600 text-lg font-bold p-1"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="py-6 space-y-4 text-sm text-slate-600">
-              <p className="font-semibold text-slate-800">
-                In wenigen Schritten zum passenden Tarif:
-              </p>
-              <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100 space-y-2 text-xs">
-                <p className="flex items-center text-slate-700 font-medium">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2" /> Kostenloser & automatischer Wechselservice
-                </p>
-                <p className="flex items-center text-slate-700 font-medium">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2" /> Sofortige digitale Bestätigung per E-Mail
-                </p>
-                <p className="flex items-center text-slate-700 font-medium">
-                  <Check className="w-4 h-4 text-emerald-600 mr-2" /> Gesetzliches 14-tägiges Widerrufsrecht
-                </p>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Ihre E-Mail-Adresse</label>
-                <input 
-                  type="email" 
-                  placeholder="ihre.adresse@beispiel.de" 
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-            </div>
-
-            <div className="pt-2 flex items-center space-x-3">
-              <button
-                onClick={() => {
-                  alert('Vielen Dank! Die Tarifunterlagen für ' + selectedTariff.provider + ' wurden unverbindlich versendet.');
-                  setSelectedTariff(null);
-                }}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-sm shadow-md hover:from-blue-700 hover:to-cyan-700 transition-all"
-              >
-                Tarife anzeigen & sparen
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Disclaimer */}
+      <p className="mt-6 text-[11px] text-slate-400 text-center">
+        * Beispielpreise zur Orientierung. Ihr tatsächlicher Beitrag wird im Vergleichsrechner individuell berechnet.
+      </p>
     </div>
   );
 }

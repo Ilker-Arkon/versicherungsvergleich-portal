@@ -1,70 +1,125 @@
 'use client';
 
 import React from 'react';
+import PartnerWidget from '@/components/PartnerWidget';
 import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
 import FAQAccordion from '@/components/FAQAccordion';
+import { ShieldCheck, CheckCircle2, Banknote } from 'lucide-react';
+import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 
-const sampleTariffs: TariffRow[] = [
+const kreditTariffs: TariffRow[] = [
   {
-    id: 'standard-1',
-    provider: 'Premium Partner Direkt',
-    logoText: 'TOP',
-    tariffName: 'Exklusiv Schutz 2026',
-    priceMonthly: 12.50,
-    priceYearly: 150.00,
+    id: 'targobank-online',
+    provider: 'TARGOBANK',
+    logoText: 'TAR',
+    tariffName: 'Online-Vorteilskredit',
+    priceMonthly: 84.50,
+    priceYearly: 1014.00,
     rating: 4.9,
-    reviewCount: 1420,
-    benefits: ['Geprüfter Testsieger-Schutz', 'Volle Leistung im Schadensfall', 'Keine Wartezeit', 'Täglich kündbar'],
-    bonus: 'Bis zu 1.200 € Zinsersparnis',
+    reviewCount: 3820,
+    benefits: ['Freie Verwendung (z. B. Umschuldung, Auto, Modernisierung)', 'Kostenlose Sondertilgungen jederzeit möglich', 'Ratenpause alle 12 Monate möglich', 'Schnelle Auszahlung in 24 bis 48 Stunden'],
+    bonus: 'Günstiger 2/3-Zins',
     isTestsieger: true,
-    ctaText: 'Jetzt kostenlos vergleichen'
+    ctaText: 'Kredit online anfragen'
   },
   {
-    id: 'standard-2',
-    provider: 'Smart Schutz Digital',
-    logoText: 'SMT',
-    tariffName: 'Komfort Tarif',
-    priceMonthly: 15.90,
-    priceYearly: 190.80,
+    id: 'postbank-privatkredit',
+    provider: 'Postbank',
+    logoText: 'PST',
+    tariffName: 'Privatkredit direkt',
+    priceMonthly: 86.20,
+    priceYearly: 1034.40,
     rating: 4.8,
-    reviewCount: 980,
-    benefits: ['Rundum-Sorglos-Paket', '24/7 digitaler Kundenservice', 'Familienrabatt inklusive', 'Sofortige Antragsannahme'],
+    reviewCount: 2950,
+    benefits: ['Feste Monatsrate über die gesamte Laufzeit', 'Digitaler Dokumentenupload', 'Flexible Laufzeiten von 12 bis 120 Monaten', 'Auf Wunsch mit Restkreditversicherung'],
     isTestsieger: false,
-    ctaText: 'Tarif wählen'
+    ctaText: 'Konditionen prüfen'
   }
 ];
 
-const faqs = [
+const kreditFaqs = [
   {
-    question: 'Wie läuft der Abschluss für Kredit & Ratenkredit ab?',
-    answer: 'In nur 3 Schritten: Daten eingeben, Tarife filtern und den gewünschten Vertrag direkt online abschließen oder unverbindlich per E-Mail anfordern.'
+    question: "Ist die Kreditanfrage SCHUFA-neutral?",
+    answer: "Ja! Jede Konditionsanfrage über unseren Vergleichsrechner erfolgt streng nach dem Merkmal 'Anfrage Kreditkondition' (KK). Dies ist zu 100 % SCHUFA-neutral und hat keinerlei negativen Einfluss auf Ihren SCHUFA-Score."
+  },
+  {
+    question: "Wann wird der Kreditbetrag auf mein Konto überwiesen?",
+    answer: "Bei digitalem Kontoblick und VideoIdent-Legitimation wird der gewünschte Kreditbetrag bei vielen Banken bereits innerhalb von 24 bis 48 Stunden vollständig auf Ihr Girokonto ausgezahlt."
+  },
+  {
+    question: "Kann ich bestehende teure Kredite zusammenfassen und umschulden?",
+    answer: "Ja, eine Umschuldung ist eine der effektivsten Möglichkeiten, um monatliche Zinskosten zu senken und die monatliche Gesamtbelastung spürbar zu reduzieren."
   }
 ];
 
-export default function Page() {
+export default function KreditPage() {
+  const widget = PARTNER_WIDGETS.kredit;
+
   return (
     <div className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center max-w-3xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+        <div className="mb-8 text-center max-w-3xl mx-auto">
+          <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
             Finanzen & Banken
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Kredit & Ratenkredit: <span className="text-blue-600">Beste Tarife im Vergleich</span>
+            Kredit & Ratenkredit <span className="text-amber-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Günstige Umschuldung, Modernisierungskredite und freie Verwendung mit Top-Zinsen.
+            Finden Sie die günstigsten Zinsen für Ihren Wunschkredit. 100% unverbindlich, SCHUFA-neutral und mit schneller Sofortentscheidung.
           </p>
+
+          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% SCHUFA-neutrale Konditionsanfrage</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortauszahlung in 24–48 Stunden möglich</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Kostenlose Sondertilgungen</span>
+          </div>
         </div>
+
+        {/* Live Partner Widget */}
         <div className="mb-14">
-          <ComparisonTable 
-            title="Die besten Angebote im Vergleich 2026"
-            subtitle="Transparent verglichen mit voller Preistransparenz"
-            productType="Kredit & Ratenkredit"
-            tariffs={sampleTariffs}
+          <PartnerWidget
+            containerId={widget.containerId}
+            scriptSrc={widget.scriptSrc}
+            directLink={widget.directLink}
+            title="Offizieller Kredit-Vergleichsrechner"
+            badgeText="Günstige Top-Zinsen ab 3,49%"
+            minHeight="700px"
           />
         </div>
-        <FAQAccordion items={faqs} title="Häufige Fragen zu Kredit & Ratenkredit" />
+
+        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+            <ShieldCheck className="w-5 h-5 text-amber-600 mr-2" />
+            Tipps für den besten Ratenkredit
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">1. Zweiten Kreditnehmer angeben</p>
+              <p className="text-xs text-slate-500">Ein zweiter Antragsteller (z. B. Partner) erhöht die Bonität und senkt den Zinssatz oft signifikant.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">2. Freie Sondertilgung nutzen</p>
+              <p className="text-xs text-slate-500">Achten Sie darauf, dass Sie den Kredit jederzeit ganz oder teilweise ohne Vorfälligkeitsentschädigung ablösen können.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">3. Auf 2/3-Zinssatz achten</p>
+              <p className="text-xs text-slate-500">Der gesetzliche 2/3-Zins zeigt Ihnen den realistischen Zinssatz, den mindestens zwei Drittel aller Kunden erhalten.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-14">
+          <ComparisonTable 
+            title="Beliebte Ratenkredite im Zinsvergleich"
+            subtitle="Transparente Konditionen namhafter deutscher Kreditinstitute"
+            productType="Ratenkredit"
+            tariffs={kreditTariffs}
+            widgetSlug="/kredit-vergleich"
+          />
+        </div>
+
+        <FAQAccordion items={kreditFaqs} title="Häufige Fragen zum Ratenkredit" />
       </div>
     </div>
   );

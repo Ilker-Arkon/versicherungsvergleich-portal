@@ -1,104 +1,139 @@
 'use client';
 
 import React from 'react';
+import PartnerWidget from '@/components/PartnerWidget';
 import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
 import FAQAccordion from '@/components/FAQAccordion';
+import { ShieldCheck, CheckCircle2, CreditCard } from 'lucide-react';
+import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 
-const girokontoTariffs: TariffRow[] = [
+const giroTariffs: TariffRow[] = [
   {
-    id: 'comdirect-giro',
-    provider: 'comdirect',
-    logoText: 'COM',
-    tariffName: 'Girokonto Aktiv',
+    id: 'dkb-cash',
+    provider: 'DKB',
+    logoText: 'DKB',
+    tariffName: 'DKB Girokonto Aktiv',
     priceMonthly: 0.00,
     priceYearly: 0.00,
     rating: 4.9,
-    reviewCount: 5410,
-    benefits: ['0 € Kontoführungsgebühr bei aktiver Nutzung', 'Kostenlose Visa-Debitkarte & girocard', 'Weltweit kostenfrei Bargeld abheben', 'Apple Pay & Google Pay'],
-    bonus: 'Bis zu 150 € Willkommensbonus',
+    reviewCount: 4120,
+    benefits: ['0 € Kontoführungsgebühr bei Geldeingang', 'Kostenlose Visa Debitkarte', 'Weltweit gebührenfrei bezahlen & abheben', 'Kostenloses Depot zubuchbar'],
+    bonus: 'Bis zu 100 € Startguthaben',
     isTestsieger: true,
     ctaText: 'Konto online eröffnen'
   },
   {
-    id: 'dkb-giro',
-    provider: 'DKB',
-    logoText: 'DKB',
-    tariffName: 'DKB Cash Girokonto',
+    id: 'comdirect-giro',
+    provider: 'comdirect',
+    logoText: 'COM',
+    tariffName: 'Girokonto Plus',
     priceMonthly: 0.00,
     priceYearly: 0.00,
     rating: 4.8,
-    reviewCount: 8900,
-    benefits: ['0 € Kontoführung für Aktivkunden', 'Kostenfreie Visa Debitkarte', 'Weltweit ohne Auslandseinsatzentgelt bezahlen', 'Attraktives Tagesgeld-Konto zubuchbar'],
-    bonus: 'Kostenloser Kontowechsel-Service in 8 Min.',
+    reviewCount: 3650,
+    benefits: ['Kostenlose Kontoführung', '3 kostenlose Bargeldeinzahlungen / Jahr', 'Google & Apple Pay Unterstützung', 'Automatischer digitaler Kontowechselservice'],
+    bonus: '75 € Willkommensprämie',
     isTestsieger: false,
     ctaText: 'Jetzt beantragen'
   },
   {
-    id: 'ing-giro',
+    id: 'ing-girokonto',
     provider: 'ING',
     logoText: 'ING',
-    tariffName: 'Girokonto Free',
+    tariffName: 'ING Gehaltskonto',
     priceMonthly: 0.00,
     priceYearly: 0.00,
-    rating: 4.9,
-    reviewCount: 12400,
-    benefits: ['0 € Kontoführung ab 700 € Geldeingang', 'Kostenlos Bargeld an 97% aller Geldautomaten', 'Ausgezeichnete Mobile-Banking App', 'Zusätzliches Extra-Konto mit Top-Zinsen'],
-    bonus: '200 € Neukundenprämie',
-    isTestsieger: true,
-    ctaText: 'Prämie sichern'
-  },
-  {
-    id: 'n26-standard',
-    provider: 'N26',
-    logoText: 'N26',
-    tariffName: 'N26 Standard Smart',
-    priceMonthly: 0.00,
-    priceYearly: 0.00,
-    rating: 4.7,
-    reviewCount: 6300,
-    benefits: ['Bedingungslos 0 € ohne Mindestgeldeingang', '100% mobiles Smartphone-Banking', 'Echtzeit-Push-Nachrichten bei jeder Transaktion', 'Virtuelle Mastercard sofort einsatzbereit'],
+    rating: 4.8,
+    reviewCount: 5200,
+    benefits: ['0 € ab 700 € mtl. Gehaltseingang', 'Kostenloses Tagesgeld mit Top-Zins', 'Über 97% aller Geldautomaten in DE kostenlos', 'Ausgezeichnete Banking-App'],
     isTestsieger: false,
-    ctaText: 'In 5 Min. eröffnen'
+    ctaText: 'Zum Girokonto'
   }
 ];
 
-const girokontoFaqs = [
+const giroFaqs = [
   {
-    question: "Wie funktioniert der Kontowechselservice?",
-    answer: "Der gesetzliche Wechselservice ist für Sie vollständig automatisiert. Die neue Bank informiert alle Lastschriftempfänger (z. B. Strom, Miete, Fitnessstudio) und richtet Ihre bestehenden Daueraufträge neu ein."
+    question: "Wie erhalte ich Neukundenboni oder Wechselprämien bei Banken?",
+    answer: "Viele Banken bieten attraktive Boni (z. B. bis zu 200 € Prämien) an. Um den Bonus zu erhalten, reicht oft die Eröffnung des Kontos über den Vergleichsrechner und die Nutzung als aktives Gehaltskonto."
   },
   {
-    question: "Welche Voraussetzungen gibt es für das kostenlose Girokonto?",
-    answer: "Die meisten Direktbanken verlangen entweder keinen Mindestgeldeingang (wie N26) oder einen monatlichen Geldeingang von 700 € (z. B. Gehalt, Rente), um die Kontoführungsgebühr dauerhaft auf 0 € zu setzen."
+    question: "Wie läuft der Kontowechsel ab?",
+    answer: "Dank des gesetzlich geregelten digitalen Kontowechselservices werden Daueraufträge, Lastschriften und Zahlungspartner automatisch auf dein neues Konto übertragen."
+  },
+  {
+    question: "Ist das Girokonto wirklich dauerhaft kostenlos?",
+    answer: "Ja, bei vielen Direktbanken ist die Kontoführung bei einem regelmäßigen Geldeingang (oft ab 700 € / Monat) oder für Personen unter 28 Jahren dauerhaft ohne Grundgebühr."
   }
 ];
 
 export default function GirokontoPage() {
+  const widget = PARTNER_WIDGETS.girokonto;
+
   return (
     <div className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center max-w-3xl mx-auto">
+        <div className="mb-8 text-center max-w-3xl mx-auto">
           <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
             Finanzen & Banken
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Girokonto-Vergleich: <span className="text-amber-600">0 € Gebühren + bis 200 € Prämie</span>
+            Girokonto-Vergleich 2026: <span className="text-amber-600">0 € Gebühr & Prämien</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Vergleichen Sie die besten gebührenfreien Girokonten mit Gratis-Debitkarte, weltweiter Bargeldversorgung und automatischem Wechselservice.
+            Finden Sie die besten kostenlosen Girokonten mit Visa/Mastercard, Top-Zinsen und attraktiven Willkommensprämien bis zu 200 €.
           </p>
+
+          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% gesetzliche deutsche Einlagensicherung (100.000 €)</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Schnelle Online-Eröffnung per VideoIdent</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Kostenloser Kündigungs- & Wechselservice</span>
+          </div>
+        </div>
+
+        {/* Live Partner Widget */}
+        <div className="mb-14">
+          <PartnerWidget
+            containerId={widget.containerId}
+            scriptSrc={widget.scriptSrc}
+            directLink={widget.directLink}
+            title="Offizieller Girokonto-Vergleichsrechner"
+            badgeText="Tagesaktuelle Prämien & Konditionen"
+            minHeight="700px"
+          />
+        </div>
+
+        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
+            <ShieldCheck className="w-5 h-5 text-amber-600 mr-2" />
+            Vorteile der Top-Girokonten 2026
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">1. 0 € Kontoführung</p>
+              <p className="text-xs text-slate-500">Sparen Sie bis zu 180 € pro Jahr an Kontoführungs- und Buchungsgebühren im Vergleich zu Filialbanken.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">2. Weltweit Bargeld</p>
+              <p className="text-xs text-slate-500">Kostenlose Debit- oder Kreditkarten mit gebührenfreien Abhebungen im In- und Ausland.</p>
+            </div>
+            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+              <p className="font-bold text-slate-900 mb-1">3. Attraktive Startprämien</p>
+              <p className="text-xs text-slate-500">Sichern Sie sich bis zu 200 € Willkommensbonus bei aktiver Nutzung als Gehaltskonto.</p>
+            </div>
+          </div>
         </div>
 
         <div className="mb-14">
           <ComparisonTable 
-            title="Kostenlose Girokonten im Vergleich 2026"
-            subtitle="Inklusive Prämien, Karten und Dispozinsen"
+            title="Die besten Girokonten im Test"
+            subtitle="Ausgezeichnet von Stiftung Warentest & Handelsblatt"
             productType="Girokonto"
-            tariffs={girokontoTariffs}
+            tariffs={giroTariffs}
+            widgetSlug="/girokonto-vergleich"
           />
         </div>
 
-        <FAQAccordion items={girokontoFaqs} title="Häufige Fragen zum Girokonto-Wechsel" />
+        <FAQAccordion items={giroFaqs} title="Häufige Fragen zum Girokonto-Wechsel" />
       </div>
     </div>
   );

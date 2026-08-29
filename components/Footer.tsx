@@ -45,7 +45,7 @@ export default function Footer() {
               </div>
               <div>
                 <h4 className="text-white font-bold text-sm">Bestpreis- & Spar-Garantie</h4>
-                <p className="text-xs text-slate-400 mt-1">Regelmäßige Sonderkontingente, exklusive Wechselboni & Prämien.</p>
+                <p className="text-xs text-slate-400 mt-1">Geprüfte Tarife & Originalkonditionen direkt vom Anbieter.</p>
               </div>
             </div>
 
@@ -71,12 +71,12 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gradient-to-tr from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold shadow-md">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <span className="text-xl font-black text-white tracking-tight">
-                Tarif<span className="text-blue-500">Vergleich</span> Direkt
+              <span className="text-xl font-bold text-white tracking-tight">
+                Tarif<span className="text-blue-500">Vergleich</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed pr-4">
-              Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Haushaltstarife. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
+              Ihr unabhängiges Vergleichsportal für Versicherungen & Finanzen. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
             </p>
             <div className="pt-2 text-xs text-slate-400 space-y-1">
               <p className="flex items-center">
@@ -105,8 +105,8 @@ export default function Footer() {
                 {cat.title.replace(/^[0-9]\.\s*/, '')}
               </h5>
               <ul className="space-y-2 text-sm">
-                {cat.subcategories.map((sub) => (
-                  <li key={sub.slug}>
+                {cat.subcategories.slice(0, 6).map((sub) => (
+                  <li key={sub.slug + sub.title}>
                     <Link href={sub.slug} className="text-slate-400 hover:text-white transition-colors flex items-center group">
                       <span className="group-hover:translate-x-1 transition-transform">{sub.title}</span>
                     </Link>
@@ -117,29 +117,32 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Categories 5 & 6 and Legal */}
+        {/* Category 5, Ratgeber & Legal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mt-10 pt-8 border-t border-slate-800/80">
           <div className="lg:col-span-2">
             <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-emerald-500 pl-2">
-              Energie & Haushalt
+              {CATEGORIES[4]?.title.replace(/^[0-9]\.\s*/, '') || "Finanzen & Banken"}
             </h5>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/strom-gas-vergleich" className="text-slate-400 hover:text-white">Strom & Gas Vergleich</Link></li>
-              <li><Link href="/dsl-mobilfunk-vergleich" className="text-slate-400 hover:text-white">DSL & Mobilfunk Tarife</Link></li>
-              <li><Link href="/reiseversicherung" className="text-slate-400 hover:text-white">Reiseversicherung</Link></li>
-              <li><Link href="/pauschalreisen" className="text-slate-400 hover:text-white">Pauschalreisen & Urlaub</Link></li>
+              {CATEGORIES[4]?.subcategories.map((sub) => (
+                <li key={sub.slug + sub.title}>
+                  <Link href={sub.slug} className="text-slate-400 hover:text-white transition-colors">
+                    {sub.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="lg:col-span-2">
             <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-amber-500 pl-2">
-              Ratgeber & Themen
+              Ratgeber & Spartipps
             </h5>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/ratgeber" className="text-slate-400 hover:text-white">Kfz-Versicherungs-Stichtag 30.11.</Link></li>
-              <li><Link href="/ratgeber" className="text-slate-400 hover:text-white">PKV Beitragsoptimierung</Link></li>
-              <li><Link href="/ratgeber" className="text-slate-400 hover:text-white">Girokonto Wechselservice Leitfaden</Link></li>
-              <li><Link href="/ratgeber" className="text-slate-400 hover:text-white">Elementarschaden Pflichtratgeber</Link></li>
+              <li><Link href="/kfz-versicherung" className="text-slate-400 hover:text-white">Kfz-Versicherungs-Wechsel Fristen</Link></li>
+              <li><Link href="/pkv" className="text-slate-400 hover:text-white">PKV Beitragsoptimierung</Link></li>
+              <li><Link href="/berufsunfaehigkeit" className="text-slate-400 hover:text-white">Berufsunfähigkeit Schutzratgeber</Link></li>
+              <li><Link href="/girokonto-vergleich" className="text-slate-400 hover:text-white">Kostenloses Girokonto mit Prämie</Link></li>
             </ul>
           </div>
 
@@ -157,13 +160,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="bg-slate-950/90 py-6 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} TarifVergleich Direkt • Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center"><ShieldCheck className="w-4 h-4 mr-1 text-emerald-500" /> TÜV Geprüfte Vergleichsstandards</span>
-            <span>Versicherungsmakler gem. § 34d Abs. 1 GewO</span>
-          </div>
+      <div className="bg-slate-950/90 py-5 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-3">
+          <p>© {new Date().getFullYear()} TarifVergleich · Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
+          <span className="flex items-center"><ShieldCheck className="w-3.5 h-3.5 mr-1 text-emerald-500" /> Geprüfte Vergleichsstandards</span>
         </div>
       </div>
     </footer>
