@@ -10,7 +10,7 @@ import {
   Mail, 
   MapPin
 } from 'lucide-react';
-import { CATEGORIES } from '@/lib/data';
+import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
 
 export default function Footer() {
   return (
@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
               <div>
                 <h4 className="text-white font-bold text-sm">Kostenfreie Experten-Hotline</h4>
-                <p className="text-xs text-slate-400 mt-1">Mo.–Fr. 08:00 – 20:00 Uhr persönliche Beratung durch zertifizierte Experten.</p>
+                <p className="text-xs text-slate-400 mt-1">Persönliche Beratung unter {CUSTOMER_PROFILE.phone}.</p>
               </div>
             </div>
           </div>
@@ -76,12 +76,25 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed pr-4">
-              Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Haushaltstarife. Finden Sie in wenigen Minuten das beste Angebot und senken Sie Ihre monatlichen Fixkosten dauerhaft.
+              Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Haushaltstarife. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
             </p>
             <div className="pt-2 text-xs text-slate-400 space-y-1">
-              <p className="flex items-center"><PhoneCall className="w-3.5 h-3.5 mr-2 text-blue-400" /> Hotline: 0800 123 4567 (Kostenfrei)</p>
-              <p className="flex items-center"><Mail className="w-3.5 h-3.5 mr-2 text-blue-400" /> service@tarifvergleich-direkt.de</p>
-              <p className="flex items-center"><MapPin className="w-3.5 h-3.5 mr-2 text-blue-400" /> Deutschlandweiter Service</p>
+              <p className="flex items-center">
+                <PhoneCall className="w-3.5 h-3.5 mr-2 text-blue-400" />
+                <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="hover:text-white transition-colors">
+                  Telefon: {CUSTOMER_PROFILE.phone}
+                </a>
+              </p>
+              <p className="flex items-center">
+                <Mail className="w-3.5 h-3.5 mr-2 text-blue-400" />
+                <a href={`mailto:${CUSTOMER_PROFILE.email}`} className="hover:text-white transition-colors">
+                  {CUSTOMER_PROFILE.email}
+                </a>
+              </p>
+              <p className="flex items-center">
+                <MapPin className="w-3.5 h-3.5 mr-2 text-blue-400" />
+                {CUSTOMER_PROFILE.street}, {CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}
+              </p>
             </div>
           </div>
 
@@ -146,7 +159,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-slate-950/90 py-6 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} TarifVergleich Direkt. Alle Rechte vorbehalten. 100% Unabhängig.</p>
+          <p>© {new Date().getFullYear()} TarifVergleich Direkt • Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
           <div className="flex items-center space-x-6">
             <span className="flex items-center"><ShieldCheck className="w-4 h-4 mr-1 text-emerald-500" /> TÜV Geprüfte Vergleichsstandards</span>
             <span>Versicherungsmakler gem. § 34d Abs. 1 GewO</span>

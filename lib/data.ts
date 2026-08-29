@@ -1,3 +1,27 @@
+export interface CustomerProfile {
+  name: string;
+  salutation: string;
+  street: string;
+  zip: string;
+  city: string;
+  country: string;
+  phone: string;
+  email: string;
+  partnerId: string;
+}
+
+export const CUSTOMER_PROFILE: CustomerProfile = {
+  salutation: "Herr",
+  name: "Hüseyin Gülec",
+  street: "Anna Str. 6",
+  zip: "90459",
+  city: "Nürnberg",
+  country: "Deutschland",
+  phone: "0911 9277785",
+  email: "gulec32@googlemail.com",
+  partnerId: "75137"
+};
+
 export interface SubCategory {
   title: string;
   slug: string;

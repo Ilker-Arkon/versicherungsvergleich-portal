@@ -16,7 +16,7 @@ import {
   Plane,
   Zap
 } from 'lucide-react';
-import { CATEGORIES } from '@/lib/data';
+import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,9 +47,9 @@ export default function Navbar() {
             <span className="text-slate-400">TÜV-geprüfte Sicherheit</span>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="tel:08001234567" className="flex items-center hover:text-white transition-colors">
+            <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors">
               <PhoneCall className="w-3.5 h-3.5 mr-1 text-emerald-400" />
-              Kostenlose Beratung: 0800 123 4567
+              Kostenlose Beratung: {CUSTOMER_PROFILE.phone}
             </a>
             <Link href="/ratgeber" className="hover:text-white transition-colors">
               Ratgeber & Spartipps
@@ -71,7 +71,7 @@ export default function Navbar() {
                 Tarif<span className="text-blue-600">Vergleich</span>
                 <span className="ml-1 text-xs uppercase px-1.5 py-0.5 bg-amber-100 text-amber-800 font-bold rounded">Direkt</span>
               </span>
-              <p className="text-[10px] text-slate-500 font-medium tracking-wide">DAS VERBRAUCHERPORTAL</p>
+              <p className="text-[10px] text-slate-500 font-medium tracking-wide">DAS VERBRAUCHERPORTAL • {CUSTOMER_PROFILE.city}</p>
             </div>
           </Link>
 

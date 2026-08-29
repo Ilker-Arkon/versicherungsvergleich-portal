@@ -1,70 +1,64 @@
 'use client';
 
 import React from 'react';
-import ComparisonTable, { TariffRow } from '@/components/ComparisonTable';
-import FAQAccordion from '@/components/FAQAccordion';
+import { CUSTOMER_PROFILE } from '@/lib/data';
+import { ShieldCheck, FileText, PhoneCall, Mail, MapPin } from 'lucide-react';
 
-const sampleTariffs: TariffRow[] = [
-  {
-    id: 'standard-1',
-    provider: 'Premium Partner Direkt',
-    logoText: 'TOP',
-    tariffName: 'Exklusiv Schutz 2026',
-    priceMonthly: 12.50,
-    priceYearly: 150.00,
-    rating: 4.9,
-    reviewCount: 1420,
-    benefits: ['Geprüfter Testsieger-Schutz', 'Volle Leistung im Schadensfall', 'Keine Wartezeit', 'Täglich kündbar'],
-    bonus: 'BaFin-Konform',
-    isTestsieger: true,
-    ctaText: 'Jetzt kostenlos vergleichen'
-  },
-  {
-    id: 'standard-2',
-    provider: 'Smart Schutz Digital',
-    logoText: 'SMT',
-    tariffName: 'Komfort Tarif',
-    priceMonthly: 15.90,
-    priceYearly: 190.80,
-    rating: 4.8,
-    reviewCount: 980,
-    benefits: ['Rundum-Sorglos-Paket', '24/7 digitaler Kundenservice', 'Familienrabatt inklusive', 'Sofortige Antragsannahme'],
-    isTestsieger: false,
-    ctaText: 'Tarif wählen'
-  }
-];
-
-const faqs = [
-  {
-    question: 'Wie läuft der Abschluss für Erstinformation gem. § 15 VersVermV ab?',
-    answer: 'In nur 3 Schritten: Daten eingeben, Tarife filtern und den gewünschten Vertrag direkt online abschließen oder unverbindlich per E-Mail anfordern.'
-  }
-];
-
-export default function Page() {
+export default function ErstinformationPage() {
   return (
-    <div className="py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center max-w-3xl mx-auto">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
-            Rechtliches
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Erstinformation gem. § 15 VersVermV: <span className="text-blue-600">Beste Tarife im Vergleich</span>
-          </h1>
-          <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Gesetzliche Statusinformation über Maklertätigkeit und Schlichtungsstellen.
+    <div className="py-12 bg-slate-50 min-h-screen">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+          <div className="inline-flex items-center text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-3">
+            <ShieldCheck className="w-4 h-4 mr-1.5" /> Gesetzliche Pflichtinformation
+          </div>
+          <h1 className="text-3xl font-black text-slate-900 mb-4">Erstinformation gemäß § 15 VersVermV</h1>
+          <p className="text-sm text-slate-500 mb-8">
+            Status- und Kontaktinformationen für Kunden und Interessenten beim ersten Geschäftskontakt.
           </p>
+
+          <div className="space-y-8 text-sm text-slate-600 leading-relaxed">
+            <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+              <h2 className="text-base font-bold text-slate-900 mb-3">1. Vermittlerangaben</h2>
+              <p className="font-semibold text-slate-800">{CUSTOMER_PROFILE.name}</p>
+              <p>TarifVergleich Direkt</p>
+              <p>{CUSTOMER_PROFILE.street}</p>
+              <p>{CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}</p>
+              <p className="mt-2">Telefon: {CUSTOMER_PROFILE.phone}</p>
+              <p>E-Mail: {CUSTOMER_PROFILE.email}</p>
+            </div>
+
+            <div>
+              <h2 className="text-base font-bold text-slate-900 mb-2">2. Status und Berufsbezeichnung</h2>
+              <p>
+                {CUSTOMER_PROFILE.name} ist tätig als <strong>Versicherungsmakler</strong> mit Erlaubnis nach § 34d Abs. 1 GewO (Bundesrepublik Deutschland).
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-base font-bold text-slate-900 mb-2">3. Aufsichtsbehörde & Register</h2>
+              <p>
+                Zuständige IHK: Industrie- und Handelskammer Nürnberg für Mittelfranken, Hauptmarkt 25/27, 90403 Nürnberg.<br />
+                Gemeinsame Registerstelle: Deutscher Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin, Telefon: 0180 600 58 50, <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.vermittlerregister.info</a>.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-base font-bold text-slate-900 mb-2">4. Beteiligungen & Unabhängigkeit</h2>
+              <p>
+                Der Vermittler hält keine unmittelbare oder mittelbare Beteiligung von mehr als 10 % an den Stimmrechten oder am Kapital eines Versicherungsunternehmens. Kein Versicherungsunternehmen hält eine Beteiligung am Unternehmen des Vermittlers.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-base font-bold text-slate-900 mb-2">5. Schlichtungsstellen</h2>
+              <ul className="list-disc pl-5 space-y-2 text-xs text-slate-500">
+                <li>Versicherungsombudsmann e.V., Postfach 08 06 32, 10006 Berlin</li>
+                <li>Ombudsmann Private Kranken- und Pflegeversicherung, Postfach 06 02 22, 10052 Berlin</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="mb-14">
-          <ComparisonTable 
-            title="Die besten Angebote im Vergleich 2026"
-            subtitle="Transparent verglichen mit voller Preistransparenz"
-            productType="Erstinformation gem. § 15 VersVermV"
-            tariffs={sampleTariffs}
-          />
-        </div>
-        <FAQAccordion items={faqs} title="Häufige Fragen zu Erstinformation gem. § 15 VersVermV" />
       </div>
     </div>
   );
