@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TarifVergleich — Versicherungs- & Finanzvergleichsportal
 
-## Getting Started
+Ein deutsches Vergleichsportal für Versicherungs- und Finanzprodukte (KFZ, Haftpflicht, Hausrat, PKV, BU, Baufinanzierung u. v. m.). Gebaut mit **Next.js 16** (App Router, Turbopack), **React 19**, **Tailwind CSS v4** und **Lucide Icons**.
 
-First, run the development server:
+## Features
+
+- **27 Detailseiten** in 5 Kategorie-Route-Groups (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`).
+- **Live-Partner-Rechner** je Sparte (`components/PartnerWidget.tsx`) mit Single-Injection-Guard gegen doppelte iframes (React StrictMode).
+- **Ehrliche Leistungstabellen** (`components/Leistungsvergleich.tsx`) statt fiktiver Preise.
+- **Vollständige SEO-Grundlage:** `robots.ts`, `sitemap.ts`, `not-found.tsx`, `metadataBase`/`openGraph`, Per-Page-Metadata via `lib/seo.ts`, Favicon (`app/icon.svg`).
+
+## Lokal starten
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dann http://localhost:3000 öffnen.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Produktions-Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## Widgets automatisiert prüfen
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+node scripts/verify-widgets.mjs
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Der Test lädt jede Detailseite in headless Chrome und prüft, dass genau **1** sichtbarer Rechner gerendert wird (braucht einen laufenden Dev-Server und ein installiertes Google Chrome).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
+```bash
+npx vercel --prod --yes
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Wichtige Hinweise
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Produktion:** `NEXT_PUBLIC_SITE_URL` setzen (steuert `metadataBase`, `robots.txt` und `sitemap.xml`). Default ist `http://localhost:3000`.
+- **Offene Compliance-Punkte:** Marketing-Behauptungen („TÜV-geprüft", „Testsieger", Nutzerzahlen), Impressum-Angaben und fiktive Anbieternamen müssen vor dem nächsten Livegang verifiziert werden — siehe `PROJECT_STATUS.md`.
+- **Aufgaben & Plan:** Der aktuelle Stand offener Arbeit liegt in `TASKS.md`.

@@ -1,11 +1,14 @@
-'use client';
-
 import React from 'react';
 import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Dog } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 import Link from 'next/link';
+import type { Metadata } from "next";
+import { subcategoryMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = subcategoryMetadata("/hundeversicherung");
+
 
 const hundeFaqs = [
   {

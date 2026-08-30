@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -8,6 +6,11 @@ import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 import Leistungsvergleich from '@/components/Leistungsvergleich';
 import { LEISTUNGEN } from '@/lib/leistungen';
 import Link from 'next/link';
+import type { Metadata } from "next";
+import { subcategoryMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = subcategoryMetadata("/rente");
+
 
 const renteFaqs = [
   {

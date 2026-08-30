@@ -15,12 +15,12 @@ export default function PromoCards() {
   return (
     <section className="py-20 section-white relative overflow-hidden">
       {/* Dekorativer, transparenter Hintergrund */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-15 mix-blend-multiply pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1920&fm=webp" 
           alt="" 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover grayscale" 
           loading="lazy" 
         />
       </div>

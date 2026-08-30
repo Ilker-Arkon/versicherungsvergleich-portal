@@ -1,10 +1,13 @@
-'use client';
-
 import React from 'react';
 import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, GraduationCap } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
+import type { Metadata } from "next";
+import { subcategoryMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = subcategoryMetadata("/pkv-studenten");
+
 
 const studentenFaqs = [
   {

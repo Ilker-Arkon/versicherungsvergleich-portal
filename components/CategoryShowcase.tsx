@@ -49,12 +49,12 @@ export default function CategoryShowcase() {
   return (
     <section className="py-20 section-alt relative overflow-hidden">
       {/* Dekorativer, transparenter Hintergrund */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+      <div className="absolute inset-0 opacity-15 mix-blend-multiply pointer-events-none">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img 
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&fm=webp" 
           alt="" 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover grayscale" 
           loading="lazy" 
         />
       </div>

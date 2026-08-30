@@ -139,6 +139,14 @@ export const CATEGORIES: MainCategory[] = [
         badge: "Maßgeschneidert",
         savingsPotential: "Individuell",
         iconName: "Briefcase"
+      },
+      {
+        title: "Haftpflicht & Hausrat",
+        slug: "/haftpflicht-hausrat",
+        description: "Privathaftpflicht und Hausrat gebündelt vergleichen – Schutz für Vermögen, Familie und Zuhause.",
+        badge: "Kombi-Vergleich",
+        savingsPotential: "Beide Tarife im Blick",
+        iconName: "Umbrella"
       }
     ]
   },
@@ -247,6 +255,14 @@ export const CATEGORIES: MainCategory[] = [
         badge: "Vermögensschutz",
         savingsPotential: "Schutz vor Eigenanteil",
         iconName: "UserCheck"
+      },
+      {
+        title: "Lebensversicherung",
+        slug: "/lebensversicherung",
+        description: "Hinterbliebenenschutz und garantierte Auszahlung – Kapital- und Risikolebensversicherungen vergleichen.",
+        badge: "Hinterbliebenenschutz",
+        savingsPotential: "Individuell",
+        iconName: "Heart"
       }
     ]
   },

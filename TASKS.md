@@ -51,28 +51,28 @@ Doppel-Rechner-Bug oben).
 
 - [x] **Ansatz gewählt (30.08.):** Route Groups — URLs bleiben identisch, nur Dateisystem wird sauberer.
 - [x] Seiten in 5 Kategorie-Gruppen umgezogen: `(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`. Rechtstexte + `ratgeber` bleiben auf `app/`-Root.
-- [ ] Verwaiste Seiten klären: `haftpflicht-hausrat`, `lebensversicherung` (entweder verlinken oder entfernen)
-- [ ] `build_all_pages.js` von Root in `scripts/` verschieben oder löschen (veraltet, überschreibt Seiten)
+- [x] Verwaiste Seiten geklärt (30.08.): `haftpflicht-hausrat` + `lebensversicherung` in `lib/data.ts` als echte Subkategorien aufgenommen (→ in Navigation/Startseite verlinkt) und mit eigenen Seiten + Per-Page-Metadata ausgestattet.
+- [x] `build_all_pages.js` gelöscht (30.08. — gefährlicher Generator, schrieb alte flache Pfade + fiktive Tarifdaten; würde echte Seiten überschreiben)
 
 ---
 
 ## 🔴 Prio 3 — SEO-Grundlage
 
-- [ ] `app/sitemap.ts` anlegen (dynamisch aus `CATEGORIES` + statischen Seiten)
-- [ ] `app/robots.ts` anlegen
-- [ ] `app/not-found.tsx` anlegen
-- [ ] `metadataBase` + `openGraph` in `layout.tsx` setzen
-- [ ] Per-Page-Metadata: `generateMetadata` für Detailseiten (aus `CATEGORIES`/`partnerWidgets` ableiten)
-- [ ] Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` von `'use client'` zu Server Components umbauen, damit `metadata`/`generateMetadata` greifen
+- [x] `app/sitemap.ts` angelegt (dynamisch aus `CATEGORIES` + statischen Seiten)
+- [x] `app/robots.ts` angelegt
+- [x] `app/not-found.tsx` angelegt
+- [x] `metadataBase` + `openGraph` in `layout.tsx` gesetzt
+- [x] Per-Page-Metadata: `subcategoryMetadata(slug)` in `lib/seo.ts` für alle Detailseiten (aus `CATEGORIES` abgeleitet); `haftpflicht-hausrat` über eigenes `layout.tsx` (Seite behält `'use client'` wegen Tab-`useState`)
+- [x] Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` von `'use client'` zu Server Components umgebaut, damit `metadata` greift
 
 ---
 
 ## 🟢 Prio 4 — Aufräumen & Branding
 
-- [ ] `components/InteractiveCalculator.tsx` löschen (ungenutzt, nur in veraltetem Skript referenziert)
-- [ ] `components/ComparisonTable.tsx` löschen (seit 30.08. **komplett ungenutzt** — alle 14 Verwendungen entfernt)
-- [ ] `public/` Boilerplate-SVGs (`file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg`) entfernen
-- [ ] Echtes Favicon/Logo (Branding „TarifVergleich") setzen
+- [x] `components/InteractiveCalculator.tsx` gelöscht (ungenutzt)
+- [x] `components/ComparisonTable.tsx` gelöscht (seit 30.08. **komplett ungenutzt** — alle 14 Verwendungen entfernt)
+- [x] `public/` Boilerplate-SVGs (`file.svg`, `globe.svg`, `next.svg`, `vercel.svg`, `window.svg`) entfernt
+- [x] Favicon gesetzt: `app/icon.svg` (blau→cyan Gradient + Schild-Checkmark, passt zu `from-blue-600 to-cyan-500`-Branding)
 
 ---
 
@@ -86,8 +86,8 @@ Doppel-Rechner-Bug oben).
 
 ## 📦 Handover
 
-- [ ] `PROJECT_STATUS.md` aktualisieren („Prio 1 doppelte Tabellen" als erledigt markieren, sobald erledigt)
-- [ ] `README.md` um echte Projekt-Infos ersetzen (aktuell nur `create-next-app`-Boilerplate)
+- [x] `PROJECT_STATUS.md` aktualisiert (SEO-Grundlage + Aufräumen als erledigt, offene Compliance-Punkte dokumentiert)
+- [x] `README.md` um echte Projekt-Infos ersetzt (kein `create-next-app`-Boilerplate mehr)
 
 ---
 
@@ -98,3 +98,6 @@ Doppel-Rechner-Bug oben).
 - [x] (30.08.) Ordnerstruktur: 27 Detailseiten in 5 Route Groups (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`) umgezogen, URLs unverändert.
 - [x] (30.08.) Test-Harness: `scripts/verify-widgets.mjs` + `playwright-core` (devDependency) zum automatisierten Prüfen der iframe-Anzahl.
 - [x] (30.08.) Ehrliche Leistungstabelle: `Leistungsvergleich`-Komponente (sachliche Leistungsmerkmale, keine erfundenen Preise/Bewertungen) auf 14 Seiten als Ersatz für `ComparisonTable` eingebunden. TS-Check grün, Rechner unverändert je 1.
+- [x] (30.08.) **SEO-Grundlage fertig:** `robots.ts`, `sitemap.ts`, `not-found.tsx`, `metadataBase`+`openGraph` im Layout, Per-Page-Metadata via `lib/seo.ts`, Rechtstexte + `ratgeber` als Server Components. `next build` grün (38 statische Seiten).
+- [x] (30.08.) **Aufräumen & Branding fertig:** `ComparisonTable`, `InteractiveCalculator`, `build_all_pages.js`, Boilerplate-SVGs gelöscht; Favicon `app/icon.svg` gesetzt.
+- [x] (30.08.) **Handover:** `PROJECT_STATUS.md` + `README.md` aktualisiert.

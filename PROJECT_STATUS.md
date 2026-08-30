@@ -36,12 +36,35 @@
 5. **Struktur:**
    * 27 Detailseiten sind sauber in 5 Route Groups organisiert (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`).
 
+6. **SEO-Grundlage (erledigt 30.08.):**
+   * `app/robots.ts` — `MetadataRoute.Robots` mit Sitemap-Verweis.
+   * `app/sitemap.ts` — dynamisch aus `CATEGORIES` (statische Seiten + alle Unterseiten, Priority 0.8/weekly).
+   * `app/not-found.tsx` — gebrandete 404-Seite.
+   * `app/layout.tsx` — `metadataBase`, Title-Template (`%s | TarifVergleich`) + `openGraph`.
+   * Per-Page-Metadata über `lib/seo.ts` → `subcategoryMetadata(slug)`, abgeleitet aus `CATEGORIES`.
+   * Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` zu Server Components umgebaut.
+   * Favicon: `app/icon.svg` (blau→cyan Gradient + Schild-Checkmark).
+
+7. **Aufräumen (erledigt 30.08.):**
+   * Gelöscht: `components/ComparisonTable.tsx`, `components/InteractiveCalculator.tsx`, `build_all_pages.js`, Boilerplate-SVGs in `public/`.
+
 ---
 
 ## 🛠️ 3. Wichtige Befehle
 
 * **Lokaler Dev-Server:** `npm run dev`
 * **Produktions-Build prüfen:** `npm run build`
+* **Widgets automatisiert prüfen:** `node scripts/verify-widgets.mjs` (braucht laufenden Dev-Server + system-Chrome)
 * **Live-Deploy via Vercel CLI:** `npx vercel --prod --yes`
 * **Git Remote:** `git push origin master`
 
+---
+
+## ⚠️ 4. Offene Punkte (vor Livegang)
+
+* **Compliance / Recht (BLOCKIERT — wartet auf User-Input):**
+  * Behauptungen verifizieren: „TÜV-geprüft", „Stiftung Warentest & Focus Money Testsieger", „150.000+ Nutzer", „4,9/5", konkrete Ersparnisse.
+  * Impressum-Angaben („Versicherungsmakler § 34d GewO", IHK Nürnberg, `Vermittlerregister`) mit Auftraggeber gegenprüfen.
+  * Fiktive Anbieternamen/-preise (Allianz Direct, HUK24, AXA, CosmosDirekt …) rechtlich bewerten.
+* **Verwaiste Seiten klären:** `haftpflicht-hausrat` und `lebensversicherung` — entweder verlinken oder entfernen.
+* **`NEXT_PUBLIC_SITE_URL`** für Produktion setzen (steuert `metadataBase`, `robots.txt`-Sitemap-URL und `sitemap.xml`-URLs; Default `http://localhost:3000`).

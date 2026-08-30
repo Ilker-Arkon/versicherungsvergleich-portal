@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
@@ -7,6 +5,11 @@ import { ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 import Leistungsvergleich from '@/components/Leistungsvergleich';
 import { LEISTUNGEN } from '@/lib/leistungen';
+import type { Metadata } from "next";
+import { subcategoryMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = subcategoryMetadata("/kfz-versicherung");
+
 
 const kfzFaqs = [
   {

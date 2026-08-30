@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
-  description: "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge. Sparen Sie bares Geld mit unserem Experten-Vergleich.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
+    template: "%s | TarifVergleich",
+  },
+  description:
+    "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge. Sparen Sie bares Geld mit unserem Experten-Vergleich.",
+  openGraph: {
+    title: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
+    description:
+      "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
+    url: "/",
+    siteName: "TarifVergleich",
+    locale: "de_DE",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

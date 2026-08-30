@@ -1,10 +1,13 @@
-'use client';
-
-import React from 'react';
+import type { Metadata } from "next";
 import Link from 'next/link';
 import FAQAccordion from '@/components/FAQAccordion';
 import { GUIDE_ARTICLES } from '@/lib/data';
 import { ShieldCheck, ArrowRight, BookOpen, Sparkles, CheckCircle2, Clock } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Ratgeber & Spartipps",
+  description: "Experten-Ratgeber, Spartipps und Wechselfristen für Versicherungen und Finanzen.",
+};
 
 const ratgeberFaqs = [
   {

@@ -1,8 +1,11 @@
-'use client';
-
-import React from 'react';
+import type { Metadata } from "next";
 import { CUSTOMER_PROFILE } from '@/lib/data';
 import { ShieldCheck, Lock } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: "Datenschutzerklärung",
+  description: "Datenschutzerklärung von TarifVergleich – Informationen zum Umgang mit personenbezogenen Daten gemäß DSGVO.",
+};
 
 export default function DatenschutzPage() {
   return (
