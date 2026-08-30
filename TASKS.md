@@ -76,6 +76,47 @@ Doppel-Rechner-Bug oben).
 
 ---
 
+## 🟡 Prio 5 — Kontakt & Support bereitstellen
+
+- [ ] **WhatsApp / Live-Chat** (z. B. WhatsApp Business oder Chat-Widget) — auf allen Seiten sichtbar
+- [ ] **Telefonnummer** (Festnetz/Mobil) für Rückfragen
+- [ ] **Kontaktformular** (mit E-Mail-Versand, Datenschutz-Hinweis, Spam-Schutz)
+- [ ] **Professionelle E-Mail-Adresse** (domaingebunden, z. B. `info@…` / `kontakt@…`)
+- [ ] **Support-/Öffnungszeiten** + Reaktionszeit angeben (schafft Vertrauen)
+
+---
+
+## 🔴 Prio 6 — Rechtstexte & Compliance vollständig machen
+
+- [ ] **Impressum** (§ 5 DDG): Firma, Anschrift, Vertretung, USt-ID, Aufsichtsbehörde, `Vermittlerregister`-Nr.
+- [ ] **Datenschutzerklärung** (DSGVO): Partner-iFrames, Tracking, Drittdienste, Betroffenenrechte
+- [ ] **Cookie-Consent-Banner** (Einwilligung für Tracking + Partner-Skripte — zwingend, weil die Partner-Widgets Cookies setzen)
+- [ ] **Erstinformation** (§ 11 VersVermV) inhaltlich gegenprüfen
+- [ ] **AGB + Widerrufsbelehrung** (falls eigene Leistung/Lead-Weiterleitung angeboten wird)
+- [ ] **AV-Verträge / Partnervereinbarungen** mit Vermittlern & Trackern
+
+---
+
+## 🟡 Prio 7 — Branding, Domain & Infrastruktur
+
+- [ ] **Domain** registrieren (z. B. `tarifvergleich.de`) und auf Vercel anbinden
+- [ ] **Firmen-/Markenname** festlegen (steuert Logo, E-Mail, Impressum)
+- [ ] **Professionelles Logo** (Vektor/SVG, Favicon-Varianten, OG-Image/Social-Preview)
+- [ ] **E-Mail-Postfach** einrichten (Google Workspace / Microsoft 365 / eigener Mailserver)
+- [ ] **`NEXT_PUBLIC_SITE_URL`** für Produktion setzen (steuert `metadataBase`, `robots.txt`, `sitemap.xml`)
+
+---
+
+## 🟢 Prio 8 — Technischer Feinschliff
+
+- [ ] **Formular-Backend**: Server Action / API-Route + E-Mail-Versand (Resend/Nodemailer) + Spam-Schutz (Honeypot/Captcha)
+- [ ] **DSGVO-konforme Analytics** (z. B. Plausible/Matomo statt Google Analytics)
+- [ ] **OG-/Social-Preview-Images** pro Seite
+- [ ] **Barrierefreiheit** (Kontraste, Alt-Texte, Tastatur-Navigation)
+- [ ] **SEO-/Performance-Audit** (Lighthouse, Core Web Vitals, Meta-Tags)
+
+---
+
 ## ⚠️ Querschnitt — Compliance / Recht (vor nächstem Livegang klären)
 
 - [ ] Behauptungen verifizieren: „TÜV-geprüft", „Stiftung Warentest & Focus Money Testsieger", „150.000+ Nutzer", „4,9/5", konkrete Ersparnisse
