@@ -47,8 +47,19 @@ export default function CategoryShowcase() {
   };
 
   return (
-    <section className="py-20 section-alt">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 section-alt relative overflow-hidden">
+      {/* Dekorativer, transparenter Hintergrund */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&fm=webp" 
+          alt="" 
+          className="w-full h-full object-cover" 
+          loading="lazy" 
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Spartenübersicht

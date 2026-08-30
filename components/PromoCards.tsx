@@ -13,8 +13,19 @@ const ACCENT_BARS = [
 
 export default function PromoCards() {
   return (
-    <section className="py-20 section-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 section-white relative overflow-hidden">
+      {/* Dekorativer, transparenter Hintergrund */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img 
+          src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=1920&fm=webp" 
+          alt="" 
+          className="w-full h-full object-cover" 
+          loading="lazy" 
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
