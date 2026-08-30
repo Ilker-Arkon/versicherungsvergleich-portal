@@ -23,6 +23,7 @@ export default function PartnerWidget({
   minHeight = "650px"
 }: PartnerWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const injectedKeyRef = useRef<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
@@ -42,6 +43,16 @@ export default function PartnerWidget({
 
     const currentContainer = containerRef.current;
     if (!currentContainer) return;
+
+    // Strict Mode (dev, im App Router standardmäßig aktiv) führt diesen Effect
+    // doppelt aus. Ohne Guard würde das Partner-Skript zweimal geladen und über
+    // `appendChild` zwei identische iframes in denselben Container gehängt.
+    const injectionKey = `${scriptSrc}::${containerId}`;
+    if (injectedKeyRef.current === injectionKey) {
+      setIsLoading(false);
+      return;
+    }
+    injectedKeyRef.current = injectionKey;
 
     currentContainer.innerHTML = '';
 
@@ -73,12 +84,12 @@ export default function PartnerWidget({
       }
     }, 2500);
 
+    // Den Container im Cleanup bewusst NICHT leeren: Der iframe wird vom asynchron
+    // geladenen Skript eingefügt. Ein Leeren hier würde beim Strict-Mode-Remount
+    // das Ziel löschen und beim zweiten Lauf zu einem doppelten iframe führen.
     return () => {
       isMounted = false;
       clearTimeout(timeoutTimer);
-      if (currentContainer) {
-        currentContainer.innerHTML = '';
-      }
     };
   }, [containerId, scriptSrc, iframeUrl]);
 

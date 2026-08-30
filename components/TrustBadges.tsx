@@ -10,7 +10,7 @@ export default function TrustBadges() {
   ];
 
   return (
-    <div className="section-white border-y border-slate-200/80 py-8">
+    <div className="bg-blue-50 border-b border-blue-100 py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-3 gap-6">
           {stats.map((stat, i) => (

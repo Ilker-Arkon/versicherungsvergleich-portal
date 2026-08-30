@@ -1,299 +1,104 @@
 import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, CheckCircle2, ShieldCheck, Clock, FileText, PhoneCall, Handshake } from 'lucide-react';
+import HeroSection from '@/components/HeroSection';
+import TrustBadges from '@/components/TrustBadges';
+import CategoryShowcase from '@/components/CategoryShowcase';
+import PromoCards from '@/components/PromoCards';
+import GuidePreview from '@/components/GuidePreview';
 import FAQAccordion from '@/components/FAQAccordion';
 import { GENERAL_FAQS } from '@/lib/data';
+import Link from 'next/link';
+import { ShieldCheck, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div>
       {/* 1. Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-blue-700 text-white py-20 md:py-32">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Tarife vergleichen. <span className="text-blue-200">Sofort sparen.</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-8 text-blue-50">
-                Versicherungen & Finanzen — 100 % kostenlos, unverbindlich und in unter 3 Minuten zum besten Angebot.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/kfz-versicherung"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center shadow-lg"
-                >
-                  KFZ vergleichen
-                </Link>
-                <Link
-                  href="/haftpflicht"
-                  className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition text-center"
-                >
-                  Haftpflicht vergleichen
-                </Link>
-              </div>
-            </div>
-            <div className="hidden lg:block">
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
-                  alt="Versicherungsvergleich - Familie und Sicherheit"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
-      {/* 2. Stats Section */}
-      <section className="py-12 bg-slate-50 border-b border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="bg-white p-6 rounded-xl shadow-md border border-slate-100">
-              <div className="text-5xl font-bold text-blue-600 mb-2">100%</div>
-              <div className="text-slate-600 font-medium">Kostenlos & Unverbindlich</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-slate-100">
-              <div className="text-5xl font-bold text-blue-600 mb-2">300+</div>
-              <div className="text-slate-600 font-medium">Versicherer im Vergleich</div>
-            </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border border-slate-100">
-              <div className="text-5xl font-bold text-blue-600 mb-2">850€</div>
-              <div className="text-slate-600 font-medium">Durchschnittliche Ersparnis</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 2. Trust Badges Strip */}
+      <TrustBadges />
 
-      {/* 3. Photo Category Grid */}
-      <section className="py-20 bg-white">
+      {/* 3. Category Showcase Grid */}
+      <CategoryShowcase />
+
+      {/* 4. Action Highlights / Promo Banner */}
+      <PromoCards />
+
+      {/* 5. Why Choose Us Section */}
+      <section className="py-20 bg-slate-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Welche Versicherung möchten Sie vergleichen?
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-800">
+              Ihre Vorteile
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mt-3">
+              Warum Verbraucher auf unseren Vergleich setzen
             </h2>
-            <p className="text-xl text-slate-600">
-              Wählen Sie den passenden Vergleichsrechner für Ihre Bedürfnisse
+            <p className="text-slate-400 text-base mt-3">
+              Unabhängige Rechner filtern in Sekunden die passenden Tarife — transparent und ohne versteckte Kosten.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* KFZ */}
-            <Link href="/kfz-versicherung" className="group">
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden shrink-0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80"
-                    alt="KFZ-Versicherung"
-                    fill
-                    className="object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">KFZ</h3>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                    TOP
-                  </div>
-                </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Vergleichen Sie über 330 Kfz-Tarife und sparen Sie bis zu 850€ pro Jahr.
-                  </p>
-                  <div className="flex items-center text-blue-600 font-bold text-sm group-hover:translate-x-2 transition">
-                    Jetzt vergleichen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
-                </div>
-              </div>
-            </Link>
 
-            {/* Haftpflicht */}
-            <Link href="/haftpflicht" className="group">
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden shrink-0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80"
-                    alt="Haftpflichtversicherung"
-                    fill
-                    className="object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">Haftpflicht</h3>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-7 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+              <div>
+                <div className="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-lg mb-5 border border-blue-500/20">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Die wichtigste Versicherung! Schützen Sie sich vor hohen Schadensersatzforderungen.
-                  </p>
-                  <div className="flex items-center text-blue-600 font-bold text-sm group-hover:translate-x-2 transition">
-                    Jetzt vergleichen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
-                </div>
+                <h3 className="font-bold text-lg text-white mb-2">100% Kostenlos & Unabhängig</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Volle Transparenz ohne versteckte Gebühren. Unser Service ist und bleibt für Sie komplett kostenfrei.
+                </p>
               </div>
-            </Link>
+            </div>
 
-            {/* Hausrat */}
-            <Link href="/hausrat" className="group">
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden shrink-0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80"
-                    alt="Hausratversicherung"
-                    fill
-                    className="object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">Hausrat</h3>
-                  </div>
+            <div className="p-7 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+              <div>
+                <div className="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg mb-5 border border-emerald-500/20">
+                  <Clock className="w-6 h-6" />
                 </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Schützen Sie Ihr Hab und Gut vor Einbruch, Feuer und Wasserschäden.
-                  </p>
-                  <div className="flex items-center text-blue-600 font-bold text-sm group-hover:translate-x-2 transition">
-                    Jetzt vergleichen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
-                </div>
+                <h3 className="font-bold text-lg text-white mb-2">In 3 Min. zum Besttarif</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Echtzeit-Berechnung aus Hunderten Tarifen — sofort online abschließen oder Unterlagen anfordern.
+                </p>
               </div>
-            </Link>
+            </div>
 
-            {/* Rechtsschutz */}
-            <Link href="/rechtsschutz-versicherung" className="group">
-              <div className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2 h-full flex flex-col">
-                <div className="relative h-48 overflow-hidden shrink-0">
-                  <Image
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80"
-                    alt="Rechtsschutzversicherung"
-                    fill
-                    className="object-cover group-hover:scale-110 transition duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">Rechtsschutz</h3>
-                  </div>
+            <div className="p-7 rounded-2xl bg-slate-800/60 border border-slate-700/60 flex flex-col justify-between">
+              <div>
+                <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg mb-5 border border-amber-500/20">
+                  <CheckCircle2 className="w-6 h-6" />
                 </div>
-                <div className="p-6 flex-grow flex flex-col justify-between">
-                  <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                    Sichern Sie sich effektiv ab gegen hohe Anwalts- und Gerichtskosten.
-                  </p>
-                  <div className="flex items-center text-blue-600 font-bold text-sm group-hover:translate-x-2 transition">
-                    Jetzt vergleichen
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
-                </div>
+                <h3 className="font-bold text-lg text-white mb-2">Einfacher Wechselservice</h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Kein lästiger Papierkram. Kündigung des Altvertrags und Neuabschluss laufen bequem volldigital.
+                </p>
               </div>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Why Choose Us / Vorteile Section */}
-      <section className="py-20 bg-slate-50 border-t border-slate-200/60">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Ihre Vorteile auf einen Blick
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <ShieldCheck className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">100% Kostenlos</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Unser Vergleichsrechner ist komplett kostenlos, transparent und ohne versteckte Gebühren.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <Clock className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">Schneller Wechsel</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Wechseln Sie in wenigen Minuten digital zu einer günstigeren Versicherung.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <CheckCircle2 className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">TÜV-geprüft</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Alle unsere angebundenen Versicherer und Rechner sind TÜV-geprüft und zertifiziert.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <FileText className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">Bis zu 850€ sparen</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Durchschnittliche jährliche Ersparnis beim Versicherungswechsel über unsere Tarifrechner.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <Handshake className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">Jährlich kündbar</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Flexible Vertragslaufzeiten und jährliches Kündigungsrecht für maximale Freiheit.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition">
-              <div className="text-blue-600 mb-6">
-                <PhoneCall className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">Persönliche Beratung</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Bei Fragen oder Unklarheiten steht Ihnen unser Expertenteam jederzeit zur Verfügung.
-              </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 5. FAQ Section (Kept for SEO/Value) */}
-      <FAQAccordion items={GENERAL_FAQS} title="Häufig gestellte Fragen" />
-
-      {/* 6. Final Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white mt-auto">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Bereit für Ihren Fixkosten-Check?</h2>
-          <p className="text-xl mb-10 text-blue-50">
-            Starten Sie jetzt unverbindlich und entdecken Sie Ihr persönliches Sparpotenzial.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* Integrated CTA Box */}
+          <div className="mt-14 p-8 sm:p-10 rounded-2xl bg-gradient-to-r from-blue-700 to-indigo-700 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+            <div>
+              <h3 className="text-2xl font-bold">Bereit für Ihren Fixkosten-Check?</h3>
+              <p className="text-blue-100 text-sm mt-1">Starten Sie jetzt unverbindlich und entdecken Sie Ihr persönliches Sparpotenzial.</p>
+            </div>
             <Link
               href="/kfz-versicherung"
-              className="inline-flex justify-center items-center bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition text-lg shadow-lg"
+              className="inline-flex items-center px-7 py-3.5 bg-white text-slate-900 rounded-xl font-bold text-sm hover:bg-slate-50 shadow-md transition-all active:scale-95 shrink-0"
             >
-              KFZ vergleichen
-            </Link>
-            <Link
-              href="/haftpflicht"
-              className="inline-flex justify-center items-center bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-blue-600 transition text-lg"
-            >
-              Haftpflicht vergleichen
+              <span>Jetzt unverbindlich vergleichen</span>
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
         </div>
       </section>
+
+      {/* 6. Guide Preview */}
+      <GuidePreview />
+
+      {/* 7. FAQ Section */}
+      <FAQAccordion items={GENERAL_FAQS} />
     </div>
   );
 }
