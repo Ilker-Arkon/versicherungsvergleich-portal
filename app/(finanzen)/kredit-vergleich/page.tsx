@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Banknote } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -81,14 +79,6 @@ export default function KreditPage() {
               <p className="text-xs text-slate-500">Der gesetzliche 2/3-Zins zeigt Ihnen den realistischen Zinssatz, den mindestens zwei Drittel aller Kunden erhalten.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.kredit.title}
-            subtitle={LEISTUNGEN.kredit.subtitle}
-            merkmale={LEISTUNGEN.kredit.merkmale}
-          />
         </div>
 
         <FAQAccordion items={kreditFaqs} title="Häufige Fragen zum Ratenkredit" />

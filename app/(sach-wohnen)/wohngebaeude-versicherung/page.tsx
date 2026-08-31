@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Home } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -90,14 +88,6 @@ export default function WohngebaeudePage() {
               <p className="text-xs text-emerald-700">Die Versicherungssumme wird automatisch an steigende Bau- und Materialpreise angepasst. Im Totalschadenfall wird dein Haus ohne finanzielle Lücke neu aufgebaut.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.wohngebaeude.title}
-            subtitle={LEISTUNGEN.wohngebaeude.subtitle}
-            merkmale={LEISTUNGEN.wohngebaeude.merkmale}
-          />
         </div>
 
         <FAQAccordion items={gebaeudeFaqs} title="Häufige Fragen zur Wohngebäudeversicherung" />

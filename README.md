@@ -6,7 +6,6 @@ Ein deutsches Vergleichsportal für Versicherungs- und Finanzprodukte (KFZ, Haft
 
 - **27 Detailseiten** in 5 Kategorie-Route-Groups (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`).
 - **Live-Partner-Rechner** je Sparte (`components/PartnerWidget.tsx`) mit Single-Injection-Guard gegen doppelte iframes (React StrictMode).
-- **Ehrliche Leistungstabellen** (`components/Leistungsvergleich.tsx`) statt fiktiver Preise.
 - **Vollständige SEO-Grundlage:** `robots.ts`, `sitemap.ts`, `not-found.tsx`, `metadataBase`/`openGraph`, Per-Page-Metadata via `lib/seo.ts`, Favicon (`app/icon.svg`).
 
 ## Lokal starten

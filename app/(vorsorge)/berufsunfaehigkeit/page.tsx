@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Briefcase } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -94,14 +92,6 @@ export default function BerufsunfaehigkeitPage() {
               <p className="text-xs text-emerald-700">Je jünger und gesünder du bei Vertragsabschluss bist, desto günstiger sind deine monatlichen Beiträge über die gesamte Laufzeit.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.berufsunfaehigkeit.title}
-            subtitle={LEISTUNGEN.berufsunfaehigkeit.subtitle}
-            merkmale={LEISTUNGEN.berufsunfaehigkeit.merkmale}
-          />
         </div>
 
         <FAQAccordion items={buFaqs} title="Häufige Fragen zur Berufsunfähigkeitsversicherung" />

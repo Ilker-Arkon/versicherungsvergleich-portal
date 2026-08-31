@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Award, HeartPulse } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import Link from 'next/link';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
@@ -105,14 +103,6 @@ export default function PkvPage() {
               <p className="text-xs text-slate-500">Passgenaue Tarife, die oft umfassendere Leistungen bieten als die gesetzliche Kasse – bei ähnlichem oder geringerem Beitrag.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.pkv.title}
-            subtitle={LEISTUNGEN.pkv.subtitle}
-            merkmale={LEISTUNGEN.pkv.merkmale}
-          />
         </div>
 
         <FAQAccordion items={pkvFaqs} title="Häufige Fragen zur Privaten Krankenversicherung" />

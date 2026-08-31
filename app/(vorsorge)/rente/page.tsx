@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, TrendingUp } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import Link from 'next/link';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
@@ -84,14 +82,6 @@ export default function RentePage() {
               <p className="text-xs text-slate-500">Wahlrecht zwischen lebenslanger Rente, einmaliger Gesamtauszahlung oder einer Kombination aus beidem.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.rente.title}
-            subtitle={LEISTUNGEN.rente.subtitle}
-            merkmale={LEISTUNGEN.rente.merkmale}
-          />
         </div>
 
         <FAQAccordion items={renteFaqs} title="Häufige Fragen zur privaten Rentenversicherung" />

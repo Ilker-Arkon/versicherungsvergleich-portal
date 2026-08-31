@@ -41,7 +41,7 @@ Preisen unterhalb des Live-Rechners. Das war eine *separate* Redundanz (nicht de
 Doppel-Rechner-Bug oben).
 
 - [x] `ComparisonTable` auf den 14 Seiten entfernt (Import, `TariffRow[]`-Block, JSX-Block). Verifiziert: 0 Treffer in `app/`.
-- [x] **Ersetzt (30.08.):** Ehrliche `Leistungsvergleich`-Tabelle (`components/Leistungsvergleich.tsx` + `lib/leistungen.ts`) — nur sachliche Leistungsmerkmale, **keine** Preise/Bewertungen/Anbieternamen — auf allen 14 Seiten eingebunden.
+- [x] **Ersetzt (30.08.), wieder entfernt (31.08.):** Ehrliche `Leistungsvergleich`-Tabelle wurde eingebaut, dann aber wegen **ungeprüfter fachlicher Aussagen** (Compliance-Risiko) wieder entfernt. Eigene Leistungstabellen bleiben bis zur fachlichen Freigabe durch den Makler draußen — die verbindlichen Tarife/Leistungen liefert der Live-Rechner.
 
 ---
 
@@ -145,6 +145,7 @@ Doppel-Rechner-Bug oben).
 - [x] (30.08.) Ordnerstruktur: 27 Detailseiten in 5 Route Groups (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`) umgezogen, URLs unverändert.
 - [x] (30.08.) Test-Harness: `scripts/verify-widgets.mjs` + `playwright-core` (devDependency) zum automatisierten Prüfen der iframe-Anzahl.
 - [x] (30.08.) Ehrliche Leistungstabelle: `Leistungsvergleich`-Komponente (sachliche Leistungsmerkmale, keine erfundenen Preise/Bewertungen) auf 14 Seiten als Ersatz für `ComparisonTable` eingebunden. TS-Check grün, Rechner unverändert je 1.
+- [x] (31.08.) **Eigene Leistungstabelle wieder entfernt:** `Leistungsvergleich`-Komponente + `lib/leistungen.ts` gelöscht, Einbindung aus allen 14 Seiten entfernt. Grund: ungeprüfte fachliche Leistungsmerkmale (u. a. Hausrat-„Elementarschäden“-Fehler) = Compliance-Risiko. Reversibel im Git-Verlauf, nach fachlicher Freigabe reaktivierbar.
 - [x] (30.08.) **SEO-Grundlage fertig:** `robots.ts`, `sitemap.ts`, `not-found.tsx`, `metadataBase`+`openGraph` im Layout, Per-Page-Metadata via `lib/seo.ts`, Rechtstexte + `ratgeber` als Server Components. `next build` grün (38 statische Seiten).
 - [x] (30.08.) **Aufräumen & Branding fertig:** `ComparisonTable`, `InteractiveCalculator`, `build_all_pages.js`, Boilerplate-SVGs gelöscht; Favicon `app/icon.svg` gesetzt.
 - [x] (30.08.) **Handover:** `PROJECT_STATUS.md` + `README.md` aktualisiert.

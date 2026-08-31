@@ -5,8 +5,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Umbrella, Home } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 
 const phvFaqs = [
   {
@@ -101,14 +99,6 @@ export default function HaftpflichtHausratPage() {
               <p className="text-xs text-slate-500">In der Hausratversicherung lohnt sich die 24h-Klausel für Fahrräder & E-Bikes gegen Diebstahl auf offener Straße.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN['haftpflicht-hausrat'].title}
-            subtitle={LEISTUNGEN['haftpflicht-hausrat'].subtitle}
-            merkmale={LEISTUNGEN['haftpflicht-hausrat'].merkmale}
-          />
         </div>
 
         <FAQAccordion items={phvFaqs} title="Häufige Fragen zu Haftpflicht & Hausrat" />

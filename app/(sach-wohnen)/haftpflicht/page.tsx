@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import Link from 'next/link';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
@@ -89,14 +87,6 @@ export default function HaftpflichtPage() {
               <p className="text-xs text-blue-700">Unberechtigte Ansprüche Dritter werden von der Versicherung auf deren Kosten geprüft und abgewehrt.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.haftpflicht.title}
-            subtitle={LEISTUNGEN.haftpflicht.subtitle}
-            merkmale={LEISTUNGEN.haftpflicht.merkmale}
-          />
         </div>
 
         <FAQAccordion items={faqs} title="Häufige Fragen zur Privathaftpflichtversicherung" />

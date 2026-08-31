@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, Sparkles, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -82,14 +80,6 @@ export default function KfzPage() {
               <p className="text-xs text-slate-500">Erhöht die oft zu niedrigen Mindestdeckungssummen bei Mietwagen im europäischen Ausland auf deutsches Niveau.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.kfz.title}
-            subtitle={LEISTUNGEN.kfz.subtitle}
-            merkmale={LEISTUNGEN.kfz.merkmale}
-          />
         </div>
 
         <FAQAccordion items={kfzFaqs} title="Häufige Fragen zur Kfz-Versicherung" />

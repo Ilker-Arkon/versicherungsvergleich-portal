@@ -23,7 +23,7 @@
 | Doppelte Live-Rechner behoben | 30.08. | Root-Cause: React StrictMode → Partner-Skript 2× geladen → 2 iframes. Fix: Single-Injection-Guard in `components/PartnerWidget.tsx`. |
 | Automatisierte Verifikation | 30.08. | `scripts/verify-widgets.mjs` + `playwright-core` (headless Chrome): jede Seite rendert genau **1** Rechner. |
 | Statische `ComparisonTable` entfernt | 30.08. | 14 Unterseiten: fiktive Beispieltabelle (Preise/Anbieternamen) entfernt. |
-| Ehrlicher `Leistungsvergleich` | 30.08. | `components/Leistungsvergleich.tsx` + `lib/leistungen.ts` — sachliche Leistungsmerkmale (Basis/Komfort/Premium) statt erfundener Preise. |
+| Ehrlicher `Leistungsvergleich` | 30.08. → 31.08. | Eingebaut (`Leistungsvergleich.tsx` + `lib/leistungen.ts`), dann wegen ungeprüfter Fachaussagen (Compliance) wieder entfernt — reversibel im Git-Verlauf. |
 
 ### 2. Struktur & Architektur
 

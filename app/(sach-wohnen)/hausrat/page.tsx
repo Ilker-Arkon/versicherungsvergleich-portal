@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import Link from 'next/link';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
@@ -84,14 +82,6 @@ export default function HausratPage() {
               <p className="text-xs text-slate-500">Ergänzen Sie den Standard-Hausratschutz um Elementargefahren wie Überschwemmung und Starkregen.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.hausrat.title}
-            subtitle={LEISTUNGEN.hausrat.subtitle}
-            merkmale={LEISTUNGEN.hausrat.merkmale}
-          />
         </div>
 
         <FAQAccordion items={faqs} title="Häufige Fragen zur Hausratversicherung" />

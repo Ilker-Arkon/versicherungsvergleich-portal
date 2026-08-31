@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -76,14 +74,6 @@ export default function MotorradPage() {
               <p className="text-xs text-slate-500">Verhindert eine Rückstufung der SF-Klasse nach dem ersten gemeldeten Schaden im Kalenderjahr.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.motorrad.title}
-            subtitle={LEISTUNGEN.motorrad.subtitle}
-            merkmale={LEISTUNGEN.motorrad.merkmale}
-          />
         </div>
 
         <FAQAccordion items={motorradFaqs} title="Häufige Fragen zur Motorradversicherung" />

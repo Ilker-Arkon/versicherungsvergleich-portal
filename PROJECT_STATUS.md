@@ -30,13 +30,10 @@
    * **Single-Injection-Guard:** Schutz gegen React StrictMode / doppeltes Mounten. Verhindert, dass externe Partnerskripte (Mr-Money / Partner-Versicherung) doppelte iFrames in die Seite einfügen.
    * Auf allen Unterkategorien wird zuverlässig genau **1 Rechner** gerendert.
 
-4. **Transparenter Leistungsvergleich (`components/Leistungsvergleich.tsx`):**
-   * Ersetzt statische Test-Tarife durch übersichtliche, ehrliche Leistungskriterien je Sparte (Basis vs. Komfort vs. Premium).
-
-5. **Struktur:**
+4. **Struktur:**
    * 27 Detailseiten sind sauber in 5 Route Groups organisiert (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`).
 
-6. **SEO-Grundlage (erledigt 30.08.):**
+5. **SEO-Grundlage (erledigt 30.08.):**
    * `app/robots.ts` — `MetadataRoute.Robots` mit Sitemap-Verweis.
    * `app/sitemap.ts` — dynamisch aus `CATEGORIES` (statische Seiten + alle Unterseiten, Priority 0.8/weekly).
    * `app/not-found.tsx` — gebrandete 404-Seite.
@@ -45,7 +42,7 @@
    * Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` zu Server Components umgebaut.
    * Favicon: `app/icon.svg` (blau→cyan Gradient + Schild-Checkmark).
 
-7. **Aufräumen (erledigt 30.08.):**
+6. **Aufräumen (erledigt 30.08.):**
    * Gelöscht: `components/ComparisonTable.tsx`, `components/InteractiveCalculator.tsx`, `build_all_pages.js`, Boilerplate-SVGs in `public/`.
 
 ---

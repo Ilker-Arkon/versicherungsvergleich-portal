@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -93,14 +91,6 @@ export default function RechtsschutzPage() {
             ))}
           </div>
           <p className="text-xs text-slate-500 mt-4 text-center">Viele moderne Tarife bieten dir neben der freien Anwaltswahl auch kostenlose telefonische Erstberatungen und unbürokratische Schlichtungsverfahren (Mediation).</p>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.rechtsschutz.title}
-            subtitle={LEISTUNGEN.rechtsschutz.subtitle}
-            merkmale={LEISTUNGEN.rechtsschutz.merkmale}
-          />
         </div>
 
         <FAQAccordion items={rechtsschutzFaqs} title="Häufige Fragen zur Rechtsschutzversicherung" />

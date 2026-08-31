@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, Heart } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -77,14 +75,6 @@ export default function RisikolebenPage() {
               <p className="text-xs text-slate-500">Für unverheiratete Paare: Jeder versichert das Leben des Partners, um die Erbschaftsteuerfreibeträge optimal zu nutzen.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.risikoleben.title}
-            subtitle={LEISTUNGEN.risikoleben.subtitle}
-            merkmale={LEISTUNGEN.risikoleben.merkmale}
-          />
         </div>
 
         <FAQAccordion items={rlvFaqs} title="Häufige Fragen zur Risikolebensversicherung" />

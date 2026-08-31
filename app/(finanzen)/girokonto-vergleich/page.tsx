@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, CreditCard } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -81,14 +79,6 @@ export default function GirokontoPage() {
               <p className="text-xs text-slate-500">Sichern Sie sich bis zu 200 € Willkommensbonus bei aktiver Nutzung als Gehaltskonto.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.girokonto.title}
-            subtitle={LEISTUNGEN.girokonto.subtitle}
-            merkmale={LEISTUNGEN.girokonto.merkmale}
-          />
         </div>
 
         <FAQAccordion items={giroFaqs} title="Häufige Fragen zum Girokonto-Wechsel" />

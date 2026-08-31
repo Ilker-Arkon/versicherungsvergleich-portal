@@ -3,8 +3,6 @@ import PartnerWidget from '@/components/PartnerWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { ShieldCheck, CheckCircle2, HeartHandshake } from 'lucide-react';
 import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
-import Leistungsvergleich from '@/components/Leistungsvergleich';
-import { LEISTUNGEN } from '@/lib/leistungen';
 import type { Metadata } from "next";
 import { subcategoryMetadata } from "@/lib/seo";
 
@@ -95,14 +93,6 @@ export default function UnfallPage() {
               <p className="text-xs text-emerald-700">Kinder und Partner lassen sich kostengünstig in einem gemeinsamen Vertrag mit absichern.</p>
             </div>
           </div>
-        </div>
-
-        <div className="mb-14">
-          <Leistungsvergleich
-            title={LEISTUNGEN.unfall.title}
-            subtitle={LEISTUNGEN.unfall.subtitle}
-            merkmale={LEISTUNGEN.unfall.merkmale}
-          />
         </div>
 
         <FAQAccordion items={unfallFaqs} title="Häufige Fragen zur Unfallversicherung" />
