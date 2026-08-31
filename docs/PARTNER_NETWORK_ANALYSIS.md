@@ -28,3 +28,18 @@
     *   Erweiterung um die Sparten: Strom & Gas, DSL, Handytarife, Pauschalreisen, Mietwagen.
 *   **Support:**
     *   Direkter Draht per E-Mail (`support@tarifcheck.de`) und Telefon für technische Integrationen.
+
+## 3. Design-Vorgabe für die White-Label-Anpassung (31.08. erstellt)
+
+> Diese Farbwerte dem Partner (Tarifcheck / Mr-Money) nennen, damit die Rechner
+> optisch zum Portal passen. Quelle: Tailwind-Klassen des Projekts.
+
+| Element | Farbwert | Tailwind |
+|---|---|---|
+| Primär (CTA / Logo) | `#2563eb` | `blue-600` |
+| Sekundär (Gradient) | `#06b6d4` | `cyan-500` |
+| Dunkler Header | `#0f172a` | `slate-900` |
+| Hintergrund hell | `#f8fafc` | `slate-50` |
+| Kartenrahmen | `#e2e8f0` | `slate-200` |
+| Erfolg / Spar-Badges | `#059669` | `emerald-600` |
+| Text | `#0f172a` / `#64748b` | `slate-900` / `slate-500` |
