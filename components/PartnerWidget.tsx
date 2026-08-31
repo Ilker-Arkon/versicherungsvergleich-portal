@@ -7,6 +7,8 @@ import { useCookieConsent } from '@/components/CookieConsentProvider';
 interface PartnerWidgetProps {
   containerId?: string;
   scriptSrc?: string;
+  dataStyle?: string;
+  dataScrollTo?: string;
   iframeUrl?: string;
   directLink?: string;
   title?: string;
@@ -17,6 +19,8 @@ interface PartnerWidgetProps {
 export default function PartnerWidget({
   containerId,
   scriptSrc,
+  dataStyle,
+  dataScrollTo,
   iframeUrl,
   directLink,
   title = "Offizieller Tarifrechner & Live-Vergleich",
@@ -74,6 +78,12 @@ export default function PartnerWidget({
     const widgetTarget = document.createElement('div');
     widgetTarget.id = containerId;
     widgetTarget.style.width = '100%';
+    if (dataStyle) {
+      widgetTarget.setAttribute('data-style', dataStyle);
+    }
+    if (dataScrollTo) {
+      widgetTarget.setAttribute('data-scrollto', dataScrollTo);
+    }
     currentContainer.appendChild(widgetTarget);
 
     const script = document.createElement('script');
@@ -110,7 +120,7 @@ export default function PartnerWidget({
       isMounted = false;
       clearTimeout(timeoutTimer);
     };
-  }, [containerId, scriptSrc, iframeUrl, ready, hasMarketingConsent]);
+  }, [containerId, scriptSrc, dataStyle, dataScrollTo, iframeUrl, ready, hasMarketingConsent]);
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg overflow-hidden my-8">

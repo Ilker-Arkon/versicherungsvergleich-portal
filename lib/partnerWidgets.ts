@@ -4,6 +4,8 @@ export interface PartnerConfig {
   category: 'kfz' | 'vorsorge' | 'kranken' | 'sach' | 'finanzen' | 'energie_reisen';
   containerId?: string;
   scriptSrc?: string;
+  dataStyle?: string;
+  dataScrollTo?: string;
   iframeUrl?: string;
   directLink: string;
   adId?: string;
@@ -20,6 +22,8 @@ export const PARTNER_WIDGETS: Record<string, PartnerConfig> = {
     category: "kfz",
     containerId: "tcpp-iframe-kfz",
     scriptSrc: "https://form.partner-versicherung.de/widgets/75137/tcpp-iframe-kfz/kfz-iframe.js",
+    dataStyle: "custom_blue",
+    dataScrollTo: "iframe",
     directLink: "https://a.partner-versicherung.de/click.php?partner_id=75137&ad_id=15&deep=kfz-versicherung",
     deepLinkParam: "kfz-versicherung"
   },

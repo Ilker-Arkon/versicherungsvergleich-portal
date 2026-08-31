@@ -53,6 +53,8 @@ export default function KfzPage() {
           <PartnerWidget
             containerId={widget.containerId}
             scriptSrc={widget.scriptSrc}
+            dataStyle={widget.dataStyle}
+            dataScrollTo={widget.dataScrollTo}
             directLink={widget.directLink}
             title="Offizieller Kfz-Versicherungs-Vergleichsrechner"
             badgeText="Über 330 Tarife im Live-Test"
