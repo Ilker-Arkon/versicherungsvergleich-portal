@@ -5,6 +5,7 @@ import { ShieldCheck, FileText, PhoneCall, Mail, MapPin } from 'lucide-react';
 export const metadata: Metadata = {
   title: "Erstinformation gemäß § 15 VersVermV",
   description: "Erstinformation für Kunden und Interessenten gemäß § 15 Versicherungsvermittlungsverordnung (VersVermV).",
+  alternates: { canonical: "/erstinformation" },
 };
 
 export default function ErstinformationPage() {

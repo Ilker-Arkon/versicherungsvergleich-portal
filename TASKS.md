@@ -78,9 +78,9 @@ Doppel-Rechner-Bug oben).
 
 ## 🟡 Prio 5 — Kontakt & Support bereitstellen
 
-- [ ] **WhatsApp / Live-Chat** (z. B. WhatsApp Business oder Chat-Widget) — auf allen Seiten sichtbar
-- [ ] **Telefonnummer** (Festnetz/Mobil) für Rückfragen
-- [ ] **Kontaktformular** (mit E-Mail-Versand, Datenschutz-Hinweis, Spam-Schutz)
+- [x] **WhatsApp / Live-Chat** — schwebender Button unten rechts **und** im Header (`components/ContactFab.tsx` + `components/Navbar.tsx`); sichtbar, sobald `NEXT_PUBLIC_WHATSAPP_NUMBER` gesetzt ist
+- [x] **Telefonnummer** (Mobil +49 1525 2592531) — als `tel:`-Link in Header-Trust-Bar, schwebendem „Anrufen"-Button (über WhatsApp) und Footer verlinkt
+- [x] **Kontaktformular** (`/kontakt` + Server Action + Honeypot + Server-Validierung + Consent-Checkbox; E-Mail-Versand als austauschbarer Hook in `lib/mailer.ts`, Resend folgt beim Livegang)
 - [ ] **Professionelle E-Mail-Adresse** (domaingebunden, z. B. `info@…` / `kontakt@…`)
 - [ ] **Support-/Öffnungszeiten** + Reaktionszeit angeben (schafft Vertrauen)
 
@@ -88,9 +88,13 @@ Doppel-Rechner-Bug oben).
 
 ## 🔴 Prio 6 — Rechtstexte & Compliance vollständig machen
 
+> **Hinweis (31.08.):** Die vollständigen Rechtstexte (Impressum, Datenschutz, Erstinformation, AGB)
+> werden von einer **Anwaltskanzlei nach der Registrierung** bereitgestellt und **vor Veröffentlichung**
+> eingespielt. Hier also **keinen Rechtsinhalt selbst schreiben** — nur technische Vorbereitung.
+
 - [ ] **Impressum** (§ 5 DDG): Firma, Anschrift, Vertretung, USt-ID, Aufsichtsbehörde, `Vermittlerregister`-Nr.
 - [ ] **Datenschutzerklärung** (DSGVO): Partner-iFrames, Tracking, Drittdienste, Betroffenenrechte
-- [ ] **Cookie-Consent-Banner** (Einwilligung für Tracking + Partner-Skripte — zwingend, weil die Partner-Widgets Cookies setzen)
+- [x] **Cookie-Consent-Banner** (Einwilligung für Tracking + Partner-Skripte — zwingend, weil die Partner-Widgets Cookies setzen)
 - [ ] **Erstinformation** (§ 11 VersVermV) inhaltlich gegenprüfen
 - [ ] **AGB + Widerrufsbelehrung** (falls eigene Leistung/Lead-Weiterleitung angeboten wird)
 - [ ] **AV-Verträge / Partnervereinbarungen** mit Vermittlern & Trackern
@@ -109,11 +113,13 @@ Doppel-Rechner-Bug oben).
 
 ## 🟢 Prio 8 — Technischer Feinschliff
 
-- [ ] **Formular-Backend**: Server Action / API-Route + E-Mail-Versand (Resend/Nodemailer) + Spam-Schutz (Honeypot/Captcha)
+- [ ] **Formular-Backend**: E-Mail-Versand finalisieren (Resend/Nodemailer). Server Action + Honeypot-Spam-Schutz sind fertig (`app/kontakt/actions.ts`), Versand-Hook vorbereitet (`lib/mailer.ts`).
 - [ ] **DSGVO-konforme Analytics** (z. B. Plausible/Matomo statt Google Analytics)
-- [ ] **OG-/Social-Preview-Images** pro Seite
-- [ ] **Barrierefreiheit** (Kontraste, Alt-Texte, Tastatur-Navigation)
-- [ ] **SEO-/Performance-Audit** (Lighthouse, Core Web Vitals, Meta-Tags)
+- [x] **OG-/Social-Preview-Images** pro Seite
+- [x] **Barrierefreiheit — Kernfixes**: Skip-Link (`layout.tsx`), globaler `:focus-visible`-Fokus (`globals.css`), FAQ-Accordion `aria-expanded`/`aria-controls`, Live-Region im Rechner-Loading, dekorative Icons `aria-hidden`, Navbar `aria-haspopup`.
+- [ ] **Barrierefreiheit — vertieft**: Farbkontrast-Messung (z. B. `text-slate-400`-Stellen unter 4.5:1) + Headings-Hierarchie (h1→h3-Sprünge) beheben.
+- [x] **SEO-/Performance-Audit — Meta & Struktur**: JSON-LD `Organization` (`layout.tsx`), canonical auf allen Seiten (Detailseiten via `lib/seo.ts`, statische Seiten + Homepage), `loading="lazy"`/`decoding="async"` auf Hero-Bildern.
+- [ ] **SEO-/Performance-Audit — Messung**: Lighthouse/Core-Web-Vitals-Lauf + Analytics (Plausible/Matomo) stehen noch aus.
 
 ---
 
@@ -142,3 +148,9 @@ Doppel-Rechner-Bug oben).
 - [x] (30.08.) **SEO-Grundlage fertig:** `robots.ts`, `sitemap.ts`, `not-found.tsx`, `metadataBase`+`openGraph` im Layout, Per-Page-Metadata via `lib/seo.ts`, Rechtstexte + `ratgeber` als Server Components. `next build` grün (38 statische Seiten).
 - [x] (30.08.) **Aufräumen & Branding fertig:** `ComparisonTable`, `InteractiveCalculator`, `build_all_pages.js`, Boilerplate-SVGs gelöscht; Favicon `app/icon.svg` gesetzt.
 - [x] (30.08.) **Handover:** `PROJECT_STATUS.md` + `README.md` aktualisiert.
+- [x] (31.08.) **Cookie-Consent-Banner implementiert:** `components/CookieConsentProvider.tsx` (Context + `localStorage`), `components/CookieConsentBanner.tsx` (Erst-Banner, Einstellungs-Dialog, Reopen-Button), `lib/cookieConsent.ts`. `PartnerWidget` lädt Partner-Skripte/-iFrames **erst nach** Marketing-Einwilligung, sonst Platzhalter mit „Rechner freischalten". `app/layout.tsx` verdrahtet. Verifiziert via `scripts/verify-widgets.mjs` (Test 1: ohne Consent 0 Skripte/iframes; Test 2: mit Consent je 1 Rechner). `next build` grün (38 Seiten).
+- [x] (31.08.) **OG-/Social-Preview-Images:** dynamischer Generator `app/api/og/route.tsx` (`ImageResponse` aus `next/og`), `lib/seo.ts` liefert pro Detailseite `openGraph.images` + `twitter`-Card (`summary_large_image`), `app/layout.tsx` Default-Bild. Verifiziert in dev + production (HTTP 200 PNG, Meta-Tags korrekt).
+- [x] (31.08.) **Kontaktformular:** `/kontakt`-Seite + `components/ContactForm.tsx` (`useActionState`), Server Action `app/kontakt/actions.ts` (Honeypot + Server-Validierung + Consent-Check), austauschbarer E-Mail-Hook `lib/mailer.ts` (Console-Fallback, Resend beim Livegang). Footer + `sitemap.ts` verlinkt. `next build` grün (39 Seiten).
+- [x] (31.08.) **WhatsApp-Button:** schwebender Chat-Button `components/WhatsAppButton.tsx` (unten rechts, `wa.me`-Link, vorausgefüllte Nachricht), in `app/layout.tsx` verdrahtet. Sichtbar erst mit `NEXT_PUBLIC_WHATSAPP_NUMBER` (international, ohne `+`); ohne Nummer ausgeblendet. Verifiziert (Build + Startseite zeigt `wa.me`-Link).
+- [x] (31.08.) **Barrierefreiheit — Kernfixes:** Skip-Link („Zum Inhalt springen") + `<main id="main-content">` in `layout.tsx`; globaler `:focus-visible`-Outline in `globals.css`; FAQ-Accordion mit `useId`, `aria-expanded`, `aria-controls`, `role="region"`; Rechner-Loading als `role="status"`-Live-Region; dekorative Icons `aria-hidden`; Navbar-Dropdown `aria-haspopup`. `next build` grün. (Vertieft offen: Kontrast-Messung + Headings-Hierarchie.)
+- [x] (31.08.) **SEO-/Performance-Audit — Meta & Struktur:** JSON-LD `Organization` (`app/layout.tsx`), canonical-URLs auf allen Seiten (Detailseiten via `subcategoryMetadata`, Homepage + statische Seiten), `loading="lazy"` + `decoding="async"` + `width`/`height` auf Hero-Bildern. Verifiziert (canonical + JSON-LD im HTML). `next build` grün. (Lighthouse-Messung + Analytics offen.)

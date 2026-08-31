@@ -121,3 +121,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .link-underline:hover::after {
   width: 100%;
 }
+
+/* === Accessibility: sichtbarer Tastatur-Fokus ===
+   Elemente mit eigener `outline-none`/`focus:ring`-Behandlung überschreiben das
+   gezielt — alle übrigen interaktiven Elemente bekommen hier einen klaren Fokus. */
+:focus-visible {
+  outline: 2px solid var(--primary-light);
+  outline-offset: 2px;
+}

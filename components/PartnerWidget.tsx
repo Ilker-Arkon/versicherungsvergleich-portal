@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { ExternalLink, ShieldCheck, Sparkles, RefreshCw, Lock } from 'lucide-react';
+import { useCookieConsent } from '@/components/CookieConsentProvider';
 
 interface PartnerWidgetProps {
   containerId?: string;
@@ -27,10 +28,25 @@ export default function PartnerWidget({
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
 
+  const { ready, consent, openSettings } = useCookieConsent();
+  const hasMarketingConsent = consent.marketing;
+  const showConsentPlaceholder = ready && !hasMarketingConsent;
+
   useEffect(() => {
     let isMounted = true;
     setIsLoading(true);
     setHasError(false);
+
+    // DSGVO: externe Partner-Skripte/-iFrames erst NACH Einwilligung laden.
+    // `ready` bleibt false, bis localStorage gelesen wurde — davor wird nichts geladen
+    // (kein Flash, kein vorzeitiges Setzen von Drittanbieter-Cookies).
+    if (!ready) {
+      return () => { isMounted = false; };
+    }
+    if (!hasMarketingConsent) {
+      setIsLoading(false);
+      return () => { isMounted = false; };
+    }
 
     if (iframeUrl) {
       const timeoutTimer = setTimeout(() => {
@@ -91,7 +107,7 @@ export default function PartnerWidget({
       isMounted = false;
       clearTimeout(timeoutTimer);
     };
-  }, [containerId, scriptSrc, iframeUrl]);
+  }, [containerId, scriptSrc, iframeUrl, ready, hasMarketingConsent]);
 
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg overflow-hidden my-8">
@@ -123,8 +139,8 @@ export default function PartnerWidget({
       <div className="p-4 sm:p-6 bg-slate-50/50 relative">
         {/* Loading Skeleton */}
         {isLoading && (
-          <div className="absolute inset-0 bg-white/90 backdrop-blur-xs flex flex-col items-center justify-center z-10 p-6 min-h-[400px]">
-            <RefreshCw className="w-7 h-7 text-blue-600 animate-spin mb-3" />
+          <div role="status" aria-live="polite" className="absolute inset-0 bg-white/90 backdrop-blur-xs flex flex-col items-center justify-center z-10 p-6 min-h-[400px]">
+            <RefreshCw aria-hidden="true" className="w-7 h-7 text-blue-600 animate-spin mb-3" />
             <p className="text-sm font-bold text-slate-800">Vergleichsrechner wird geladen...</p>
             <p className="text-xs text-slate-500 mt-1">Echtzeit-Tarife und Konditionen werden synchronisiert</p>
           </div>
@@ -147,8 +163,34 @@ export default function PartnerWidget({
           </div>
         )}
 
+        {/* Consent-Placeholder: Rechner erst nach Einwilligung */}
+        {showConsentPlaceholder && (
+          <div className="flex flex-col items-center justify-center text-center py-10 px-6">
+            <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center border border-blue-200 mb-4">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <p className="text-sm font-bold text-slate-800">
+              Vergleichsrechner erst nach Ihrer Einwilligung
+            </p>
+            <p className="text-xs text-slate-500 mt-1 max-w-md">
+              Der Live-Tarifrechner wird von unserem Partner bereitgestellt. Beim Laden werden
+              Daten (z. B. IP-Adresse) an{" "}
+              <span className="font-medium">form.partner-versicherung.de</span> übertragen und
+              Cookies gesetzt.
+            </p>
+            <button
+              type="button"
+              onClick={openSettings}
+              className="mt-4 inline-flex items-center px-5 py-2.5 bg-blue-600 text-white font-bold text-sm rounded-xl shadow-md hover:bg-blue-700 transition-colors"
+            >
+              <ShieldCheck className="w-4 h-4 mr-2" />
+              Rechner freischalten
+            </button>
+          </div>
+        )}
+
         {/* Script Target Container */}
-        {!iframeUrl && containerId && scriptSrc && (
+        {hasMarketingConsent && !iframeUrl && containerId && scriptSrc && (
           <div
             ref={containerRef}
             style={{ minHeight }}
@@ -157,10 +199,10 @@ export default function PartnerWidget({
         )}
 
         {/* Direct iframe container */}
-        {iframeUrl && (
-          <iframe 
-            src={iframeUrl} 
-            width="100%" 
+        {hasMarketingConsent && iframeUrl && (
+          <iframe
+            src={iframeUrl}
+            width="100%"
             style={{ minHeight, border: 'none' }}
             title={title}
             onLoad={() => setIsLoading(false)}

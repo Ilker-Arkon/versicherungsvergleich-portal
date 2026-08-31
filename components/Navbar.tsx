@@ -9,9 +9,11 @@ import {
   Menu,
   X,
   PhoneCall,
+  MessageCircle,
   ArrowRight,
 } from 'lucide-react';
 import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
+import { PHONE_URL, WHATSAPP_URL } from '@/lib/site';
 
 const CATEGORY_COLORS: Record<string, string> = {
   mobilitaet: 'bg-blue-500',
@@ -119,8 +121,9 @@ export default function Navbar() {
                 onMouseEnter={() => handleMouseEnter(cat.id)}
                 onMouseLeave={handleMouseLeave}
               >
-                <button 
+                <button
                   onClick={() => toggleDropdown(cat.id)}
+                  aria-haspopup="true"
                   className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
                     activeDropdown === cat.id 
                       ? 'bg-slate-100 text-blue-600 font-semibold' 
@@ -185,7 +188,7 @@ export default function Navbar() {
           </nav>
 
           {/* CTA & Mobile */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             <Link
               href="/kfz-versicherung"
               className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
@@ -193,6 +196,30 @@ export default function Navbar() {
               Jetzt vergleichen
               <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
             </Link>
+
+            <a
+              href={PHONE_URL}
+              aria-label="Anrufen"
+              title="Anrufen"
+              className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4" />
+              <span className="hidden xl:inline">Anrufen</span>
+            </a>
+
+            {WHATSAPP_URL && (
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                title="WhatsApp"
+                className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span className="hidden xl:inline">WhatsApp</span>
+              </a>
+            )}
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

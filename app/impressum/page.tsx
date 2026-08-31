@@ -5,6 +5,7 @@ import { ShieldCheck, Mail, PhoneCall, MapPin } from 'lucide-react';
 export const metadata: Metadata = {
   title: "Impressum",
   description: "Impressum und gesetzliche Anbieterkennzeichnung von TarifVergleich.",
+  alternates: { canonical: "/impressum" },
 };
 
 export default function ImpressumPage() {

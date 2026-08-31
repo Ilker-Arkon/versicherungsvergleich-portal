@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 interface FAQItem {
@@ -20,6 +20,7 @@ export default function FAQAccordion({
   subtitle = "Alles, was Sie für Ihren transparenten Tarifvergleich wissen müssen." 
 }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const baseId = useId();
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -46,19 +47,27 @@ export default function FAQAccordion({
               >
                 <button
                   onClick={() => toggle(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`${baseId}-panel-${index}`}
                   className="w-full p-5 text-left flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors"
                 >
                   <span className="font-bold text-slate-900 text-sm sm:text-base pr-4">
                     {item.question}
                   </span>
                   <ChevronDown
+                    aria-hidden="true"
                     className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
                       isOpen ? 'transform rotate-180 text-blue-600' : ''
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <div className="p-5 bg-white text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+                  <div
+                    id={`${baseId}-panel-${index}`}
+                    role="region"
+                    aria-label={item.question}
+                    className="p-5 bg-white text-sm text-slate-600 leading-relaxed border-t border-slate-100"
+                  >
                     {item.answer}
                   </div>
                 )}

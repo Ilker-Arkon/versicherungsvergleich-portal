@@ -151,6 +151,7 @@ export default function Footer() {
               Rechtliches & Information
             </h5>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/kontakt" className="text-slate-400 hover:text-white">Kontakt</Link></li>
               <li><Link href="/impressum" className="text-slate-400 hover:text-white">Impressum</Link></li>
               <li><Link href="/datenschutz" className="text-slate-400 hover:text-white">Datenschutzerklärung</Link></li>
               <li><Link href="/erstinformation" className="text-slate-400 hover:text-white">Erstinformation gem. § 15 VersVermV</Link></li>

@@ -17,7 +17,7 @@ export const CUSTOMER_PROFILE: CustomerProfile = {
   zip: "90459",
   city: "Nürnberg",
   country: "Deutschland",
-  phone: "0911 9277785",
+  phone: "+49 1525 2592531",
   email: "gulec32@googlemail.com",
   partnerId: "75137"
 };

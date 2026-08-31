@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from "next";
 import HeroSection from '@/components/HeroSection';
 import TrustBadges from '@/components/TrustBadges';
 import CategoryShowcase from '@/components/CategoryShowcase';
@@ -8,6 +9,10 @@ import FAQAccordion from '@/components/FAQAccordion';
 import { GENERAL_FAQS } from '@/lib/data';
 import Link from 'next/link';
 import { ShieldCheck, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

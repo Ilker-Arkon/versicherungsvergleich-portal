@@ -7,6 +7,7 @@ import { ShieldCheck, ArrowRight, BookOpen, Sparkles, CheckCircle2, Clock } from
 export const metadata: Metadata = {
   title: "Ratgeber & Spartipps",
   description: "Experten-Ratgeber, Spartipps und Wechselfristen für Versicherungen und Finanzen.",
+  alternates: { canonical: "/ratgeber" },
 };
 
 const ratgeberFaqs = [

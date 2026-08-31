@@ -50,7 +50,7 @@ export default function Leistungsvergleich({ title, subtitle, merkmale }: Leistu
 
       {/* Ehrlichkeits-Hinweis */}
       <div className="px-6 sm:px-8 py-4 bg-slate-50 border-t border-slate-100 flex items-start gap-2 text-xs text-slate-500">
-        <Info className="h-4 w-4 shrink-0 text-slate-400 mt-0.5" />
+        <Info aria-hidden="true" className="h-4 w-4 shrink-0 text-slate-400 mt-0.5" />
         <p className="leading-relaxed">
           Bewusst ohne Preis- und Bewertungsangaben: Preise, Verfügbarkeit und Anbieter ändern sich tagesaktuell.
           Ihren individuellen Beitrag zeigt der Rechner oben in Echtzeit.

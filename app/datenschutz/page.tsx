@@ -5,6 +5,7 @@ import { ShieldCheck, Lock } from 'lucide-react';
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description: "Datenschutzerklärung von TarifVergleich – Informationen zum Umgang mit personenbezogenen Daten gemäß DSGVO.",
+  alternates: { canonical: "/datenschutz" },
 };
 
 export default function DatenschutzPage() {

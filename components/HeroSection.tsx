@@ -144,6 +144,10 @@ export default function HeroSection() {
               <img
                 src={card.image}
                 alt={card.title}
+                width={600}
+                height={400}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
               {/* Dark overlay */}
