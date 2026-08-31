@@ -42,8 +42,14 @@
    * Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` zu Server Components umgebaut.
    * Favicon: `app/icon.svg` (blau→cyan Gradient + Schild-Checkmark).
 
-6. **Aufräumen (erledigt 30.08.):**
+6. **Performance & Widgets (erledigt 31.08.):**
+   * Widget-Ladezeiten drastisch reduziert (künstliche Verzögerung von 600ms auf 100ms gekürzt, Fallback auf 1500ms, künstliche iFrame-Delays entfernt).
+   * Resource Hints: DNS-Prefetch für `tarifcheck.de` und `a.partner-versicherung.de` in `app/layout.tsx` integriert.
+   * Analyse des Tarifcheck-Partnerprogramms in `docs/PARTNER_NETWORK_ANALYSIS.md` dokumentiert.
+
+7. **Aufräumen & Sicherung:**
    * Gelöscht: `components/ComparisonTable.tsx`, `components/InteractiveCalculator.tsx`, `build_all_pages.js`, Boilerplate-SVGs in `public/`.
+   * `master` und `main` Branches kontinuierlich synchronisiert und auf Vercel live geschaltet.
 
 ---
 
