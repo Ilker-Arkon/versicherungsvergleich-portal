@@ -57,6 +57,8 @@ export default function RootLayout({
   // DNS + TCP + TLS (~300–500 ms) beim ersten Kontakt zu form.partner-versicherung.de.
   preconnect("https://form.partner-versicherung.de");
   prefetchDNS("https://a.partner-versicherung.de");
+  // Tarifcheck selbst lädt Unterressourcen von dieser Domain — DNS vorwärmen.
+  prefetchDNS("https://www.tarifcheck.de");
 
   return (
     <html

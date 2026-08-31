@@ -49,10 +49,9 @@ export default function PartnerWidget({
     }
 
     if (iframeUrl) {
-      const timeoutTimer = setTimeout(() => {
-        if (isMounted) setIsLoading(false);
-      }, 800);
-      return () => { isMounted = false; clearTimeout(timeoutTimer); };
+      // iFrame-Modus: isLoading wird via onLoad-Event des <iframe> zurückgesetzt.
+      // Kein künstliches Timeout nötig.
+      return () => { isMounted = false; };
     }
 
     if (!scriptSrc || !containerId) return;
@@ -82,7 +81,9 @@ export default function PartnerWidget({
     script.async = true;
     script.onload = () => {
       if (isMounted) {
-        setTimeout(() => setIsLoading(false), 600);
+        // 100 ms reicht, damit der iframe des Partner-Skripts im DOM erscheint,
+        // bevor wir den Ladebalken ausblenden (war: 600 ms — unnötig lang).
+        setTimeout(() => setIsLoading(false), 100);
       }
     };
     script.onerror = () => {
@@ -94,11 +95,13 @@ export default function PartnerWidget({
 
     currentContainer.appendChild(script);
 
+    // Fallback: Falls onload nicht feuert (z. B. CORS), nach 1500 ms trotzdem
+    // den Ladebalken ausblenden (war: 2500 ms).
     const timeoutTimer = setTimeout(() => {
       if (isMounted) {
         setIsLoading(false);
       }
-    }, 2500);
+    }, 1500);
 
     // Den Container im Cleanup bewusst NICHT leeren: Der iframe wird vom asynchron
     // geladenen Skript eingefügt. Ein Leeren hier würde beim Strict-Mode-Remount
