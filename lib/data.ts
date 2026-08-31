@@ -319,37 +319,37 @@ export const TRUST_STATS = [
 
 export const PROMO_HIGHLIGHTS = [
   {
-    id: "kfz-sparen",
-    title: "Kfz-Versicherungs-Wechsel",
-    headline: "Bis zu 850 € im Jahr einsparen",
-    description: "Vergleichen Sie über 330 Kfz-Tarife im offiziellen Live-Rechner. Wechseln Sie bequem online zum Testsieger.",
-    badge: "Bestseller 2026",
-    buttonText: "Kfz-Tarife berechnen",
-    link: "/kfz-versicherung",
-    tag: "Kfz & Mobilität",
-    color: "border-blue-500/30 bg-gradient-to-br from-blue-50 to-blue-100/50"
+    id: "girokonto-wechsel",
+    title: "Girokonto-Vergleich",
+    headline: "Bis zu 180 € Neukundenbonus",
+    description: "Kostenfreie Kontoführung mit attraktiven Wechselboni. Der Wechselservice übernimmt alle Lastschriften vollautomatisch.",
+    badge: "0 € Kontoführung",
+    buttonText: "Girokonto vergleichen",
+    link: "/girokonto-vergleich",
+    tag: "Finanzen & Banken",
+    color: "border-amber-500/30 bg-gradient-to-br from-amber-50 to-amber-100/50"
   },
   {
-    id: "pkv-optimierung",
-    title: "Private Krankenversicherung",
-    headline: "Bis zu 2.400 € Beitragsersparnis",
-    description: "Erstklassige medizinische Versorgung mit Chefarztbehandlung und 1-Bett-Zimmer zu Top-Konditionen vergleichen.",
-    badge: "Top-Leistungen",
-    buttonText: "PKV vergleichen",
-    link: "/pkv",
+    id: "zahnzusatz-optimierung",
+    title: "Zahn- & Krankenzusatzversicherung",
+    headline: "Bis 1.500 € Zuzahlung sparen",
+    description: "Schließen Sie Kassenlücken: Hochwertige Zahnkronen, Implantate und Vorsorge mit bis zu 100 % Zahnersatz.",
+    badge: "Bis 100% Zahnersatz",
+    buttonText: "Zahnzusatz vergleichen",
+    link: "/krankenzusatz",
     tag: "Gesundheit & Kranken",
     color: "border-rose-500/30 bg-gradient-to-br from-rose-50 to-rose-100/50"
   },
   {
-    id: "bu-absicherung",
-    title: "Berufsunfähigkeits-Schutz",
-    headline: "Ihr monatliches Einkommen sichern",
-    description: "Existenzschutz Nr. 1: Vergleichen Sie zertifizierte BU-Tarife mit Verzicht auf abstrakte Verweisung.",
-    badge: "Existenzschutz",
-    buttonText: "BU berechnen",
-    link: "/berufsunfaehigkeit",
+    id: "rente-aufbau",
+    title: "Private Rentenversicherung",
+    headline: "Lebenslange Zusatzrente aufbauen",
+    description: "Schließen Sie Ihre Rentenlücke mit staatlich geförderter, steuerbegünstigter Altersvorsorge.",
+    badge: "Steuerbegünstigt",
+    buttonText: "Rente berechnen",
+    link: "/rente",
     tag: "Vorsorge & Leben",
-    color: "border-purple-500/30 bg-gradient-to-br from-purple-50 to-purple-100/50"
+    color: "border-indigo-500/30 bg-gradient-to-br from-indigo-50 to-indigo-100/50"
   }
 ];
 

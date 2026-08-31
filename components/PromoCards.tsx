@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { PROMO_HIGHLIGHTS } from '@/lib/data';
 
 const ACCENT_BARS = [
-  'accent-bar-blue',
+  'accent-bar-amber',
   'accent-bar-rose',
   'accent-bar-indigo',
 ];

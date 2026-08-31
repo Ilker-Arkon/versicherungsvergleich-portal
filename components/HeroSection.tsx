@@ -47,10 +47,10 @@ export default function HeroSection() {
 
   const photoCards = [
     {
-      title: "KFZ-Versicherung",
-      slug: "/kfz-versicherung",
-      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
-      badge: "Bis zu 850 € sparen",
+      title: "Motorradversicherung",
+      slug: "/motorrad-versicherung",
+      image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
+      badge: "Top Schutz",
     },
     {
       title: "Haftpflicht",
@@ -65,10 +65,10 @@ export default function HeroSection() {
       badge: "Testsieger 2026",
     },
     {
-      title: "Berufsunfähigkeit",
-      slug: "/berufsunfaehigkeit",
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80",
-      badge: "Existenzschutz Nr. 1",
+      title: "Rechtsschutz",
+      slug: "/rechtsschutz-versicherung",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
+      badge: "Ohne Wartezeit wählbar",
     },
   ];
 
