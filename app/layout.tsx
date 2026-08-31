@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { preconnect, prefetchDNS } from "react-dom";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -51,6 +52,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Resource Hints: Verbindung zur Partner-Domain frühzeitig aufbauen, damit der
+  // Live-Tarifrechner (Skript → iframe) schneller erscheint. `preconnect` spart
+  // DNS + TCP + TLS (~300–500 ms) beim ersten Kontakt zu form.partner-versicherung.de.
+  preconnect("https://form.partner-versicherung.de");
+  prefetchDNS("https://a.partner-versicherung.de");
+
   return (
     <html
       lang="de"
