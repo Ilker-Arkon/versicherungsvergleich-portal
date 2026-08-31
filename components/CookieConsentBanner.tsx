@@ -178,17 +178,6 @@ export default function CookieConsentBanner() {
         </div>
       )}
 
-      {/* Reopen-Button, sobald eine Entscheidung getroffen wurde */}
-      {hasChosen && !settingsOpen && (
-        <button
-          type="button"
-          onClick={openSettings}
-          className="fixed bottom-4 left-4 z-[55] inline-flex items-center gap-2 px-3 py-2 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-lg hover:bg-slate-800 transition-colors"
-        >
-          <Cookie className="w-4 h-4" />
-          Cookie-Einstellungen
-        </button>
-      )}
     </>
   );
 }

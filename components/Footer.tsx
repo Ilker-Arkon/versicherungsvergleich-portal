@@ -11,8 +11,10 @@ import {
   MapPin
 } from 'lucide-react';
 import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
+import { useCookieConsent } from '@/components/CookieConsentProvider';
 
 export default function Footer() {
+  const { openSettings } = useCookieConsent();
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800">
       {/* Trust & Guarantees Strip */}
@@ -155,6 +157,15 @@ export default function Footer() {
               <li><Link href="/impressum" className="text-slate-400 hover:text-white">Impressum</Link></li>
               <li><Link href="/datenschutz" className="text-slate-400 hover:text-white">Datenschutzerklärung</Link></li>
               <li><Link href="/erstinformation" className="text-slate-400 hover:text-white">Erstinformation gem. § 15 VersVermV</Link></li>
+              <li>
+                <button
+                  type="button"
+                  onClick={openSettings}
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  Cookie-Einstellungen
+                </button>
+              </li>
             </ul>
           </div>
         </div>
