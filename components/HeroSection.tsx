@@ -6,168 +6,226 @@ import {
   Car,
   HeartPulse,
   Briefcase,
+  ShieldCheck,
+  Home,
+  Scale,
   ArrowRight,
   CheckCircle2,
-  Star,
+  Sparkles,
+  ChevronRight,
 } from 'lucide-react';
 
+interface HeroCategoryCard {
+  title: string;
+  tag: string;
+  badge: string;
+  subtitle: string;
+  slug: string;
+  image: string;
+  icon: React.ReactNode;
+  accentGradient: string;
+  borderGlow: string;
+}
+
 export default function HeroSection() {
-  const topCards = [
+  const heroCards: HeroCategoryCard[] = [
     {
       title: "Kfz-Versicherung",
-      subtitle: "Jedes Jahr Hunderte € sparen",
+      tag: "Fahrzeug & Mobilität",
+      badge: "Bis zu 850 € / Jahr sparen",
+      subtitle: "Über 330 Tarife im Live-Test · Sofortige eVB-Nummer per SMS",
       slug: "/kfz-versicherung",
-      icon: <Car className="w-5 h-5" />,
-      accentClass: "accent-bar-blue",
-      iconBg: "bg-blue-50 text-blue-600",
-      cta: "Jetzt Beitrag berechnen & sparen",
-      description: "Gleicher Schutz, weniger zahlen — über 330 Tarife im Live-Vergleich."
+      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
+      icon: <Car className="w-4 h-4 text-blue-300" />,
+      accentGradient: "from-blue-600 to-cyan-500",
+      borderGlow: "group-hover:border-blue-400/80 group-hover:shadow-blue-500/20",
     },
     {
       title: "Private Krankenversicherung",
-      subtitle: "Chefarzt & Einzelzimmer",
+      tag: "Gesundheit & Medizin",
+      badge: "Chefarzt & Top-Schutz",
+      subtitle: "Freie Arztwahl, Einbettzimmer & hohe Beitragsrückerstattung",
       slug: "/pkv",
-      icon: <HeartPulse className="w-5 h-5" />,
-      accentClass: "accent-bar-rose",
-      iconBg: "bg-rose-50 text-rose-600",
-      cta: "Unverbindliches Angebot anfordern",
-      description: "Maßgeschneiderter Gesundheitsschutz — garantiert und nicht kürzbar."
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
+      icon: <HeartPulse className="w-4 h-4 text-rose-300" />,
+      accentGradient: "from-rose-600 to-pink-500",
+      borderGlow: "group-hover:border-rose-400/80 group-hover:shadow-rose-500/20",
     },
     {
       title: "Berufsunfähigkeit",
-      subtitle: "Existenzschutz Nr. 1",
+      tag: "Vorsorge & Einkommen",
+      badge: "Existenzschutz Nr. 1",
+      subtitle: "Monatliches Einkommen verlässlich sichern – ohne Verweisung",
       slug: "/berufsunfaehigkeit",
-      icon: <Briefcase className="w-5 h-5" />,
-      accentClass: "accent-bar-indigo",
-      iconBg: "bg-indigo-50 text-indigo-600",
-      cta: "In 2 Minuten zum besten Tarif",
-      description: "Dein Einkommen absichern — ohne abstrakte Verweisung."
-    }
-  ];
-
-  const photoCards = [
-    {
-      title: "Motorradversicherung",
-      slug: "/motorrad-versicherung",
-      image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80",
-      badge: "Top Schutz",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+      icon: <Briefcase className="w-4 h-4 text-indigo-300" />,
+      accentGradient: "from-indigo-600 to-violet-500",
+      borderGlow: "group-hover:border-indigo-400/80 group-hover:shadow-indigo-500/20",
     },
     {
-      title: "Haftpflicht",
-      slug: "/haftpflicht",
-      image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80",
+      title: "Privathaftpflicht",
+      tag: "Sach & Familie",
       badge: "Ab 3,50 € / Monat",
+      subtitle: "Bis zu 50 Mio. € Deckungssumme für Sie, Partner & Kinder",
+      slug: "/haftpflicht",
+      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80",
+      icon: <ShieldCheck className="w-4 h-4 text-emerald-300" />,
+      accentGradient: "from-emerald-600 to-teal-500",
+      borderGlow: "group-hover:border-emerald-400/80 group-hover:shadow-emerald-500/20",
     },
     {
       title: "Hausrat & Wohnen",
+      tag: "Heim & Eigentum",
+      badge: "Optimaler Schutz",
+      subtitle: "Schutz bei Feuer, Leitungswasser, Sturm & Fahrraddiebstahl",
       slug: "/hausrat",
-      image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80",
-      badge: "Top-Tarife 2026",
+      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      icon: <Home className="w-4 h-4 text-amber-300" />,
+      accentGradient: "from-amber-600 to-orange-500",
+      borderGlow: "group-hover:border-amber-400/80 group-hover:shadow-amber-500/20",
     },
     {
-      title: "Rechtsschutz",
-      slug: "/rechtsschutz-versicherung",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80",
+      title: "Rechtsschutzversicherung",
+      tag: "Recht & Sicherheit",
       badge: "Ohne Wartezeit wählbar",
+      subtitle: "Volle Kostendeckung bei Rechtsstreit, Anwalts- & Gerichtskosten",
+      slug: "/rechtsschutz-versicherung",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80",
+      icon: <Scale className="w-4 h-4 text-purple-300" />,
+      accentGradient: "from-purple-600 to-indigo-600",
+      borderGlow: "group-hover:border-purple-400/80 group-hover:shadow-purple-500/20",
     },
   ];
 
-  return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-black opacity-10 pointer-events-none" />
+  const quickLinks = [
+    { label: "Motorrad", slug: "/motorrad-versicherung" },
+    { label: "Krankenzusatz", slug: "/krankenzusatz" },
+    { label: "Risikoleben", slug: "/risikoleben" },
+    { label: "Kredit-Vergleich", slug: "/kredit-vergleich" },
+    { label: "Girokonto", slug: "/girokonto-vergleich" },
+    { label: "Baufinanzierung", slug: "/baufinanzierung" },
+  ];
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-0 md:pt-20">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 py-12 md:py-20">
+      {/* Dynamic Background Lighting Effects */}
+      <div className="absolute top-0 left-1/4 -translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header-Bereich */}
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4 backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+            <span>Unabhängiger Live-Vergleich für Deutschland</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
             Tarife vergleichen.{' '}
-            <span className="text-blue-200">Sofort sparen.</span>
+            <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-400 bg-clip-text text-transparent">
+              Sofort sparen.
+            </span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg text-blue-100 leading-relaxed">
-            Versicherungen & Finanzen — 100 % kostenlos, unverbindlich und in unter 3 Minuten zum besten Angebot.
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            Finden Sie in unter 3 Minuten den optimalen Schutz aus Hunderten geprüften Anbietern — 100 % transparent, kostenfrei und unverbindlich.
           </p>
 
           {/* Trust Row */}
-          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-blue-100">
-            <span className="flex items-center font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
-              100% Kostenlos & Unabhängig
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-300">
+            <span className="inline-flex items-center font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 mr-1.5 shrink-0" />
+              100 % Kostenlos & Unabhängig
             </span>
-            <span className="text-blue-300 hidden sm:inline">|</span>
-            <span className="flex items-center font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
-              Über 300 Tarife im Live-Vergleich
+            <span className="text-slate-600 hidden sm:inline">|</span>
+            <span className="inline-flex items-center font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 mr-1.5 shrink-0" />
+              Über 300 Tarife im Live-Test
             </span>
-            <span className="text-blue-300 hidden sm:inline">|</span>
-            <span className="flex items-center font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
+            <span className="text-slate-600 hidden sm:inline">|</span>
+            <span className="inline-flex items-center font-medium">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 mr-1.5 shrink-0" />
               256-Bit SSL Datenschutz
             </span>
           </div>
         </div>
 
-        {/* 3 Quick Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto mb-14">
-          {topCards.map((card) => (
+        {/* Einheitliches Bild-Karten Grid (3x2 Desktop, 2x3 Tablet, 1x6 Mobile) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-12">
+          {heroCards.map((card) => (
             <Link
               key={card.slug}
               href={card.slug}
-              className={`premium-card p-6 flex flex-col justify-between group ${card.accentClass}`}
+              className={`group relative h-72 sm:h-80 rounded-3xl overflow-hidden border border-white/10 ${card.borderGlow} shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between p-6 bg-slate-900`}
             >
-              <div>
-                <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-4 ${card.iconBg}`}>
-                  {card.icon}
-                </div>
-                <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                  {card.title}
-                </h3>
-                <p className="text-sm font-semibold text-emerald-600 mt-1">{card.subtitle}</p>
-                <p className="text-xs text-slate-500 mt-2 leading-relaxed">{card.description}</p>
+              {/* Hintergrundbild mit sanftem Zoom-Hover */}
+              <div className="absolute inset-0 z-0 overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={card.image}
+                  alt={card.title}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
+                />
+                {/* Dynamisches Mehrstufen-Gradient für maximale Lesbarkeit */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/30 group-hover:via-slate-950/70 transition-colors" />
               </div>
 
-              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
-                <span>{card.cta}</span>
-                <ArrowRight className="w-3.5 h-3.5 shrink-0 ml-1 group-hover:translate-x-0.5 transition-transform" />
+              {/* Karte Oben: Kategorie-Tag & Vorteil-Badge */}
+              <div className="relative z-10 flex items-start justify-between gap-2">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm">
+                  {card.icon}
+                  <span>{card.tag}</span>
+                </div>
+
+                <span className={`inline-flex items-center px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r ${card.accentGradient} border border-white/20`}>
+                  {card.badge}
+                </span>
+              </div>
+
+              {/* Karte Unten: Titel, Subtitle & Interaktiver CTA Button */}
+              <div className="relative z-10">
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1.5 line-clamp-2 leading-relaxed font-normal">
+                  {card.subtitle}
+                </p>
+
+                <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
+                  <span>Jetzt Tarife berechnen</span>
+                  <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-blue-600 flex items-center justify-center transition-all">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                </div>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* Photo Tiles Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
-          {photoCards.map((card) => (
-            <Link
-              key={card.slug}
-              href={card.slug}
-              className="relative h-52 overflow-hidden group"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={card.image}
-                alt={card.title}
-                width={600}
-                height={400}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              {/* Dark overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
-              {/* Badge top-right */}
-              <span className="absolute top-3 right-3 text-[10px] font-bold bg-blue-600 text-white px-2 py-0.5 rounded-full">
-                {card.badge}
-              </span>
-              {/* Title + CTA bottom */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-white font-bold text-base leading-tight">{card.title}</h3>
-                <span className="inline-flex items-center text-blue-200 text-xs font-semibold mt-1 group-hover:text-white transition-colors">
-                  Jetzt vergleichen <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-0.5 transition-transform" />
-                </span>
-              </div>
-            </Link>
-          ))}
+        {/* Schnellwahl-Leiste für weitere beliebte Sparten */}
+        <div className="max-w-4xl mx-auto rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-5 backdrop-blur-md">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm">
+            <span className="font-semibold text-slate-300 flex items-center gap-1.5">
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              Weitere Vergleiche:
+            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              {quickLinks.map((item) => (
+                <Link
+                  key={item.slug}
+                  href={item.slug}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600/80 text-slate-200 hover:text-white border border-white/10 transition-all font-medium inline-flex items-center gap-1"
+                >
+                  <span>{item.label}</span>
+                  <ChevronRight className="w-3 h-3 text-slate-400" />
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
