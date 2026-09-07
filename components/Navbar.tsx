@@ -268,7 +268,7 @@ export default function Navbar() {
               Jetzt kostenlos vergleichen
             </Link>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );
