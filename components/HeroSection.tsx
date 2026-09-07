@@ -62,7 +62,7 @@ export default function HeroSection() {
       title: "Hausrat & Wohnen",
       slug: "/hausrat",
       image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80",
-      badge: "Testsieger 2026",
+      badge: "Top-Tarife 2026",
     },
     {
       title: "Rechtsschutz",
@@ -89,18 +89,21 @@ export default function HeroSection() {
             Versicherungen & Finanzen — 100 % kostenlos, unverbindlich und in unter 3 Minuten zum besten Angebot.
           </p>
 
-          {/* Social Proof Row */}
-          <div className="mt-6 inline-flex items-center space-x-4 text-sm text-blue-100">
+          {/* Trust Row */}
+          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-blue-100">
             <span className="flex items-center font-medium">
-              <Star className="w-4 h-4 text-amber-400 fill-amber-400 mr-1" />
-              <strong className="text-white">4,9/5</strong>
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
+              100% Kostenlos & Unabhängig
             </span>
-            <span className="text-blue-300">|</span>
-            <span className="font-medium">150.000+ Nutzer</span>
-            <span className="text-blue-300">|</span>
+            <span className="text-blue-300 hidden sm:inline">|</span>
             <span className="flex items-center font-medium">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1" />
-              TÜV-geprüft
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
+              Über 300 Tarife im Live-Vergleich
+            </span>
+            <span className="text-blue-300 hidden sm:inline">|</span>
+            <span className="flex items-center font-medium">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 mr-1.5" />
+              256-Bit SSL Datenschutz
             </span>
           </div>
         </div>

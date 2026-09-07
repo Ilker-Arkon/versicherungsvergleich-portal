@@ -112,9 +112,10 @@ export default function ContactForm() {
         />
       </div>
 
-      <label className="flex items-start space-x-3 text-sm text-slate-600">
+      <label htmlFor="consent" className="flex items-start space-x-3 text-sm text-slate-600">
         <input
           type="checkbox"
+          id="consent"
           name="consent"
           required
           className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"

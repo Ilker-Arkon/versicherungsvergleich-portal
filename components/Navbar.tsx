@@ -224,7 +224,8 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
-              aria-label="Menü"
+              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -234,7 +235,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
+        <nav aria-label="Mobiles Menü" className="lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
           <div className="space-y-4">
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="border-b border-slate-100 pb-3">

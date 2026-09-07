@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PhoneCall, Mail, MapPin } from "lucide-react";
+import { PhoneCall, Mail, MapPin, Clock } from "lucide-react";
 import { CUSTOMER_PROFILE } from "@/lib/data";
 import { ogImageMeta } from "@/lib/seo";
 import ContactForm from "@/components/ContactForm";
@@ -85,6 +85,21 @@ export default function KontaktPage() {
                 </p>
                 <p className="text-sm text-slate-600">
                   {CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4 rounded-3xl bg-white border border-slate-200 p-6 shadow-sm">
+              <div className="p-3 bg-indigo-600/10 text-indigo-600 rounded-xl">
+                <Clock className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="font-bold text-slate-900">Service- & Öffnungszeiten</p>
+                <p className="text-sm text-slate-600 mt-0.5">
+                  {CUSTOMER_PROFILE.serviceHours}
+                </p>
+                <p className="text-xs text-slate-400 mt-1">
+                  {CUSTOMER_PROFILE.responseTime}
                 </p>
               </div>
             </div>

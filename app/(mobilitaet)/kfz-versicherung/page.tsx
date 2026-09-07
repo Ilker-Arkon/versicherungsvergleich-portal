@@ -42,7 +42,7 @@ export default function KfzPage() {
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> TÜV-geprüfte Tarifberechnung</span>
+            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Echtzeit-Tarifberechnung</span>
             <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige eVB-Nummer per SMS</span>
             <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> In 3 Minuten zum Bestpreis</span>
           </div>

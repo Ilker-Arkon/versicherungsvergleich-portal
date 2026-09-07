@@ -8,7 +8,8 @@ import {
   CheckCircle2, 
   PhoneCall, 
   Mail, 
-  MapPin
+  MapPin,
+  Clock
 } from 'lucide-react';
 import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
 import { useCookieConsent } from '@/components/CookieConsentProvider';
@@ -96,6 +97,10 @@ export default function Footer() {
               <p className="flex items-center">
                 <MapPin className="w-3.5 h-3.5 mr-2 text-blue-400" />
                 {CUSTOMER_PROFILE.street}, {CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}
+              </p>
+              <p className="flex items-center">
+                <Clock className="w-3.5 h-3.5 mr-2 text-blue-400" />
+                Servicezeiten: {CUSTOMER_PROFILE.serviceHours}
               </p>
             </div>
           </div>

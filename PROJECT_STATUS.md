@@ -1,7 +1,7 @@
 # 📋 TarifVergleich Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
-> Zuletzt aktualisiert: 30. August 2026
+> Zuletzt aktualisiert: 07. September 2026 · Stand: Sprint 1 & Basissicherung abgeschlossen
 
 ---
 
@@ -15,59 +15,55 @@
 
 ---
 
-## 🎨 2. Umgesetzte Features & Design
+## 🎨 2. Umgesetzte Features & Verifizierungen (Stand 07.09.)
 
-1. **Startseite (`app/page.tsx`):**
-   * **Hero-Bereich:** Klassischer, vertrauensvoller blauer Gradient (`bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800`) mit Texten (*„Tarife vergleichen. Sofort sparen.“*), Social-Proof-Zeile (4.9/5, 150k+ Nutzer, TÜV-geprüft).
-   * **Schnellkarten & Bildkacheln:** 3 hervorgehobene Schnellkarten + 4 große Bildkacheln für Top-Sparten (KFZ, Haftpflicht, Hausrat, BU).
-   * **Inhalte:** Trust-Badges (`bg-blue-50`), Spartenübersicht, exklusive Wechsel-Vorteile, Ratgeber-Vorschau (`GuidePreview`), Vorteile-Kacheln und FAQs.
+1. **Live-Rechner & Widget-Schutz (`components/PartnerWidget.tsx`):**
+   * **27 von 27 Kostenrechnern** vollständig verifiziert: Jeder Rechner rendert exakt 1 iFrame (kein Doppel-Mount).
+   * **Partner-ID `75137`:** Auf allen 27 Seiten in Skripten und Direct-Links aktiv und geprüft.
+   * **DSGVO Consent-Gate:** 0 Drittanbieter-Skripte vor Einwilligung, sofortige Freischaltung nach Klick.
 
-2. **Navigation (`components/Navbar.tsx`):**
-   * Trust-Leiste ganz oben (*100% Kostenlos & Unverbindlich*, *4.9/5 Bewertungen*, *In 3 Min. zum Besttarif*, *TÜV-Datenschutz*).
-   * Menü-Dropdowns mit Hover-Debounce (kein plötzliches Zuklappen), voller Breite und ohne störende Scrollbalken.
+2. **Cookie-Consent-Workflow (`components/CookieConsentBanner.tsx`):**
+   * Vollständig getestet (15/15 Checks): Banner-Anzeige, Klick auf „Alle akzeptieren“, Ablehnen („Nur notwendige“), nachträgliche Aktivierung im Rechner-Placeholder, Einstellungs-Modal und Footer-Reopen.
 
-3. **Live-Rechner & Widget-Schutz (`components/PartnerWidget.tsx`):**
-   * **Single-Injection-Guard:** Schutz gegen React StrictMode / doppeltes Mounten. Verhindert, dass externe Partnerskripte (Mr-Money / Partner-Versicherung) doppelte iFrames in die Seite einfügen.
-   * Auf allen Unterkategorien wird zuverlässig genau **1 Rechner** gerendert.
+3. **Navigation & Links (`components/Navbar.tsx` & `components/Footer.tsx`):**
+   * 33 von 33 internen Links liefern HTTP 200 (keine Broken Links).
+   * Gebrandete 404-Fehlerseite aktiv und verifiziert.
+   * Mobiles Burger-Menü mit `aria-expanded` und semantischem `<nav>` optimiert.
 
-4. **Struktur:**
-   * 27 Detailseiten sind sauber in 5 Route Groups organisiert (`(mobilitaet)`, `(sach-wohnen)`, `(gesundheit)`, `(vorsorge)`, `(finanzen)`).
+4. **Kontaktformular & Spamschutz (`app/kontakt/page.tsx`):**
+   * Client- & Server-Validierung, Honeypot-Bot-Abwehr und Server Action end-to-end verifiziert (11/11 Checks).
 
-5. **SEO-Grundlage (erledigt 30.08.):**
-   * `app/robots.ts` — `MetadataRoute.Robots` mit Sitemap-Verweis.
-   * `app/sitemap.ts` — dynamisch aus `CATEGORIES` (statische Seiten + alle Unterseiten, Priority 0.8/weekly).
-   * `app/not-found.tsx` — gebrandete 404-Seite.
-   * `app/layout.tsx` — `metadataBase`, Title-Template (`%s | TarifVergleich`) + `openGraph`.
-   * Per-Page-Metadata über `lib/seo.ts` → `subcategoryMetadata(slug)`, abgeleitet aus `CATEGORIES`.
-   * Rechtstexte (`impressum`, `datenschutz`, `erstinformation`) + `ratgeber` zu Server Components umgebaut.
-   * Favicon: `app/icon.svg` (blau→cyan Gradient + Schild-Checkmark).
+5. **Servicezeiten & Claims-Bereinigung:**
+   * Erreichbarkeitszeiten (Mo–Fr 09:00–18:00 Uhr) in Footer und Kontaktseite hinterlegt.
+   * Abmahngefährdete Werbeaussagen („TÜV-geprüft“, „150.000+ Nutzer“, „4,9/5“) durch seriöse Aussagen („Über 300 Tarife“, „100% Kostenlos & Unabhängig“) ersetzt.
 
-6. **Performance & Widgets (erledigt 31.08.):**
-   * Widget-Ladezeiten drastisch reduziert (künstliche Verzögerung von 600ms auf 100ms gekürzt, Fallback auf 1500ms, künstliche iFrame-Delays entfernt).
-   * Resource Hints: DNS-Prefetch für `tarifcheck.de` und `a.partner-versicherung.de` in `app/layout.tsx` integriert.
-   * Analyse des Tarifcheck-Partnerprogramms in `docs/PARTNER_NETWORK_ANALYSIS.md` dokumentiert.
-
-7. **Aufräumen & Sicherung:**
-   * Gelöscht: `components/ComparisonTable.tsx`, `components/InteractiveCalculator.tsx`, `build_all_pages.js`, Boilerplate-SVGs in `public/`.
-   * `master` und `main` Branches kontinuierlich synchronisiert und auf Vercel live geschaltet.
+6. **Mobile Responsiveness:**
+   * Getestet auf 375px (iPhone SE): Kein horizontaler Überlauf, Burger-Menü öffnet zuverlässig, Rechner skalieren mobil.
 
 ---
 
-## 🛠️ 3. Wichtige Befehle
+## 🛠️ 3. Bereitgestellte Test-Befehle
 
-* **Lokaler Dev-Server:** `npm run dev`
-* **Produktions-Build prüfen:** `npm run build`
-* **Widgets automatisiert prüfen:** `node scripts/verify-widgets.mjs` (braucht laufenden Dev-Server + system-Chrome)
-* **Live-Deploy via Vercel CLI:** `npx vercel --prod --yes`
-* **Git Remote:** `git push origin master`
+* **Rechner-Batch-Test (27 Seiten):** `node scripts/test-all-calculators.mjs`
+* **Cookie-Consent Workflow:** `node scripts/test-cookie-consent-flow.mjs`
+* **Navigation- & 404-Audit:** `node scripts/test-navigation.mjs`
+* **Kontaktformular-Test:** `node scripts/test-contact-form.mjs`
+* **Mobile-Responsive Audit:** `node scripts/test-mobile-responsive.mjs`
+* **Produktions-Build:** `npm run build`
 
 ---
 
-## ⚠️ 4. Offene Punkte (vor Livegang)
+## 🗺️ 4. Master-Aufgabenplan für die nächste Session (Einfach → Schwer)
 
-* **Compliance / Recht (BLOCKIERT — wartet auf User-Input):**
-  * Behauptungen verifizieren: „TÜV-geprüft", „Stiftung Warentest & Focus Money Testsieger", „150.000+ Nutzer", „4,9/5", konkrete Ersparnisse.
-  * Impressum-Angaben („Versicherungsmakler § 34d GewO", IHK Nürnberg, `Vermittlerregister`) mit Auftraggeber gegenprüfen.
-  * Fiktive Anbieternamen/-preise (Allianz Direct, HUK24, AXA, CosmosDirekt …) rechtlich bewerten.
-* **Verwaiste Seiten klären:** `haftpflicht-hausrat` und `lebensversicherung` — entweder verlinken oder entfernen.
-* **`NEXT_PUBLIC_SITE_URL`** für Produktion setzen (steuert `metadataBase`, `robots.txt`-Sitemap-URL und `sitemap.xml`-URLs; Default `http://localhost:3000`).
+| Nr. | Aufgabe / Bereich | Stufe | Status | Empfohlene KI | Nächste Aktion |
+|:---:|:---|:---:|:---:|:---:|:---|
+| **01** | Support- & Öffnungszeiten | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Eingebaut in Footer & `/kontakt`. |
+| **02** | Trust-Badges & Claims bereinigen | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Unbelegte Behauptungen entfernt. |
+| **03** | Mobile Viewport Audit | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6/6 Tests auf 375px bestanden. |
+| **04** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | **NÄCHSTER SCHRITT** | ⚡ **Gemini Flash** | Lighthouse-Audit für Core Web Vitals ausführen & dokumentieren. |
+| **05** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | CHECK24-iFrame CSP Warnings (`idb.check24.de`) analysieren. |
+| **06** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Kontraste & Heading-Hierarchie nach WCAG 2.1 AA optimieren. |
+| **07** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Console-Stub in `lib/mailer.ts` durch Resend API ersetzen. |
+| **08** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Wartet auf Vorlagen | ⚡ **Gemini Flash** | Texte vom Händlerbund 1:1 einbinden (Impressum, Datenschutz, Erstinfo, AGB). |
+| **09** | **Eigene Domain & E-Mail aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Domain auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen. |
+| **10** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 04–09 | ⚡ **Gemini Flash** | End-to-End-Smoke-Test unter Produktiv-Domain. |
