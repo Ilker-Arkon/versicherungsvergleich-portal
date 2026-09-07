@@ -59,11 +59,12 @@
 |:---:|:---|:---:|:---:|:---:|:---|
 | **01** | Support- & Öffnungszeiten | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Eingebaut in Footer & `/kontakt`. |
 | **02** | Trust-Badges & Claims bereinigen | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Unbelegte Behauptungen entfernt. |
-| **03** | Mobile Viewport Audit | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6/6 Tests auf 375px bestanden. |
-| **04** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | **NÄCHSTER SCHRITT** | ⚡ **Gemini Flash** | Lighthouse-Audit für Core Web Vitals ausführen & dokumentieren. |
-| **05** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | CHECK24-iFrame CSP Warnings (`idb.check24.de`) analysieren. |
-| **06** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Kontraste & Heading-Hierarchie nach WCAG 2.1 AA optimieren. |
-| **07** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Console-Stub in `lib/mailer.ts` durch Resend API ersetzen. |
-| **08** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Wartet auf Vorlagen | ⚡ **Gemini Flash** | Texte vom Händlerbund 1:1 einbinden (Impressum, Datenschutz, Erstinfo, AGB). |
-| **09** | **Eigene Domain & E-Mail aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Domain auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen. |
-| **10** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 04–09 | ⚡ **Gemini Flash** | End-to-End-Smoke-Test unter Produktiv-Domain. |
+| **03** | Hero-Bereich: Einheitliches Bild-Grid | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6er-Bildkarten-Grid mit Zoom-Hover & Schnellwahl umgesetzt. |
+| **04** | Mobile Viewport Audit (375px) | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6/6 Tests auf 375px bestanden. |
+| **05** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | **NÄCHSTER SCHRITT** | ⚡ **Gemini Flash** | Lighthouse-Audit für Core Web Vitals ausführen & dokumentieren. |
+| **06** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | CHECK24-iFrame CSP Warnings (`idb.check24.de`) analysieren. |
+| **07** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Kontraste & Heading-Hierarchie nach WCAG 2.1 AA optimieren. |
+| **08** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Console-Stub in `lib/mailer.ts` durch Resend API ersetzen. |
+| **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Wartet auf Vorlagen | ⚡ **Gemini Flash** | Texte vom Händlerbund 1:1 einbinden (Impressum, Datenschutz, Erstinfo, AGB). |
+| **10** | **Eigene Domain & E-Mail aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Domain auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen. |
+| **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 05–10 | ⚡ **Gemini Flash** | End-to-End-Smoke-Test unter Produktiv-Domain. |
