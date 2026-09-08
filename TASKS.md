@@ -25,7 +25,7 @@
 | **07** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Farbkontraste (`text-slate-400` auf weiß) nach WCAG 2.1 AA anheben, Heading-Hierarchie (h1→h2→h3) semantisch bereinigen. |
 | **08** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Bisherigen Console-Stub in `lib/mailer.ts` durch echten E-Mail-Versand (Resend API) mit Benachrichtigungstemplate ersetzen. |
 | **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Text nötig | ⚡ **Gemini Flash** | Sobald die Vorlagen vom Händlerbund vorliegen: 1:1 Einbindung in `/impressum`, `/datenschutz`, `/erstinformation` und `/agb`. |
-| **10** | **Eigene Domain & E-Mail-Postfach aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Echte Domain (z. B. `tarifvergleich.de`) auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen und geschäftliche E-Mail hinterlegen. |
+| **10** | **Eigene Domain aufgeschaltet** | 🔴 Komplex | [x] Erledigt (08.09.) | ⚡ **Gemini Flash** | `sichertarif.de` & `www.sichertarif.de` mit Vercel DNS verbunden, SSL aktiv, SITE_URL gesetzt. |
 | **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 01–10 | ⚡ **Gemini Flash** | Vollständiger End-to-End-Smoke-Test aller 27 Rechner, Formulare und DSGVO-Einwilligungen unter Produktiv-Domain. |
 
 ---
