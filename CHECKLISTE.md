@@ -105,7 +105,7 @@
 
 ### 🟡 Branding, Domain & Infrastruktur
 
-- [ ] **Domain** registrieren (z. B. `tarifvergleich.de`) und auf Vercel anbinden
+- [ ] **Domain** registrieren (z. B. `sichertarif.de`) und auf Vercel anbinden
 - [ ] **Firmen-/Markenname** festlegen (steuert Logo, E-Mail, Impressum)
 - [ ] **Professionelles Logo** (Vektor/SVG, Favicon-Varianten, OG-Image/Social-Preview)
 - [ ] **E-Mail-Postfach** (domaingebunden, z. B. `info@…` / `kontakt@…`) — ersetzt private Gmail

@@ -1,4 +1,4 @@
-# 🗺️ Roadmap — TarifVergleich Portal
+# 🗺️ Roadmap — SicherVergleich Portal
 
 > **Reihenfolge nach Abhängigkeiten, nicht nach Prio.**
 > Diese Datei ergänzt `TASKS.md` (Quelle der Wahrheit für offene Punkte) um die
@@ -69,7 +69,7 @@ Datenschutz und alle Vertrauens-Badges abgeleitet werden können.
 
 > **Voraussetzung** für: professionelle E-Mail, korrekte `metadataBase`/Sitemap/OG.
 
-- [ ] **Domain registrieren** (z. B. `tarifvergleich.de`) und auf Vercel anbinden
+- [ ] **Domain registrieren** (z. B. `SicherVergleich.de`) und auf Vercel anbinden
 - [ ] **Professionelles E-Mail-Postfach** (Google Workspace / Microsoft 365 / Mailserver) —
       ersetzt die private Gmail in `CUSTOMER_PROFILE.email`
 - [ ] **Logo** (Vektor/SVG, Favicon-Varianten, OG-/Social-Preview-Image)

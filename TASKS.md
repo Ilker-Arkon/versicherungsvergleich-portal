@@ -1,4 +1,4 @@
-# ✅ Aufgaben & Plan — TarifVergleich Portal
+# ✅ Aufgaben & Plan — SicherVergleich Portal
 
 > **Diese Datei wird von jeder neuen Session automatisch geladen** (via `CLAUDE.md` → `@TASKS.md`).
 > Stand: 07. September 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
@@ -43,3 +43,4 @@
 - [x] **Kontaktkanäle im Layout:** WhatsApp-Button, Anrufen-Button und `/kontakt`-Seite implementiert.
 - [x] **Hero-Bereich Bild-Karten Redesign:** Einheitliches, animiertes 6er-Bildkarten-Grid mit sanftem Zoom-Hover, dynamischem Gradient-Overlay, Glassmorphism-Badges und Schnellwahl-Leiste (07.09.).
 - [x] **Mobile-Responsive Audit (375px):** 6/6 Checks bestanden — kein Überlauf, Burger-Menü mit ARIA-Accessibility, Rechner-Skalierung, Floating Buttons (07.09.).
+- [x] **Top-Bar & Branding Update:** Markenname auf "SicherVergleich" geändert, Trust-Bar im Header harmonisiert und erweitert (08.09.).

@@ -1,4 +1,4 @@
-# 📋 TarifVergleich Portal — Projektstatus & Handover
+# 📋 SicherVergleich Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
 > Zuletzt aktualisiert: 07. September 2026 · Stand: Sprint 1 & Basissicherung abgeschlossen
@@ -7,7 +7,7 @@
 
 ## 🎯 1. Projekt-Überblick & Architektur
 
-* **Projektname:** TarifVergleich (Versicherungsvergleich Portal)
+* **Projektname:** SicherVergleich (Versicherungsvergleich Portal)
 * **Framework:** Next.js 16 (App Router, Turbopack, Tailwind CSS, Lucide Icons)
 * **GitHub Repository:** `https://github.com/Ilker-Arkon/versicherungsvergleich-portal`
 * **Live Deployment (Vercel):** `https://eager-pythagoras-iota.vercel.app`
