@@ -177,14 +177,16 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/30 group-hover:via-slate-950/70 transition-colors" />
               </div>
 
-              {/* Karte Oben: Kategorie-Tag & Vorteil-Badge */}
-              <div className="relative z-10 flex items-start justify-between gap-2 overflow-hidden">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm shrink-0">
-                  {card.icon}
-                  <span className="truncate">{card.tag}</span>
+              {/* Karte Oben: Kategorie-Tag & Vorteil-Badge untereinander */}
+              <div className="relative z-10 flex flex-col items-start gap-2.5">
+                {/* Kategorie-Pille */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm">
+                  <div className="scale-90">{card.icon}</div>
+                  <span className="whitespace-nowrap">{card.tag}</span>
                 </div>
 
-                <span className={`whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r ${card.accentGradient} border border-white/20`}>
+                {/* Vorteil-Pille (immer einzeilig, keine abgeschnittenen Texte) */}
+                <span className={`whitespace-nowrap inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r ${card.accentGradient} border border-white/20`}>
                   {card.badge}
                 </span>
               </div>
