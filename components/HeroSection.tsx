@@ -177,32 +177,32 @@ export default function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/30 group-hover:via-slate-950/70 transition-colors" />
               </div>
 
-              {/* Karte Oben: Kategorie-Tag & Vorteil-Badge untereinander */}
-              <div className="relative z-10 flex flex-col items-start gap-2.5">
-                {/* Kategorie-Pille */}
-                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm">
-                  <div className="scale-90">{card.icon}</div>
+                {/* Karte Oben: Vorteil-Badge (Zentriert & Größer) */}
+                <div className="relative z-10 flex justify-center w-full">
+                  <span className="whitespace-nowrap inline-flex items-center px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-black uppercase tracking-widest text-white shadow-lg bg-gradient-to-r from-blue-600 to-cyan-500 border border-white/20">
+                    {card.badge}
+                  </span>
+                </div>
+
+              {/* Karte Unten: Kategorie, Titel, Subtitle & CTA (Alles zentriert gestapelt) */}
+              <div className="relative z-10 flex flex-col items-center mt-auto text-center pt-8">
+                {/* Kategorie-Pille (Zentriert über Titel) */}
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 rounded-full text-xs sm:text-sm font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm">
+                  {card.icon}
                   <span className="whitespace-nowrap">{card.tag}</span>
                 </div>
 
-                {/* Vorteil-Pille (immer einzeilig, keine abgeschnittenen Texte) */}
-                <span className="whitespace-nowrap inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r from-blue-600 to-cyan-500 border border-white/20">
-                  {card.badge}
-                </span>
-              </div>
-
-              {/* Karte Unten: Titel, Subtitle & Interaktiver CTA Button */}
-              <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 mt-1.5 line-clamp-2 leading-relaxed font-normal">
+                
+                <p className="text-xs sm:text-sm text-slate-300 mt-2 line-clamp-2 leading-relaxed font-normal">
                   {card.subtitle}
                 </p>
 
-                <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
-                  <span>Jetzt Tarife berechnen</span>
-                  <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-blue-600 flex items-center justify-center transition-all">
+                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-center gap-3 w-full text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
+                  <span className="tracking-wide uppercase text-[11px] sm:text-xs">Jetzt Tarife berechnen</span>
+                  <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-blue-600 flex items-center justify-center transition-all shadow-md">
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
