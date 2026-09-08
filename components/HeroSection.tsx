@@ -173,45 +173,35 @@ export default function HeroSection() {
                   decoding="async"
                   className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                {/* Dynamisches Gradient: Nur von unten nach oben dunkel, Bild bleibt oben komplett frei */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent transition-colors" />
+                {/* Dynamisches Mehrstufen-Gradient für maximale Lesbarkeit */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-slate-950/30 group-hover:via-slate-950/70 transition-colors" />
               </div>
 
-              {/* Karte Content: Alles ordentlich unten gestapelt */}
-              <div className="relative z-10 h-full flex flex-col justify-end">
-                
-                {/* Metadaten-Reihe (Kategorie & Vorteil) direkt über dem Titel */}
-                <div className="flex items-center flex-wrap gap-x-3 gap-y-1.5 mb-3">
-                  <div className="flex items-center gap-1.5 text-slate-300">
-                    <div className="opacity-70 scale-90">{card.icon}</div>
-                    <span className="text-[9px] font-semibold tracking-widest uppercase">
-                      {card.tag}
-                    </span>
-                  </div>
-                  
-                  {/* Trennpunkt (nur sichtbar wenn genug Platz) */}
-                  <span className="hidden sm:inline-block text-white/20 text-[10px]">•</span>
-
-                  <span className={`whitespace-nowrap text-[9.5px] sm:text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-r ${card.accentGradient} bg-clip-text text-transparent`}>
-                    {card.badge}
-                  </span>
+              {/* Karte Oben: Kategorie-Tag & Vorteil-Badge */}
+              <div className="relative z-10 flex items-start justify-between gap-2 overflow-hidden">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/15 backdrop-blur-md border border-white/20 text-white shadow-sm shrink-0">
+                  {card.icon}
+                  <span className="truncate">{card.tag}</span>
                 </div>
 
-                {/* Titel */}
+                <span className={`whitespace-nowrap inline-flex items-center px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r ${card.accentGradient} border border-white/20`}>
+                  {card.badge}
+                </span>
+              </div>
+
+              {/* Karte Unten: Titel, Subtitle & Interaktiver CTA Button */}
+              <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
                   {card.title}
                 </h3>
-                
-                {/* Subtitle */}
-                <p className="text-xs sm:text-sm text-slate-300 mt-2 line-clamp-2 leading-relaxed font-normal">
+                <p className="text-xs sm:text-sm text-slate-300 mt-1.5 line-clamp-2 leading-relaxed font-normal">
                   {card.subtitle}
                 </p>
 
-                {/* CTA / Button */}
-                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
-                  <span className="tracking-wide uppercase text-[11px] sm:text-xs">Jetzt Tarife berechnen</span>
-                  <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600 group-hover:border-blue-500 flex items-center justify-center transition-all shadow-lg backdrop-blur-md">
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
+                  <span>Jetzt Tarife berechnen</span>
+                  <div className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-blue-600 flex items-center justify-center transition-all">
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
                   </div>
                 </div>
               </div>
