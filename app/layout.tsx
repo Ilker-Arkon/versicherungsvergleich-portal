@@ -9,6 +9,7 @@ import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ContactFab from "@/components/ContactFab";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { ogImageMeta } from "@/lib/seo";
+import { CUSTOMER_PROFILE } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
