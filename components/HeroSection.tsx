@@ -186,7 +186,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Vorteil-Pille (immer einzeilig, keine abgeschnittenen Texte) */}
-                <span className={`whitespace-nowrap inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r ${card.accentGradient} border border-white/20`}>
+                <span className="whitespace-nowrap inline-flex items-center px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider text-white shadow-md bg-gradient-to-r from-blue-600 to-cyan-500 border border-white/20">
                   {card.badge}
                 </span>
               </div>
