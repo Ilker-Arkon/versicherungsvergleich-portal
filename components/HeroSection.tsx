@@ -173,37 +173,41 @@ export default function HeroSection() {
                   decoding="async"
                   className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
-                {/* Dynamisches Mehrstufen-Gradient: Dunkel oben & unten für perfekte Lesbarkeit, Bild leuchtet in der Mitte */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-slate-950/90 group-hover:via-slate-950/50 transition-colors" />
+                {/* Dynamisches Gradient: Nur von unten nach oben dunkel, Bild bleibt oben komplett frei */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent transition-colors" />
               </div>
 
-              {/* Karte Oben: Elegante Typografie statt klobiger Boxen */}
-              <div className="relative z-10 flex items-center justify-between gap-3 border-b border-white/10 pb-3">
-                {/* Links: Kategorie mit dezentem Icon */}
-                <div className="flex items-center gap-2">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-                    <div className="scale-75">{card.icon}</div>
+              {/* Karte Content: Alles ordentlich unten gestapelt */}
+              <div className="relative z-10 h-full flex flex-col justify-end">
+                
+                {/* Metadaten-Reihe (Kategorie & Vorteil) direkt über dem Titel */}
+                <div className="flex items-center flex-wrap gap-x-3 gap-y-1.5 mb-3">
+                  <div className="flex items-center gap-1.5 text-slate-300">
+                    <div className="opacity-70 scale-90">{card.icon}</div>
+                    <span className="text-[9px] font-semibold tracking-widest uppercase">
+                      {card.tag}
+                    </span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] text-slate-300 font-semibold tracking-widest uppercase">
-                    {card.tag}
+                  
+                  {/* Trennpunkt (nur sichtbar wenn genug Platz) */}
+                  <span className="hidden sm:inline-block text-white/20 text-[10px]">•</span>
+
+                  <span className={`whitespace-nowrap text-[9.5px] sm:text-[10px] font-black uppercase tracking-[0.1em] sm:tracking-[0.15em] bg-gradient-to-r ${card.accentGradient} bg-clip-text text-transparent`}>
+                    {card.badge}
                   </span>
                 </div>
 
-                {/* Rechts: Vorteil als leuchtender Text ohne störenden Kasten */}
-                <span className={`text-[9px] sm:text-[10px] font-black uppercase tracking-[0.15em] bg-gradient-to-r ${card.accentGradient} bg-clip-text text-transparent text-right`}>
-                  {card.badge}
-                </span>
-              </div>
-
-              {/* Karte Unten: Titel, Subtitle & Interaktiver CTA Button */}
-              <div className="relative z-10">
+                {/* Titel */}
                 <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
                   {card.title}
                 </h3>
+                
+                {/* Subtitle */}
                 <p className="text-xs sm:text-sm text-slate-300 mt-2 line-clamp-2 leading-relaxed font-normal">
                   {card.subtitle}
                 </p>
 
+                {/* CTA / Button */}
                 <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between text-xs sm:text-sm font-bold text-cyan-300 group-hover:text-white transition-colors">
                   <span className="tracking-wide uppercase text-[11px] sm:text-xs">Jetzt Tarife berechnen</span>
                   <div className="w-8 h-8 rounded-full bg-white/5 border border-white/10 group-hover:bg-blue-600 group-hover:border-blue-500 flex items-center justify-center transition-all shadow-lg backdrop-blur-md">
