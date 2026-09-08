@@ -20,8 +20,8 @@
 | **02** | **Trust-Badges & Werbe-Claims bereinigen** | 🟢 Leicht | [x] Erledigt (07.09.) | ⚡ **Gemini Flash** | Unbelegte Behauptungen („TÜV-geprüft“, „150.000+ Nutzer“, „4,9/5“) in `HeroSection.tsx`, `data.ts` und `kfz-versicherung/page.tsx` durch 100% ehrliche, abmahnsichere Aussagen ersetzt. |
 | **03** | **Hero-Bereich: Einheitliches Bild-Grid** | 🟢 Leicht | [x] Erledigt (07.09.) | ⚡ **Gemini Flash** | 3 weiße Boxen + 4 Bilder durch ein einheitliches, animiertes 6er-Bildkarten-Grid mit Zoom-Hover, dynamischem Gradient & Schnellwahl-Leiste ersetzt. |
 | **04** | **Responsive Mobile Audit (375px)** | 🟢 Leicht | [x] Erledigt (07.09.) | ⚡ **Gemini Flash** | Playwright Mobile-Test (iPhone 375px): 6/6 Checks bestanden (Kein Überlauf, Burger-Menü mit ARIA-Accessibility, Rechner-Skalierung). |
-| **05** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | **NÄCHSTER SCHRITT** | ⚡ **Gemini Flash** | Automatisiertes Lighthouse-Audit ausführen, Core Web Vitals (LCP, CLS, FID) und SEO-Score dokumentieren. |
-| **06** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Browser-Konsolenmeldungen bei CHECK24-iFrames (`idb.check24.de`) untersuchen und saubere Konfiguration sicherstellen. |
+| **05** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | [x] Erledigt (08.09.) | ⚡ **Gemini Flash** | Automatisiertes Lighthouse-Audit auf Live-Domain ausgeführt: Performance 93, Accessibility 91, Best Practices 100, SEO 100, CLS 0, FCP 1.1s. |
+| **06** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | **NÄCHSTER SCHRITT** | 🧠 **Claude Sonnet** | Browser-Konsolenmeldungen bei CHECK24-iFrames (`idb.check24.de`) untersuchen und saubere Konfiguration sicherstellen. |
 | **07** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Farbkontraste (`text-slate-400` auf weiß) nach WCAG 2.1 AA anheben, Heading-Hierarchie (h1→h2→h3) semantisch bereinigen. |
 | **08** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Bisherigen Console-Stub in `lib/mailer.ts` durch echten E-Mail-Versand (Resend API) mit Benachrichtigungstemplate ersetzen. |
 | **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Text nötig | ⚡ **Gemini Flash** | Sobald die Vorlagen vom Händlerbund vorliegen: 1:1 Einbindung in `/impressum`, `/datenschutz`, `/erstinformation` und `/agb`. |
@@ -44,3 +44,5 @@
 - [x] **Hero-Bereich Bild-Karten Redesign:** Einheitliches, animiertes 6er-Bildkarten-Grid mit sanftem Zoom-Hover, dynamischem Gradient-Overlay, Glassmorphism-Badges und Schnellwahl-Leiste (07.09.).
 - [x] **Mobile-Responsive Audit (375px):** 6/6 Checks bestanden — kein Überlauf, Burger-Menü mit ARIA-Accessibility, Rechner-Skalierung, Floating Buttons (07.09.).
 - [x] **Top-Bar & Branding Update:** Markenname auf "SicherVergleich" geändert, Trust-Bar im Header harmonisiert und erweitert (08.09.).
+- [x] **Lighthouse Performance- & SEO-Messung:** Audit direkt gegen Live-Domain https://sichertarif.de bestanden — Performance: 93, Accessibility: 91, Best Practices: 100, SEO: 100, CLS: 0, FCP: 1.1s (08.09.).
+- [x] **Vercel Projekt-Bereinigung:** Projekt von 'eager-pythagoras' in 'sichervergleich' umbenannt, package.json angepasst (08.09.).
