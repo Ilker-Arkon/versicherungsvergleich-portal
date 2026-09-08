@@ -75,25 +75,28 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-      {/* Trust Bar */}
-      <div className="bg-slate-900 text-slate-400 text-xs py-1.5 px-4 hidden md:block">
+      {/* Trust Bar (Stimmig & Harmonisch) */}
+      <div className="bg-slate-950 text-slate-300 text-[11px] py-2 px-4 hidden md:block border-b border-white/5">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center divide-x divide-slate-700">
-            <span className="flex items-center text-emerald-400 font-semibold pr-4">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1 shrink-0" /> 100 % Kostenlos & Unverbindlich
+          <div className="flex items-center gap-4 lg:gap-6">
+            <span className="flex items-center font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> 100 % Kostenlos & Unverbindlich
             </span>
-            <span className="flex items-center px-4 text-slate-300">
-              ✦ Über 20 Jahre Erfahrung
+            <span className="hidden lg:flex items-center font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Über 300 Tarife im Live-Test
             </span>
-            <span className="flex items-center px-4">
-              🔒 Sicher & Datenschutzkonform
+            <span className="flex items-center font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Über 20 Jahre Erfahrung
             </span>
-            <span className="flex items-center pl-4 text-amber-400 font-semibold">
-              ⚡ In unter 3 Min. zum Bestpreis
+            <span className="hidden xl:flex items-center font-medium">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Sicher & Datenschutzkonform
+            </span>
+            <span className="flex items-center font-medium text-blue-100">
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> In unter 3 Min. zum Bestpreis
             </span>
           </div>
-          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors shrink-0 ml-4">
-            <PhoneCall className="w-3.5 h-3.5 mr-1 text-emerald-400" />
+          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors shrink-0 ml-4 font-semibold text-blue-400">
+            <PhoneCall className="w-3 h-3 mr-1.5" />
             {CUSTOMER_PROFILE.phone}
           </a>
         </div>
@@ -102,13 +105,18 @@ export default function Navbar() {
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2.5 group shrink-0">
-            <div className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white shadow-sm group-hover:bg-blue-700 transition-colors">
-              <ShieldCheck className="w-5 h-5" />
+          {/* Logo (Platzhalter + Neuer Name) */}
+          <Link href="/" className="flex items-center space-x-3 group shrink-0">
+            {/* Logo Placeholder (für zukünftige Bild-Datei) */}
+            <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 overflow-hidden relative">
+              <span className="text-[10px] font-bold text-blue-400">LOGO</span>
+              {/* Wenn das Logo da ist, kann es hier einfach über das <img> Tag eingebunden werden:
+              <img src="/logo.svg" alt="SicherVergleich Logo" className="absolute inset-0 w-full h-full object-contain" /> */}
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">
-              Tarif<span className="text-blue-600">Vergleich</span>
+            
+            {/* Brand Text */}
+            <span className="text-xl font-black tracking-tight text-slate-900">
+              Sicher<span className="text-blue-600">Vergleich</span>
             </span>
           </Link>
 

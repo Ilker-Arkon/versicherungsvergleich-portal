@@ -4,7 +4,7 @@ import { ShieldCheck, Lock } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
-  description: "Datenschutzerklärung von TarifVergleich – Informationen zum Umgang mit personenbezogenen Daten gemäß DSGVO.",
+  description: "Datenschutzerklärung von SicherVergleich – Informationen zum Umgang mit personenbezogenen Daten gemäß DSGVO.",
   alternates: { canonical: "/datenschutz" },
 };
 
@@ -29,7 +29,7 @@ export default function DatenschutzPage() {
             <div className="border-t border-slate-100 pt-6">
               <h2 className="text-lg font-bold text-slate-900 mb-2">2. Verantwortliche Stelle</h2>
               <p className="font-semibold text-slate-800">{CUSTOMER_PROFILE.name}</p>
-              <p>TarifVergleich Direkt</p>
+              <p>SicherVergleich Direkt</p>
               <p>{CUSTOMER_PROFILE.street}</p>
               <p>{CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}</p>
               <p>Telefon: {CUSTOMER_PROFILE.phone}</p>
@@ -39,7 +39,7 @@ export default function DatenschutzPage() {
             <div className="border-t border-slate-100 pt-6">
               <h2 className="text-lg font-bold text-slate-900 mb-2">3. Datenerfassung bei Nutzung unserer Vergleichsrechner</h2>
               <p>
-                Wenn Sie unsere kostenlosen Tarifvergleiche nutzen, werden ausschließlich die für den jeweiligen Vergleich notwendigen technischen und tarifrelevanten Parameter (z. B. Postleitzahl, Fahrzeugtyp, gewünschter Deckungsumfang) verschlüsselt verarbeitet.
+                Wenn Sie unsere kostenlosen SicherVergleiche nutzen, werden ausschließlich die für den jeweiligen Vergleich notwendigen technischen und tarifrelevanten Parameter (z. B. Postleitzahl, Fahrzeugtyp, gewünschter Deckungsumfang) verschlüsselt verarbeitet.
               </p>
             </div>
 

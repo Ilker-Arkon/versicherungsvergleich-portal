@@ -179,7 +179,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-slate-950/90 py-5 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-3">
-          <p>© {new Date().getFullYear()} TarifVergleich · Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
+          <p>© {new Date().getFullYear()} SicherVergleich · Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
           <span className="flex items-center"><ShieldCheck className="w-3.5 h-3.5 mr-1 text-emerald-500" /> Geprüfte Vergleichsstandards</span>
         </div>
       </div>

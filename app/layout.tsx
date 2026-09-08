@@ -24,16 +24,26 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
-    template: "%s | TarifVergleich",
+    template: "%s | SicherVergleich",
   },
   description:
-    "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge. Sparen Sie bares Geld mit unserem Experten-Vergleich.",
+    "Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Vorsorge. Finden Sie in wenigen Minuten die besten Tarife und sparen Sie Geld.",
+  keywords: [
+    "Versicherungsvergleich",
+    "Finanzvergleich",
+    "Kfz-Versicherung",
+    "Private Krankenversicherung",
+    "Kreditvergleich",
+    "Girokonto Vergleich",
+  ],
+  authors: [{ name: CUSTOMER_PROFILE.name }],
+  creator: CUSTOMER_PROFILE.name,
   openGraph: {
-    title: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
+    title: "Top Tarife vergleichen und sparen",
     description:
       "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
     url: "/",
-    siteName: "TarifVergleich",
+    siteName: "SicherVergleich",
     locale: "de_DE",
     type: "website",
     images: [ogImageMeta("Tarife vergleichen. Sofort sparen.")],

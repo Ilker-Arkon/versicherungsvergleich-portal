@@ -7,18 +7,18 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Kontakt",
   description:
-    "Kontaktieren Sie das TarifVergleich-Team: telefonisch, per E-Mail oder direkt über das Kontaktformular.",
+    "Kontaktieren Sie das SicherVergleich-Team: telefonisch, per E-Mail oder direkt über das Kontaktformular.",
   alternates: { canonical: "/kontakt" },
   openGraph: {
     title: "Kontakt",
     description:
-      "Kontaktieren Sie das TarifVergleich-Team: telefonisch, per E-Mail oder direkt über das Kontaktformular.",
+      "Kontaktieren Sie das SicherVergleich-Team: telefonisch, per E-Mail oder direkt über das Kontaktformular.",
     images: [ogImageMeta("Kontakt")],
   },
   twitter: {
     card: "summary_large_image",
     title: "Kontakt",
-    description: "Kontaktieren Sie das TarifVergleich-Team.",
+    description: "Kontaktieren Sie das SicherVergleich-Team.",
     images: [ogImageMeta("Kontakt")],
   },
 };
