@@ -115,9 +115,12 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header-Bereich */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/30 text-blue-300 text-xs font-semibold mb-4 backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-            <span>Unabhängiger Live-Vergleich für Deutschland</span>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-r from-transparent to-slate-400/40"></div>
+            <span className="text-slate-400 text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase">
+              Unabhängiger Live-Vergleich für Deutschland
+            </span>
+            <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-l from-transparent to-slate-400/40"></div>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12]">
@@ -151,7 +154,7 @@ export default function HeroSection() {
         </div>
 
         {/* Einheitliches Bild-Karten Grid (3x2 Desktop, 2x3 Tablet, 1x6 Mobile) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mb-16">
           {heroCards.map((card) => (
             <Link
               key={card.slug}
@@ -206,25 +209,24 @@ export default function HeroSection() {
           ))}
         </div>
 
-        {/* Schnellwahl-Leiste für weitere beliebte Sparten */}
-        <div className="max-w-4xl mx-auto rounded-2xl bg-white/5 border border-white/10 p-4 sm:p-5 backdrop-blur-md">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs sm:text-sm">
-            <span className="font-semibold text-slate-300 flex items-center gap-1.5">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              Weitere Vergleiche:
-            </span>
-            <div className="flex flex-wrap items-center gap-2">
-              {quickLinks.map((item) => (
-                <Link
-                  key={item.slug}
-                  href={item.slug}
-                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-blue-600/80 text-slate-200 hover:text-white border border-white/10 transition-all font-medium inline-flex items-center gap-1"
-                >
-                  <span>{item.label}</span>
-                  <ChevronRight className="w-3 h-3 text-slate-400" />
-                </Link>
-              ))}
-            </div>
+        {/* Schnellwahl-Leiste für weitere beliebte Sparten (Next-Level Design) */}
+        <div className="relative max-w-5xl mx-auto pt-10 border-t border-white/5">
+          <p className="text-center text-[10px] sm:text-xs font-semibold text-slate-500 tracking-[0.2em] uppercase mb-8">
+            Entdecken Sie weitere Vergleiche
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-8 sm:gap-x-12 gap-y-6 text-sm">
+            {quickLinks.map((item) => (
+              <Link
+                key={item.slug}
+                href={item.slug}
+                className="group relative text-slate-400 hover:text-white transition-colors duration-300 flex items-center gap-2 font-medium"
+              >
+                <span>{item.label}</span>
+                <ChevronRight className="w-3.5 h-3.5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-blue-400" />
+                {/* Underline Hover-Effekt */}
+                <span className="absolute -bottom-1.5 left-0 w-0 h-[2px] bg-gradient-to-r from-blue-400 to-cyan-400 transition-all duration-300 group-hover:w-full rounded-full"></span>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
