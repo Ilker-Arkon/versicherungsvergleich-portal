@@ -41,10 +41,10 @@ export default function KfzPage() {
             Über 330 Kfz-Tarife im transparenten Echtzeit-Vergleich. Sichern Sie sich starken Vollkasko-, Teilkasko- oder Haftpflichtschutz — und sparen Sie jedes Jahr Hunderte Euro.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Echtzeit-Tarifberechnung</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige eVB-Nummer per SMS</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> In 3 Minuten zum Bestpreis</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Echtzeit-Tarifberechnung</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Sofortige eVB-Nummer per SMS</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> In 3 Minuten zum Bestpreis</span>
           </div>
         </div>
 
@@ -63,23 +63,23 @@ export default function KfzPage() {
         </div>
 
         {/* Advice box */}
-        <div className="premium-card p-8 mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-blue-600 mr-2" />
-            Worauf Sie beim Kfz-Versicherungsvergleich 2026 achten sollten
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <ShieldCheck className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
+            <span>Worauf Sie beim Kfz-Versicherungsvergleich 2026 achten sollten</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">1. Deckungssumme 100 Mio. €</p>
-              <p className="text-xs text-slate-500">Wählen Sie stets die pauschale Höchstdeckung von 100 Mio. € für Personen-, Sach- und Vermögensschäden.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Wählen Sie stets die pauschale Höchstdeckung von 100 Mio. € für Personen-, Sach- und Vermögensschäden.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">2. Erweiterte Elementarschäden</p>
-              <p className="text-xs text-slate-500">Achten Sie auf Absicherung bei Lawinen, Muren, Erdrutsch sowie Tierbisse aller Art inkl. Folgeschäden.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Achten Sie auf Absicherung bei Lawinen, Muren, Erdrutsch sowie Tierbisse aller Art inkl. Folgeschäden.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">3. Mallorca-Police</p>
-              <p className="text-xs text-slate-500">Erhöht die oft zu niedrigen Mindestdeckungssummen bei Mietwagen im europäischen Ausland auf deutsches Niveau.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Erhöht die oft zu niedrigen Mindestdeckungssummen bei Mietwagen im europäischen Ausland auf deutsches Niveau.</p>
             </div>
           </div>
         </div>

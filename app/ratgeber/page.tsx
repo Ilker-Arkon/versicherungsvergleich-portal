@@ -46,7 +46,7 @@ export default function RatgeberPage() {
           {GUIDE_ARTICLES.map((article, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
+              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between text-xs text-slate-400 mb-4">
@@ -58,7 +58,7 @@ export default function RatgeberPage() {
                     {article.readTime}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors hyphens-auto break-words">
                   <Link href={article.slug}>{article.title}</Link>
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
@@ -81,7 +81,7 @@ export default function RatgeberPage() {
         </div>
 
         {/* Highlight Banner */}
-        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-3xl p-8 sm:p-12 mb-16 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white rounded-3xl p-6 sm:p-10 mb-16 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-xl">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950 px-3 py-1 rounded-full border border-emerald-700">
               Kostenlose Tarifberatung

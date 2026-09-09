@@ -41,27 +41,27 @@ export default function HaftpflichtHausratPage() {
           </p>
 
           {/* Toggle Tab */}
-          <div className="mt-6 inline-flex p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+          <div className="mt-6 flex flex-col sm:flex-row p-1.5 bg-slate-100 rounded-2xl border border-slate-200 w-full sm:w-auto max-w-full">
             <button
               onClick={() => setActiveTab('phv')}
-              className={`flex items-center px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
+              className={`flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
                 activeTab === 'phv'
                   ? 'bg-white text-emerald-700 shadow-md'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Umbrella className="w-4 h-4 mr-2" />
+              <Umbrella className="w-4 h-4 mr-2 shrink-0" />
               Privathaftpflicht-Rechner
             </button>
             <button
               onClick={() => setActiveTab('hr')}
-              className={`flex items-center px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
+              className={`flex items-center justify-center px-5 py-2.5 rounded-xl font-bold text-sm transition-all ${
                 activeTab === 'hr'
                   ? 'bg-white text-emerald-700 shadow-md'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Home className="w-4 h-4 mr-2" />
+              <Home className="w-4 h-4 mr-2 shrink-0" />
               Hausratversicherungs-Rechner
             </button>
           </div>
@@ -80,23 +80,23 @@ export default function HaftpflichtHausratPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-emerald-600 mr-2" />
-            Wichtige Kriterien beim Versicherungsschutz
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <ShieldCheck className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
+            <span>Wichtige Kriterien beim Versicherungsschutz</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">1. Forderungsausfalldeckung</p>
-              <p className="text-xs text-slate-500">Ihre Haftpflicht zahlt auch dann, wenn Ihnen jemand einen Schaden zufügt, der selbst mittellos und unversichert ist.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Ihre Haftpflicht zahlt auch dann, wenn Ihnen jemand einen Schaden zufügt, der selbst mittellos und unversichert ist.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">2. Schlüsselverlust privat & Beruf</p>
-              <p className="text-xs text-slate-500">Kosten für den Austausch von Schließanlagen in Mietshäusern oder am Arbeitsplatz sollten voll mitversichert sein.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Kosten für den Austausch von Schließanlagen in Mietshäusern oder am Arbeitsplatz sollten voll mitversichert sein.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">3. Fahrrad- & Fahrraddiebstahl</p>
-              <p className="text-xs text-slate-500">In der Hausratversicherung lohnt sich die 24h-Klausel für Fahrräder & E-Bikes gegen Diebstahl auf offener Straße.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">In der Hausratversicherung lohnt sich die 24h-Klausel für Fahrräder & E-Bikes gegen Diebstahl auf offener Straße.</p>
             </div>
           </div>
         </div>

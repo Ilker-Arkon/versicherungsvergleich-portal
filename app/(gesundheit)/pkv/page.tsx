@@ -36,24 +36,24 @@ export default function PkvPage() {
             Gesundheit & Kranken
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
-            Private Krankenversicherung (PKV) <span className="text-gradient">Vergleich</span>
+            Private Kranken&shy;versicherung (PKV) <span className="text-gradient">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Spitzenmedizin, Chefarztbehandlung und 1-Bett-Komfort: Vergleichen Sie die besten PKV-Tarife für Selbstständige, Beamte, Angestellte und Studenten.
           </p>
 
           {/* Quick Sub-navigation for Special Target Groups */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <Link href="/pkv" className="px-3.5 py-1.5 bg-rose-600 text-white text-xs font-bold rounded-lg shadow-xs">
+          <div className="mt-6 flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
+            <Link href="/pkv" className="px-3.5 py-1.5 bg-rose-600 text-white text-xs font-bold rounded-lg shadow-xs text-center">
               PKV Vollversicherung
             </Link>
-            <Link href="/pkv-beamte" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors">
+            <Link href="/pkv-beamte" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors text-center">
               Für Beamte & Beihilfe
             </Link>
-            <Link href="/krankenzusatz" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors">
+            <Link href="/krankenzusatz" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors text-center">
               Zahn- & Zusatzversicherung
             </Link>
-            <Link href="/pkv-studenten" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors">
+            <Link href="/pkv-studenten" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-rose-50 text-xs font-semibold rounded-lg transition-colors text-center">
               Für Studenten
             </Link>
           </div>
@@ -72,13 +72,13 @@ export default function PkvPage() {
         </div>
 
         {/* Ratgeber-Sektion */}
-        <div className="premium-card p-8 mb-14">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center shrink-0">
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <div className="flex items-start space-x-3 mb-6">
+            <div className="w-10 h-10 bg-rose-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <ShieldCheck className="w-5 h-5 text-rose-600" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-slate-900">Deine Gesundheit, deine Wahl: Die Private Krankenversicherung einfach erklärt</h2>
+              <h2 className="text-xl font-bold text-slate-900 leading-snug">Deine Gesundheit, deine Wahl: Die Private Krankenversicherung einfach erklärt</h2>
               <p className="text-xs text-slate-500 mt-0.5">Für wen lohnt sich der Wechsel in die PKV?</p>
             </div>
           </div>
@@ -87,25 +87,25 @@ export default function PkvPage() {
           </p>
           <div className="mb-5 p-4 bg-blue-50 border border-blue-200/60 rounded-xl">
             <p className="text-sm font-bold text-blue-900 mb-2">Für wen lohnt sich der Wechsel?</p>
-            <p className="text-xs text-blue-800">Eine private Absicherung ist besonders interessant für <strong>Selbstständige & Freiberufler</strong>, <strong>Beamte</strong> sowie <strong>Angestellte</strong>, deren Einkommen über der gesetzlichen Versicherungspflichtgrenze liegt.</p>
+            <p className="text-xs text-blue-800 leading-relaxed">Eine private Absicherung ist besonders interessant für <strong>Selbstständige & Freiberufler</strong>, <strong>Beamte</strong> sowie <strong>Angestellte</strong>, deren Einkommen über der gesetzlichen Versicherungspflichtgrenze liegt.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
               <p className="font-bold text-slate-900 text-sm mb-1">⭐ Individuelle Wunschleistungen</p>
-              <p className="text-xs text-slate-500">Wähle selbst zwischen Chefarztbehandlung, Einbettzimmer oder umfangreicher Zahngesundheit.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Wähle selbst zwischen Chefarztbehandlung, Einbettzimmer oder umfangreicher Zahngesundheit.</p>
             </div>
             <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
               <p className="font-bold text-emerald-900 text-sm mb-1">🔒 Garantierter Schutz</p>
-              <p className="text-xs text-emerald-700">Deine gewählten Leistungen können von der Versicherung nicht einseitig gekürzt werden – anders als in der gesetzlichen Kasse.</p>
+              <p className="text-xs text-emerald-700 leading-relaxed">Deine gewählten Leistungen können von der Versicherung nicht einseitig gekürzt werden – anders als in der gesetzlichen Kasse.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
               <p className="font-bold text-slate-900 text-sm mb-1">💶 Attraktive Beiträge</p>
-              <p className="text-xs text-slate-500">Passgenaue Tarife, die oft umfassendere Leistungen bieten als die gesetzliche Kasse – bei ähnlichem oder geringerem Beitrag.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Passgenaue Tarife, die oft umfassendere Leistungen bieten als die gesetzliche Kasse – bei ähnlichem oder geringerem Beitrag.</p>
             </div>
           </div>
         </div>
 
-        <FAQAccordion items={pkvFaqs} title="Häufige Fragen zur Privaten Krankenversicherung" />
+        <FAQAccordion items={pkvFaqs} title={<>Häufige Fragen zur Privaten Kranken&shy;versicherung</>} />
       </div>
     </div>
   );

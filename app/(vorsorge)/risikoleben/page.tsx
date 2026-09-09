@@ -31,16 +31,16 @@ export default function RisikolebenPage() {
             Vorsorge & Leben
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Risikolebensversicherung <span className="text-purple-600">Vergleich</span>
+            Risiko&shy;lebens&shy;versicherung <span className="text-purple-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Zuverlässiger Schutz für Ihre Familie und finanzielle Sicherheit für Immobilienkredite ab wenigen Euro im Monat.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Auszahlung 100% einkommensteuerfrei</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Günstige Sonderkonditionen für Nichtraucher</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Optionale Über-Kreuz-Versicherung (Erbschaftsteuer-Vorteil)</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Auszahlung 100% einkommensteuerfrei</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Günstige Sonderkonditionen für Nichtraucher</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Optionale Über-Kreuz-Versicherung (Erbschaftsteuer-Vorteil)</span>
           </div>
         </div>
 
@@ -56,10 +56,10 @@ export default function RisikolebenPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <Heart className="w-5 h-5 text-purple-600 mr-2" />
-            Empfohlene Absicherungshöhe
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <Heart className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+            <span>Empfohlene Absicherungshöhe</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">

@@ -10,8 +10,8 @@ interface FAQItem {
 
 interface FAQAccordionProps {
   items: FAQItem[];
-  title?: string;
-  subtitle?: string;
+  title?: React.ReactNode;
+  subtitle?: React.ReactNode;
 }
 
 export default function FAQAccordion({ 
@@ -33,7 +33,7 @@ export default function FAQAccordion({
           <div className="inline-flex items-center justify-center p-2.5 bg-blue-50 text-blue-600 rounded-xl mb-3">
             <HelpCircle className="w-6 h-6" />
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">{title}</h2>
+          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight hyphens-auto break-words px-2">{title}</h2>
           <p className="text-slate-500 text-sm mt-2">{subtitle}</p>
         </div>
 
@@ -49,14 +49,14 @@ export default function FAQAccordion({
                   onClick={() => toggle(index)}
                   aria-expanded={isOpen}
                   aria-controls={`${baseId}-panel-${index}`}
-                  className="w-full p-5 text-left flex justify-between items-center bg-slate-50/50 hover:bg-slate-50 transition-colors"
+                  className="w-full p-4 sm:p-5 text-left flex justify-between items-start bg-slate-50/50 hover:bg-slate-50 transition-colors gap-3"
                 >
-                  <span className="font-bold text-slate-900 text-sm sm:text-base pr-4">
+                  <span className="font-bold text-slate-900 text-sm sm:text-base">
                     {item.question}
                   </span>
                   <ChevronDown
                     aria-hidden="true"
-                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 ${
+                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 mt-0.5 ${
                       isOpen ? 'transform rotate-180 text-blue-600' : ''
                     }`}
                   />

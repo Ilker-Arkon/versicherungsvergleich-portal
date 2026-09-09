@@ -32,17 +32,17 @@ export default function HundeversicherungPage() {
             Sach & Eigentum
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Hundehalterhaftpflicht <span className="text-emerald-600">Vergleich</span>
+            Hundehalter&shy;haftpflicht <span className="text-emerald-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Zuverlässiger Schutz bei Personen-, Sach- und Vermögensschäden durch Ihren Hund – ab nur ca. 3,50 € im Monat.
           </p>
 
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <Link href="/hundeversicherung" className="px-3.5 py-1.5 bg-emerald-600 text-white text-xs font-bold rounded-lg shadow-xs">
+          <div className="mt-6 flex flex-col sm:flex-row flex-wrap justify-center gap-2 max-w-md mx-auto">
+            <Link href="/hundeversicherung" className="px-3.5 py-2 bg-emerald-600 text-white text-xs font-bold rounded-lg shadow-xs text-center">
               Hundehalterhaftpflicht
             </Link>
-            <Link href="/hundekrankenversicherung" className="px-3.5 py-1.5 bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50 text-xs font-semibold rounded-lg transition-colors">
+            <Link href="/hundekrankenversicherung" className="px-3.5 py-2 bg-white border border-slate-200 text-slate-700 hover:bg-emerald-50 text-xs font-semibold rounded-lg transition-colors text-center">
               Hundekranken- & OP-Schutz
             </Link>
           </div>
@@ -60,7 +60,7 @@ export default function HundeversicherungPage() {
           />
         </div>
 
-        <FAQAccordion items={hundeFaqs} title="Häufige Fragen zur Hundehalterhaftpflicht" />
+        <FAQAccordion items={hundeFaqs} title={<>Häufige Fragen zur Hundehalter&shy;haftpflicht</>} />
       </div>
     </div>
   );

@@ -31,16 +31,16 @@ export default function KrankenzusatzPage() {
             Gesundheit & Kranken
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Zahn- & Krankenzusatzversicherung <span className="text-rose-600">Vergleich</span>
+            Zahn- & Kranken&shy;zusatz&shy;versicherung <span className="text-rose-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Schließen Sie die Eigenanteil-Lücken der gesetzlichen Kasse: Bis zu 100% Erstattung für Zahnersatz, Implantate, 1-Bett-Zimmer und Heilpraktiker.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Bis zu 100% Erstattung für Implantate & Inlays</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Tarife ohne Wartezeit wählbar</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Kostenübernahme für professionelle Zahnreinigung</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Bis zu 100% Erstattung für Implantate & Inlays</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Tarife ohne Wartezeit wählbar</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Kostenübernahme für professionelle Zahnreinigung</span>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export default function KrankenzusatzPage() {
           />
         </div>
 
-        <FAQAccordion items={zusatzFaqs} title="Häufige Fragen zu Zusatzversicherungen" />
+        <FAQAccordion items={zusatzFaqs} title={<>Häufige Fragen zu Zusatz&shy;versicherungen</>} />
       </div>
     </div>
   );

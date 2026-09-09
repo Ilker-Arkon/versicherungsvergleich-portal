@@ -37,10 +37,10 @@ export default function RiesterPage() {
             Sichern Sie sich staatliche Förderungen, Kinderzulagen und hohe Steuervorteile für Ihre private Altersvorsorge.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 175 € Grundzulage + 300 € pro Kind</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% Beitragsgarantie zum Rentenbeginn</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Bis zu 2.100 € Steuervorteil</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> 175 € Grundzulage + 300 € pro Kind</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> 100% Beitragsgarantie zum Rentenbeginn</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Bis zu 2.100 € Steuervorteil</span>
           </div>
         </div>
 
@@ -56,10 +56,10 @@ export default function RiesterPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <Coins className="w-5 h-5 text-purple-600 mr-2" />
-            Warum sich die Riester-Förderung lohnt
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <Coins className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+            <span>Warum sich die Riester-Förderung lohnt</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">

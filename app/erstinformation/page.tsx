@@ -12,11 +12,11 @@ export default function ErstinformationPage() {
   return (
     <div className="py-12 bg-slate-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           <div className="inline-flex items-center text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-3">
             <ShieldCheck className="w-4 h-4 mr-1.5" /> Gesetzliche Pflichtinformation
           </div>
-          <h1 className="text-3xl font-black text-slate-900 mb-4">Erstinformation gemäß § 15 VersVermV</h1>
+          <h1 className="text-3xl font-black text-slate-900 mb-4 break-words">Erst&shy;information gemäß § 15 VersVermV</h1>
           <p className="text-sm text-slate-500 mb-8">
             Status- und Kontaktinformationen für Kunden und Interessenten beim ersten Geschäftskontakt.
           </p>
@@ -43,7 +43,7 @@ export default function ErstinformationPage() {
               <h2 className="text-base font-bold text-slate-900 mb-2">3. Aufsichtsbehörde & Register</h2>
               <p>
                 Zuständige IHK: Industrie- und Handelskammer Nürnberg für Mittelfranken, Hauptmarkt 25/27, 90403 Nürnberg.<br />
-                Gemeinsame Registerstelle: Deutscher Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin, Telefon: 0180 600 58 50, <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.vermittlerregister.info</a>.
+                Gemeinsame Registerstelle: Deutscher Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin, Telefon: 0180 600 58 50, <a href="https://www.vermittlerregister.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline break-all">www.vermittlerregister.info</a>.
               </p>
             </div>
 

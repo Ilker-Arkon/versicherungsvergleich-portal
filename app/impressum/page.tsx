@@ -12,7 +12,7 @@ export default function ImpressumPage() {
   return (
     <div className="py-12 bg-slate-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
             Gesetzliche Anbieterkennzeichnung
           </span>

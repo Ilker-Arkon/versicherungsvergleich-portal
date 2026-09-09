@@ -72,7 +72,7 @@ export default function CategoryShowcase() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
           {CATEGORIES.map((category) => (
             <div
               key={category.id}
@@ -98,14 +98,12 @@ export default function CategoryShowcase() {
                     <Link
                       key={sub.slug + sub.title}
                       href={sub.slug}
-                      className="flex items-center justify-between py-2 px-2.5 rounded-lg hover:bg-slate-50 transition-colors group"
+                      className="flex items-center justify-between py-2 px-2.5 rounded-lg hover:bg-slate-50 transition-colors group gap-2"
                     >
-                      <div className="flex-1 min-w-0 pr-2">
-                        <div className="flex items-center space-x-1.5">
-                          <span className="text-xs font-semibold text-slate-700 group-hover:text-blue-600 transition-colors truncate">
-                            {sub.title}
-                          </span>
-                        </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-xs font-semibold text-slate-700 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                          {sub.title}
+                        </span>
                       </div>
                       <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded shrink-0">
                         {sub.savingsPotential}

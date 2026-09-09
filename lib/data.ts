@@ -20,7 +20,7 @@ export const CUSTOMER_PROFILE: CustomerProfile = {
   city: "Nürnberg",
   country: "Deutschland",
   phone: "+49 1525 2592531",
-  email: "gulec32@googlemail.com",
+  email: "info@sichertarif.de",
   partnerId: "75137",
   serviceHours: "Mo. – Fr. 09:00 – 18:00 Uhr",
   responseTime: "Antwort in der Regel unter 24 Std."
@@ -179,11 +179,11 @@ export const CATEGORIES: MainCategory[] = [
         iconName: "Award"
       },
       {
-        title: "Zahn- & Krankenzusatzversicherung",
+        title: "Zahn- & Kranken\u00ADzusatzversicherung",
         slug: "/krankenzusatz",
         description: "Schließen Sie Kassenlücken: Hochwertige Zahnkronen, Implantate und Vorsorge.",
         badge: "Bis 100% Zahnersatz",
-        savingsPotential: "Bis 1.500 € Zuzahlung sparen",
+        savingsPotential: "Bis 1.500 € sparen",
         iconName: "Sparkles"
       },
       {
@@ -367,7 +367,7 @@ export const GUIDE_ARTICLES = [
     slug: "/kfz-versicherung"
   },
   {
-    title: "Berufsunfähigkeitsversicherung: Wann ist der Einstieg am günstigsten?",
+    title: "Berufs\u00ADunfähigkeits\u00ADversicherung: Wann ist der Einstieg am günstigsten?",
     excerpt: "Warum ein früher Abschluss die Monatsbeiträge dauerhaft drastisch senkt und worauf bei Gesundheitsfragen zu achten ist.",
     category: "Vorsorge",
     readTime: "5 Min. Lesezeit",
