@@ -20,7 +20,7 @@ export const CUSTOMER_PROFILE: CustomerProfile = {
   city: "Nürnberg",
   country: "Deutschland",
   phone: "+49 1525 2592531",
-  email: "gulec32@googlemail.com",
+  email: "info@sichertarif.de",
   partnerId: "75137",
   serviceHours: "Mo. – Fr. 09:00 – 18:00 Uhr",
   responseTime: "Antwort in der Regel unter 24 Std."
