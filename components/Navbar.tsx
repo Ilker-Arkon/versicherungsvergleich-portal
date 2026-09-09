@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ShieldCheck,
   ChevronDown,
@@ -105,17 +106,21 @@ export default function Navbar() {
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo (Platzhalter + Neuer Name) */}
-          <Link href="/" className="flex items-center space-x-3 group shrink-0">
-            {/* Logo Placeholder (für zukünftige Bild-Datei) */}
-            <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 overflow-hidden relative">
-              <span className="text-[10px] font-bold text-blue-400">LOGO</span>
-              {/* Wenn das Logo da ist, kann es hier einfach über das <img> Tag eingebunden werden:
-              <img src="/logo.svg" alt="SicherVergleich Logo" className="absolute inset-0 w-full h-full object-contain" /> */}
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0">
+            <div className="h-9 sm:h-10 px-1.5 sm:px-2 py-0.5 rounded-xl bg-slate-950 border border-slate-800 shadow-sm flex items-center justify-center overflow-hidden group-hover:border-blue-500/50 transition-all duration-200 shrink-0">
+              <Image
+                src="/logo-emblem.webp"
+                alt="SicherVergleich Logo"
+                width={86}
+                height={36}
+                priority
+                className="h-7 sm:h-8 w-auto object-contain"
+              />
             </div>
             
             {/* Brand Text */}
-            <span className="text-xl font-black tracking-tight text-slate-900">
+            <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
               Sicher<span className="text-blue-600">Vergleich</span>
             </span>
           </Link>
@@ -222,7 +227,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 title="WhatsApp"
-                className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span className="hidden xl:inline">WhatsApp</span>
