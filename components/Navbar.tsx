@@ -105,28 +105,36 @@ export default function Navbar() {
 
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 sm:space-x-3 group shrink-0 min-w-0">
-            <div className="h-9 sm:h-10 px-1.5 sm:px-2 py-0.5 rounded-xl bg-slate-950 border border-slate-800 shadow-sm flex items-center justify-center overflow-hidden group-hover:border-blue-500/50 transition-all duration-200 shrink-0">
-              <Image
-                src="/logo-emblem.webp"
-                alt="SicherVergleich Logo"
-                width={86}
-                height={36}
-                priority
-                className="h-7 sm:h-8 w-auto object-contain"
-              />
-            </div>
-            
-            {/* Brand Text */}
-            <span className="text-lg sm:text-xl font-black tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
-              Sicher<span className="text-blue-600">Vergleich</span>
-            </span>
-          </Link>
+        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+          
+          {/* 1. Mobile Burger Menu (Left) */}
+          <div className="flex-1 flex lg:hidden items-center justify-start">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 -ml-2 rounded-lg text-slate-600 hover:bg-slate-100"
+              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-0.5 h-full">
+          {/* 2. Logo (Center on mobile, Left on desktop) */}
+          <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:flex-1 lg:mr-8">
+            <Link href="/" className="group inline-block">
+              <Image
+                src="/logo-header.webp"
+                alt="SicherVergleich Logo"
+                width={316}
+                height={160}
+                priority
+                className="h-12 sm:h-14 lg:h-20 w-auto rounded-xl lg:rounded-2xl shadow-md border border-slate-800/30 object-contain transition-transform hover:scale-[1.02]"
+              />
+            </Link>
+          </div>
+
+          {/* 3. Desktop Navigation (Center on desktop, hidden on mobile) */}
+          <nav className="hidden lg:flex flex-none items-center space-x-1 h-full">
             {CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
@@ -200,14 +208,14 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA & Mobile */}
-          <div className="flex items-center space-x-2 sm:space-x-3">
+          {/* 4. Actions (Right) */}
+          <div className="flex-1 lg:flex-none flex items-center justify-end space-x-1 sm:space-x-2">
             <Link
               href="/kfz-versicherung"
-              className="hidden sm:inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
+              className="hidden lg:inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
             >
               Jetzt vergleichen
-              <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              <ArrowRight className="w-4 h-4 ml-1.5" />
             </Link>
 
             <a
@@ -216,8 +224,7 @@ export default function Navbar() {
               title="Anrufen"
               className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors"
             >
-              <PhoneCall className="w-4 h-4" />
-              <span className="hidden xl:inline">Anrufen</span>
+              <PhoneCall className="w-5 h-5" />
             </a>
 
             {WHATSAPP_URL && (
@@ -227,21 +234,11 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
                 title="WhatsApp"
-                className="hidden sm:inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+                className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span className="hidden xl:inline">WhatsApp</span>
+                <MessageCircle className="w-5 h-5" />
               </a>
             )}
-
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
-              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
           </div>
         </div>
       </div>

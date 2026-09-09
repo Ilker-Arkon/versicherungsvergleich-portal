@@ -71,21 +71,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-flex items-center space-x-3 group">
-              <div className="h-10 px-2 py-0.5 rounded-xl bg-slate-900 border border-slate-800 shadow-md flex items-center justify-center overflow-hidden group-hover:border-blue-500/50 transition-all duration-200">
-                <Image
-                  src="/logo-emblem.webp"
-                  alt="SicherVergleich Logo"
-                  width={86}
-                  height={36}
-                  className="h-8 w-auto object-contain"
-                />
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight group-hover:text-blue-400 transition-colors">
-                Sicher<span className="text-blue-500">Vergleich</span>
-              </span>
+            <Link href="/" className="inline-block group">
+              <Image
+                src="/logo-header.webp"
+                alt="SicherVergleich Logo"
+                width={316}
+                height={160}
+                className="h-14 w-auto rounded-xl object-contain shadow-sm border border-slate-800/50 transition-transform group-hover:scale-[1.02]"
+              />
             </Link>
-            <p className="text-sm text-slate-400 leading-relaxed pr-4">
+            <p className="text-sm text-slate-400 leading-relaxed pr-4 mt-4">
               Ihr unabhängiges Vergleichsportal für Versicherungen & Finanzen. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
             </p>
             <div className="pt-2 text-xs text-slate-400 space-y-1">
