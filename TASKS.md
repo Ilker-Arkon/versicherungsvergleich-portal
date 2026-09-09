@@ -27,6 +27,7 @@
 | **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Text nötig | ⚡ **Gemini Flash** | Sobald die Vorlagen vom Händlerbund vorliegen: 1:1 Einbindung in `/impressum`, `/datenschutz`, `/erstinformation` und `/agb`. |
 | **10** | **Eigene Domain aufgeschaltet** | 🔴 Komplex | [x] Erledigt (08.09.) | ⚡ **Gemini Flash** | `sichertarif.de` & `www.sichertarif.de` mit Vercel DNS verbunden, SSL aktiv, SITE_URL gesetzt. |
 | **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 01–10 | ⚡ **Gemini Flash** | Vollständiger End-to-End-Smoke-Test aller 27 Rechner, Formulare und DSGVO-Einwilligungen unter Produktiv-Domain. |
+| **12** | **24/7 Hybrid-Support (KI von 20:00 bis 08:00 Uhr)** | 🟡 Mittel | [ ] Neu aufgenommen | ⚡ **Gemini Flash** | Zeitgesteuerte Kundenbetreuung: Tagsüber (08:00–20:00 Uhr) persönlicher Berater (Telefon/WhatsApp), ab 20:00 Uhr bis 08:00 Uhr automatischer KI-Chatbot zur Kundenbetreuung, Tarif-Beratung und Lead-Generierung mit Mail-Übergabe an `info@sichertarif.de`. |
 
 ---
 
