@@ -105,7 +105,7 @@ export default function Navbar() {
 
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           
           {/* 1. Mobile Burger Menu (Left) */}
           <div className="flex-1 flex lg:hidden items-center justify-start">
@@ -115,7 +115,7 @@ export default function Navbar() {
               aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
 
@@ -128,7 +128,7 @@ export default function Navbar() {
                 width={316}
                 height={160}
                 priority
-                className="h-12 sm:h-14 lg:h-20 w-auto rounded-xl lg:rounded-2xl shadow-md border border-slate-800/30 object-contain transition-transform hover:scale-[1.02]"
+                className="h-14 sm:h-16 lg:h-20 w-auto rounded-xl lg:rounded-2xl shadow-md border border-slate-800/30 object-contain transition-transform hover:scale-[1.02]"
               />
             </Link>
           </div>
