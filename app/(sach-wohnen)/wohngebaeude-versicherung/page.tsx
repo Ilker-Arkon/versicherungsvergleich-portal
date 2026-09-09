@@ -35,16 +35,16 @@ export default function WohngebaeudePage() {
             Sach & Eigentum
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Wohngebäudeversicherung <span className="text-emerald-600">Vergleich</span>
+            Wohn&shy;gebäude&shy;versicherung <span className="text-emerald-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Optimaler Rundum-Schutz für Ihr Eigenheim vor Feuer, Sturm, Leitungswasser und extremen Elementarschäden.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Gleitender Neuwertfaktor</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Elementarschäden optional zubuchbar</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Photovoltaik- & Wärmepumpenschutz</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Gleitender Neuwertfaktor</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Elementarschäden optional zubuchbar</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Photovoltaik- & Wärmepumpenschutz</span>
           </div>
         </div>
 
@@ -61,13 +61,13 @@ export default function WohngebaeudePage() {
         </div>
 
         {/* Ratgeber-Sektion */}
-        <div className="premium-card p-8 mb-14">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <div className="flex items-start space-x-3 mb-6">
+            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-slate-900">Dein Zuhause optimal schützen: Die Wohngebäudeversicherung im Überblick</h2>
+              <h2 className="text-xl font-bold text-slate-900 leading-snug">Dein Zuhause optimal schützen: Die Wohn&shy;gebäude&shy;versicherung im Überblick</h2>
               <p className="text-xs text-slate-500 mt-0.5">Was du wissen musst – klar und verständlich erklärt</p>
             </div>
           </div>
@@ -77,20 +77,20 @@ export default function WohngebaeudePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="p-4 bg-blue-50 rounded-xl border border-blue-200/60">
               <p className="font-bold text-blue-900 text-sm mb-1">🌧️ Schutz vor Elementarschäden</p>
-              <p className="text-xs text-blue-700">Überschwemmungen durch Starkregen, Rückstau oder Schneedruck nehmen zu. Der Elementarschutz stellt sicher, dass alle Schadensbeseitigungen übernommen werden.</p>
+              <p className="text-xs text-blue-700 leading-relaxed">Überschwemmungen durch Starkregen, Rückstau oder Schneedruck nehmen zu. Der Elementarschutz stellt sicher, dass alle Schadensbeseitigungen übernommen werden.</p>
             </div>
             <div className="p-4 bg-orange-50 rounded-xl border border-orange-200/60">
               <p className="font-bold text-orange-900 text-sm mb-1">🔥 Umfassender Feuerschutz</p>
-              <p className="text-xs text-orange-700">Egal ob Kurzschluss, Kabelbrand oder Blitzeinschlag – die Versicherung kommt für die vollständige Wiederherstellung deines Gebäudes auf.</p>
+              <p className="text-xs text-orange-700 leading-relaxed">Egal ob Kurzschluss, Kabelbrand oder Blitzeinschlag – die Versicherung kommt für die vollständige Wiederherstellung deines Gebäudes auf.</p>
             </div>
             <div className="p-4 bg-emerald-50 rounded-xl border border-emerald-200/60">
               <p className="font-bold text-emerald-900 text-sm mb-1">📈 Gleitender Neuwert</p>
-              <p className="text-xs text-emerald-700">Die Versicherungssumme wird automatisch an steigende Bau- und Materialpreise angepasst. Im Totalschadenfall wird dein Haus ohne finanzielle Lücke neu aufgebaut.</p>
+              <p className="text-xs text-emerald-700 leading-relaxed">Die Versicherungssumme wird automatisch an steigende Bau- und Materialpreise angepasst. Im Totalschadenfall wird dein Haus ohne finanzielle Lücke neu aufgebaut.</p>
             </div>
           </div>
         </div>
 
-        <FAQAccordion items={gebaeudeFaqs} title="Häufige Fragen zur Wohngebäudeversicherung" />
+        <FAQAccordion items={gebaeudeFaqs} title={<>Häufige Fragen zur Wohn&shy;gebäude&shy;versicherung</>} />
       </div>
     </div>
   );

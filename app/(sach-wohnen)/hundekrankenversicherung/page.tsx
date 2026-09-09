@@ -31,16 +31,16 @@ export default function HundekrankenPage() {
             Sach & Eigentum
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Hundekranken- & OP-Versicherung <span className="text-emerald-600">Vergleich</span>
+            Hunde&shy;kranken- & OP-Versicherung <span className="text-emerald-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Schützen Sie sich vor explodierenden Tierarzt- und OP-Kosten: Bis zu 100% Erstattung für Operationen, Diagnostik und Medikamente.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Bis zu 4-facher GOT-Satz erstattungsfähig</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Freie Tierarzt- & Tierklinikwahl</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Schnelle Direkterstattung</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Bis zu 4-facher GOT-Satz erstattungsfähig</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Freie Tierarzt- & Tierklinikwahl</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Schnelle Direkterstattung</span>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export default function HundekrankenPage() {
           />
         </div>
 
-        <FAQAccordion items={tierkrankenFaqs} title="Häufige Fragen zur Tierkrankenversicherung" />
+        <FAQAccordion items={tierkrankenFaqs} title={<>Häufige Fragen zur Tier&shy;kranken&shy;versicherung</>} />
       </div>
     </div>
   );

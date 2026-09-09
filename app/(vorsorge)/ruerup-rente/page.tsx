@@ -37,10 +37,10 @@ export default function RuerupPage() {
             Maximale Steuerersparnis und garantierte lebenslange Rentenzahlung für Selbstständige, Freiberufler und Besserverdiener.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% steuerlich absetzbare Beiträge</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Pfändungs- & insolvenzsicher</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Flexible Einmalzahlungen zum Jahresende</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> 100% steuerlich absetzbare Beiträge</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Pfändungs- & insolvenzsicher</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Flexible Einmalzahlungen zum Jahresende</span>
           </div>
         </div>
 
@@ -56,10 +56,10 @@ export default function RuerupPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <FileSpreadsheet className="w-5 h-5 text-purple-600 mr-2" />
-            Kernvorteile der Rürup-Basisrente
+        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <FileSpreadsheet className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
+            <span>Kernvorteile der Rürup-Basisrente</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">

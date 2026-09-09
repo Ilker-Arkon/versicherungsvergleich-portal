@@ -12,11 +12,11 @@ export default function DatenschutzPage() {
   return (
     <div className="py-12 bg-slate-50 min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-sm">
           <div className="inline-flex items-center text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-200 mb-3">
             <Lock className="w-4 h-4 mr-1.5" /> DSGVO-Konform
           </div>
-          <h1 className="text-3xl font-black text-slate-900 mb-6">Datenschutzerklärung</h1>
+          <h1 className="text-3xl font-black text-slate-900 mb-6 break-words">Datenschutz&shy;erklärung</h1>
 
           <div className="space-y-8 text-sm text-slate-600 leading-relaxed">
             <div>

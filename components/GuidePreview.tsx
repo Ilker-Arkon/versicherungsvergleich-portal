@@ -40,7 +40,7 @@ export default function GuidePreview() {
                     <Clock className="w-3 h-3 mr-1" /> {article.readTime}
                   </span>
                 </div>
-                <h3 className="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                <h3 className="font-bold text-sm text-slate-900 group-hover:text-blue-600 transition-colors leading-snug hyphens-auto break-words">
                   {article.title}
                 </h3>
                 <p className="text-xs text-slate-500 mt-2 leading-relaxed line-clamp-3">

@@ -125,17 +125,17 @@ export default function PartnerWidget({
   return (
     <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg overflow-hidden my-8">
       {/* Widget Header */}
-      <div className="bg-slate-900 text-white px-6 py-4 flex flex-wrap items-center justify-between gap-4 border-b border-slate-800">
-        <div className="flex items-center space-x-3">
-          <div className="w-9 h-9 bg-blue-600/20 text-blue-400 rounded-lg flex items-center justify-center border border-blue-500/30">
+      <div className="bg-slate-900 text-white px-4 py-3.5 sm:px-6 sm:py-4 flex flex-wrap items-center justify-between gap-3 sm:gap-4 border-b border-slate-800">
+        <div className="flex items-start space-x-3">
+          <div className="w-9 h-9 bg-blue-600/20 text-blue-400 rounded-lg flex items-center justify-center border border-blue-500/30 shrink-0 mt-0.5">
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="font-bold text-base text-white flex items-center">
+            <h3 className="font-bold text-sm sm:text-base text-white flex items-center leading-snug">
               {title}
             </h3>
             <p className="text-xs text-slate-400 flex items-center mt-0.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 mr-1" />
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 mr-1 shrink-0" />
               100% kostenlos, unverbindlich & DSGVO-konform
             </p>
           </div>

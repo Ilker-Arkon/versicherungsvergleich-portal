@@ -35,16 +35,16 @@ export default function RechtsschutzPage() {
             Sach & Eigentum
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Rechtsschutzversicherung <span className="text-emerald-600">Vergleich 2026</span>
+            Rechts&shy;schutz&shy;versicherung <span className="text-emerald-600">Vergleich 2026</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Sichern Sie Ihr gutes Recht in Beruf, Straßenverkehr, Mietstreitigkeiten und im Privatleben. Vergleichen Sie Top-Tarife im offiziellen Live-Rechner.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Unbegrenzte Deckungssummen</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige telefonische Erstberatung</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> 100% freie Anwaltswahl</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Unbegrenzte Deckungssummen</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Sofortige telefonische Erstberatung</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> 100% freie Anwaltswahl</span>
           </div>
         </div>
 
@@ -61,13 +61,13 @@ export default function RechtsschutzPage() {
         </div>
 
         {/* Ratgeber-Sektion */}
-        <div className="premium-card p-8 mb-14">
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0">
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <div className="flex items-start space-x-3 mb-6">
+            <div className="w-10 h-10 bg-emerald-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-slate-900">Recht haben und Recht bekommen: Keine Angst vor teuren Anwaltskosten</h2>
+              <h2 className="text-xl font-bold text-slate-900 leading-snug">Recht haben und Recht bekommen: Keine Angst vor teuren Anwaltskosten</h2>
               <p className="text-xs text-slate-500 mt-0.5">Rechtsschutzversicherung einfach erklärt</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function RechtsschutzPage() {
                 <span className="text-xl shrink-0">{item.icon}</span>
                 <div>
                   <p className="font-bold text-slate-900 text-sm mb-1">{item.title}</p>
-                  <p className="text-xs text-slate-500">{item.text}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.text}</p>
                 </div>
               </div>
             ))}
@@ -93,7 +93,7 @@ export default function RechtsschutzPage() {
           <p className="text-xs text-slate-500 mt-4 text-center">Viele moderne Tarife bieten dir neben der freien Anwaltswahl auch kostenlose telefonische Erstberatungen und unbürokratische Schlichtungsverfahren (Mediation).</p>
         </div>
 
-        <FAQAccordion items={rechtsschutzFaqs} title="Häufige Fragen zur Rechtsschutzversicherung" />
+        <FAQAccordion items={rechtsschutzFaqs} title={<>Häufige Fragen zur Rechts&shy;schutz&shy;versicherung</>} />
       </div>
     </div>
   );

@@ -48,11 +48,11 @@ export default function PromoCards() {
               className={`premium-card p-7 flex flex-col justify-between ${ACCENT_BARS[idx % ACCENT_BARS.length]}`}
             >
               <div>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md">
+                <div className="flex flex-wrap justify-between items-start gap-2 mb-4">
+                  <span className="text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md shrink-0">
                     {promo.tag}
                   </span>
-                  <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-2.5 py-0.5 rounded-full">
+                  <span className="text-xs font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-2.5 py-0.5 rounded-full text-right">
                     {promo.badge}
                   </span>
                 </div>

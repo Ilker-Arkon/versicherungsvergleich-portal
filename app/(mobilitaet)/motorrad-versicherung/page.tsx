@@ -31,15 +31,15 @@ export default function MotorradPage() {
             Fahrzeug & Mobilität
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mt-3">
-            Motorradversicherung vergleichen & <span className="text-blue-600">Top-Schutz sichern</span>
+            Motorrad&shy;versicherung vergleichen & <span className="text-blue-600">Top-Schutz sichern</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
             Maßgeschneiderte Tarife für Motorräder, Roller, Chopper und Quads. Vergleichen Sie Haftpflicht, Teil- und Vollkasko im offiziellen Live-Rechner.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Sofortige elektronische Versicherungsbestätigung (eVB)</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Saisonkennzeichen-Unterstützung</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Sofortige elektronische Versicherungs&shy;bestätigung (eVB)</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Saisonkennzeichen-Unterstützung</span>
           </div>
         </div>
 
@@ -55,23 +55,23 @@ export default function MotorradPage() {
           />
         </div>
 
-        <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center">
-            <ShieldCheck className="w-5 h-5 text-blue-600 mr-2" />
-            Tipps für den optimalen Motorradschutz
+        <div className="premium-card p-6 sm:p-8 mb-14">
+          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+            <ShieldCheck className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
+            <span>Tipps für den optimalen Motorradschutz</span>
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">1. Schutzkleidung & Helm</p>
-              <p className="text-xs text-slate-500">Achten Sie auf ausreichende Versicherungssummen für beschädigte Lederkombis und Schutzhelme bei Sturzschäden.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Achten Sie auf ausreichende Versicherungssummen für beschädigte Lederkombis und Schutzhelme bei Sturzschäden.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">2. Tierbisse & Kurzschlüsse</p>
-              <p className="text-xs text-slate-500">Marder- und Tierbisse an Kabeln und Schläuchen sollten inklusive teurer Folgeschäden abgedeckt sein.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Marder- und Tierbisse an Kabeln und Schläuchen sollten inklusive teurer Folgeschäden abgedeckt sein.</p>
             </div>
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">3. Rabattschutz</p>
-              <p className="text-xs text-slate-500">Verhindert eine Rückstufung der SF-Klasse nach dem ersten gemeldeten Schaden im Kalenderjahr.</p>
+              <p className="text-xs text-slate-500 leading-relaxed">Verhindert eine Rückstufung der SF-Klasse nach dem ersten gemeldeten Schaden im Kalenderjahr.</p>
             </div>
           </div>
         </div>

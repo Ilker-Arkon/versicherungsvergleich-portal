@@ -37,10 +37,10 @@ export default function PkvBeamtePage() {
             Maßgeschneiderte Beihilfe-Restkostentarife mit bis zu 80% Kostenerstattung und Spitzenmedizin zum Beihilfetarif.
           </p>
 
-          <div className="mt-4 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-emerald-700">
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Spezielle Tarife für Bundes- & Landesbeamte</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Günstige Anwärterkonditionen für Referendare</span>
-            <span className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-1 text-emerald-500" /> Optionale Beihilfe-Ergänzungstarife</span>
+          <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Spezielle Tarife für Bundes- & Landesbeamte</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Günstige Anwärterkonditionen für Referendare</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Optionale Beihilfe-Ergänzungstarife</span>
           </div>
         </div>
 
@@ -56,7 +56,7 @@ export default function PkvBeamtePage() {
           />
         </div>
 
-        <FAQAccordion items={beamteFaqs} title="Häufige Fragen zur PKV für Beamte" />
+        <FAQAccordion items={beamteFaqs} title={<>Häufige Fragen zur PKV für Beamte</>} />
       </div>
     </div>
   );
