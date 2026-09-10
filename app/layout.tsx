@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
-    template: "%s | SicherVergleich",
+    template: "%s | SicherTarif",
   },
   description:
     "Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Vorsorge. Finden Sie in wenigen Minuten die besten Tarife und sparen Sie Geld.",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     description:
       "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
     url: "/",
-    siteName: "SicherVergleich",
+    siteName: "SicherTarif",
     locale: "de_DE",
     type: "website",
     images: [ogImageMeta("Tarife vergleichen. Sofort sparen.")],

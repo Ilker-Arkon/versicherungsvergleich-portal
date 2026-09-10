@@ -30,9 +30,9 @@ async function run() {
   // Fülle das Kontaktformular aus
   console.log('Fülle Formularfelder aus...');
   await page.fill('input[name="name"]', 'Max Mustermann (Testkunde)');
-  await page.fill('input[name="email"]', 'testkunde@sichervergleich.de');
+  await page.fill('input[name="email"]', 'testkunde@sichertarif.de');
   await page.fill('input[name="subject"]', 'Test-Anfrage: Beratung zur Kfz-Versicherung');
-  await page.fill('textarea[name="message"]', 'Guten Tag,\n\ndies ist eine echte Testnachricht über das Kontaktformular auf SicherVergleich (sichertarif.de).\nBitte prüfen Sie, ob die E-Mail ordnungsgemäß im IONOS-Postfach info@sichertarif.de angekommen ist.\n\nViele Grüße,\nMax Mustermann');
+  await page.fill('textarea[name="message"]', 'Guten Tag,\n\ndies ist eine echte Testnachricht über das Kontaktformular auf SicherTarif (sichertarif.de).\nBitte prüfen Sie, ob die E-Mail ordnungsgemäß im IONOS-Postfach info@sichertarif.de angekommen ist.\n\nViele Grüße,\nMax Mustermann');
 
   // Checkbox Datenschutz/Einwilligung ankreuzen
   console.log('Setze Häkchen bei Einwilligung...');

@@ -38,11 +38,11 @@ async function verify() {
     // Sende eine Test-E-Mail an das eigene Postfach
     console.log('Sende Test-E-Mail an:', env.SMTP_USER);
     const info = await transporter.sendMail({
-      from: env.EMAIL_FROM || `SicherVergleich <${env.SMTP_USER}>`,
+      from: env.EMAIL_FROM || `SicherTarif <${env.SMTP_USER}>`,
       to: env.SMTP_USER,
-      subject: 'Test-E-Mail: SicherVergleich Kontaktformular erfolgreich verbunden',
-      text: 'Herzlichen Glückwunsch! Die E-Mail-Konfiguration für SicherVergleich (sichertarif.de) über IONOS SMTP funktioniert einwandfrei.',
-      html: '<h2 style="color: #2563eb;">SicherVergleich E-Mail-Test erfolgreich!</h2><p>Die Anbindung an das IONOS SMTP-Postfach <strong>info@sichertarif.de</strong> funktioniert einwandfrei. Kontaktanfragen über Ihre Website werden ab sofort direkt hier zugestellt.</p>',
+      subject: 'Test-E-Mail: SicherTarif Kontaktformular erfolgreich verbunden',
+      text: 'Herzlichen Glückwunsch! Die E-Mail-Konfiguration für SicherTarif (sichertarif.de) über IONOS SMTP funktioniert einwandfrei.',
+      html: '<h2 style="color: #2563eb;">SicherTarif E-Mail-Test erfolgreich!</h2><p>Die Anbindung an das IONOS SMTP-Postfach <strong>info@sichertarif.de</strong> funktioniert einwandfrei. Kontaktanfragen über Ihre Website werden ab sofort direkt hier zugestellt.</p>',
     });
 
     console.log('✅ Test-E-Mail erfolgreich versendet! Message-ID:', info.messageId);

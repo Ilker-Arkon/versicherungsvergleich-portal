@@ -5,7 +5,7 @@ import { CUSTOMER_PROFILE } from "@/lib/data";
  * Empfänger-Adresse für Kontaktanfragen.
  */
 export const CONTACT_EMAIL = process.env.CONTACT_EMAIL || CUSTOMER_PROFILE.email;
-export const EMAIL_FROM = process.env.EMAIL_FROM || `SicherVergleich <${CONTACT_EMAIL}>`;
+export const EMAIL_FROM = process.env.EMAIL_FROM || `SicherTarif <${CONTACT_EMAIL}>`;
 
 export interface ContactMessage {
   name: string;
@@ -46,13 +46,13 @@ export async function sendContactEmail(
       from: EMAIL_FROM,
       to: CONTACT_EMAIL,
       replyTo: `"${data.name}" <${data.email}>`,
-      subject: `[SicherVergleich Anfrage] ${data.subject}`,
-      text: `Neue Kontaktanfrage über SicherVergleich:\n\nName: ${data.name}\nE-Mail: ${data.email}\nBetreff: ${data.subject}\n\nNachricht:\n${data.message}\n\n---\nGesendet über das Kontaktformular auf https://sichertarif.de`,
+      subject: `[SicherTarif Anfrage] ${data.subject}`,
+      text: `Neue Kontaktanfrage über SicherTarif:\n\nName: ${data.name}\nE-Mail: ${data.email}\nBetreff: ${data.subject}\n\nNachricht:\n${data.message}\n\n---\nGesendet über das Kontaktformular auf https://sichertarif.de`,
       html: `
         <div style="font-family: Arial, sans-serif; color: #1e293b; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
           <div style="background-color: #2563eb; color: #ffffff; padding: 20px; text-align: center;">
             <h2 style="margin: 0; font-size: 20px;">Neue Kontaktanfrage</h2>
-            <p style="margin: 4px 0 0; font-size: 13px; opacity: 0.9;">SicherVergleich Portal (sichertarif.de)</p>
+            <p style="margin: 4px 0 0; font-size: 13px; opacity: 0.9;">SicherTarif Portal (sichertarif.de)</p>
           </div>
           <div style="padding: 24px; background-color: #ffffff;">
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">

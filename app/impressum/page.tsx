@@ -4,7 +4,7 @@ import { ShieldCheck, Mail, PhoneCall, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum und gesetzliche Anbieterkennzeichnung von SicherVergleich.",
+  description: "Impressum und gesetzliche Anbieterkennzeichnung von SicherTarif.",
   alternates: { canonical: "/impressum" },
 };
 
@@ -22,7 +22,7 @@ export default function ImpressumPage() {
             <div>
               <h2 className="text-lg font-bold text-slate-900 mb-2">Angaben gemäß § 5 TMG</h2>
               <p className="font-semibold text-slate-800">{CUSTOMER_PROFILE.name}</p>
-              <p>SicherVergleich Direkt</p>
+              <p>SicherTarif Direkt</p>
               <p>{CUSTOMER_PROFILE.street}</p>
               <p>{CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}</p>
               <p>{CUSTOMER_PROFILE.country}</p>

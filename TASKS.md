@@ -1,4 +1,4 @@
-# ✅ Aufgaben & Plan — SicherVergleich Portal
+# ✅ Aufgaben & Plan — SicherTarif Portal
 
 > **Diese Datei wird von jeder neuen Session automatisch geladen** (via `CLAUDE.md` → `@TASKS.md`).
 > Stand: 09. September 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
@@ -28,7 +28,7 @@
 | **10** | **Eigene Domain aufgeschaltet** | 🔴 Komplex | [x] Erledigt (08.09.) | ⚡ **Gemini Flash** | `sichertarif.de` & `www.sichertarif.de` mit Vercel DNS verbunden, SSL aktiv, SITE_URL gesetzt. |
 | **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 01–10 | ⚡ **Gemini Flash** | Vollständiger End-to-End-Smoke-Test aller 27 Rechner, Formulare und DSGVO-Einwilligungen unter Produktiv-Domain. |
 | **12** | **24/7 Hybrid-Support (KI von 20:00 bis 08:00 Uhr)** | 🟡 Mittel | [ ] Offen | ⚡ **Gemini Flash** | Zeitgesteuerte Kundenbetreuung: Tagsüber (08:00–20:00 Uhr) persönlicher Berater (Telefon/WhatsApp), ab 20:00 Uhr bis 08:00 Uhr automatischer KI-Chatbot zur Kundenbetreuung. |
-| **13** | **Logo Layout korrigieren** | 🟢 Leicht | [ ] Offen | ⚡ **Gemini Flash** | Fehler bei der Darstellung im Header beheben (Logo-Bereich anpassen, Kasten entfernen), sicherstellen dass das neue "sichervergleich" Logo perfekt auf Desktop & Mobile skaliert ohne weiße Ränder oben/unten. |
+| **13** | **Logo Layout korrigieren** | 🟢 Leicht | [x] Erledigt | ⚡ **Gemini Flash** | Fehler bei der Darstellung im Header beheben (Logo-Bereich anpassen, Kasten entfernen), sicherstellen dass das neue "sichertarif" Logo perfekt auf Desktop & Mobile skaliert ohne weiße Ränder oben/unten. |
 
 ---
 
@@ -47,6 +47,6 @@
 - [x] **SEO-Grundlage:** Sitemap dynamisch, robots.txt, automatische OpenGraph-Images pro Sparte.
 - [x] **Kontaktkanäle im Layout:** WhatsApp-Button, Anrufen-Button und `/kontakt`-Seite implementiert.
 - [x] **Hero-Bereich Bild-Karten Redesign:** Einheitliches, animiertes 6er-Bildkarten-Grid mit sanftem Zoom-Hover, dynamischem Gradient-Overlay, Glassmorphism-Badges und Schnellwahl-Leiste (07.09.).
-- [x] **Top-Bar & Branding Update:** Markenname auf "SicherVergleich" geändert, Trust-Bar im Header harmonisiert und erweitert (08.09.).
+- [x] **Top-Bar & Branding Update:** Markenname auf "SicherTarif" geändert, Trust-Bar im Header harmonisiert und erweitert (08.09.).
 - [x] **Lighthouse Performance- & SEO-Messung:** Audit direkt gegen Live-Domain https://sichertarif.de bestanden — Performance: 93, Accessibility: 91, Best Practices: 100, SEO: 100, CLS: 0, FCP: 1.1s (08.09.).
-- [x] **Vercel Projekt-Bereinigung:** Projekt von 'eager-pythagoras' in 'sichervergleich' umbenannt, package.json angepasst (08.09.).
+- [x] **Vercel Projekt-Bereinigung:** Projekt von 'eager-pythagoras' in 'sichertarif' umbenannt, package.json angepasst (08.09.).

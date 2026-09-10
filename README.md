@@ -1,4 +1,4 @@
-# SicherVergleich — Versicherungs- & Finanzvergleichsportal
+# SicherTarif — Versicherungs- & Finanzvergleichsportal
 
 Ein deutsches Vergleichsportal für Versicherungs- und Finanzprodukte (KFZ, Haftpflicht, Hausrat, PKV, BU, Baufinanzierung u. v. m.). Gebaut mit **Next.js 16** (App Router, Turbopack), **React 19**, **Tailwind CSS v4** und **Lucide Icons**.
 

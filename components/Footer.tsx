@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { BrandLogo } from '@/components/BrandLogo';
 import { 
   ShieldCheck, 
   Lock, 
@@ -71,14 +71,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="inline-block group">
-              <Image
-                src="/logo-header.webp"
-                alt="SicherVergleich Logo"
-                width={316}
-                height={160}
-                className="h-14 w-auto rounded-xl object-contain shadow-sm border border-slate-800/50 transition-transform group-hover:scale-[1.02]"
-              />
+            <Link href="/" className="inline-block group" aria-label="Zur Startseite">
+              <BrandLogo variant="footer" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed pr-4 mt-4">
               Ihr unabhängiges Vergleichsportal für Versicherungen & Finanzen. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
@@ -181,7 +175,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="bg-slate-950/90 py-5 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-3">
-          <p>© {new Date().getFullYear()} SicherVergleich · Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
+          <p>© {new Date().getFullYear()} SicherTarif · Inhaber: {CUSTOMER_PROFILE.name}. Alle Rechte vorbehalten.</p>
           <span className="flex items-center"><ShieldCheck className="w-3.5 h-3.5 mr-1 text-emerald-500" /> Geprüfte Vergleichsstandards</span>
         </div>
       </div>

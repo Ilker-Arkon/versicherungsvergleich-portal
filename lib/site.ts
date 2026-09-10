@@ -16,7 +16,7 @@ export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ||
   "https://sichertarif.de";
 
-export const SITE_NAME = "SicherVergleich";
+export const SITE_NAME = "SicherTarif";
 
 /**
  * WhatsApp-Business-Nummer im internationalen Format ohne `+`

@@ -25,7 +25,7 @@ export default function ErstinformationPage() {
             <div className="p-6 bg-slate-50 rounded-2xl border border-slate-100">
               <h2 className="text-base font-bold text-slate-900 mb-3">1. Vermittlerangaben</h2>
               <p className="font-semibold text-slate-800">{CUSTOMER_PROFILE.name}</p>
-              <p>SicherVergleich Direkt</p>
+              <p>SicherTarif Direkt</p>
               <p>{CUSTOMER_PROFILE.street}</p>
               <p>{CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}</p>
               <p className="mt-2">Telefon: {CUSTOMER_PROFILE.phone}</p>

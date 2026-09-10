@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import Image from 'next/image';
+import { BrandLogo } from '@/components/BrandLogo';
 import {
   ShieldCheck,
   ChevronDown,
@@ -105,36 +105,29 @@ export default function Navbar() {
 
       {/* Main Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex h-16 sm:h-20 items-center justify-between gap-2">
           
-          {/* 1. Mobile Burger Menu (Left) */}
-          <div className="flex-1 flex lg:hidden items-center justify-start">
+          {/* 1. Mobile Menu Button (Left on mobile, hidden on desktop) */}
+          <div className="xl:hidden flex items-center justify-start">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 -ml-2 rounded-lg text-slate-600 hover:bg-slate-100"
-              aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+              className="p-1.5 sm:p-2 -ml-2 text-slate-600 hover:text-blue-600 rounded-lg hover:bg-slate-50 transition-colors"
               aria-expanded={mobileMenuOpen}
+              aria-label="Menü öffnen"
             >
               {mobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
             </button>
           </div>
 
           {/* 2. Logo (Center on mobile, Left on desktop) */}
-          <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:flex-1 lg:mr-8">
-            <Link href="/" className="group inline-block">
-              <Image
-                src="/logo-header.webp"
-                alt="SicherVergleich Logo"
-                width={316}
-                height={160}
-                priority
-                className="h-14 sm:h-16 lg:h-20 w-auto rounded-xl lg:rounded-2xl shadow-md border border-slate-800/30 object-contain transition-transform hover:scale-[1.02]"
-              />
+          <div className="shrink-0 flex justify-center items-center xl:justify-start mr-2 sm:mr-4 xl:mr-6">
+            <Link href="/" className="group inline-block" aria-label="Zur Startseite">
+              <BrandLogo variant="header" />
             </Link>
           </div>
 
-          {/* 3. Desktop Navigation (Center on desktop, hidden on mobile) */}
-          <nav className="hidden lg:flex flex-none items-center space-x-1 h-full">
+          {/* 3. Desktop Navigation (Center on desktop, hidden on mobile/tablet) */}
+          <nav className="hidden xl:flex flex-none items-center space-x-0.5 2xl:space-x-1 h-full">
             {CATEGORIES.map((cat) => (
               <div
                 key={cat.id}
@@ -145,7 +138,7 @@ export default function Navbar() {
                 <button
                   onClick={() => toggleDropdown(cat.id)}
                   aria-haspopup="true"
-                  className={`flex items-center px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
+                  className={`flex items-center px-2 2xl:px-3.5 py-2 text-[13px] 2xl:text-sm font-medium rounded-lg transition-colors ${
                     activeDropdown === cat.id 
                       ? 'bg-slate-100 text-blue-600 font-semibold' 
                       : 'text-slate-600 hover:text-blue-600 hover:bg-slate-50'
@@ -209,10 +202,10 @@ export default function Navbar() {
           </nav>
 
           {/* 4. Actions (Right) */}
-          <div className="flex-1 lg:flex-none flex items-center justify-end space-x-1 sm:space-x-2">
+          <div className="flex items-center justify-end space-x-1 sm:space-x-2">
             <Link
               href="/kfz-versicherung"
-              className="hidden lg:inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
+              className="hidden 2xl:inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm transition-all"
             >
               Jetzt vergleichen
               <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -245,7 +238,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <nav aria-label="Mobiles Menü" className="lg:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
+        <nav aria-label="Mobiles Menü" className="xl:hidden bg-white border-t border-slate-200 px-4 pt-2 pb-6 max-h-[80vh] overflow-y-auto">
           <div className="space-y-4">
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="border-b border-slate-100 pb-3">
