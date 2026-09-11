@@ -29,6 +29,7 @@
 | **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 01–10 | ⚡ **Gemini Flash** | Vollständiger End-to-End-Smoke-Test aller 27 Rechner, Formulare und DSGVO-Einwilligungen unter Produktiv-Domain. |
 | **12** | **24/7 Hybrid-Support (KI von 20:00 bis 08:00 Uhr)** | 🟡 Mittel | [x] Erledigt (11.09.) | ⚡ **Gemini Flash** | Zeitgesteuerte Kundenbetreuung: Tagsüber (08:00–20:00 Uhr) persönlicher Berater (Telefon/WhatsApp), ab 20:00 Uhr bis 08:00 Uhr automatischer KI-Chatbot (Claude Haiku) mit Compliance-Guardrails. |
 | **13** | **Logo Layout korrigieren** | 🟢 Leicht | [x] Erledigt | ⚡ **Gemini Flash** | Fehler bei der Darstellung im Header beheben (Logo-Bereich anpassen, Kasten entfernen), sicherstellen dass das neue "sichertarif" Logo perfekt auf Desktop & Mobile skaliert ohne weiße Ränder oben/unten. |
+| **14** | **SEO-Ratgeberartikel generieren** | 🟡 Mittel | [ ] Offen | ⚡ **Gemini Flash** | Echte Ratgeber-/Blog-Artikel mit Volltext (neutral, ohne Rechts-/Beratungsinhalte) für die Sparten erstellen und unter eigener URL (z. B. `/ratgeber/…`) veröffentlichen. Bisher nur 4 Teaser-Karten ohne Volltext auf `/ratgeber`. |
 
 ---
 
