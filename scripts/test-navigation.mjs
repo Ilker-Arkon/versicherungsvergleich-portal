@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-core';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const BASE_URL = process.env.TEST_URL || 'https://eager-pythagoras-iota.vercel.app';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

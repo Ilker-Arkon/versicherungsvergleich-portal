@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const BASE_URL = process.env.TEST_URL || 'https://eager-pythagoras-iota.vercel.app';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
 const MOBILE_SS_DIR = path.join(process.cwd(), 'scripts', 'screenshots', 'mobile');
 
 if (!fs.existsSync(MOBILE_SS_DIR)) {
@@ -65,7 +65,7 @@ async function testMobileResponsive() {
   if (burgerVisible) {
     await burgerBtn.click();
     await sleep(600);
-    const menuOpen = await p.locator('.lg\\:hidden').filter({ hasText: 'Kfz & Mobilität' }).first().isVisible();
+    const menuOpen = await p.locator('nav[aria-label="Mobiles Menü"]').isVisible();
     log('Burger-Menü öffnet sich beim Klick', menuOpen);
   }
 

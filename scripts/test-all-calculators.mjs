@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const BASE_URL = process.env.TEST_URL || 'https://eager-pythagoras-iota.vercel.app';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
 const SCREENSHOTS_DIR = path.join(process.cwd(), 'scripts', 'screenshots');
 
 if (!fs.existsSync(SCREENSHOTS_DIR)) {

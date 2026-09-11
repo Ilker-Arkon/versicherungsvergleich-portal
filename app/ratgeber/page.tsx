@@ -49,7 +49,7 @@ export default function RatgeberPage() {
               className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-slate-400 mb-4">
+                <div className="flex items-center justify-between text-xs text-slate-600 mb-4">
                   <span className="font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
                     {article.category}
                   </span>
@@ -58,16 +58,16 @@ export default function RatgeberPage() {
                     {article.readTime}
                   </span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors hyphens-auto break-words">
+                <h2 className="text-xl font-bold text-slate-900 mb-3 hover:text-blue-600 transition-colors hyphens-auto break-words">
                   <Link href={article.slug}>{article.title}</Link>
-                </h3>
+                </h2>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6">
                   {article.excerpt}
                 </p>
               </div>
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs text-slate-400 font-medium">{article.date}</span>
+                <span className="text-xs text-slate-600 font-medium">{article.date}</span>
                 <Link
                   href={article.slug}
                   className="inline-flex items-center text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors"

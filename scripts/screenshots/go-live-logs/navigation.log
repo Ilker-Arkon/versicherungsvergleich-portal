@@ -1,0 +1,52 @@
+========================================================================
+🧭 Starte Navigations-, Link- & 404-Audit auf: https://sichertarif.de
+========================================================================
+
+Gefundene eindeutige interne Links auf der Homepage: 34
+
+[01/34] ✅ HTTP 200 | /
+[02/34] ✅ HTTP 200 | /kfz-versicherung
+[03/34] ✅ HTTP 200 | /pkv
+[04/34] ✅ HTTP 200 | /berufsunfaehigkeit
+[05/34] ✅ HTTP 200 | /haftpflicht
+[06/34] ✅ HTTP 200 | /hausrat
+[07/34] ✅ HTTP 200 | /rechtsschutz-versicherung
+[08/34] ✅ HTTP 200 | /motorrad-versicherung
+[09/34] ✅ HTTP 200 | /krankenzusatz
+[10/34] ✅ HTTP 200 | /risikoleben
+[11/34] ✅ HTTP 200 | /kredit-vergleich
+[12/34] ✅ HTTP 200 | /girokonto-vergleich
+[13/34] ✅ HTTP 200 | /baufinanzierung
+[14/34] ✅ HTTP 200 | /wohngebaeude-versicherung
+[15/34] ✅ HTTP 200 | /hundeversicherung
+[16/34] ✅ HTTP 200 | /hundekrankenversicherung
+[17/34] ✅ HTTP 200 | /grundbesitzerhaftpflicht
+[18/34] ✅ HTTP 200 | /firmenversicherung
+[19/34] ✅ HTTP 200 | /haftpflicht-hausrat
+[20/34] ✅ HTTP 200 | /pkv-beamte
+[21/34] ✅ HTTP 200 | /pkv-studenten
+[22/34] ✅ HTTP 200 | /rente
+[23/34] ✅ HTTP 200 | /unfallversicherung
+[24/34] ✅ HTTP 200 | /riester-rente
+[25/34] ✅ HTTP 200 | /ruerup-rente
+[26/34] ✅ HTTP 200 | /pflegezusatz
+[27/34] ✅ HTTP 200 | /lebensversicherung
+[28/34] ✅ HTTP 200 | /kreditkarten
+[29/34] ✅ HTTP 200 | /ratgeber
+[30/34] ✅ HTTP 200 | /kontakt
+[31/34] ✅ HTTP 200 | /impressum
+[32/34] ✅ HTTP 200 | /agb
+[33/34] ✅ HTTP 200 | /datenschutz
+[34/34] ✅ HTTP 200 | /erstinformation
+
+--- Test 2: Custom 404 Not-Found-Seite ---
+  404 HTTP-Status: 404 (erwartet: 404)
+  Branded 404-Text vorhanden: true
+  Ergebnis 404-Test: ✅ BESTANDEN
+
+========================================================================
+📊 TEST-ZUSAMMENFASSUNG NAVIGATION: 34 von 34 Links OK, 0 defekt
+========================================================================
+
+
+--- STDERR ---

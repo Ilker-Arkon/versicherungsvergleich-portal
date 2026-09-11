@@ -1,0 +1,37 @@
+========================================================================
+🍪 Starte Cookie-Consent Workflow-Test auf: https://sichertarif.de
+========================================================================
+
+--- Test 1: Erstaufruf ohne Cookies ---
+✅ [PASS] Banner wird angezeigt 
+✅ [PASS] DSGVO-Sperre aktiv (0 Skripte, 0 iFrames) — Skripte: 0, iFrames: 0
+✅ [PASS] Freischalten-Placeholder sichtbar 
+
+--- Test 2: Klick auf "Alle akzeptieren" ---
+✅ [PASS] Banner schließt sich nach Klick 
+✅ [PASS] Consent korrekt in localStorage gespeichert 
+✅ [PASS] Rechner lädt dynamisch nach (iFrame erscheint) 
+
+--- Test 3: Persistenz nach Page-Reload ---
+✅ [PASS] Banner bleibt nach Reload geschlossen 
+✅ [PASS] Rechner rendert sofort nach Reload 
+
+--- Test 4: Ablehnen ("Nur notwendige") ---
+✅ [PASS] Banner schließt sich nach Ablehnung 
+✅ [PASS] Consent in localStorage: marketing=false 
+✅ [PASS] Rechner bleibt gesperrt (0 Skripte, 0 iFrames) 
+✅ [PASS] Placeholder mit "Rechner freischalten" bleibt sichtbar 
+
+--- Test 5: "Rechner freischalten" öffnet Modal & erlaubt nachträgliche Aktivierung ---
+✅ [PASS] Einstellungs-Dialog öffnet sich 
+✅ [PASS] Nach Speichern im Modal lädt der Rechner 
+
+--- Test 6: Footer "Cookie-Einstellungen" Button ---
+✅ [PASS] Footer-Button öffnet Einstellungs-Dialog 
+
+========================================================================
+📊 TEST-ZUSAMMENFASSUNG COOKIE-FLOW: 15 bestanden, 0 fehlgeschlagen
+========================================================================
+
+
+--- STDERR ---

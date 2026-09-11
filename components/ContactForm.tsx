@@ -81,7 +81,7 @@ export default function ContactForm() {
           htmlFor="subject"
           className="mb-1.5 block text-sm font-semibold text-slate-700"
         >
-          Betreff <span className="font-normal text-slate-400">(optional)</span>
+          Betreff <span className="font-normal text-slate-600">(optional)</span>
         </label>
         <input
           id="subject"

@@ -1,0 +1,35 @@
+{
+  "totalChecked": 165,
+  "totalPages": 33,
+  "viewportCount": 5,
+  "pagesWithDocOverflow": [],
+  "pagesWithElementOverflow": [],
+  "consoleErrors": [
+    {
+      "path": "/kfz-versicherung",
+      "vp": "mobile-360",
+      "error": "turnstile not loaded"
+    },
+    {
+      "path": "/kfz-versicherung",
+      "vp": "mobile-375",
+      "error": "turnstile not loaded"
+    },
+    {
+      "path": "/kfz-versicherung",
+      "vp": "mobile-390",
+      "error": "turnstile not loaded"
+    },
+    {
+      "path": "/kfz-versicherung",
+      "vp": "tablet-768",
+      "error": "turnstile not loaded"
+    },
+    {
+      "path": "/kfz-versicherung",
+      "vp": "desktop-1280",
+      "error": "turnstile not loaded"
+    }
+  ],
+  "details": []
+}

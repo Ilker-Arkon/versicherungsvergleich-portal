@@ -64,10 +64,10 @@ export default function RentePage() {
         </div>
 
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+          <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
             <TrendingUp className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" />
             <span>Ihre Vorteile einer privaten Rentenversicherung</span>
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">1. Lebenslange Rentengarantie</p>

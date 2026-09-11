@@ -192,9 +192,9 @@ export default function HeroSection() {
                   <span className="whitespace-nowrap">{card.tag}</span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
+                <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-snug group-hover:text-cyan-300 transition-colors">
                   {card.title}
-                </h3>
+                </h2>
                 
                 <p className="text-xs sm:text-sm text-slate-300 mt-2 line-clamp-2 leading-relaxed font-normal">
                   {card.subtitle}

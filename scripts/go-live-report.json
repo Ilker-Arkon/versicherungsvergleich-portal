@@ -1,0 +1,56 @@
+{
+  "baseUrl": "https://sichertarif.de",
+  "timestamp": "2026-09-11T13:11:33.322Z",
+  "allPassed": true,
+  "suites": [
+    {
+      "id": "navigation",
+      "label": "Navigation, interne Links & 404",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 6623
+    },
+    {
+      "id": "cookie-consent",
+      "label": "DSGVO Cookie-Consent-Flow",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 26513
+    },
+    {
+      "id": "calculators",
+      "label": "27 Vergleichsrechner (genau 1 je Seite + IDs)",
+      "status": "OK",
+      "detail": "27/27 Rechner bestanden",
+      "durationMs": 102693
+    },
+    {
+      "id": "widgets",
+      "label": "Widget DSGVO-Gate & kein Doppel-Mount",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 31616
+    },
+    {
+      "id": "contact-form",
+      "label": "Kontaktformular (Validierung + Honeypot + SMTP)",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 11566
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile Responsive (375 px)",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 7826
+    },
+    {
+      "id": "full-site",
+      "label": "Voll-Site Integrität (33 Seiten × 5 Viewports)",
+      "status": "OK",
+      "detail": "",
+      "durationMs": 201303
+    }
+  ]
+}

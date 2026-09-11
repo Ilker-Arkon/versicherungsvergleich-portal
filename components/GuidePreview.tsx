@@ -32,11 +32,11 @@ export default function GuidePreview() {
               className="premium-card p-6 flex flex-col justify-between group"
             >
               <div>
-                <div className="flex items-center justify-between text-xs text-slate-400 mb-3">
+                <div className="flex items-center justify-between text-xs text-slate-600 mb-3">
                   <span className="font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">
                     {article.category}
                   </span>
-                  <span className="flex items-center text-slate-400">
+                  <span className="flex items-center text-slate-600">
                     <Clock className="w-3 h-3 mr-1" /> {article.readTime}
                   </span>
                 </div>

@@ -28,7 +28,7 @@ export default function Footer() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">100% Kostenlos & Unabhängig</h4>
+                <p className="text-white font-bold text-sm">100% Kostenlos & Unabhängig</p>
                 <p className="text-xs text-slate-400 mt-1">Keine versteckten Gebühren, neutraler und transparenter Marktüberblick.</p>
               </div>
             </div>
@@ -38,7 +38,7 @@ export default function Footer() {
                 <Lock className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">256-Bit SSL Datenschutz</h4>
+                <p className="text-white font-bold text-sm">256-Bit SSL Datenschutz</p>
                 <p className="text-xs text-slate-400 mt-1">DSGVO-konforme Übertragung nach höchsten deutschen Sicherheitsstandards.</p>
               </div>
             </div>
@@ -48,7 +48,7 @@ export default function Footer() {
                 <CheckCircle2 className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">Bestpreis- & Spar-Garantie</h4>
+                <p className="text-white font-bold text-sm">Bestpreis- & Spar-Garantie</p>
                 <p className="text-xs text-slate-400 mt-1">Geprüfte Tarife & Originalkonditionen direkt vom Anbieter.</p>
               </div>
             </div>
@@ -58,7 +58,7 @@ export default function Footer() {
                 <PhoneCall className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm">Kostenfreie Experten-Hotline</h4>
+                <p className="text-white font-bold text-sm">Kostenfreie Experten-Hotline</p>
                 <p className="text-xs text-slate-400 mt-1">Persönliche Beratung unter {CUSTOMER_PROFILE.phone}.</p>
               </div>
             </div>
@@ -104,9 +104,9 @@ export default function Footer() {
           {/* Dynamic Categories */}
           {CATEGORIES.slice(0, 4).map((cat) => (
             <div key={cat.id}>
-              <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-blue-500 pl-2">
+              <p className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-blue-500 pl-2">
                 {cat.title.replace(/^[0-9]\.\s*/, '')}
-              </h5>
+              </p>
               <ul className="space-y-2 text-sm">
                 {cat.subcategories.slice(0, 6).map((sub) => (
                   <li key={sub.slug + sub.title}>
@@ -123,9 +123,9 @@ export default function Footer() {
         {/* Category 5, Ratgeber & Legal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mt-10 pt-8 border-t border-slate-800/80">
           <div className="lg:col-span-2">
-            <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-emerald-500 pl-2">
+            <p className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-emerald-500 pl-2">
               {CATEGORIES[4]?.title.replace(/^[0-9]\.\s*/, '') || "Finanzen & Banken"}
-            </h5>
+            </p>
             <ul className="space-y-2 text-sm">
               {CATEGORIES[4]?.subcategories.map((sub) => (
                 <li key={sub.slug + sub.title}>
@@ -138,9 +138,9 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-amber-500 pl-2">
+            <p className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-amber-500 pl-2">
               Ratgeber & Spartipps
-            </h5>
+            </p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/kfz-versicherung" className="text-slate-400 hover:text-white">Kfz-Versicherungs-Wechsel Fristen</Link></li>
               <li><Link href="/pkv" className="text-slate-400 hover:text-white">PKV Beitragsoptimierung</Link></li>
@@ -150,12 +150,13 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h5 className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-slate-500 pl-2">
+            <p className="text-sm font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-slate-500 pl-2">
               Rechtliches & Information
-            </h5>
+            </p>
             <ul className="space-y-2 text-sm">
               <li><Link href="/kontakt" className="text-slate-400 hover:text-white">Kontakt</Link></li>
               <li><Link href="/impressum" className="text-slate-400 hover:text-white">Impressum</Link></li>
+              <li><Link href="/agb" className="text-slate-400 hover:text-white">AGB</Link></li>
               <li><Link href="/datenschutz" className="text-slate-400 hover:text-white">Datenschutzerklärung</Link></li>
               <li><Link href="/erstinformation" className="text-slate-400 hover:text-white">Erstinformation gem. § 15 VersVermV</Link></li>
               <li>

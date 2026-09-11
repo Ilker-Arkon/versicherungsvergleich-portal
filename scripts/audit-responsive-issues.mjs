@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const BASE_URL = process.env.TEST_URL || 'https://eager-pythagoras-iota.vercel.app';
-const ARTIFACT_DIR = 'C:/Users/Home/.gemini/antigravity/brain/2dc5e61b-4a81-478b-97cb-9bdd0ce0162e/audit-screenshots';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
+const ARTIFACT_DIR = 'scripts/screenshots';
 
 if (!fs.existsSync(ARTIFACT_DIR)) {
   fs.mkdirSync(ARTIFACT_DIR, { recursive: true });

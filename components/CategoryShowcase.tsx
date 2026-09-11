@@ -88,7 +88,7 @@ export default function CategoryShowcase() {
                     <h3 className="font-bold text-lg text-slate-900 leading-snug">
                       {category.title.replace(/^[0-9]\.\s*/, '')}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5 line-clamp-1">{category.description}</p>
+                    <p className="text-xs text-slate-600 mt-0.5 line-clamp-1">{category.description}</p>
                   </div>
                 </div>
 

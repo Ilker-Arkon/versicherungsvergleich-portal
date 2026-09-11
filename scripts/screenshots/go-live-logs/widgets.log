@@ -1,0 +1,45 @@
+
+=== Test 1: OHNE Consent (kfz-versicherung) ===
+  Partner-Skripte: 0 (erwartet 0)
+  iframes gesamt:  0 (erwartet 0)
+  Freischalten-Button sichtbar: true (erwartet true)
+
+=== kfz-versicherung  [#tcpp-iframe-kfz] ===
+  Verdict: OK (1)   |  Partner-Skripte: 1
+  iframes gesamt: 1
+    [0] https://form.partner-versicherung.de/show2.php?aid=1226&cid=6&partner_id=75137&insurance_i
+  Console-Fehler (1): Failed to load resource: the server responded with a status of 404 ()
+
+=== motorrad-versicherung  [#tcpp-iframe-mot] ===
+  Verdict: DOPPELT (2)   |  Partner-Skripte: 1
+  iframes gesamt: 2
+    [0] https://www.check24.de/einsurance/mot/partner/motPartnerEntry.form?pid=mot&b2bid=51&cpid=t
+    [1] https://www.tarifchecks.de/third-party-cookie-checker/
+  Console-Fehler (6): Failed to load resource: the server responded with a status of 404 ()
+
+=== haftpflicht  [#tcpp-iframe-phv] ===
+  Verdict: OK (1)   |  Partner-Skripte: 1
+  iframes gesamt: 1
+    [0] https://form.partner-versicherung.de/show2.php?aid=1226&cid=8&partner_id=75137&insurance_i
+
+=== hausrat  [#tcpp-iframe-hr] ===
+  Verdict: OK (1)   |  Partner-Skripte: 1
+  iframes gesamt: 1
+    [0] https://form.partner-versicherung.de/show2.php?aid=1226&cid=9&partner_id=75137&insurance_i
+
+=== pkv  [#tcpp-iframe-pkv] ===
+  Verdict: OK (1)   |  Partner-Skripte: 1
+  iframes gesamt: 1
+    [0] https://form.partner-versicherung.de/form.php?aid=1226&cid=1&partner_id=75137&insurance_id
+
+=== rechtsschutz-versicherung  [#tcpp-iframe-rs] ===
+  Verdict: OK (1)   |  Partner-Skripte: 1
+  iframes gesamt: 1
+    [0] https://form.partner-versicherung.de/show2.php?aid=1226&cid=13&partner_id=75137&insurance_
+
+=== haftpflicht-hausrat (Tab 1) === {"phv":1,"hr":0,"total":1,"scripts":1}
+=== haftpflicht-hausrat (Tab 2) === {"phv":0,"hr":1,"total":1,"scripts":1}
+
+--- Verifikation abgeschlossen ---
+
+--- STDERR ---

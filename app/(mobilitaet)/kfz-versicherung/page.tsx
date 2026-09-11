@@ -64,10 +64,10 @@ export default function KfzPage() {
 
         {/* Advice box */}
         <div className="premium-card p-6 sm:p-8 mb-14">
-          <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
+          <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-start gap-2.5">
             <ShieldCheck className="w-6 h-6 text-blue-600 shrink-0 mt-0.5" />
             <span>Worauf Sie beim Kfz-Versicherungsvergleich 2026 achten sollten</span>
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 text-sm text-slate-600">
             <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
               <p className="font-bold text-slate-900 mb-1">1. Deckungssumme 100 Mio. €</p>

@@ -28,7 +28,7 @@
     "partnerScriptCount": 1,
     "partnerIdInScript": true,
     "calculatorSrc": "https://www.check24.de/einsurance/mot/partner/motPartnerEntry.form?pid=mot&b2bid=51&c...",
-    "consoleErrorsCount": 6,
+    "consoleErrorsCount": 0,
     "screenshotSaved": true,
     "passed": true,
     "error": null

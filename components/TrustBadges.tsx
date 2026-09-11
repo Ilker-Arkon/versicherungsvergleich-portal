@@ -17,7 +17,7 @@ export default function TrustBadges() {
             <div key={i} className="text-center">
               <p className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">{stat.value}</p>
               <p className="text-xs font-semibold text-blue-600 mt-1">{stat.label}</p>
-              <p className="text-[11px] text-slate-400 mt-0.5">{stat.sub}</p>
+              <p className="text-[11px] text-slate-600 mt-0.5">{stat.sub}</p>
             </div>
           ))}
         </div>

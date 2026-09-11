@@ -1,0 +1,53 @@
+========================================================================
+🚀 Starte Playwright Rechner- & Verbindungstest auf: https://sichertarif.de
+========================================================================
+
+--- 1. Test: DSGVO Consent-Gate ohne Einwilligung ---
+  Ergebnis Consent-Gate: ✅ BESTANDEN
+    - Partner-Skripte geladen: 0 (erwartet: 0)
+    - iFrames geladen: 0 (erwartet: 0)
+    - 'Rechner freischalten' sichtbar: true (erwartet: true)
+
+--- 2. Test: Alle 27 Vergleichsrechner & Tabellen mit Einwilligung ---
+Prüfe Container, Rechner-iFrame, Skript-URLs & Verbindungen...
+
+[01/27] ✅ OK | Mobilität            | /kfz-versicherung             | Rechner: 1 | HTTP 200
+[02/27] ✅ OK | Mobilität            | /motorrad-versicherung        | Rechner: 1 | HTTP 200
+[03/27] ✅ OK | Sach & Wohnen        | /haftpflicht                  | Rechner: 1 | HTTP 200
+[04/27] ✅ OK | Sach & Wohnen        | /hausrat                      | Rechner: 1 | HTTP 200
+[05/27] ✅ OK | Sach & Wohnen        | /rechtsschutz-versicherung    | Rechner: 1 | HTTP 200
+[06/27] ✅ OK | Sach & Wohnen        | /wohngebaeude-versicherung    | Rechner: 1 | HTTP 200
+[07/27] ✅ OK | Sach & Wohnen        | /hundeversicherung            | Rechner: 1 | HTTP 200
+[08/27] ✅ OK | Sach & Wohnen        | /hundekrankenversicherung     | Rechner: 1 | HTTP 200
+[09/27] ✅ OK | Sach & Wohnen        | /grundbesitzerhaftpflicht     | Rechner: 1 | HTTP 200
+[10/27] ✅ OK | Sach & Wohnen        | /firmenversicherung           | Rechner: 1 | HTTP 200
+[11/27] ✅ OK | Sach & Wohnen (Kombi) | /haftpflicht-hausrat          | Rechner: 1 | HTTP 200
+[12/27] ✅ OK | Gesundheit           | /pkv                          | Rechner: 1 | HTTP 200
+[13/27] ✅ OK | Gesundheit           | /pkv-beamte                   | Rechner: 1 | HTTP 200
+[14/27] ✅ OK | Gesundheit           | /pkv-studenten                | Rechner: 1 | HTTP 200
+[15/27] ✅ OK | Gesundheit           | /krankenzusatz                | Rechner: 1 | HTTP 200
+[16/27] ✅ OK | Vorsorge             | /berufsunfaehigkeit           | Rechner: 1 | HTTP 200
+[17/27] ✅ OK | Vorsorge             | /lebensversicherung           | Rechner: 1 | HTTP 200
+[18/27] ✅ OK | Vorsorge             | /risikoleben                  | Rechner: 1 | HTTP 200
+[19/27] ✅ OK | Vorsorge             | /unfallversicherung           | Rechner: 1 | HTTP 200
+[20/27] ✅ OK | Vorsorge             | /riester-rente                | Rechner: 1 | HTTP 200
+[21/27] ✅ OK | Vorsorge             | /ruerup-rente                 | Rechner: 1 | HTTP 200
+[22/27] ✅ OK | Vorsorge             | /rente                        | Rechner: 1 | HTTP 200
+[23/27] ✅ OK | Vorsorge             | /pflegezusatz                 | Rechner: 1 | HTTP 200
+[24/27] ✅ OK | Finanzen             | /kredit-vergleich             | Rechner: 1 | HTTP 200
+[25/27] ✅ OK | Finanzen             | /baufinanzierung              | Rechner: 1 | HTTP 200
+[26/27] ✅ OK | Finanzen             | /girokonto-vergleich          | Rechner: 1 | HTTP 200
+[27/27] ✅ OK | Finanzen             | /kreditkarten                 | Rechner: 1 | HTTP 200
+
+--- 3. Test: Spezialfall /haftpflicht-hausrat (Tab-Umschaltung) ---
+  Tab 1 (Haftpflicht aktiv): PHV-iFrames=1, HR-iFrames=0
+  Tab 2 (Hausrat aktiviert): PHV-iFrames=0, HR-iFrames=1
+  Ergebnis Tab-Umschaltung: ✅ BESTANDEN
+
+========================================================================
+📊 TEST-ZUSAMMENFASSUNG: 27 von 27 Rechnern erfolgreich getestet!
+========================================================================
+Ergebnisse gespeichert in: C:\Users\Home\Documents\antigravity\eager-pythagoras\scripts\test-results.json
+
+
+--- STDERR ---

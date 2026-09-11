@@ -56,7 +56,7 @@ export default function FAQAccordion({
                   </span>
                   <ChevronDown
                     aria-hidden="true"
-                    className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200 mt-0.5 ${
+                    className={`w-5 h-5 text-slate-500 shrink-0 transition-transform duration-200 mt-0.5 ${
                       isOpen ? 'transform rotate-180 text-blue-600' : ''
                     }`}
                   />

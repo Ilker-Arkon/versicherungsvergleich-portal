@@ -131,9 +131,9 @@ export default function PartnerWidget({
             <Sparkles className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="font-bold text-sm sm:text-base text-white flex items-center leading-snug">
+            <h2 className="font-bold text-sm sm:text-base text-white flex items-center leading-snug">
               {title}
-            </h3>
+            </h2>
             <p className="text-xs text-slate-400 flex items-center mt-0.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 mr-1 shrink-0" />
               100% kostenlos, unverbindlich & DSGVO-konform

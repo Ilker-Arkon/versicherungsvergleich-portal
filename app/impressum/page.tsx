@@ -20,7 +20,7 @@ export default function ImpressumPage() {
 
           <div className="space-y-8 text-sm text-slate-600 leading-relaxed">
             <div>
-              <h2 className="text-lg font-bold text-slate-900 mb-2">Angaben gemäß § 5 TMG</h2>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">Angaben gemäß § 5 DDG</h2>
               <p className="font-semibold text-slate-800">{CUSTOMER_PROFILE.name}</p>
               <p>SicherTarif Direkt</p>
               <p>{CUSTOMER_PROFILE.street}</p>
@@ -61,7 +61,7 @@ export default function ImpressumPage() {
             </div>
 
             <div className="border-t border-slate-100 pt-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
               <p>{CUSTOMER_PROFILE.name}</p>
               <p>{CUSTOMER_PROFILE.street}</p>
               <p>{CUSTOMER_PROFILE.zip} {CUSTOMER_PROFILE.city}</p>

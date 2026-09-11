@@ -98,7 +98,7 @@ export default function KontaktPage() {
                 <p className="text-sm text-slate-600 mt-0.5">
                   {CUSTOMER_PROFILE.serviceHours}
                 </p>
-                <p className="text-xs text-slate-400 mt-1">
+                <p className="text-xs text-slate-600 mt-1">
                   {CUSTOMER_PROFILE.responseTime}
                 </p>
               </div>

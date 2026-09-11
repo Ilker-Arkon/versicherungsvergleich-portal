@@ -147,7 +147,7 @@ export default function Navbar() {
                 >
                   <span>{cat.title.replace(/^[0-9]\.\s*/, '')}</span>
                   <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-200 ${
-                    activeDropdown === cat.id ? 'transform rotate-180 text-blue-600' : 'text-slate-400'
+                    activeDropdown === cat.id ? 'transform rotate-180 text-blue-600' : 'text-slate-500'
                   }`} />
                 </button>
 
@@ -164,7 +164,7 @@ export default function Navbar() {
                     <div className="bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-3 overflow-hidden ring-1 ring-black/5">
                       <div className="px-3 py-2 mb-2 border-b border-slate-100/80 bg-slate-50/70 rounded-xl flex items-center justify-between">
                         <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">{cat.title.replace(/^[0-9]\.\s*/, '')}</p>
-                        <span className="text-[11px] text-slate-400 font-medium">{cat.subcategories.length} Angebote</span>
+                        <span className="text-[11px] text-slate-600 font-medium">{cat.subcategories.length} Angebote</span>
                       </div>
                       <div className="space-y-1">
                         {cat.subcategories.map((sub) => {
@@ -242,7 +242,7 @@ export default function Navbar() {
           <div className="space-y-4">
             {CATEGORIES.map((cat) => (
               <div key={cat.id} className="border-b border-slate-100 pb-3">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2 px-1">
+                <p className="text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2 px-1">
                   {cat.title.replace(/^[0-9]\.\s*/, '')}
                 </p>
                 <div className="space-y-0.5">

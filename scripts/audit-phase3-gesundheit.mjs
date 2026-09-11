@@ -3,8 +3,8 @@ import fs from 'fs';
 import path from 'path';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
-const BASE_URL = 'http://localhost:3000';
-const OUT_DIR = 'C:/Users/Home/.gemini/antigravity/brain/2dc5e61b-4a81-478b-97cb-9bdd0ce0162e/audit-screenshots/phase3-gesundheit';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
+const OUT_DIR = 'scripts/screenshots/phase3-gesundheit';
 
 if (!fs.existsSync(OUT_DIR)) {
   fs.mkdirSync(OUT_DIR, { recursive: true });

@@ -166,7 +166,7 @@ export default function CookieConsentBanner() {
               </button>
             </div>
 
-            <p className="mt-4 text-xs text-slate-400">
+            <p className="mt-4 text-xs text-slate-600">
               Sie können Ihre Einwilligung jederzeit über „Cookie-Einstellungen“ ändern oder
               widerrufen. Details in der{" "}
               <Link href="/datenschutz" className="text-blue-600 hover:underline">

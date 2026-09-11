@@ -5,6 +5,7 @@
 import { chromium } from 'playwright-core';
 
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const BASE_URL = process.env.TEST_URL || 'https://sichertarif.de';
 
 // (Name, containerId) — IDs direkt aus lib/partnerWidgets.ts
 const PAGES = [
@@ -34,7 +35,7 @@ const browser = await chromium.launch({ executablePath: CHROME, headless: true }
 {
   const ctx = await browser.newContext();
   const p = await ctx.newPage();
-  await p.goto('http://localhost:3000/kfz-versicherung', { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await p.goto(`${BASE_URL}/kfz-versicherung`, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await sleep(2500);
   const noConsent = await p.evaluate(() => ({
     scripts: document.querySelectorAll('script[src*="form.partner-versicherung.de"]').length,
@@ -60,7 +61,7 @@ for (const [name, containerId] of PAGES) {
   p.on('pageerror', (e) => errors.push(String(e)));
 
   try {
-    await p.goto(`http://localhost:3000/${name}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+    await p.goto(`${BASE_URL}/${name}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await p.waitForSelector(`#${containerId} iframe`, { timeout: 8000 }).catch(() => {});
     await sleep(2500);
 
@@ -93,7 +94,7 @@ try {
   const ctx = await browser.newContext();
   await ctx.addInitScript(grantConsent);
   const p = await ctx.newPage();
-  await p.goto('http://localhost:3000/haftpflicht-hausrat', { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await p.goto(`${BASE_URL}/haftpflicht-hausrat`, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await sleep(4000);
   const countIframes = () => p.evaluate(() => ({
     phv: document.querySelectorAll('#tcpp-iframe-phv iframe').length,

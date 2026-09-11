@@ -1,0 +1,22 @@
+========================================================================
+📱 Starte Mobile Responsive Audit auf: https://sichertarif.de (Viewport 375x667)
+========================================================================
+
+--- Test 1: Startseite Mobile (375px) ---
+✅ [PASS] Kein horizontaler Überlauf auf der Startseite
+✅ [PASS] Mobile Burger-Menü Button sichtbar
+✅ [PASS] Burger-Menü öffnet sich beim Klick
+
+--- Test 2: Rechner-Seite Mobile (/kfz-versicherung) ---
+✅ [PASS] Kein horizontaler Überlauf auf /kfz-versicherung
+✅ [PASS] Rechner-iFrame lädt im mobilen Viewport
+
+--- Test 3: Floating Action Buttons Überlappung ---
+✅ [PASS] Floating Buttons überlappen sich nicht
+
+========================================================================
+📊 TEST-ZUSAMMENFASSUNG MOBILE AUDIT: 6 bestanden, 0 fehlgeschlagen
+========================================================================
+
+
+--- STDERR ---
