@@ -8,7 +8,7 @@ import { PHONE_URL, WHATSAPP_URL } from "@/lib/site";
  */
 export default function ContactFab() {
   return (
-    <div className="fixed bottom-4 right-4 z-[55] flex flex-col items-end gap-3">
+    <div className="flex flex-col items-end gap-3">
       {/* Anrufen */}
       <a
         href={PHONE_URL}

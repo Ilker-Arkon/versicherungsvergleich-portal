@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import CookieConsentProvider from "@/components/CookieConsentProvider";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import ContactFab from "@/components/ContactFab";
+import ChatWidget from "@/components/ChatWidget";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { ogImageMeta } from "@/lib/seo";
 import { CUSTOMER_PROFILE } from "@/lib/data";
@@ -89,7 +90,10 @@ export default function RootLayout({
           <main id="main-content" className="flex-grow flex flex-col">{children}</main>
           <Footer />
           <CookieConsentBanner />
-          <ContactFab />
+          <div className="fixed bottom-4 right-4 z-[55] flex flex-col items-end gap-3">
+            <ChatWidget />
+            <ContactFab />
+          </div>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{

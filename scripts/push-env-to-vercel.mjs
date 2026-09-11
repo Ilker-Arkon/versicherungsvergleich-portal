@@ -36,6 +36,8 @@ const VARS = [
   ['EMAIL_FROM', false],
   ['NEXT_PUBLIC_SITE_URL', false],
   ['NEXT_PUBLIC_WHATSAPP_NUMBER', false],
+  ['ANTHROPIC_API_KEY', true],
+  ['CHAT_MODEL', false],
 ];
 
 let failed = false;
