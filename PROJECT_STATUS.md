@@ -68,3 +68,16 @@
 | **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Wartet auf Vorlagen | ⚡ **Gemini Flash** | Texte vom Händlerbund 1:1 einbinden (Impressum, Datenschutz, Erstinfo, AGB). |
 | **10** | **Eigene Domain & E-Mail aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Domain auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen. |
 | **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 05–10 | ⚡ **Gemini Flash** | End-to-End-Smoke-Test unter Produktiv-Domain. |
+
+---
+
+## 🔑 5. Umgebungsvariablen & KI-Provider (Handover-Hinweis)
+
+Der Hybrid-Support-Chatbot (Task 12, nachts 20:00–08:00 Uhr) nutzt die **DeepSeek-API**
+(`deepseek-chat`, OpenAI-kompatibel) über die Env-Variable `DEEPSEEK_API_KEY`.
+
+> ⚠️ **Wichtig für die Übergabe:** Der aktuell hinterlegte `DEEPSEEK_API_KEY` ist der
+> **Key der Agentur und nur zum Testen gedacht**. Beim Go-Live muss der **Kunde einen
+> eigenen API-Key** hinterlegen — ohne eigenen Key antwortet der Chatbot nur mit dem
+> „nicht erreichbar“-Fallback. Der Wechsel ist reine Env-Konfiguration in Vercel
+> (`DEEPSEEK_API_KEY`), kein Code-Umbau.

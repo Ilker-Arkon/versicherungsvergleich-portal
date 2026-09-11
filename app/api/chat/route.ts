@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { askClaude, hasChatKey, type ChatMessage } from "@/lib/chat";
+import { askChat, hasChatKey, type ChatMessage } from "@/lib/chat";
 import { isChatActive } from "@/lib/hybridHours";
 import { CUSTOMER_PROFILE } from "@/lib/data";
 
@@ -75,7 +75,7 @@ export async function POST(request: Request) {
 
   // 4) Sprachmodell aufrufen; bei Fehler fallback auf Kontakt-Verweis.
   try {
-    const reply = await askClaude(history);
+    const reply = await askChat(history);
     return NextResponse.json({ reply });
   } catch (err) {
     console.error("[chat] Fehler beim LLM-Call:", err);
