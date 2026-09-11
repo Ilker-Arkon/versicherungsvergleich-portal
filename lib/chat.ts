@@ -40,6 +40,9 @@ export async function askChat(history: ChatMessage[]): Promise<string> {
       model: getChatModel(),
       max_tokens: 512,
       temperature: 0,
+      // DeepSeek V4 „denkt" standardmäßig und verbraucht damit das
+      // max_tokens-Budget (leere Antworten). Für den Support-Bot abschalten.
+      reasoning_effort: "none",
       messages: [{ role: "system", content: buildSystemPrompt() }, ...history],
     }),
   });
