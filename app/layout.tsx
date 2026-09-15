@@ -57,6 +57,9 @@ export const metadata: Metadata = {
       "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
     images: [ogImageMeta("Tarife vergleichen. Sofort sparen.")],
   },
+  verification: {
+    google: "BLj3PY95VPpGx8navV3OV0jmcYugzp66HFNMp-JWBko",
+  },
 };
 
 export default function RootLayout({
