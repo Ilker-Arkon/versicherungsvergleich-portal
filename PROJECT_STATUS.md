@@ -1,7 +1,7 @@
 # 📋 SicherTarif Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
-> Zuletzt aktualisiert: 07. September 2026 · Stand: Sprint 1 & Basissicherung abgeschlossen
+> Zuletzt aktualisiert: 18. September 2026 · Stand: Sprint 2 (Ansprechpartner-Integration, Erreichbarkeits-Harmonisierung & KI-Chatbot Produktivbetrieb)
 
 ---
 
@@ -10,74 +10,65 @@
 * **Projektname:** SicherTarif (Versicherungsvergleich Portal)
 * **Framework:** Next.js 16 (App Router, Turbopack, Tailwind CSS, Lucide Icons)
 * **GitHub Repository:** `https://github.com/Ilker-Arkon/versicherungsvergleich-portal`
-* **Live Deployment (Vercel):** `https://eager-pythagoras-iota.vercel.app`
+* **Live Deployment (Vercel):** `https://sichertarif.de` (Alias aktiv, SSL A+ aktiv)
+* **Vercel Project:** `sichertarif` (`ilkers-projects-c05564a9/sichervergleich`)
 * **VS Code Workspace:** Integriert im Multi-Root-Workspace `AI-Projekte.code-workspace`
 
 ---
 
-## 🎨 2. Umgesetzte Features & Verifizierungen (Stand 07.09.)
+## 🎨 2. Umgesetzte Features & Verifizierungen (Stand 18.09.)
 
-1. **Live-Rechner & Widget-Schutz (`components/PartnerWidget.tsx`):**
+1. **Ansprechpartner-Bereich & Berater-Präsentation (`components/AdvisorSection.tsx`):**
+   * **Porträtfoto:** `public/berater-hueseyin-guelec.jpg` zentriert eingebunden (`objectPosition: "center 40%"` für perfekte Ausrichtung von Kopf, Schultern und Hemd).
+   * **Typografie & Name:** Offizieller Anzeigename **Herr Gülec** in eleganter Serifenschrift (`next/font/google` -> `Playfair Display`).
+   * **3-Spalten-Kontaktleiste:** Gleichmäßig aufgeteilter, responsiver Block (`WhatsApp | Anruf | Mail`) mit dezenten horizontalen Begrenzungslinien (`border-y border-slate-700/70`) und gleitender Unterstrich-Hover-Animation.
+   * **Rechtliche Bereinigung:** Alle Nennungen von Paragrafen (§ 34d, § 15, BGB) sowie Steuerclaims („steuerbegünstigt“) aus Marketing- und Beratertexten vollständig entfernt.
+
+2. **Erreichbarkeits-Harmonisierung & Servicezeiten:**
+   * **Telefonzeiten:** Einheitlich portalweit auf **Mo. – Fr. 10:00 – 16:00 Uhr** gesetzt (`CUSTOMER_PROFILE.serviceHours`, Navbar, Footer, Kontaktseite, Rechner-Seiten).
+   * **E-Mail-Kontaktpunkte:** E-Mail als klickbares Briefumschlag-Icon in der Navbar, dritter schwebender Button im `ContactFab` sowie klickbare `mailto:info@sichertarif.de`-Aktionen.
+
+3. **24/7 Hybrid-Support & KI-Assistent (`components/ChatWidget.tsx`, `lib/chat.ts`, `lib/hybridHours.ts`):**
+   * **Zeitsteuerung:** Tagsüber (Mo.–Fr. 10:00–16:00 Uhr) persönlicher Berater im Fokus; außerhalb der Telefonzeiten (Mo.–Fr. 16:00–10:00 Uhr und an Wochenenden ganztägig) übernimmt der KI-Assistent.
+   * **Seitenwechsel-Persistenz:** Das Chat-Widget bleibt beim Navigieren durch Unterseiten geöffnet, der Gesprächsverlauf bleibt via `sessionStorage` nahtlos erhalten.
+   * **Klickbare Rechner-Links:** URLs in Chat-Antworten werden als Buttons/Links formatiert. Klicks auf interne Rechner nutzen den Next.js Client-Router (`router.push`), sodass der Chat offen bleibt und die Seite im Hintergrund wechselt.
+   * **Seitenerkennung (`currentPath`):** Das Widget übermittelt den aktuellen Pfad an `/api/chat`. Der Systemprompt reagiert spartenspezifisch und passgenau auf die Seite, auf der sich der Nutzer gerade befindet.
+   * **Automatischer Retry & Ausfallsicherheit:** Bis zu 2 Abfrageversuche mit AbortController-Timeout und 800 ms Backoff bei temporären API-Aussetzern; grammatikalisch sauberer Fallback mit direktem Verweis auf Herrn Gülec.
+
+4. **Live-Rechner & Widget-Schutz (`components/PartnerWidget.tsx`):**
    * **27 von 27 Kostenrechnern** vollständig verifiziert: Jeder Rechner rendert exakt 1 iFrame (kein Doppel-Mount).
    * **Partner-ID `75137`:** Auf allen 27 Seiten in Skripten und Direct-Links aktiv und geprüft.
    * **DSGVO Consent-Gate:** 0 Drittanbieter-Skripte vor Einwilligung, sofortige Freischaltung nach Klick.
 
-2. **Cookie-Consent-Workflow (`components/CookieConsentBanner.tsx`):**
-   * Vollständig getestet (15/15 Checks): Banner-Anzeige, Klick auf „Alle akzeptieren“, Ablehnen („Nur notwendige“), nachträgliche Aktivierung im Rechner-Placeholder, Einstellungs-Modal und Footer-Reopen.
-
-3. **Navigation & Links (`components/Navbar.tsx` & `components/Footer.tsx`):**
-   * 33 von 33 internen Links liefern HTTP 200 (keine Broken Links).
-   * Gebrandete 404-Fehlerseite aktiv und verifiziert.
-   * Mobiles Burger-Menü mit `aria-expanded` und semantischem `<nav>` optimiert.
-
-4. **Kontaktformular & Spamschutz (`app/kontakt/page.tsx`):**
-   * Client- & Server-Validierung, Honeypot-Bot-Abwehr und Server Action end-to-end verifiziert (11/11 Checks).
-
-5. **Servicezeiten & Claims-Bereinigung:**
-   * Erreichbarkeitszeiten (Mo–Fr 09:00–18:00 Uhr) in Footer und Kontaktseite hinterlegt.
-   * Abmahngefährdete Werbeaussagen („TÜV-geprüft“, „150.000+ Nutzer“, „4,9/5“) durch seriöse Aussagen („Über 300 Tarife“, „100% Kostenlos & Unabhängig“) ersetzt.
-
-6. **Mobile Responsiveness:**
-   * Getestet auf 375px (iPhone SE): Kein horizontaler Überlauf, Burger-Menü öffnet zuverlässig, Rechner skalieren mobil.
+5. **E-Mail-Backend (IONOS SMTP / Nodemailer):**
+   * Echter E-Mail-Versand über offizielles IONOS-Postfach `info@sichertarif.de` mit HTML-Vorlage, Absender-ReplyTo und Live-Test erfolgreich angebunden.
 
 ---
 
-## 🛠️ 3. Bereitgestellte Test-Befehle
+## 🛠️ 3. Wichtige Befehle & Test-Suites
 
+* **Produktions-Build:** `npm run build`
+* **TypeScript-Check:** `npx tsc --noEmit`
 * **Rechner-Batch-Test (27 Seiten):** `node scripts/test-all-calculators.mjs`
 * **Cookie-Consent Workflow:** `node scripts/test-cookie-consent-flow.mjs`
 * **Navigation- & 404-Audit:** `node scripts/test-navigation.mjs`
 * **Kontaktformular-Test:** `node scripts/test-contact-form.mjs`
 * **Mobile-Responsive Audit:** `node scripts/test-mobile-responsive.mjs`
-* **Produktions-Build:** `npm run build`
+* **Vercel Deployment:** `npx vercel --prod --yes`
 
 ---
 
-## 🗺️ 4. Master-Aufgabenplan für die nächste Session (Einfach → Schwer)
+## 🔑 4. Umgebungsvariablen & Vercel-Konfiguration
 
-| Nr. | Aufgabe / Bereich | Stufe | Status | Empfohlene KI | Nächste Aktion |
-|:---:|:---|:---:|:---:|:---:|:---|
-| **01** | Support- & Öffnungszeiten | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Eingebaut in Footer & `/kontakt`. |
-| **02** | Trust-Badges & Claims bereinigen | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | Unbelegte Behauptungen entfernt. |
-| **03** | Hero-Bereich: Einheitliches Bild-Grid | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6er-Bildkarten-Grid mit Zoom-Hover & Schnellwahl umgesetzt. |
-| **04** | Mobile Viewport Audit (375px) | 🟢 Leicht | [x] Erledigt | ⚡ Gemini Flash | 6/6 Tests auf 375px bestanden. |
-| **05** | **Lighthouse Performance- & SEO-Messung** | 🟢 Leicht | **NÄCHSTER SCHRITT** | ⚡ **Gemini Flash** | Lighthouse-Audit für Core Web Vitals ausführen & dokumentieren. |
-| **06** | **CSP- & Framing-Warnungen analysieren** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | CHECK24-iFrame CSP Warnings (`idb.check24.de`) analysieren. |
-| **07** | **Barrierefreiheit (Kontraste & Headings)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Kontraste & Heading-Hierarchie nach WCAG 2.1 AA optimieren. |
-| **08** | **E-Mail-Backend (Resend/Nodemailer)** | 🟡 Mittel | [ ] Offen | 🧠 **Claude Sonnet** | Console-Stub in `lib/mailer.ts` durch Resend API ersetzen. |
-| **09** | **Rechtstexte integrieren (Händlerbund)** | 🔴 Komplex | ⏸ Wartet auf Vorlagen | ⚡ **Gemini Flash** | Texte vom Händlerbund 1:1 einbinden (Impressum, Datenschutz, Erstinfo, AGB). |
-| **10** | **Eigene Domain & E-Mail aufschalten** | 🔴 Komplex | ⏸ Domain nötig | ⚡ **Gemini Flash** | Domain auf Vercel konfigurieren, `NEXT_PUBLIC_SITE_URL` setzen. |
-| **11** | **Finale Go-Live-Abnahme** | 🔴 Komplex | ⏸ Nach 05–10 | ⚡ **Gemini Flash** | End-to-End-Smoke-Test unter Produktiv-Domain. |
+Folgende Umgebungsvariablen sind sowohl in `.env.local` als auch in Vercel (`Production`, `Preview`, `Development`) hinterlegt:
 
----
+| Variable | Zweck |
+|:---|:---|
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | WhatsApp-Direktkontakt (`4915252592531`) |
+| `NEXT_PUBLIC_SITE_URL` | Offizielle Domain (`https://sichertarif.de`) |
+| `SMTP_HOST` / `SMTP_PORT` / `SMTP_SECURE` | IONOS Mailserver (`smtp.ionos.de`, 465, true) |
+| `SMTP_USER` / `SMTP_PASS` | Authentifizierung für `info@sichertarif.de` |
+| `CONTACT_EMAIL` / `EMAIL_FROM` | Empfänger- & Absenderadresse |
+| `DEEPSEEK_API_KEY` | API-Schlüssel für den automatischen Support-Chatbot |
 
-## 🔑 5. Umgebungsvariablen & KI-Provider (Handover-Hinweis)
-
-Der Hybrid-Support-Chatbot (Task 12, nachts 20:00–08:00 Uhr) nutzt die **DeepSeek-API**
-(`deepseek-chat`, OpenAI-kompatibel) über die Env-Variable `DEEPSEEK_API_KEY`.
-
-> ⚠️ **Wichtig für die Übergabe:** Der aktuell hinterlegte `DEEPSEEK_API_KEY` ist der
-> **Key der Agentur und nur zum Testen gedacht**. Beim Go-Live muss der **Kunde einen
-> eigenen API-Key** hinterlegen — ohne eigenen Key antwortet der Chatbot nur mit dem
-> „nicht erreichbar“-Fallback. Der Wechsel ist reine Env-Konfiguration in Vercel
-> (`DEEPSEEK_API_KEY`), kein Code-Umbau.
+> ⚠️ **Handover-Hinweis:** Der aktuell hinterlegte `DEEPSEEK_API_KEY` ist aktiv und mit Guthaben ausgestattet. Nach der Übergabe kann der Kunde jederzeit seinen eigenen Key in den Vercel Project Settings austauschen.
