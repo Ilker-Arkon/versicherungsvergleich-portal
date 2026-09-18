@@ -30,6 +30,10 @@
 | **12** | **24/7 Hybrid-Support (KI von 20:00 bis 08:00 Uhr)** | 🟡 Mittel | [x] Erledigt (11.09.) | ⚡ **Gemini Flash** | Zeitgesteuerte Kundenbetreuung: Tagsüber (08:00–20:00 Uhr) persönlicher Berater (Telefon/WhatsApp), ab 20:00 Uhr bis 08:00 Uhr automatischer KI-Chatbot (Claude Haiku) mit Compliance-Guardrails. |
 | **13** | **Logo Layout korrigieren** | 🟢 Leicht | [x] Erledigt | ⚡ **Gemini Flash** | Fehler bei der Darstellung im Header beheben (Logo-Bereich anpassen, Kasten entfernen), sicherstellen dass das neue "sichertarif" Logo perfekt auf Desktop & Mobile skaliert ohne weiße Ränder oben/unten. |
 | **14** | **SEO-Ratgeberartikel generieren** | 🟡 Mittel | [ ] Offen | ⚡ **Gemini Flash** | Echte Ratgeber-/Blog-Artikel mit Volltext (neutral, ohne Rechts-/Beratungsinhalte) für die Sparten erstellen und unter eigener URL (z. B. `/ratgeber/…`) veröffentlichen. Bisher nur 4 Teaser-Karten ohne Volltext auf `/ratgeber`. |
+| **15** | **Ansprechpartner-Bereich & Berater-Präsentation** | 🟢 Leicht | [x] Erledigt (18.09.) | ⚡ **Gemini Flash** | Startseite: Neue `AdvisorSection` mit Porträtfoto von Herrn Gülec (zentriert 40%), Typografie mit Serifenschrift (`Playfair Display`), 3-Spalten-Kontakt (`WhatsApp \| Anruf \| Mail`) mit dezenter Linienführung und Hover-Animation. Marketingtexte von Paragrafennummern (§ 34d etc.) und Steuerclaims befreit. |
+| **16** | **Erreichbarkeits- & Servicezeiten-Harmonisierung** | 🟢 Leicht | [x] Erledigt (18.09.) | ⚡ **Gemini Flash** | Telefonische Erreichbarkeit portalweit einheitlich auf `Mo. – Fr. 10:00 – 16:00 Uhr` gesetzt (Navbar, Footer, Kontakt, Chatbot, AdvisorSection). Briefumschlag-Icon in Navbar und 3. Floating Button für E-Mail ergänzt. |
+| **17** | **KI-Chat Widget UX, Persistenz & Retry** | 🟡 Mittel | [x] Erledigt (18.09.) | ⚡ **Gemini Flash** | Chatbot-Fenster bleibt bei Seitenwechsel geöffnet (`sessionStorage`), Klick auf Rechner-Links navigiert sanft per Next.js Router im Hintergrund weiter, Kontextübermittlung der aktuellen URL (`currentPath`), automatischer Retry bei kurzen API-Wacklern und grammatikalisch sauberer Fallback. |
+| **18** | **Vercel Production Env & Live-Verifikation** | 🟡 Mittel | [x] Erledigt (18.09.) | ⚡ **Gemini Flash** | `DEEPSEEK_API_KEY` in Vercel (Production/Preview/Dev) konfiguriert, Deployment auf `sichertarif.de` live geschaltet und end-to-end verifiziert (Status 200, KI antwortet live). |
 
 ---
 
@@ -51,3 +55,8 @@
 - [x] **Top-Bar & Branding Update:** Markenname auf "SicherTarif" geändert, Trust-Bar im Header harmonisiert und erweitert (08.09.).
 - [x] **Lighthouse Performance- & SEO-Messung:** Audit direkt gegen Live-Domain https://sichertarif.de bestanden — Performance: 93, Accessibility: 91, Best Practices: 100, SEO: 100, CLS: 0, FCP: 1.1s (08.09.).
 - [x] **Vercel Projekt-Bereinigung:** Projekt von 'eager-pythagoras' in 'sichertarif' umbenannt, package.json angepasst (08.09.).
+- [x] **Ansprechpartner-Bereich:** Neue `AdvisorSection` auf Homepage mit Foto von Herrn Gülec, Typografie mit Serifenschrift (`Playfair Display`), 3-Spalten-Kontakt (`WhatsApp | Anruf | Mail`) und Hover-Animation (18.09.).
+- [x] **Rechtliche Bereinigung:** Alle Paragrafen (§ 34d etc.) und steuerlichen Versprechen aus Marketing- und Beratertexten entfernt (18.09.).
+- [x] **Erreichbarkeits-Zeiten:** Telefonzeiten portalweit einheitlich auf `Mo. – Fr. 10:00 – 16:00 Uhr` gesetzt; E-Mail als Briefumschlag im Header und im schwebenden FAB verankert (18.09.).
+- [x] **KI-Chatbot Persistenz & Routing:** Chat bleibt beim Navigieren durch Unterseiten geöffnet, Rechner-Links öffnen nahtlos im Hintergrund, Seitenerkennung (`currentPath`) aktiv (18.09.).
+- [x] **Live-KI-Betrieb (DeepSeek):** Key auf Vercel eingerichtet, automatischer Retry und Fallback bei Timeouts implementiert, Live-Chat auf `sichertarif.de` voll funktionsfähig (18.09.).
