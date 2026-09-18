@@ -1,10 +1,12 @@
-import { PhoneCall, MessageCircle } from "lucide-react";
+import { PhoneCall, MessageCircle, Mail } from "lucide-react";
 import { PHONE_URL, WHATSAPP_URL } from "@/lib/site";
+import { CUSTOMER_PROFILE } from "@/lib/data";
 
 /**
  * Schwebende Kontakt-Buttons (unten rechts, auf allen Seiten):
- * „Anrufen" (blau, oben) und „WhatsApp" (grün, darunter).
- * Der WhatsApp-Button erscheint nur, wenn `NEXT_PUBLIC_WHATSAPP_NUMBER` gesetzt ist.
+ * 1. „Anrufen" (blau)
+ * 2. „WhatsApp" (grün)
+ * 3. „E-Mail" (dunkel/slate)
  */
 export default function ContactFab() {
   return (
@@ -34,6 +36,17 @@ export default function ContactFab() {
           <span className="hidden sm:inline">WhatsApp</span>
         </a>
       )}
+
+      {/* E-Mail */}
+      <a
+        href={`mailto:${CUSTOMER_PROFILE.email}`}
+        aria-label="E-Mail senden"
+        title={`E-Mail an ${CUSTOMER_PROFILE.email}`}
+        className="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-3 text-white font-semibold text-sm shadow-lg hover:bg-slate-800 transition-colors border border-slate-700/60"
+      >
+        <Mail className="h-5 w-5 text-blue-400" />
+        <span className="hidden sm:inline">E-Mail</span>
+      </a>
     </div>
   );
 }

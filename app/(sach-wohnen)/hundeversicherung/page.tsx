@@ -13,7 +13,7 @@ export const metadata: Metadata = subcategoryMetadata("/hundeversicherung");
 const hundeFaqs = [
   {
     question: "Ist die Hundehalterhaftpflicht in Deutschland gesetzliche Pflicht?",
-    answer: "In den meisten Bundesländern (z. B. Berlin, Hamburg, Niedersachsen, Schleswig-Holstein, Thüringen u. a.) ist die Hundehaftpflicht für jeden Hundehalter gesetzlich vorgeschrieben. In anderen Ländern gilt die Pflicht für bestimmte Rassen oder größere Hunde. Aufgrund der unbegrenzten Gefährdungshaftung nach § 833 BGB ist sie für jeden Hundehalter dringend anzuraten."
+    answer: "In den meisten Bundesländern (z. B. Berlin, Hamburg, Niedersachsen, Schleswig-Holstein, Thüringen u. a.) ist die Hundehaftpflicht für jeden Hundehalter gesetzlich vorgeschrieben. In anderen Ländern gilt die Pflicht für bestimmte Rassen oder größere Hunde. Aufgrund der gesetzlichen unbegrenzten Gefährdungshaftung ist sie für jeden Hundehalter dringend anzuraten."
   },
   {
     question: "Sind Mietsachschäden und Fremdhüter mitversichert?",

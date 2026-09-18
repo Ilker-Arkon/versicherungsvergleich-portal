@@ -9,7 +9,7 @@ import { PARTNER_WIDGETS } from '@/lib/partnerWidgets';
 const phvFaqs = [
   {
     question: "Warum ist die Privathaftpflichtversicherung unverzichtbar?",
-    answer: "Nach § 823 BGB haften Sie in Deutschland mit Ihrem gesamten gegenwärtigen und zukünftigen Vermögen unbegrenzt für Schäden, die Sie Dritten zufügen. Eine Privathaftpflicht schützt Sie vor dem finanziellen Ruin."
+    answer: "Nach deutschem Recht haften Sie mit Ihrem gesamten gegenwärtigen und zukünftigen Vermögen unbegrenzt für Schäden, die Sie Dritten zufügen. Eine Privathaftpflicht schützt Sie vor dem finanziellen Ruin."
   },
   {
     question: "Was deckt eine Hausratversicherung ab?",

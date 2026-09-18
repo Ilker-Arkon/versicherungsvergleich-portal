@@ -12,6 +12,7 @@ import {
   PhoneCall,
   MessageCircle,
   ArrowRight,
+  Mail,
 } from 'lucide-react';
 import { CATEGORIES, CUSTOMER_PROFILE } from '@/lib/data';
 import { PHONE_URL, WHATSAPP_URL } from '@/lib/site';
@@ -96,10 +97,16 @@ export default function Navbar() {
               <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> In unter 3 Min. zum Bestpreis
             </span>
           </div>
-          <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors shrink-0 ml-4 font-semibold text-blue-400">
-            <PhoneCall className="w-3 h-3 mr-1.5" />
-            {CUSTOMER_PROFILE.phone}
-          </a>
+          <div className="flex items-center gap-4 shrink-0 ml-4">
+            <a href={`mailto:${CUSTOMER_PROFILE.email}`} className="hidden sm:flex items-center hover:text-white transition-colors font-medium text-slate-300">
+              <Mail className="w-3 h-3 mr-1.5 text-blue-400" />
+              {CUSTOMER_PROFILE.email}
+            </a>
+            <a href={`tel:${CUSTOMER_PROFILE.phone.replace(/\s+/g, '')}`} className="flex items-center hover:text-white transition-colors font-semibold text-blue-400">
+              <PhoneCall className="w-3 h-3 mr-1.5" />
+              {CUSTOMER_PROFILE.phone}
+            </a>
+          </div>
         </div>
       </div>
 
@@ -232,6 +239,15 @@ export default function Navbar() {
                 <MessageCircle className="w-5 h-5" />
               </a>
             )}
+
+            <a
+              href={`mailto:${CUSTOMER_PROFILE.email}`}
+              aria-label="E-Mail schreiben"
+              title={`E-Mail an ${CUSTOMER_PROFILE.email}`}
+              className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm font-semibold text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>

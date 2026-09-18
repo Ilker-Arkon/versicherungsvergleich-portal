@@ -24,40 +24,67 @@ export function hasChatKey(): boolean {
  * gibt den Antworttext zurück. Nicht-streamend, ohne zusätzliches SDK — ein
  * simpler HTTPS-POST, damit keine neue Laufzeit-Abhängigkeit entsteht.
  */
-export async function askChat(history: ChatMessage[]): Promise<string> {
+export async function askChat(
+  history: ChatMessage[],
+  currentPath?: string,
+): Promise<string> {
   const apiKey = process.env.DEEPSEEK_API_KEY;
   if (!apiKey) {
     throw new Error("DEEPSEEK_API_KEY ist nicht konfiguriert.");
   }
 
-  const res = await fetch(DEEPSEEK_API_URL, {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: getChatModel(),
-      max_tokens: 512,
-      temperature: 0,
-      // DeepSeek V4 „denkt" standardmäßig und verbraucht damit das
-      // max_tokens-Budget (leere Antworten). Für den Support-Bot abschalten.
-      reasoning_effort: "none",
-      messages: [{ role: "system", content: buildSystemPrompt() }, ...history],
-    }),
-  });
-
-  if (!res.ok) {
-    const detail = await res.text().catch(() => "");
-    throw new Error(`DeepSeek API ${res.status}: ${detail.slice(0, 200)}`);
-  }
-
-  const data = (await res.json()) as {
-    choices?: Array<{ message?: { content?: string } }>;
+  const payload = {
+    model: getChatModel(),
+    max_tokens: 512,
+    temperature: 0,
+    // DeepSeek V4 „denkt" standardmäßig und verbraucht damit das
+    // max_tokens-Budget (leere Antworten). Für den Support-Bot abschalten.
+    reasoning_effort: "none",
+    messages: [
+      { role: "system", content: buildSystemPrompt(currentPath) },
+      ...history,
+    ],
   };
-  const text = data.choices?.[0]?.message?.content?.trim();
-  if (!text) {
-    throw new Error("Leere Antwort vom Sprachmodell.");
+
+  let lastError: unknown = null;
+
+  // Bis zu 2 Versuche bei kurzzeitigen API-Aussetzern oder Timeouts
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+      const res = await fetch(DEEPSEEK_API_URL, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify(payload),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        const detail = await res.text().catch(() => "");
+        throw new Error(`DeepSeek API ${res.status}: ${detail.slice(0, 200)}`);
+      }
+
+      const data = (await res.json()) as {
+        choices?: Array<{ message?: { content?: string } }>;
+      };
+      const text = data.choices?.[0]?.message?.content?.trim();
+      if (!text) {
+        throw new Error("Leere Antwort vom Sprachmodell.");
+      }
+      return text;
+    } catch (err) {
+      lastError = err;
+      if (attempt < 2) {
+        await new Promise((resolve) => setTimeout(resolve, 800));
+      }
+    }
   }
-  return text;
+
+  throw lastError instanceof Error ? lastError : new Error(String(lastError));
 }

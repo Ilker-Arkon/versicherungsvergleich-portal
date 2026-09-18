@@ -13,7 +13,7 @@ export const metadata: Metadata = subcategoryMetadata("/haftpflicht");
 const faqs = [
   {
     question: 'Warum ist die Privathaftpflichtversicherung unverzichtbar?',
-    answer: 'Nach § 823 BGB haften Sie in Deutschland mit Ihrem gesamten gegenwärtigen und zukünftigen Vermögen unbegrenzt für Schäden, die Sie Dritten zufügen. Eine Privathaftpflicht schützt Sie vor dem finanziellen Ruin.'
+    answer: 'Nach deutschem Recht haften Sie mit Ihrem gesamten gegenwärtigen und zukünftigen Vermögen unbegrenzt für Schäden, die Sie Dritten zufügen. Eine Privathaftpflicht schützt Sie vor dem finanziellen Ruin.'
   },
   {
     question: 'Was ist die Forderungsausfalldeckung?',
@@ -75,7 +75,7 @@ export default function HaftpflichtPage() {
             </div>
           </div>
           <p className="text-slate-600 text-sm leading-relaxed mb-5">
-            Du stößt versehentlich das teure Smartphone eines Bekannten um, fügst als Fußgänger einem Radfahrer einen Schaden zu – oder in deiner Wohnung tritt unbemerkt Wasser aus. Ein Unachsamkeitsmoment im Alltag genügt. Nach dem Bürgerlichen Gesetzbuch <strong className="text-slate-900">(§ 823 BGB)</strong> haftest du unbegrenzt mit deinem gesamten privaten Vermögen – auch mit zukünftigem Einkommen.
+            Du stößt versehentlich das teure Smartphone eines Bekannten um, fügst als Fußgänger einem Radfahrer einen Schaden zu – oder in deiner Wohnung tritt unbemerkt Wasser aus. Ein Unachsamkeitsmoment im Alltag genügt. Laut deutschem Gesetz haftest du unbegrenzt mit deinem gesamten privaten Vermögen – auch mit zukünftigem Einkommen.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">

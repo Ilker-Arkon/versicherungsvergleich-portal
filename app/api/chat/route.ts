@@ -16,16 +16,18 @@ function closedReply(): string {
   return [
     "Vielen Dank für Ihre Nachricht!",
     "",
-    `Unser persönlicher Berater ist zu folgenden Zeiten für Sie da: ${CUSTOMER_PROFILE.serviceHours}.`,
-    `Sie erreichen uns telefonisch unter ${CUSTOMER_PROFILE.phone} oder per WhatsApp.`,
+    `Unser persönlicher Berater ${CUSTOMER_PROFILE.advisorDisplayName} ist zu folgenden Zeiten für Sie da: ${CUSTOMER_PROFILE.serviceHours}.`,
+    `Sie erreichen ${CUSTOMER_PROFILE.advisorDisplayName} telefonisch unter ${CUSTOMER_PROFILE.phone}, per WhatsApp oder per E-Mail (${CUSTOMER_PROFILE.email}).`,
   ].join("\n");
 }
 
 /** Antwort, wenn der Assistent technisch nicht verfügbar ist. */
 function unavailableReply(): string {
   return [
-    "Der automatische Assistent ist momentan nicht erreichbar.",
-    `Bitte kontaktieren Sie uns telefonisch unter ${CUSTOMER_PROFILE.phone} oder per WhatsApp — wir melden uns ${CUSTOMER_PROFILE.responseTime.toLowerCase()}.`,
+    "Der automatische Assistent ist momentan leider kurz nicht erreichbar.",
+    "",
+    `Bitte versuchen Sie es in wenigen Augenblicken noch einmal oder kontaktieren Sie ${CUSTOMER_PROFILE.advisorDisplayName} direkt per WhatsApp, telefonisch unter ${CUSTOMER_PROFILE.phone} oder per E-Mail (${CUSTOMER_PROFILE.email}).`,
+    "Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen.",
   ].join("\n");
 }
 
@@ -63,7 +65,12 @@ export async function POST(request: Request) {
     );
   }
 
-  // 2) Zeit-Gate: außerhalb 20:00–08:00 Uhr nur Kontakt-Verweis, kein LLM-Call.
+  const currentPath =
+    typeof (body as { currentPath?: unknown })?.currentPath === "string"
+      ? (body as { currentPath: string }).currentPath
+      : undefined;
+
+  // 2) Zeit-Gate: außerhalb der Telefonzeiten KI aktiv.
   if (!isChatActive()) {
     return NextResponse.json({ reply: closedReply() });
   }
@@ -75,7 +82,7 @@ export async function POST(request: Request) {
 
   // 4) Sprachmodell aufrufen; bei Fehler fallback auf Kontakt-Verweis.
   try {
-    const reply = await askChat(history);
+    const reply = await askChat(history, currentPath);
     return NextResponse.json({ reply });
   } catch (err) {
     console.error("[chat] Fehler beim LLM-Call:", err);

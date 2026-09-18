@@ -5,6 +5,7 @@ import TrustBadges from '@/components/TrustBadges';
 import CategoryShowcase from '@/components/CategoryShowcase';
 import PromoCards from '@/components/PromoCards';
 import GuidePreview from '@/components/GuidePreview';
+import AdvisorSection from '@/components/AdvisorSection';
 import FAQAccordion from '@/components/FAQAccordion';
 import { GENERAL_FAQS } from '@/lib/data';
 import Link from 'next/link';
@@ -102,7 +103,10 @@ export default function HomePage() {
       {/* 6. Guide Preview */}
       <GuidePreview />
 
-      {/* 7. FAQ Section */}
+      {/* 7. Persönlicher Ansprechpartner */}
+      <AdvisorSection />
+
+      {/* 8. FAQ Section */}
       <FAQAccordion items={GENERAL_FAQS} />
     </div>
   );

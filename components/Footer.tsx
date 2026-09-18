@@ -158,7 +158,7 @@ export default function Footer() {
               <li><Link href="/impressum" className="text-slate-400 hover:text-white">Impressum</Link></li>
               <li><Link href="/agb" className="text-slate-400 hover:text-white">AGB</Link></li>
               <li><Link href="/datenschutz" className="text-slate-400 hover:text-white">Datenschutzerklärung</Link></li>
-              <li><Link href="/erstinformation" className="text-slate-400 hover:text-white">Erstinformation gem. § 15 VersVermV</Link></li>
+              <li><Link href="/erstinformation" className="text-slate-400 hover:text-white">Erstinformation</Link></li>
               <li>
                 <button
                   type="button"

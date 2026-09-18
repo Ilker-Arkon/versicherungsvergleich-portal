@@ -1,6 +1,7 @@
 export interface CustomerProfile {
   name: string;
   salutation: string;
+  advisorDisplayName: string;
   street: string;
   zip: string;
   city: string;
@@ -15,6 +16,7 @@ export interface CustomerProfile {
 export const CUSTOMER_PROFILE: CustomerProfile = {
   salutation: "Herr",
   name: "Hüseyin Gülec",
+  advisorDisplayName: "Herr Gülec",
   street: "Anna Str. 6",
   zip: "90459",
   city: "Nürnberg",
@@ -22,7 +24,7 @@ export const CUSTOMER_PROFILE: CustomerProfile = {
   phone: "+49 1525 2592531",
   email: "info@sichertarif.de",
   partnerId: "75137",
-  serviceHours: "Mo. – Fr. 09:00 – 18:00 Uhr",
+  serviceHours: "Mo. – Fr. 10:00 – 16:00 Uhr",
   responseTime: "Antwort in der Regel unter 24 Std."
 };
 
@@ -224,7 +226,7 @@ export const CATEGORIES: MainCategory[] = [
         title: "Private Rentenversicherung",
         slug: "/rente",
         description: "Lebenslange Zusatzrente für einen sorgenfreien Lebensabend ohne Rentenlücke.",
-        badge: "Steuerbegünstigt",
+        badge: "Staatlich gefördert",
         savingsPotential: "Hohe Renditechancen",
         iconName: "TrendingUp"
       },
@@ -239,7 +241,7 @@ export const CATEGORIES: MainCategory[] = [
       {
         title: "Riester-Rente",
         slug: "/riester-rente",
-        description: "Staatliche Zulagen und steuerliche Förderung für Arbeitnehmer & Familien.",
+        description: "Staatliche Zulagen und attraktive Förderungen für Arbeitnehmer & Familien.",
         badge: "Staatliche Zulagen",
         savingsPotential: "Bis zu Hunderte € Zuschuss",
         iconName: "Coins"
@@ -247,9 +249,9 @@ export const CATEGORIES: MainCategory[] = [
       {
         title: "Rürup-Rente (Basisrente)",
         slug: "/ruerup-rente",
-        description: "Maximale Steuerersparnis für Selbstständige, Freiberufler und Besserverdiener.",
-        badge: "Max. Steuervorteil",
-        savingsPotential: "Bis zu 10.000 € Steuerabzug",
+        description: "Altersvorsorge mit hoher staatlicher Förderung für Selbstständige, Freiberufler und Besserverdiener.",
+        badge: "Staatlich gefördert",
+        savingsPotential: "Hohe Förderquote",
         iconName: "FileSpreadsheet"
       },
       {
@@ -348,8 +350,8 @@ export const PROMO_HIGHLIGHTS = [
     id: "rente-aufbau",
     title: "Private Rentenversicherung",
     headline: "Lebenslange Zusatzrente aufbauen",
-    description: "Schließen Sie Ihre Rentenlücke mit staatlich geförderter, steuerbegünstigter Altersvorsorge.",
-    badge: "Steuerbegünstigt",
+    description: "Schließen Sie Ihre Rentenlücke mit flexibler und staatlich geförderter Altersvorsorge.",
+    badge: "Staatlich gefördert",
     buttonText: "Rente berechnen",
     link: "/rente",
     tag: "Vorsorge & Leben",
