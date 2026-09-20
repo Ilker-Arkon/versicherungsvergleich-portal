@@ -21,7 +21,10 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* 2. Trust Badges Strip */}
+      {/* 2. Persönlicher Ansprechpartner (Kundenwunsch: direkt nach Hero) */}
+      <AdvisorSection />
+
+      {/* 3. Trust Badges Strip */}
       <TrustBadges />
 
       {/* 3. Category Showcase Grid */}
@@ -103,10 +106,7 @@ export default function HomePage() {
       {/* 6. Guide Preview */}
       <GuidePreview />
 
-      {/* 7. Persönlicher Ansprechpartner */}
-      <AdvisorSection />
-
-      {/* 8. FAQ Section */}
+      {/* 7. FAQ Section */}
       <FAQAccordion items={GENERAL_FAQS} />
     </div>
   );

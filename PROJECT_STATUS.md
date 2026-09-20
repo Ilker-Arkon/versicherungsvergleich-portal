@@ -1,7 +1,7 @@
 # 📋 SicherTarif Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
-> Zuletzt aktualisiert: 18. September 2026 · Stand: Sprint 2 (Ansprechpartner-Integration, Erreichbarkeits-Harmonisierung & KI-Chatbot Produktivbetrieb)
+> Zuletzt aktualisiert: 20. September 2026 · Stand: Sprint 3 (Hero/Advisor-Neupositionierung, Speed-Dial-Kontakt, Soforthilfe-Badge & Google-SERP-Icons)
 
 ---
 
@@ -16,9 +16,23 @@
 
 ---
 
-## 🎨 2. Umgesetzte Features & Verifizierungen (Stand 18.09.)
+## 🎨 2. Umgesetzte Features & Verifizierungen (Stand 20.09. — Sprint 3)
 
-1. **Ansprechpartner-Bereich & Berater-Präsentation (`components/AdvisorSection.tsx`):**
+1. **Neupositionierung Ansprechpartner (`app/page.tsx`):**
+   * Auf Kundenwunsch wurde die `AdvisorSection` im Layout direkt unter das Schnellwahl-Band der `HeroSection` („Entdecken Sie weitere Vergleiche“) und unmittelbar vor die `TrustBadges` verschoben. Herr Gülec wird Besuchern nun im oberen Drittel sofort präsentiert.
+
+2. **Floating Speed-Dial Kontakt-Menü (`components/ContactFab.tsx`):**
+   * Die zuvor 3 gestapelten Buttons (Anrufen, WhatsApp, E-Mail) wurden durch ein kompaktes, elegantes Aufklappmenü (Speed-Dial) ersetzt.
+   * Null Geister-Höhe im geschlossenen Zustand: Spart massiv Displayhöhe auf Smartphones und Desktop ein und behebt die visuelle Lücke vollständig.
+
+3. **Soforthilfe-Launcher mit 24/7-Highlight (`components/ChatWidget.tsx`):**
+   * Der schwebende Chatbot-Button wurde als primäre Anlaufstelle (`Soforthilfe 24/7`) mit lebhaftem Farbverlauf, pulsierendem Live-Dot und Badge hervorgehoben. Dadurch werden Standardanfragen automatisiert abgefangen und das Telefon-/E-Mail-Aufkommen für Herrn Gülec gezielt geschützt.
+
+4. **Google-Suche Favicon & SERP-Snippet-Präsenz:**
+   * Generierung aller von Google geforderten Raster-Favicons (`favicon.ico` Multi-Res, PNGs in 48×48, 96×96, 144×144, 192×192, 512×512, Apple-Touch 180×180).
+   * Verankerung in `layout.tsx` (`metadata.icons`) sowie Verknüpfung von `logo-google.png` im Schema.org `Organization`-Markup.
+
+5. **Ansprechpartner-Bereich & Berater-Präsentation (`components/AdvisorSection.tsx`):**
    * **Porträtfoto:** `public/berater-hueseyin-guelec.jpg` zentriert eingebunden (`objectPosition: "center 40%"` für perfekte Ausrichtung von Kopf, Schultern und Hemd).
    * **Typografie & Name:** Offizieller Anzeigename **Herr Gülec** in eleganter Serifenschrift (`next/font/google` -> `Playfair Display`).
    * **3-Spalten-Kontaktleiste:** Gleichmäßig aufgeteilter, responsiver Block (`WhatsApp | Anruf | Mail`) mit dezenten horizontalen Begrenzungslinien (`border-y border-slate-700/70`) und gleitender Unterstrich-Hover-Animation.
