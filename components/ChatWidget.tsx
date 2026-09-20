@@ -226,21 +226,36 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Schwebender Chat-Launcher */}
+      {/* Schwebender Chat-Launcher: Prominent als primäre Soforthilfe hervorgehoben */}
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-label={open ? "Chat schließen" : "Chat öffnen"}
+        aria-label={open ? "Soforthilfe-Chat schließen" : "Soforthilfe-Chat öffnen"}
         aria-expanded={open}
-        className="flex-shrink-0 inline-flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white shadow-xl hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer"
+        className={`flex-shrink-0 inline-flex items-center gap-2 rounded-full text-white px-4 py-3 shadow-2xl transition-all duration-300 cursor-pointer border ${
+          open
+            ? "bg-slate-800 border-slate-700 hover:bg-slate-700 active:scale-95"
+            : "bg-gradient-to-r from-blue-600 via-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 border-blue-300/40 shadow-blue-500/30 hover:scale-105 active:scale-95 group"
+        }`}
       >
-        <span
-          className={`transform transition-transform duration-300 ${
-            open ? "rotate-90" : "rotate-0"
-          }`}
-        >
-          {open ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
-        </span>
+        {open ? (
+          <>
+            <X className="h-4 w-4 text-slate-200" />
+            <span className="text-sm font-semibold">Schließen</span>
+          </>
+        ) : (
+          <>
+            <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
+            </span>
+            <MessageCircle className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+            <span className="text-sm font-bold tracking-wide">Soforthilfe</span>
+            <span className="text-[10px] font-semibold tracking-wider uppercase bg-white/20 px-1.5 py-0.5 rounded-full text-blue-50">
+              24/7
+            </span>
+          </>
+        )}
       </button>
 
       {/* Sanft einblendbares Chat-Panel (origin-bottom-right mit Smooth Transitions) */}

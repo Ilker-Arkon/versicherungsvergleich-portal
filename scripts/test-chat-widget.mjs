@@ -46,7 +46,7 @@ async function testChatWidget() {
   await sleep(2000);
 
   // 1) Launcher ist nachts sichtbar.
-  const launcher = page.locator('button[aria-label="Chat öffnen"]');
+  const launcher = page.locator('button[aria-label*="Chat"], button[aria-label*="Soforthilfe"]').first();
   const launcherVisible = await launcher.isVisible().catch(() => false);
   log('Chat-Launcher ist nachts sichtbar', launcherVisible);
 

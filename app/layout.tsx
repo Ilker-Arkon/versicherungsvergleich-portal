@@ -60,6 +60,18 @@ export const metadata: Metadata = {
   verification: {
     google: "BLj3PY95VPpGx8navV3OV0jmcYugzp66HFNMp-JWBko",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -105,7 +117,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 name: SITE_NAME,
                 url: SITE_URL,
-                logo: `${SITE_URL}/icon.svg`,
+                logo: `${SITE_URL}/logo-google.png`,
               }),
             }}
           />
