@@ -1,7 +1,7 @@
 # 📋 SicherTarif Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
-> Zuletzt aktualisiert: 20. September 2026 · Stand: Sprint 3 (Hero/Advisor-Neupositionierung, Speed-Dial-Kontakt, Soforthilfe-Badge & Google-SERP-Icons)
+> Zuletzt aktualisiert: 24. September 2026 · Stand: Sprint 4 (Google Search Console Anbindung & Indexierungs-Monitoring)
 
 ---
 
@@ -57,6 +57,11 @@
 5. **E-Mail-Backend (IONOS SMTP / Nodemailer):**
    * Echter E-Mail-Versand über offizielles IONOS-Postfach `info@sichertarif.de` mit HTML-Vorlage, Absender-ReplyTo und Live-Test erfolgreich angebunden.
 
+6. **Google Search Console Anbindung (24.09.):**
+   * Bestehendes Service-Konto `id-ai-holding-sheets@promising-balm-478612-r2.iam.gserviceaccount.com` mit Voll-Berechtigung auf `sc-domain:sichertarif.de`.
+   * Key-Datei (nicht im Repo): `C:\Users\Home\Desktop\AI_Projekte\ai-holding\config\google-credentials.json`.
+   * Sitemap am 24.09. neu eingereicht → frischer Crawl der 34 URLs angestoßen. Re-Check der Indexierung ~29.09.
+
 ---
 
 ## 🛠️ 3. Wichtige Befehle & Test-Suites
@@ -69,6 +74,9 @@
 * **Kontaktformular-Test:** `node scripts/test-contact-form.mjs`
 * **Mobile-Responsive Audit:** `node scripts/test-mobile-responsive.mjs`
 * **Vercel Deployment:** `npx vercel --prod --yes`
+* **Search-Console-Daten (Klicks/Impr./Position):** `node scripts/gsc-query.mjs`
+* **Indexierung & Sitemap prüfen:** `node scripts/gsc-check-index.mjs`
+* **Sitemap erneut einreichen:** `node scripts/gsc-submit-sitemap.mjs`
 
 ---
 
