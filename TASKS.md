@@ -39,6 +39,7 @@
 | **21** | **Schwebende Kontakt-Buttons konsolidieren (Floating "Kontakt"-Menü)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Mobile-UX-Entlastung: Die zuvor 3 gestapelten Buttons (Anrufen, WhatsApp, E-Mail) durch ein kompaktes, elegantes Aufklapp-Menü (Speed-Dial) mit ARIA-Accessibility ersetzt. |
 | **22** | **KI-Chatbot Button optimieren (“Soforthilfe”-Label)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Der schwebende Chatbot-Launcher in `ChatWidget.tsx` wurde um ein prominentes „Soforthilfe”-Label inklusive animiertem Aktiv-Status-Dot erweitert. |
 | **23** | **Google Search Console Anbindung & Monitoring** | 🟡 Mittel | [x] Erledigt (24.09.) | 🧠 **Claude Sonnet** | Bestehendes Service-Konto `id-ai-holding-sheets@…` als Voll-Berechtigung für `sc-domain:sichertarif.de` hinterlegt; Skripte `gsc-query.mjs`, `gsc-check-index.mjs`, `gsc-submit-sitemap.mjs` erstellt; Sitemap neu eingereicht. ⏳ **Re-Check Indexierung ~29.09.2026** |
+| **24** | **Leistungs-Ampel-Dashboard (universell)** | 🟡 Mittel | [x] Erledigt (24.09.) | 🧠 **Claude Sonnet** | DoD-Checklisten-Dashboard (`leistungs-ampel.html`) mit 🟢🟡🔴-Ampel, „Was wurde gemacht“-Dropdowns, Notizen und D/A-Info-Boxen gebaut. Universelle Mehr-Projekt-Vorlage im Framework-Ordner: `…/framework/leistungssystem/leistungs-ampel.html`. |
 
 ---
 

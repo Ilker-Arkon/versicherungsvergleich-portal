@@ -1,7 +1,7 @@
 # 📋 SicherTarif Portal — Projektstatus & Handover
 
 > **Dokumentation für alle zukünftigen Sessions und Entwickler.**  
-> Zuletzt aktualisiert: 24. September 2026 · Stand: Sprint 4 (Google Search Console Anbindung & Indexierungs-Monitoring)
+> Zuletzt aktualisiert: 24. September 2026 · Stand: Sprint 4 (Google Search Console Anbindung & Indexierungs-Monitoring + Leistungs-Ampel-Dashboard)
 
 ---
 
@@ -61,6 +61,10 @@
    * Bestehendes Service-Konto `id-ai-holding-sheets@promising-balm-478612-r2.iam.gserviceaccount.com` mit Voll-Berechtigung auf `sc-domain:sichertarif.de`.
    * Key-Datei (nicht im Repo): `C:\Users\Home\Desktop\AI_Projekte\ai-holding\config\google-credentials.json`.
    * Sitemap am 24.09. neu eingereicht → frischer Crawl der 34 URLs angestoßen. Re-Check der Indexierung ~29.09.
+
+7. **Leistungs-Ampel-Dashboard (24.09.):**
+   * DoD-Checklisten-Dashboard `leistungs-ampel.html` (Repo-Root) mit 🟢🟡🔴-Ampel, „Was wurde gemacht“-Dropdowns, Notizen pro Punkt und D/A-Info-Boxen.
+   * Universelle, wiederverwendbare Mehr-Projekt-Vorlage im Framework-Ordner: `C:\Users\Home\Desktop\AI_Projekte\ai-holding-system\framework\leistungssystem\leistungs-ampel.html` (Projekt-Umschalter, editierbarer Name & Einträge, Autosave via localStorage).
 
 ---
 
