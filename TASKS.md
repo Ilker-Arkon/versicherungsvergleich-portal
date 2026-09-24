@@ -1,7 +1,7 @@
 # ✅ Aufgaben & Plan — SicherTarif Portal
 
 > **Diese Datei wird von jeder neuen Session automatisch geladen** (via `CLAUDE.md` → `@TASKS.md`).
-> Stand: 09. September 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
+> Stand: 24. September 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
 
 ## Legende
 - `[ ]` offen · `[x]` erledigt · `[⏸]` wartet auf externe Bereitstellung
@@ -37,7 +37,8 @@
 | **19** | **Google-Suche Favicon & Logo (SERP-Snippets)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Standard-Raster-Favicons (`favicon.ico`, PNGs in 48x48, 96x96, 144x144, 192x192, 512x512) generiert, in `metadata.icons` hinterlegt und `logo-google.png` im Schema.org `Organization` Markup verankert. |
 | **20** | **Ansprechpartner-Bereich nach oben verschieben** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | `AdvisorSection` auf `app/page.tsx` exakt an die vom Kunden markierte Position zwischen `HeroSection` („Entdecken Sie weitere Vergleiche“) und `TrustBadges` verschoben. |
 | **21** | **Schwebende Kontakt-Buttons konsolidieren (Floating "Kontakt"-Menü)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Mobile-UX-Entlastung: Die zuvor 3 gestapelten Buttons (Anrufen, WhatsApp, E-Mail) durch ein kompaktes, elegantes Aufklapp-Menü (Speed-Dial) mit ARIA-Accessibility ersetzt. |
-| **22** | **KI-Chatbot Button optimieren ("Soforthilfe"-Label)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Der schwebende Chatbot-Launcher in `ChatWidget.tsx` wurde um ein prominentes „Soforthilfe“-Label inklusive animiertem Aktiv-Status-Dot erweitert. |
+| **22** | **KI-Chatbot Button optimieren (“Soforthilfe”-Label)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Der schwebende Chatbot-Launcher in `ChatWidget.tsx` wurde um ein prominentes „Soforthilfe”-Label inklusive animiertem Aktiv-Status-Dot erweitert. |
+| **23** | **Google Search Console Anbindung & Monitoring** | 🟡 Mittel | [x] Erledigt (24.09.) | 🧠 **Claude Sonnet** | Bestehendes Service-Konto `id-ai-holding-sheets@…` als Voll-Berechtigung für `sc-domain:sichertarif.de` hinterlegt; Skripte `gsc-query.mjs`, `gsc-check-index.mjs`, `gsc-submit-sitemap.mjs` erstellt; Sitemap neu eingereicht. ⏳ **Re-Check Indexierung ~29.09.2026** |
 
 ---
 
