@@ -30,7 +30,8 @@ import {
   CreditCard,
   Banknote,
   CheckCircle2,
-  SlidersHorizontal
+  ChevronDown,
+  ChevronRight
 } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data';
 
@@ -80,9 +81,11 @@ const CATEGORY_THEMES: Record<string, {
 
 export default function CategoryShowcase() {
   const [activeCategoryId, setActiveCategoryId] = useState<string>(CATEGORIES[0]?.id || 'mobilitaet');
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<boolean>(false);
 
   const activeCategory = CATEGORIES.find(c => c.id === activeCategoryId) || CATEGORIES[0];
   const activeTheme = CATEGORY_THEMES[activeCategory.id] || CATEGORY_THEMES.mobilitaet;
+  const currentIndex = CATEGORIES.findIndex(c => c.id === activeCategory.id);
 
   const getSubIcon = (iconName: string, className = "w-5 h-5") => {
     switch (iconName) {
@@ -143,7 +146,7 @@ export default function CategoryShowcase() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200">
             Spartenübersicht
           </span>
@@ -155,8 +158,146 @@ export default function CategoryShowcase() {
           </p>
         </div>
 
-        {/* Category Tabs Bar */}
-        <div className="flex items-center justify-start md:justify-center gap-2.5 overflow-x-auto pb-4 pt-1 mb-10 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+        {/* 1. MOBILE ONLY: ELEGANTER DROPDOWN MIT PFEIL */}
+        <div className="md:hidden mb-8">
+          <div className="flex items-center justify-between text-xs font-bold text-slate-500 uppercase tracking-wider mb-2 px-1">
+            <span>Sparte auswählen</span>
+            <span className="text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200 text-[11px] font-bold">
+              {currentIndex + 1} von {CATEGORIES.length} Sparten
+            </span>
+          </div>
+
+          {/* Der elegante Dropdown-Button mit Überschrift & Pfeil */}
+          <button
+            type="button"
+            onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+            className={`w-full bg-white border-2 rounded-2xl p-4 flex items-center justify-between shadow-sm active:scale-[0.99] transition-all cursor-pointer ${
+              mobileDropdownOpen ? 'border-blue-600 ring-4 ring-blue-500/10' : 'border-slate-200 hover:border-slate-300'
+            }`}
+            aria-expanded={mobileDropdownOpen}
+            aria-label="Sparte auswählen und Leistungen öffnen"
+          >
+            <div className="flex items-center gap-3.5 min-w-0">
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-bold ${activeTheme.iconBg} ${activeTheme.iconColor} shrink-0`}>
+                {getMainIcon(activeCategory.iconName, 'w-6 h-6')}
+              </div>
+              <div className="text-left min-w-0">
+                <span className="text-[11px] font-semibold text-slate-400 block uppercase tracking-wider">
+                  Aktive Sparte (Tippen zum Wechseln)
+                </span>
+                <h3 className="font-extrabold text-slate-900 text-base leading-tight truncate mt-0.5">
+                  {activeCategory.title.replace(/^[0-9]\.\s*/, '')}
+                </h3>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0 ml-3">
+              <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+                {activeCategory.subcategories.length} Tarife
+              </span>
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-300 ${
+                mobileDropdownOpen 
+                  ? 'bg-blue-600 text-white rotate-180 shadow-md' 
+                  : 'bg-slate-100 text-slate-600'
+              }`}>
+                <ChevronDown className="w-5 h-5 transition-transform duration-300" />
+              </div>
+            </div>
+          </button>
+
+          {/* Aufgeklapptes Dropdown-Menü mit allen 5 Kategorien */}
+          {mobileDropdownOpen && (
+            <div className="mt-2 bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden divide-y divide-slate-100 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="px-4 py-3 bg-slate-50 flex items-center justify-between border-b border-slate-100">
+                <span className="text-xs font-bold text-slate-600 uppercase tracking-wider">
+                  Alle 5 Sparten ({CATEGORIES.reduce((acc, c) => acc + c.subcategories.length, 0)} Vergleiche)
+                </span>
+                <span className="text-[11px] text-blue-600 font-semibold">Tippen zum Öffnen</span>
+              </div>
+
+              {CATEGORIES.map((category) => {
+                const isCurrent = category.id === activeCategoryId;
+                const theme = CATEGORY_THEMES[category.id] || CATEGORY_THEMES.mobilitaet;
+                const cleanTitle = category.title.replace(/^[0-9]\.\s*/, '');
+
+                return (
+                  <button
+                    key={category.id}
+                    type="button"
+                    onClick={() => {
+                      setActiveCategoryId(category.id);
+                      setMobileDropdownOpen(false);
+                    }}
+                    className={`w-full p-4 flex items-center justify-between text-left transition-colors cursor-pointer ${
+                      isCurrent 
+                        ? 'bg-blue-50/80 text-blue-900 font-bold' 
+                        : 'hover:bg-slate-50 text-slate-800'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3.5 min-w-0">
+                      <span className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${theme.iconBg} ${theme.iconColor}`}>
+                        {getMainIcon(category.iconName, 'w-5 h-5')}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="text-sm font-bold text-slate-900 truncate">
+                          {cleanTitle}
+                        </div>
+                        <div className="text-xs text-slate-500 line-clamp-1 mt-0.5">
+                          {category.description}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-2 shrink-0 ml-3">
+                      <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${
+                        isCurrent ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-600'
+                      }`}>
+                        {category.subcategories.length} Tarife
+                      </span>
+                      {isCurrent ? (
+                        <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                      ) : (
+                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                      )}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
+          {/* Schnelle Vor-/Zurück-Blättern Buttons auf Mobile */}
+          <div className="flex items-center justify-between gap-2 mt-3 px-1">
+            <button
+              type="button"
+              onClick={() => {
+                const prevIndex = (currentIndex - 1 + CATEGORIES.length) % CATEGORIES.length;
+                setActiveCategoryId(CATEGORIES[prevIndex].id);
+                setMobileDropdownOpen(false);
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 active:scale-95 transition-all cursor-pointer shadow-2xs"
+            >
+              <span>‹</span>
+              <span className="truncate max-w-[130px]">{CATEGORIES[(currentIndex - 1 + CATEGORIES.length) % CATEGORIES.length].title.replace(/^[0-9]\.\s*/, '')}</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                const nextIndex = (currentIndex + 1) % CATEGORIES.length;
+                setActiveCategoryId(CATEGORIES[nextIndex].id);
+                setMobileDropdownOpen(false);
+              }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-50 active:scale-95 transition-all cursor-pointer shadow-2xs"
+            >
+              <span className="truncate max-w-[130px]">{CATEGORIES[(currentIndex + 1) % CATEGORIES.length].title.replace(/^[0-9]\.\s*/, '')}</span>
+              <span>›</span>
+            </button>
+          </div>
+        </div>
+
+        {/* 2. DESKTOP ONLY: HORIZONTALE SPARTEN-TABS */}
+        <div className="hidden md:flex items-center justify-center gap-2.5 overflow-x-auto pb-4 pt-1 mb-10 scrollbar-none">
           {CATEGORIES.map((category) => {
             const isActive = category.id === activeCategoryId;
             const theme = CATEGORY_THEMES[category.id] || CATEGORY_THEMES.mobilitaet;
@@ -193,8 +334,8 @@ export default function CategoryShowcase() {
           })}
         </div>
 
-        {/* Active Category Header Card */}
-        <div className="bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+        {/* 3. DESKTOP ACTIVE CATEGORY BANNER */}
+        <div className="hidden md:flex bg-white/80 backdrop-blur-sm border border-slate-200/80 rounded-2xl p-4 sm:p-5 mb-8 flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
           <div className="flex items-center gap-3.5">
             <div className={`w-11 h-11 rounded-xl flex items-center justify-center font-bold ${activeTheme.iconBg} ${activeTheme.iconColor} shrink-0 shadow-xs`}>
               {getMainIcon(activeCategory.iconName, 'w-6 h-6')}
@@ -213,13 +354,13 @@ export default function CategoryShowcase() {
               </p>
             </div>
           </div>
-          <div className="hidden lg:flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-3.5 py-1.5 rounded-xl shrink-0">
+          <div className="flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-3.5 py-1.5 rounded-xl shrink-0">
             <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
             <span>Kostenlos & unverbindlich vergleichen</span>
           </div>
         </div>
 
-        {/* Uniform Product Cards Grid */}
+        {/* 4. DIE LEISTUNGEN: UNIFORM PRODUCT CARDS GRID */}
         <div className={`grid gap-6 ${
           isTwoCols 
             ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto' 
@@ -278,7 +419,7 @@ export default function CategoryShowcase() {
           ))}
         </div>
 
-        {/* Trust & Assistance Strip below Grid */}
+        {/* 5. TRUST & ASSISTANCE STRIP BELOW GRID */}
         <div className="mt-14 pt-8 border-t border-slate-200/70 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
           <div className="flex items-center justify-center gap-2 text-xs font-semibold text-slate-600">
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
