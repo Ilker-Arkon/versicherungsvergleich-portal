@@ -1,0 +1,18 @@
+#!/bin/sh
+# pre-commit — blockt .env-Dateien und Secret-Muster im gestagten Inhalt.
+# Installiert via:  git config core.hooksPath .githooks
+
+. "$(dirname "$0")/guard.sh"
+
+files=$(git diff --cached --name-only --diff-filter=ACMR)
+diff=$(git diff --cached --diff-filter=ACMR -U0)
+
+if ! block_env_files "$files"; then
+  exit 1
+fi
+
+if ! block_secrets "$diff"; then
+  exit 1
+fi
+
+exit 0
