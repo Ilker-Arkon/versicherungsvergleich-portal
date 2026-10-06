@@ -230,7 +230,7 @@ export default function PartnerWidget({
           <Lock className="w-3 h-3 text-emerald-600 mr-1.5" />
           256-Bit SSL-gesicherte Datenübertragung
         </span>
-        <span>Unabhängiger Marktvergleich</span>
+        <span className="font-bold text-slate-700">powered by TARIFCHECK24 GmbH</span>
       </div>
     </div>
   );
