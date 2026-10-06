@@ -33,7 +33,7 @@
    * Verankerung in `layout.tsx` (`metadata.icons`) sowie Verknüpfung von `logo-google.png` im Schema.org `Organization`-Markup.
 
 5. **Ansprechpartner-Bereich & Berater-Präsentation (`components/AdvisorSection.tsx`):**
-   * **Porträtfoto:** `public/berater-hueseyin-guelec.jpg` zentriert eingebunden (`objectPosition: "center 40%"` für perfekte Ausrichtung von Kopf, Schultern und Hemd).
+   * **Porträtfoto:** `public/berater-hueseyin-guelec-v2.jpg` zentriert eingebunden (`objectPosition: "center 25%"` für optimale Ausrichtung des neuen Fotos mit Fokus auf Gesicht und Lächeln).
    * **Typografie & Name:** Offizieller Anzeigename **Herr Gülec** in eleganter Serifenschrift (`next/font/google` -> `Playfair Display`).
    * **3-Spalten-Kontaktleiste:** Gleichmäßig aufgeteilter, responsiver Block (`WhatsApp | Anruf | Mail`) mit dezenten horizontalen Begrenzungslinien (`border-y border-slate-700/70`) und gleitender Unterstrich-Hover-Animation.
    * **Rechtliche Bereinigung:** Alle Nennungen von Paragrafen (§ 34d, § 15, BGB) sowie Steuerclaims („steuerbegünstigt“) aus Marketing- und Beratertexten vollständig entfernt.

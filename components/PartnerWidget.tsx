@@ -171,8 +171,13 @@ export default function PartnerWidget({
               className="inline-flex items-center px-5 py-2.5 bg-blue-600 text-white font-bold text-sm rounded-xl shadow-md hover:bg-blue-700 transition-colors"
             >
               Jetzt zum offiziellen Tarifrechner
+              <sup className="ml-0.5 font-normal" aria-hidden="true">*</sup>
               <ExternalLink className="w-4 h-4 ml-2" />
             </a>
+            <p className="text-[11px] leading-snug text-amber-700/80 mt-3 max-w-md mx-auto">
+              (*) Affiliate-Link: Schließen Sie über diesen Link einen Vertrag ab oder führen einen Kauf
+              durch, erhalten wir vom Anbieter eine Provision. Für Sie entstehen keine Nachteile.
+            </p>
           </div>
         )}
 
@@ -230,7 +235,7 @@ export default function PartnerWidget({
           <Lock className="w-3 h-3 text-emerald-600 mr-1.5" />
           256-Bit SSL-gesicherte Datenübertragung
         </span>
-        <span>Unabhängiger Marktvergleich</span>
+        <span className="font-bold text-slate-700">powered by TARIFCHECK24 GmbH</span>
       </div>
     </div>
   );

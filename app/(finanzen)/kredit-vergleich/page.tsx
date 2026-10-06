@@ -11,10 +11,6 @@ export const metadata: Metadata = subcategoryMetadata("/kredit-vergleich");
 
 const kreditFaqs = [
   {
-    question: "Ist die Kreditanfrage SCHUFA-neutral?",
-    answer: "Ja! Jede Konditionsanfrage über unseren Vergleichsrechner erfolgt streng nach dem Merkmal 'Anfrage Kreditkondition' (KK). Dies ist zu 100 % SCHUFA-neutral und hat keinerlei negativen Einfluss auf Ihren SCHUFA-Score."
-  },
-  {
     question: "Wann wird der Kreditbetrag auf mein Konto überwiesen?",
     answer: "Bei digitalem Kontoblick und VideoIdent-Legitimation wird der gewünschte Kreditbetrag bei vielen Banken bereits innerhalb von 24 bis 48 Stunden vollständig auf Ihr Girokonto ausgezahlt."
   },
@@ -38,11 +34,11 @@ export default function KreditPage() {
             Kredit & Ratenkredit <span className="text-amber-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Finden Sie die günstigsten Zinsen für Ihren Wunschkredit. 100% unverbindlich, SCHUFA-neutral und mit schneller Sofortentscheidung.
+            Finden Sie die günstigsten Zinsen für Ihren Wunschkredit. 100% unverbindlich und mit schneller Sofortentscheidung.
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">
-            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> 100% SCHUFA-neutrale Konditionsanfrage</span>
+            <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Kostenlos & unverbindlich vergleichen</span>
             <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Sofortauszahlung in 24–48 Stunden möglich</span>
             <span className="flex items-start"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" /> Kostenlose Sondertilgungen</span>
           </div>

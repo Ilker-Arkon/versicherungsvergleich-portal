@@ -41,23 +41,40 @@ export default function ImpressumPage() {
             </div>
 
             <div className="border-t border-slate-100 pt-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-2">Tätigkeitsart & Vermittlerregister</h2>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">Tätigkeitsart</h2>
               <p>
-                Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 der Gewerbeordnung (GewO).
-              </p>
-              <p className="mt-2">
-                <strong>Zuständige Erlaubnis- und Aufsichtsbehörde:</strong><br />
-                Industrie- und Handelskammer Nürnberg für Mittelfranken<br />
-                Hauptmarkt 25/27, 90403 Nürnberg
+                SicherTarif betreibt ein unabhängiges Online-Vergleichsportal und ist ausschließlich als{" "}
+                <strong>Tippgeber</strong> tätig. SicherTarif ist <strong>kein Versicherungsvermittler</strong> und
+                erbringt keine Versicherungsvermittlung oder -beratung im Sinne des § 34d GewO.
               </p>
             </div>
 
             <div className="border-t border-slate-100 pt-6">
-              <h2 className="text-lg font-bold text-slate-900 mb-2">Schlichtungsstellen (Außergerichtliche Streitbeilegung)</h2>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>Versicherungsombudsmann e.V., Postfach 08 06 32, 10006 Berlin (www.versicherungsombudsmann.de)</li>
-                <li>Ombudsmann für die Private Kranken- und Pflegeversicherung, Postfach 06 02 22, 10052 Berlin (www.pkv-ombudsmann.de)</li>
-              </ul>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">Vergleiche powered by TARIFCHECK24 GmbH</h2>
+              <p>
+                Alle auf dieser Webseite eingebundenen Tarifvergleiche, Vergleichsrechner und Vergleichsformulare werden
+                bereitgestellt durch:
+              </p>
+              <p className="mt-2 font-semibold text-slate-800">
+                TARIFCHECK24 GmbH<br />
+                Zollstr. 11b<br />
+                21465 Wentorf bei Hamburg
+              </p>
+              <p className="mt-2">
+                Tel. 040 - 73098288<br />
+                Fax 040 - 73098289<br />
+                E-Mail: <a href="mailto:info@tarifcheck.de" className="text-blue-600 hover:underline">info@tarifcheck.de</a>
+              </p>
+              <div className="mt-4">
+                <iframe
+                  src="https://a.partner-versicherung.de/filestore/ad/1166/index.php?partner_id=75137"
+                  width="100%"
+                  scrolling="no"
+                  title="Impressum und Verantwortliche für Versicherungsvergleiche"
+                  loading="lazy"
+                  style={{ border: "none", minHeight: "700px" }}
+                />
+              </div>
             </div>
 
             <div className="border-t border-slate-100 pt-6">

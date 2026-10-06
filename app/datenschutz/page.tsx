@@ -39,7 +39,22 @@ export default function DatenschutzPage() {
             <div className="border-t border-slate-100 pt-6">
               <h2 className="text-lg font-bold text-slate-900 mb-2">3. Datenerfassung bei Nutzung unserer Vergleichsrechner</h2>
               <p>
-                Wenn Sie unsere kostenlosen SicherTarife nutzen, werden ausschließlich die für den jeweiligen Vergleich notwendigen technischen und tarifrelevanten Parameter (z. B. Postleitzahl, Fahrzeugtyp, gewünschter Deckungsumfang) verschlüsselt verarbeitet.
+                Wenn Sie unsere kostenlosen Vergleichsrechner nutzen, werden ausschließlich die für den jeweiligen
+                Vergleich notwendigen technischen und tarifrelevanten Parameter (z. B. Postleitzahl, Fahrzeugtyp,
+                gewünschter Deckungsumfang) verschlüsselt verarbeitet.
+              </p>
+              <p className="mt-2">
+                Die eingebundenen Vergleichsrechner und Vergleichsformulare (Bereiche: Kfz &amp; Mobilität, Sach &amp;
+                Wohnen, Gesundheit &amp; Kranken, Vorsorge &amp; Leben sowie Finanzen &amp; Banken) werden von der{" "}
+                <strong>TARIFCHECK24 GmbH</strong>, Zollstr. 11b, 21465 Wentorf bei Hamburg, Tel. 040 - 73098288,
+                E-Mail: <a href="mailto:info@tarifcheck.de" className="text-blue-600 hover:underline">info@tarifcheck.de</a>{" "}
+                bereitgestellt. Für die Verarbeitung der im Rahmen der Vergleiche erhobenen Daten ist die TARIFCHECK24 GmbH
+                verantwortlich.
+              </p>
+              <p className="mt-2">
+                Im Impressum binden wir einen Informations-iFrame der TARIFCHECK24 GmbH ein. Beim Aufruf werden technische
+                Daten (z. B. IP-Adresse) an <span className="font-medium">partner-versicherung.de</span> übertragen; es
+                können Cookies gesetzt werden. Die Einbindung erfolgt zur Erfüllung rechtlicher Informationspflichten.
               </p>
             </div>
 

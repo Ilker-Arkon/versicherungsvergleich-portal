@@ -54,12 +54,12 @@ export default function AdvisorSection() {
             {/* Left: Photo */}
             <div className="relative h-96 sm:h-[480px] lg:h-auto min-h-[480px] lg:min-h-[520px] overflow-hidden rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
               <Image
-                src="/berater-hueseyin-guelec.jpg"
+                src="/berater-hueseyin-guelec-v2.jpg"
                 alt={`${CUSTOMER_PROFILE.name} – Ihr persönlicher Versicherungsberater bei SicherTarif`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
-                style={{ objectPosition: "center 40%" }}
+                style={{ objectPosition: "center 25%" }}
                 priority
               />
               {/* Availability badge */}
