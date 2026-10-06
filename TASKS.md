@@ -1,7 +1,7 @@
 # ✅ Aufgaben & Plan — SicherTarif Portal
 
 > **Diese Datei wird von jeder neuen Session automatisch geladen** (via `CLAUDE.md` → `@TASKS.md`).
-> Stand: 24. September 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
+> Stand: 6. Oktober 2026 · Sortierung: **Vom Einfachsten Richtung Schwer**
 
 ## Legende
 - `[ ]` offen · `[x]` erledigt · `[⏸]` wartet auf externe Bereitstellung
@@ -40,6 +40,8 @@
 | **22** | **KI-Chatbot Button optimieren (“Soforthilfe”-Label)** | 🟢 Leicht | [x] Erledigt (20.09.) | ⚡ **Gemini Flash** | Der schwebende Chatbot-Launcher in `ChatWidget.tsx` wurde um ein prominentes „Soforthilfe”-Label inklusive animiertem Aktiv-Status-Dot erweitert. |
 | **23** | **Google Search Console Anbindung & Monitoring** | 🟡 Mittel | [x] Erledigt (24.09.) | 🧠 **Claude Sonnet** | Bestehendes Service-Konto `id-ai-holding-sheets@…` als Voll-Berechtigung für `sc-domain:sichertarif.de` hinterlegt; Skripte `gsc-query.mjs`, `gsc-check-index.mjs`, `gsc-submit-sitemap.mjs` erstellt; Sitemap neu eingereicht. ⏳ **Re-Check Indexierung ~29.09.2026** |
 | **24** | **Leistungs-Ampel-Dashboard (universell)** | 🟡 Mittel | [x] Erledigt (24.09.) | 🧠 **Claude Sonnet** | DoD-Checklisten-Dashboard (`leistungs-ampel.html`) mit 🟢🟡🔴-Ampel, „Was wurde gemacht“-Dropdowns, Notizen und D/A-Info-Boxen gebaut. Universelle Mehr-Projekt-Vorlage im Framework-Ordner: `…/framework/leistungssystem/leistungs-ampel.html`. |
+| **25** | **Affiliate-Link-/Banner-Kennzeichnung** | 🟡 Mittel | [x] Erledigt (06.10.) | 🧠 **Claude Sonnet** | Stern-Methode (Tarifcheck24-Option 2) statt aufdringlicher „Werbung“-Labels: `click.php`-Direct-Link im Error-Fallback von `PartnerWidget.tsx` mit dezentem `*` + erklärender Fußnote („Affiliate-Link … Provision, keine Nachteile“) versehen. Rechner selbst sind bereits via „powered by TARIFCHECK24 GmbH“ zugeordnet. |
+| **26** | **SCHUFA-Aussagen entfernen (Kreditvergleich)** | 🟢 Leicht | [x] Erledigt (06.10.) | ⚡ **Gemini Flash** | Untersagte Claims „100 % SCHUFA-neutral“ / „SCHUFA-neutrale Konditionsanfrage“ in `app/(finanzen)/kredit-vergleich/page.tsx` (FAQ, Hero, Feature-Liste) entfernt bzw. neutral umformuliert. |
 
 ---
 
