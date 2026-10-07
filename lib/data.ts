@@ -52,7 +52,7 @@ export const CATEGORIES: MainCategory[] = [
     id: "mobilitaet",
     title: "1. Kfz & Mobilität",
     slug: "mobilitaet",
-    description: "Finden Sie Top-Schutz für Ihr Auto oder Zweirad mit garantiertem Sparpotenzial.",
+    description: "Finden Sie Top-Schutz für Ihr Auto oder Zweirad mit attraktivem Sparpotenzial.",
     iconName: "Car",
     color: "from-blue-600 to-cyan-600",
     subcategories: [
@@ -317,17 +317,17 @@ export const CATEGORIES: MainCategory[] = [
 ];
 
 export const TRUST_STATS = [
-  { label: "Erfahrung im Markt", value: "Über 20 Jahre", subtitle: "Unabhängige Beratung" },
+  { label: "Beratung", value: "Persönlich & individuell", subtitle: "Feste Ansprechperson" },
   { label: "Vergleichsdauer", value: "In 3 Minuten", subtitle: "Zum besten Tarif" },
   { label: "Kosten & Bindung", value: "100 % Kostenlos", subtitle: "Ohne versteckte Gebühren" },
-  { label: "Anbieter im Vergleich", value: "Über 300", subtitle: "Tagesaktuelle Konditionen" }
+  { label: "Tarife im Vergleich", value: "Über 300", subtitle: "Tagesaktuelle Konditionen" }
 ];
 
 export const PROMO_HIGHLIGHTS = [
   {
     id: "girokonto-wechsel",
     title: "Girokonto-Vergleich",
-    headline: "Bis zu 180 € Neukundenbonus",
+    headline: "Bis zu 200 € Neukundenbonus",
     description: "Kostenfreie Kontoführung mit attraktiven Wechselboni. Der Wechselservice übernimmt alle Lastschriften vollautomatisch.",
     badge: "0 € Kontoführung",
     buttonText: "Girokonto vergleichen",

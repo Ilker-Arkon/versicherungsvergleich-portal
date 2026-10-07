@@ -118,7 +118,7 @@ export default function HeroSection() {
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-r from-transparent to-slate-400/40"></div>
             <span className="text-slate-400 text-[10px] sm:text-xs font-bold tracking-[0.25em] uppercase">
-              Unabhängiger Live-Vergleich für Deutschland
+              Kostenloser Live-Vergleich für Deutschland
             </span>
             <div className="h-[1px] w-12 sm:w-16 bg-gradient-to-l from-transparent to-slate-400/40"></div>
           </div>
@@ -131,14 +131,14 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-4 sm:mt-5 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Finden Sie in unter 3 Minuten den optimalen Schutz aus Hunderten geprüften Anbietern — 100 % transparent, kostenfrei und unverbindlich.
+            Finden Sie in unter 3 Minuten den optimalen Schutz aus Hunderten Tarifen im Live-Vergleich — 100 % transparent, kostenfrei und unverbindlich.
           </p>
 
           {/* Trust Row */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-sm text-slate-300">
             <span className="inline-flex items-center font-medium">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 mr-1.5 shrink-0" />
-              100 % Kostenlos & Unabhängig
+              100 % Kostenlos & Unverbindlich
             </span>
             <span className="text-slate-600 hidden sm:inline">|</span>
             <span className="inline-flex items-center font-medium">

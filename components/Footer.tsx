@@ -28,7 +28,7 @@ export default function Footer() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div>
-                <p className="text-white font-bold text-sm">100% Kostenlos & Unabhängig</p>
+                <p className="text-white font-bold text-sm">100% Kostenlos & Unverbindlich</p>
                 <p className="text-xs text-slate-400 mt-1">Keine versteckten Gebühren, neutraler und transparenter Marktüberblick.</p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function Footer() {
               <BrandLogo variant="footer" />
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed pr-4 mt-4">
-              Ihr unabhängiges Vergleichsportal für Versicherungen & Finanzen. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
+              Ihr kostenloses Vergleichsportal für Versicherungen & Finanzen. Inhaber: {CUSTOMER_PROFILE.name}, {CUSTOMER_PROFILE.city}.
             </p>
             <div className="pt-2 text-xs text-slate-400 space-y-1">
               <p className="flex items-center">

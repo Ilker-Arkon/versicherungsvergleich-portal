@@ -34,7 +34,7 @@ export default function KreditPage() {
             Kredit & Ratenkredit <span className="text-amber-600">Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Finden Sie die günstigsten Zinsen für Ihren Wunschkredit. 100% unverbindlich und mit schneller Sofortentscheidung.
+            Finden Sie die günstigsten Zinsen für Ihren Wunschkredit. 100% unverbindlich und mit schneller Rückmeldung.
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">

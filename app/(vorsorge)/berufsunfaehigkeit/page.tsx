@@ -38,7 +38,7 @@ export default function BerufsunfaehigkeitPage() {
             Berufs&shy;unfähigkeits&shy;versicherung <span className="text-purple-600">(BU) Vergleich</span>
           </h1>
           <p className="mt-4 text-slate-600 text-base leading-relaxed">
-            Sichern Sie Ihr wertvollstes Gut: Ihr monatliches Arbeitseinkommen. Vergleichen Sie zertifizierte BU-Tarife im offiziellen Live-Rechner.
+            Sichern Sie Ihr wertvollstes Gut: Ihr monatliches Arbeitseinkommen. Vergleichen Sie BU-Tarife im offiziellen Live-Rechner.
           </p>
 
           <div className="mt-4 flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 text-xs font-semibold text-emerald-700 max-w-2xl mx-auto text-left">

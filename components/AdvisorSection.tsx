@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 export default function AdvisorSection() {
   const benefits = [
     "Kostenlose Erstberatung – kein Kleingedrucktes",
-    "Unabhängig: Kein Anbieter zahlt für unser Urteil",
+    "Transparente Vergleiche – ohne versteckte Kosten",
     "Hilfe bei Kündigung, Wechsel & Unterlagen",
     "Antwort in der Regel innerhalb von 24 Stunden",
   ];
@@ -79,7 +79,7 @@ export default function AdvisorSection() {
               {/* Name & title */}
               <div className="mb-6">
                 <p className="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-1">
-                  Unabhängiger Versicherungsmakler
+                  Ihr persönlicher Versicherungsberater
                 </p>
                 <h3 className={`text-3xl sm:text-4xl text-white font-semibold tracking-wide ${playfair.className}`}>
                   Herr Gülec

@@ -44,7 +44,7 @@ export default function HomePage() {
               Warum Verbraucher auf unseren Vergleich setzen
             </h2>
             <p className="text-slate-400 text-base mt-3">
-              Unabhängige Rechner filtern in Sekunden die passenden Tarife — transparent und ohne versteckte Kosten.
+              Kostenlose Rechner filtern in Sekunden die passenden Tarife — transparent und ohne versteckte Kosten.
             </p>
           </div>
 
@@ -54,7 +54,7 @@ export default function HomePage() {
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-lg mb-5 border border-blue-500/20">
                   <ShieldCheck className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-lg text-white mb-2">100% Kostenlos & Unabhängig</h3>
+                <h3 className="font-bold text-lg text-white mb-2">100% Kostenlos & Unverbindlich</h3>
                 <p className="text-sm text-slate-400 leading-relaxed">
                   Volle Transparenz ohne versteckte Gebühren. Unser Service ist und bleibt für Sie komplett kostenfrei.
                 </p>

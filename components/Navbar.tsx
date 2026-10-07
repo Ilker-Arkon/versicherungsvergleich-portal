@@ -88,7 +88,7 @@ export default function Navbar() {
               <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Über 300 Tarife im Live-Test
             </span>
             <span className="flex items-center font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Über 20 Jahre Erfahrung
+              <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Langjährige Erfahrung
             </span>
             <span className="hidden xl:flex items-center font-medium">
               <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-blue-400" /> Sicher & Datenschutzkonform

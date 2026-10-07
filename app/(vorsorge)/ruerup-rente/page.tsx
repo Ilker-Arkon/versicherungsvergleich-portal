@@ -16,7 +16,7 @@ const ruerupFaqs = [
   },
   {
     question: "Wie hoch ist der maximale Steuervorteil?",
-    answer: "Beiträge zur Basisrente können bis zum Höchstbetrag der knappschaftlichen Rentenversicherung (über 27.500 € für Alleinstehende, über 55.000 € für Verheiratete) zu 100 % steuerlich geltend gemacht werden."
+    answer: "Beiträge zur Basisrente können bis zum jeweils geltenden Höchstbetrag der knappschaftlichen Rentenversicherung (Beitragsbemessungsgrenze) zu 100 % steuerlich geltend gemacht werden."
   }
 ];
 

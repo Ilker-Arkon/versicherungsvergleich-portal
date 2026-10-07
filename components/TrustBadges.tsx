@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function TrustBadges() {
   const stats = [
-    { value: "20+", label: "Jahre Erfahrung", sub: "Unabhängige Beratung" },
+    { value: "Persönlich", label: "1:1 Beratung", sub: "Feste Ansprechperson" },
     { value: "3 Min.", label: "Zum Besttarif", sub: "Sofortige Berechnung" },
     { value: "100%", label: "Kostenfrei", sub: "Keine versteckten Gebühren" },
   ];

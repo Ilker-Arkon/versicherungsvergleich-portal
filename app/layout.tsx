@@ -29,21 +29,13 @@ export const metadata: Metadata = {
     template: "%s | SicherTarif",
   },
   description:
-    "Ihr unabhängiges Vergleichsportal für Versicherungen, Finanzen und Vorsorge. Finden Sie in wenigen Minuten die besten Tarife und sparen Sie Geld.",
-  keywords: [
-    "Versicherungsvergleich",
-    "Finanzvergleich",
-    "Kfz-Versicherung",
-    "Private Krankenversicherung",
-    "Kreditvergleich",
-    "Girokonto Vergleich",
-  ],
+    "Ihr kostenloses Vergleichsportal für Versicherungen, Finanzen und Vorsorge. Finden Sie in wenigen Minuten die besten Tarife und sparen Sie Geld.",
   authors: [{ name: CUSTOMER_PROFILE.name }],
   creator: CUSTOMER_PROFILE.name,
   openGraph: {
     title: "Top Tarife vergleichen und sparen",
     description:
-      "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
+      "Vergleichen Sie kostenlos und unverbindlich Tarife für Versicherungen, Finanzen und Vorsorge.",
     url: "/",
     siteName: "SicherTarif",
     locale: "de_DE",
@@ -54,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Versicherungs- & Finanzportal | Top Tarife vergleichen",
     description:
-      "Vergleichen Sie kostenlos und unabhängig Tarife für Versicherungen, Finanzen und Vorsorge.",
+      "Vergleichen Sie kostenlos und unverbindlich Tarife für Versicherungen, Finanzen und Vorsorge.",
     images: [ogImageMeta("Tarife vergleichen. Sofort sparen.")],
   },
   verification: {
@@ -118,6 +110,22 @@ export default function RootLayout({
                 name: SITE_NAME,
                 url: SITE_URL,
                 logo: `${SITE_URL}/logo-google.png`,
+                description:
+                  "Vergleichsportal für Versicherungen, Finanzen und Vorsorge.",
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: CUSTOMER_PROFILE.street,
+                  postalCode: CUSTOMER_PROFILE.zip,
+                  addressLocality: CUSTOMER_PROFILE.city,
+                  addressCountry: "DE",
+                },
+                contactPoint: {
+                  "@type": "ContactPoint",
+                  telephone: CUSTOMER_PROFILE.phone,
+                  email: CUSTOMER_PROFILE.email,
+                  contactType: "customer service",
+                  availableLanguage: "de",
+                },
               }),
             }}
           />
